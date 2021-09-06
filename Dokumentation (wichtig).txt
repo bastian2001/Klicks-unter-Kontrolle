@@ -1,0 +1,15 @@
+Was ich versucht habe: 
+
+Die Sanktionen-Fragen ("sanktionen2" "sanktionen3") und insbesondere die Fragen zum Ergebnis der klage ("klage2" "klage" (wichtig hier, nicht klagen! nur klage, klagen ist eine andere Frage)) müssen priorisiert angezeigt werden. Das hab ich nicht hinbekommen. Beide sollen keine Kapitel unterbrechen, aber jeweils danach gezeigt werden. Hier habe ich das versucht:
+  previousQuestions[previousQuestions.length] = currentQuestion
+  currentQuestion = overWriteGoto || chosenAnswer.goto || (gameVariables.time >= 11*timepermonth ? 'ergebnis' : '') || checkConditions("sanktionen2"); true ? "sanktionen2" :"" || checkConditions("sanktionen3"); true ? "sanktionen2" : "" ||  getNewQuestion()
+
+Eigentlich könnte ich sie auch als Popups anzeigen lassen (wäre eigentlich auch cooler), aber sie müssen Auswirkungen auf die Variablen haben, sobald man "weiter" oder was auch immer die Antwort ist, anklickt. Das gehtnur bei den Fragen, oder? 
+
+Ich weiß, dass ich auch bei den Popups die Funktion ergänzen könnte, hatte aber gehofft, dass die Prio der Fragen eigentlich leichter wäre.
+
+Hat natürlich nicht geklappt.
+Außerdem kommt häufig eine Fehlermeldung, dass "question" of "undefined" nicht gelesen werden kann, z. T. sogar (glaube ich zumindest), obwohl ein goto angegeben war oder zumindest noch Fragen übrig wären.
+
+
+Und das inhaltliche Kapitel habe ich immer noch nicht fertig. Aber dafür das mit den Sanktionen, wenn es klappen würde.
