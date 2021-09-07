@@ -1,9 +1,14 @@
-const timepermonth = 2
+const timepermonth = 2, chapterSelectionCount = 3
 
 const chapters = {
 	//Kapitel - Eigenschaften und Fragen (Inhalte der Fragen (Fragentext, Antworten, evtl. Bedingungen))
 	intro: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Intro',
+			description: 'Hier wird das Spiel gestartet',
+			conditions:[]
+		},
 		questions: {
 			willkommen: {
 				text: "Hey, wie geht's?",
@@ -64,7 +69,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Kapiert.",
-						goto: "rundfunkratverkleinern",
+						newChapter: 'losgehts'
 					},
 				],
 			},
@@ -72,7 +77,12 @@ const chapters = {
 	},
 
 	losgehts: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Los geht\'s!',
+			description: 'Triff deine ersten Entscheidungen',
+			conditions:[]
+		},
 		questions: {
 			rundfunkratverkleinern: {
 				text: "Bisher gibt es einen öffentlich-rechtlichen Rundfunk in deinem Land. Dieser finanziert sich über eine Abgabe von allen, keine Steuer, und wird von einem Ausschuss, dem Rundfunkrat, beobachtet. Insgesamt neun Menschen sitzen im Rat, von denen drei von der Präsidentin, vier von der ersten und zwei von der zweiten Parlamentskammer bestimmt werden. Meinst du, da kann man noch was machen?",
@@ -222,12 +232,8 @@ const chapters = {
 				answers: [
 					{
 						text: "Okay, versuche ich.",
-						goto: "rsm",
+						newChapter: "rechtsstaatsmechanismus",
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -242,12 +248,8 @@ const chapters = {
 				answers: [
 					{
 						text: "Mmmhhh, okay.",
-						goto: "rsm",
+						newChapter: "rechtsstaatsmechanismus",
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 2,
@@ -261,12 +263,8 @@ const chapters = {
 				answers: [
 					{
 						text: "Let's go!",
-						goto: "rsm",
+						newChapter: "rechtsstaatsmechanismus",
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -327,12 +325,8 @@ const chapters = {
 				answers: [
 					{
 						text: "Wenn du meinst... Dann lass uns weiter Journalisten jagen.",
-						goto: "rsm",
+						newChapter: "rechtsstaatsmechanismus",
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -341,12 +335,8 @@ const chapters = {
 					},
 					{
 						text: "Das ist nicht mein Stil. Ich glaub, ich bin nicht geschaffen dafür.",
-						goto: "letzteNachfrage",
+						goto: "openend/letzteNachfrage",
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 2,
@@ -361,15 +351,11 @@ const chapters = {
 				answers: [
 					{
 						text: "Da hatten wir keinen guten Start miteinander. Aber lass' uns was anderes probieren.",
-						goto: "rsm",
+						newChapter: 'rechtsstaatsmechanismus',
 						variables: [
 							{
 								text: "time",
 								amount: 1,
-							},
-							{
-								text: "kapitelBeginn",
-								value: true,
 							},
 							{
 								text: "time",
@@ -379,12 +365,8 @@ const chapters = {
 					},
 					{
 						text: "Ich glaub, ich will komplett zurücktreten.",
-						goto: "letzteNachfrage",
+						goto: "openend/letzteNachfrage",
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 2,
@@ -399,16 +381,14 @@ const chapters = {
 	},
 
 	rechtsstaatsmechanismus: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Rechtsstaatsmechanismus',
+			description: 'Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit',
+			conditions:[]
+		},
 		questions: {
 			rsm: {
-				conditions: [
-					{
-						variableName: "kapitelBeginn",
-						type: "==",
-						value: true,
-					},
-				],
 				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaatsmechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen zu erwarten sind. Insbesondere natürlich die Einbehaltung von AU-Mitteln. Auch zuvor gab es bereits Regelungen in dieser Richtung, allerdings hat das Parlament diese als zu schwach eingeschätzt. Wir könnten dagegen klagen, was meinst du?',
 				info: 'Die Europäische Union hat zum 1.1.2021 einen solchen Mechanismus auf den Weg gebracht. Gelder sollten nicht in die Hände derjenigen gelangen, die die Demokratie bedrohen, so die Argumentation. Rechtsstaatlichkeit ist in der EU als Grundwert verankert: "Sie bedeutet, dass Regierungen das Recht achten sollten und keine willkürlichen Entscheidungen treffen dürfen. Die Bürger sollten in der Lage sein, das Handeln von Regierungen vor unabhängigen Gerichten anzufechten. Die Rechtsstaatlichkeit umfasst auch die Bekämpfung von Korruption und den Schutz der Medienfreiheit, wodurch sichergestellt wird, dass die Öffentlichkeit angemessen über staatliche Maßnahmen informiert wird", schreibt das EU-Parlament auf seiner <a href= https://www.europarl.europa.eu/news/de/headlines/eu-affairs/20201001STO88311/rechtsstaatsmechanismus-schutz-des-eu-haushalts-und-der-europaischen-werte>Webseite</a>.',
 				answers: [
@@ -416,10 +396,6 @@ const chapters = {
 						text: "Ich glaube, wir sollten da lieber keine schlafenden Hunde wecken. Natürlich unterzeichnen wir mit.",
 						goto: "unterschreiben",
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: false,
-							},
 							{
 								text: "aussenbeziehungen",
 								amount: 4,
@@ -438,10 +414,6 @@ const chapters = {
 						text: "Ja, natürlich klagen wir! Bei der geringsten Erfolgschance müssen wir es probieren. Und ansonsten verlängern wir wenigstens das Verfahren.",
 						goto: "klagen",
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: false,
-							},
 							{
 								text: "aussenbeziehungen",
 								amount: -4,
@@ -465,10 +437,6 @@ const chapters = {
 						goto: "verbuendete",
 						variables: [
 							{
-								text: "kapitelBeginn",
-								value: false,
-							},
-							{
 								text: "aussenbeziehungen",
 								amount: -1,
 							},
@@ -486,11 +454,8 @@ const chapters = {
 				answers: [
 					{
 						text: "Ach, das passt schon. Weiter geht's im Wahlkampf!",
+						newChapter: true,
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -533,11 +498,8 @@ const chapters = {
 				answers: [
 					{
 						text: "Nein, dann lassen wir das lieber so auf sich beruhen und unterschreiben. Und weiter im Wahlkampf!",
+						newChapter: true,
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "aussenbeziehungen",
 								amount: 3,
@@ -577,12 +539,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter geht's.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true
 					},
 				],
 			},
@@ -592,12 +549,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter geht's.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true
 					},
 				],
 			},
@@ -605,26 +557,20 @@ const chapters = {
 	},
 
 	polonisierung: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Renationalisierung',
+			description: 'Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit',
+			conditions:[]
+		},
 		questions: {
 			nuppisierung: {
-				conditions: [
-					{
-						variableName: "kapitelBeginn", //Wert, der verglichen wird
-						type: "==", //  =, < , >, <=, >=
-						value: true, //vergleichswert
-					},
-				],
 				text: "80 Prozent der regionalen Tageszeitungen gehören zu einem Unternehmen. Dieses wurde allerdings von einem größeren Verlag aus dem Nachbarland aufgekauft. Außerdem gehören diesem Konzern auch viele Online-Nachrichtenplattformen, die in den letzten Jahren extrem gewachsen sind. Was bedeutet das für uns?",
 				answers: [
 					{
 						text: "Weiß ich auch nicht. Ist das verkehrt?",
 						goto: "erklaerung1",
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: false,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -636,10 +582,6 @@ const chapters = {
 						goto: "geld",
 						variables: [
 							{
-								text: "kapitelBeginn",
-								value: false,
-							},
-							{
 								text: "time",
 								amount: 1,
 							},
@@ -649,10 +591,6 @@ const chapters = {
 						text: "Das Geld bleibt zum Teil im Ausland.",
 						goto: "kontrolle",
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: false,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -790,14 +728,11 @@ const chapters = {
 				answers: [
 					{
 						text: "Naja, Fehler passieren. Vergessen wir das einfach.",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
 								amount: 1,
-							},
-							{
-								text: "kapitelBeginn",
-								value: true,
 							},
 							{
 								text: "entlassungenDone",
@@ -808,11 +743,8 @@ const chapters = {
 					{
 						text: "Ist jetzt passiert, aber jetzt können wir unsere Macht natürlich auch ausnutzen. Da könnte man doch alle entlassen, die sich mal kritisch geäußert haben.",
 						goto: "entlassung",
+						newChapter: true,
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -929,12 +861,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Klingt logisch.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true
 					},
 				],
 			},
@@ -945,12 +872,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter geht's.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -961,12 +883,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Na gut, ich versuch's.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1010,12 +927,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1023,15 +935,15 @@ const chapters = {
 	},
 
 	entlassung: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Entlassung',
+			description: 'Untreue in den Staatsmedien',
+			conditions:[]
+		},
 		questions: {
 			entlassung: {
 				conditions: [
-					{
-						variableName: "kapitelBeginn",
-						type: "==",
-						value: true,
-					},
 					{
 						variableName: "staatsnaehe",
 						type: ">=",
@@ -1065,10 +977,6 @@ const chapters = {
 								text: "kritischeJournalisten",
 								amount: -14,
 							},
-							{
-								text: "kapitelBeginn",
-								value: false,
-							},
 						],
 					},
 					{
@@ -1090,10 +998,6 @@ const chapters = {
 							{
 								text: "kritischeJournalisten",
 								amount: -125,
-							},
-							{
-								text: "kapitelBeginn",
-								value: false,
 							},
 							{
 								text: "entlassungDone",
@@ -1128,10 +1032,6 @@ const chapters = {
 							{
 								text: "kritischeJournalisten",
 								amount: -312,
-							},
-							{
-								text: "kapitelBeginn",
-								value: false,
 							},
 							{
 								text: "entlassungDone",
@@ -1182,11 +1082,8 @@ const chapters = {
 					},
 					{
 						text: "Im Ausland schauen die doch sowieso schon sehr genau hin, seit wir die Medien gekauft haben. Wir sollten da schon besser aufpassen. Darum hier lieber vorsichtig sein. Und ein paar Journalisten werden so auch weniger kritisch sein.",
+						newChapter: true,
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "anerkennung",
 								amount: -2,
@@ -1239,11 +1136,8 @@ const chapters = {
 					},
 					{
 						text: "Reicht erstmal, denke ich.",
+						newChapter: true,
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -1258,11 +1152,8 @@ const chapters = {
 				answers: [
 					{
 						text: "Das hab' ich nicht bedacht... Blöd gelaufen.",
+						newChapter: true,
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "anerkennung",
 								amount: -5,
@@ -1279,16 +1170,14 @@ const chapters = {
 	},
 
 	szenarioRenationalisierung: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Kritik aus den eigenen Reihen',
+			description: 'Eine bekannte Moderatorin äußert sich dir gegenüber kritisch',
+			conditions:[]
+		},
 		questions: {
 			zensur: {
-				conditions: [
-					{
-						variableName: "kapitelBeginn",
-						type: "==",
-						value: true,
-					},
-				],
 				text: "Im öffentlich-rechtlichen Fernsehen äußert sich eine beliebte Moderatorin kritisch zu einem neuen Gesetzentwurf. Wie regierst du am besten?",
 				answers: [
 					{
@@ -1310,10 +1199,6 @@ const chapters = {
 							{
 								text: "kritischeJournalisten",
 								amount: 3,
-							},
-							{
-								text: "kapitelBeginn",
-								value: false,
 							},
 							{
 								text: "entlassungenDone",
@@ -1338,10 +1223,6 @@ const chapters = {
 								amount: -278,
 							},
 							{
-								text: "kapitelBeginn",
-								value: false,
-							},
-							{
 								text: "zensurDone",
 								value: true,
 							},
@@ -1358,10 +1239,6 @@ const chapters = {
 							{
 								text: "time",
 								amount: 2,
-							},
-							{
-								text: "kapitelBeginn",
-								value: false,
 							},
 						],
 					},
@@ -1401,7 +1278,7 @@ const chapters = {
 					},
 					{
 						text: "Ich hab da kein gutes Gefühl bei der Sache. Ich trete zurück.",
-						goto: "letzteNachfrage",
+						goto: "openend/letzteNachfrage",
 					},
 				],
 			},
@@ -1475,12 +1352,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Was machen wir als nächstes?",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1489,12 +1361,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Was machen wir als nächstes?",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1503,12 +1370,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter geht's!",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1518,12 +1380,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Richtig so!",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1531,16 +1388,14 @@ const chapters = {
 	},
 
 	umgangMitKritik: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Probleme aus dem Ausland',
+			description: 'Die Adrejanische Union hat Wind bekommen',
+			conditions:[]
+		},
 		questions: {
 			obama: {
-				conditions: [
-					{
-						variableName: "kapitelBeginn",
-						type: "==",
-						value: true,
-					},
-				],
 				text: 'Ein Präsident eines großen wichtigen Staates sagt auf einer Veranstaltung in Nuppland: "Wir blicken besorgt auf die nuppische Demokratie. Die demokratischen Verfahren werden zunehmend abgebaut, obwohl es wichtig ist, dass alle Staaten zusammenarbeiten. Nuppland ist als Beispiel für die ganze Welt zu sehen."',
 				answers: [
 					{
@@ -1558,10 +1413,6 @@ const chapters = {
 							{
 								text: "aussenbeziehungen",
 								amount: -4,
-							},
-							{
-								text: "kapitelBeginn",
-								value: false,
 							},
 						],
 					},
@@ -1606,12 +1457,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Ich hoffe, da gibt's nicht noch Ärger.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1633,10 +1479,6 @@ const chapters = {
 							{
 								text: "aussenbeziehungen",
 								amount: -4,
-							},
-							{
-								text: "kapitelBeginn",
-								value: false,
 							},
 						],
 					},
@@ -1670,12 +1512,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Einfach schnell weitermachen.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 					{
 						text: "Wir müssen noch eine Rechtfertigung mit versteckter Drohung an Journalisten rausgeben. Vielleicht hilft das, die zum Verstummen zu bringen.",
@@ -1702,12 +1539,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Man kann nicht alle glücklich machen.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1858,12 +1690,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Okay, ich wage mich dann mal wieder aus meinem Versteck...",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1873,12 +1700,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Aussitzen.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1888,12 +1710,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Glück gehabt.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1904,12 +1721,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Klingt gut.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -1917,15 +1729,15 @@ const chapters = {
 	},
 
 	medienstiftung: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Medienstiftung',
+			description: 'Mehr Geld für Deine Medien',
+			conditions:[]
+		},
 		questions: {
 			linie: {
 				conditions: [
-					{
-						variableName: "kapitelBeginn",
-						type: "==",
-						value: true,
-					},
 					{
 						variableName: "entlassungenDone",
 						type: "==",
@@ -1958,21 +1770,11 @@ const chapters = {
 								text: "staatsnaehe",
 								amount: 2,
 							},
-							{
-								text: "kapitelBeginn",
-								value: false,
-							},
 						],
 					},
 					{
 						text: "Die Nachrichten bringen bei den kleineren Sendern häufig eine ganz andere Linie rein als die, die ich mir wünschen würde. Kann man da nicht was machen?",
 						goto: "agentur",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: false,
-							},
-						],
 					},
 				],
 			},
@@ -2019,7 +1821,7 @@ const chapters = {
 					},
 					{
 						text: "Ach, das ist doch alles nichts. Die Werte sehen gerade doch ganz gut aus. Ich bin bis zu den Wahlen im Urlaub - Paris, Athen, auf Wiedersehn!",
-						goto: "letzteNachfrage",
+						goto: "openend/letzteNachfrage",
 					},
 				],
 			},
@@ -2033,10 +1835,6 @@ const chapters = {
 							{
 								text: "time",
 								amount: 1,
-							},
-							{
-								text: "kapitelBeginn",
-								value: true,
 							},
 						],
 					},
@@ -2141,14 +1939,11 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter geht's!",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
 								amount: 2,
-							},
-							{
-								text: "kapitelBeginn",
-								value: true,
 							},
 						],
 					},
@@ -2161,14 +1956,11 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter geht's!",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
 								amount: 2,
-							},
-							{
-								text: "kapitelBeginn",
-								value: true,
 							},
 						],
 					},
@@ -2178,15 +1970,15 @@ const chapters = {
 	},
 
 	werbesteuer: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Werbesteuer',
+			description: '...',
+			conditions:[]
+		},
 		questions: {
 			ws: {
 				conditions: [
-					{
-						variableName: "kapitelBeginn",
-						type: "==",
-						value: true,
-					},
 					{
 						variableName: "entlassungenDone",
 						type: "==",
@@ -2203,10 +1995,6 @@ const chapters = {
 								text: "time",
 								amount: 1,
 							},
-							{
-								text: "kapitelBeginn",
-								value: false,
-							},
 						],
 					},
 					{
@@ -2216,10 +2004,6 @@ const chapters = {
 							{
 								text: "time",
 								amount: 1,
-							},
-							{
-								text: "kapitelBeginn",
-								value: false,
 							},
 						],
 					},
@@ -2276,11 +2060,8 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter geht's.",
+						newChapter: true,
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -2296,11 +2077,8 @@ const chapters = {
 				answers: [
 					{
 						text: "What's next?",
+						newChapter: true,
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -2364,12 +2142,7 @@ const chapters = {
 					},
 					{
 						text: "Ne, das passt schon.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -2380,11 +2153,8 @@ const chapters = {
 				answers: [
 					{
 						text: "What's next?",
+						newChapter: true,
 						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 							{
 								text: "time",
 								amount: 1,
@@ -2462,6 +2232,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Ja, machen wir! Und dann weiter.",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
@@ -2479,22 +2250,15 @@ const chapters = {
 								text: "aussenbeziehungen",
 								amount: -2,
 							},
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 						],
 					},
 					{
 						text: "Das überzeugt mich nicht.",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
 								amount: 1,
-							},
-							{
-								text: "kapitelBeginn",
-								value: true,
 							},
 						],
 					},
@@ -2506,6 +2270,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Super! So machen wir das! Und dann anders weiter.",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
@@ -2523,22 +2288,15 @@ const chapters = {
 								text: "aussenbeziehungen",
 								amount: -2,
 							},
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
 						],
 					},
 					{
 						text: "Das überzeugt mich nicht. Lieber würde ich anders weitermachen.",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
 								amount: 1,
-							},
-							{
-								text: "kapitelBeginn",
-								value: true,
 							},
 						],
 					},
@@ -2609,6 +2367,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Ja, machen wir! Und dann weiter.",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
@@ -2625,10 +2384,6 @@ const chapters = {
 							{
 								text: "aussenbeziehungen",
 								amount: -3,
-							},
-							{
-								text: "kapitelBeginn",
-								value: true,
 							},
 						],
 					},
@@ -2666,6 +2421,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Super! So machen wir das! Und dann anders weiter.",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
@@ -2682,10 +2438,6 @@ const chapters = {
 							{
 								text: "aussenbeziehungen",
 								amount: -3,
-							},
-							{
-								text: "kapitelBeginn",
-								value: true,
 							},
 						],
 					},
@@ -2814,15 +2566,14 @@ const chapters = {
 	},
 
 	openend: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Was auch immer, keine Ahnung',
+			description: 'Eine Sammlung an random shit???'
+		},
 		questions: {
 			sanktionen2: {
 				conditions: [
-					{
-						variableName: "kapitelBeginn",
-						type: "==",
-						value: true,
-					},
 					{
 						variableName: "sanktionsschwelle",
 						type: "==",
@@ -2862,11 +2613,6 @@ const chapters = {
 						variableName: "sanktionsschwelle",
 						type: "==",
 						value: -22,
-					},
-					{
-						variableName: "kapitelBeginn",
-						type: "==",
-						value: true,
 					},
 					{
 						variableName: "geklagt",
@@ -2921,12 +2667,7 @@ const chapters = {
 					},
 					{
 						text: "Nein, ich versuche es doch nochmal mit etwas anderem.",
-						variables: [
-							{
-								text: "kapitelBeginn",
-								value: true,
-							},
-						],
+						newChapter: true,
 					},
 				],
 			},
@@ -3011,7 +2752,11 @@ const chapters = {
 	},
 
 	ergebnis: {
-		props: {},
+		props: {
+			entry: 0,
+			title: 'Ergebnis',
+			description: 'Ab zum Schluss (diese Nachricht solltest du nicht sehen)'
+		},
 		questions: {
 			ergebnis: {
 				conditions: [
@@ -3019,11 +2764,6 @@ const chapters = {
 						variableName: "time",
 						type: ">=",
 						value: 23,
-					},
-					{
-						variableName: "kapitelBeginn",
-						type: "==",
-						value: true,
 					},
 				],
 				text: "Okay, die Zeit ist vorbei. Schauen wir mal, wie deine Bilanz so aussieht. Bisher gibt es noch $kritischeJournalisten kritische Journalist*innen im Land. $ergebnisErgänzung",
@@ -3140,7 +2880,7 @@ const popups = {
 	//open end
 }
 
-const kritJourStart = zufallszahl(800, 1000)
+const kritJourStart = ranInt(800, 1000)
 let gameVariables = {
 	time: 0, //bis zur nächsten Wahl
 	falsch: 0, //falsche Entscheidung, für Gutmensch, aber auch für zu krasse Entscheidungen (vielleicht später raus?)
@@ -3150,7 +2890,6 @@ let gameVariables = {
 	gutmensch: 0,
 	benennungAufkaufen: "Renationalisierung",
 	kritischeJournalisten: kritJourStart,
-	kapitelBeginn: false,
 	aufgekauft: false,
 	unternehmen: false,
 	ergebnisOffset: 0,
@@ -3169,12 +2908,12 @@ let currentQuestion = {
 let overrideGoto = ""
 
 let startedChapters = [],
-	prevousPopups = []
+	previousPopups = []
 
 showQuestion(currentQuestion)
 
 function pathToKeys(path) {
-	const chapter = currentQuestion.chapter,
+	let chapter = currentQuestion.chapter,
 		question = path
 	if (path.indexOf("/") > -1) {
 		const parts = path.split("/")
@@ -3188,6 +2927,9 @@ function pathToKeys(path) {
 // }
 
 function getQuestion(chapter, question) {
+	if (chapters[chapter].questions[question] == undefined){
+		console.error(chapter, question)
+	}
 	return chapters[chapter].questions[question]
 }
 function getQuestionFromPath(path) {
@@ -3200,14 +2942,21 @@ function map(min, max, newMin, newMax, value) {
 }
 
 function showInfo() {
-	showPopup({ message: questions[currentQuestion].info, button: "OK" })
+	showPopup({ message: chapters[currentQuestion.chapter].questions[currentQuestion.question].info, button: "OK" })
 }
 
-function zufallszahl(min, max) {
+function ranInt(min, max) {
 	return Math.floor(map(0, 1, min, max + 1, Math.random()))
 }
 
 function showQuestion(obj) {
+	//Frage statt Kapitelauswahl anzeigen
+	document.getElementById('game').style.display = 'block'
+	document.getElementById('chapterSelection').style.display = 'none'
+
+	//currentquestion setzen
+	currentQuestion = obj
+
 	//Fragentext anzeigen
 	document.getElementById("frage").innerHTML = getQuestion(obj.chapter, obj.question)
 		.text.replaceAll("$benennungAufkaufen", gameVariables.benennungAufkaufen)
@@ -3223,7 +2972,7 @@ function showQuestion(obj) {
 				: "Gute Arbeit!"
 		)
 
-	//info anzeigen falls vorhanden
+	//Fragezeichen anzeigen falls Info vorhanden
 	if (getQuestion(obj.chapter, obj.question).info) {
 		document.getElementById("info").style.display = "block"
 	} else document.getElementById("info").style.display = "none"
@@ -3241,10 +2990,7 @@ function showQuestion(obj) {
 		}
 	}
 
-	//Kapitelauswahl verstecken
-	document.getElementById("chapterSelection").style = "display: none"
-
-	// Bereits gestartete Kapitel hinzufügen
+	// Zu gestarteten Kapiteln hinzufügen
 	if (startedChapters.indexOf(obj.chapter) === -1) startedChapters.push(obj.chapter)
 }
 
@@ -3261,21 +3007,130 @@ function answerClick(answerNo) {
 			else gameVariables[variable.text] = variable.value
 		}
 	}
-	if (gameVariables.time >= timepermonth * 12) {
+	if (gameVariables.time > timepermonth * 12) {
 		console.error("Zeit zu hoch: ", gameVariables.time)
-		gameVariables.time = 12 * timepermonth
+		// gameVariables.time = 12 * timepermonth
 	}
 	//Variablen ausgeben
 	// console.log(
-	// `Zeit: ${gameVariables.time}, falsch: ${gameVariables.falsch}, anerkennung: ${gameVariables.anerkennung}, aussenbeziehungen: ${gameVariables.aussenbeziehungen}, staatsnaehe: ${gameVariables.staatsnaehe}, kapitelBeginn: ${gameVariables.kapitelBeginn}, gutmensch: ${gameVariables.gutmensch}, benennungAufkaufen: ${gameVariables.benennungAufkaufen}, kritischeJournalisten: ${gameVariables.kritischeJournalisten}, sanktionsschwelle: ${gameVariables.sanktionsschwelle}`
+	// `Zeit: ${gameVariables.time}, falsch: ${gameVariables.falsch}, anerkennung: ${gameVariables.anerkennung}, aussenbeziehungen: ${gameVariables.aussenbeziehungen}, staatsnaehe: ${gameVariables.staatsnaehe}, gutmensch: ${gameVariables.gutmensch}, benennungAufkaufen: ${gameVariables.benennungAufkaufen}, kritischeJournalisten: ${gameVariables.kritischeJournalisten}, sanktionsschwelle: ${gameVariables.sanktionsschwelle}`
 	// )
 
 	// Header anpassen
-	// setHeader()
+	setHeader()
 
-	//neue Anzeige: entweder Kapitelauswahl oder neue Frage
+	popupRoutine()
 
-	//TODO
+	/*
+	overrideGoto
+	Kapitelauswahl
+	Vorgeschriebenes nächstes Kapitel
+	goto, notfalls Ergebnis
+	*/
+	if (overrideGoto){
+		showQuestion(pathToKeys(overrideGoto))
+		overrideGoto = ''
+	} else if(chosenAnswer.newChapter === true){
+		showChapterSelection()
+	} else if (chosenAnswer.newChapter){
+		startChapter(chosenAnswer.newChapter)
+	} else {
+		if (!chosenAnswer.goto) console.error('Hilfe!', currentQuestion, getQuestion(currentQuestion.chapter, currentQuestion.question), chosenAnswer)
+		let nextQuestion = chosenAnswer.goto
+		if (Array.isArray(nextQuestion)){
+			nextQuestion = getNewQuestion(chosenAnswer.goto)
+		}
+		if (gameVariables.time > 12 * timepermonth){
+			nextQuestion = 'ergebnis/ergebnis'
+			console.error("Time overflow")
+		}
+		showQuestion(pathToKeys(nextQuestion))
+	}
+}
+
+function showChapterSelection(){
+	if (gameVariables.time >= timepermonth * 12){
+		startChapter('ergebnis')
+		return
+	}
+
+	let availableChapters = Object.keys(chapters)
+		.filter(el => startedChapters.indexOf(el) === -1)
+		.filter(el => checkConditions(chapters[el].props))
+
+	availableChapters = randomSelection(availableChapters, chapterSelectionCount)
+
+	document.getElementById('game').style.display = 'none'
+	document.getElementById('chapterSelection').style.display = 'grid'
+
+	if (availableChapters.length === 0){
+		console.error('Keine Kapitel zur Auswahl')
+	}
+
+	for (let i = 0; i < chapterSelectionCount; i++){
+		const el = document.getElementById(`newChapter${i}`)
+		if (availableChapters[i]){
+			el.style.display = 'block'
+			el.setAttribute('chapter', availableChapters[i])
+			el.children[1].innerHTML = chapters[availableChapters[i]].props.title
+			el.children[2].innerHTML = chapters[availableChapters[i]].props.description
+		} else {
+			el.style.display = 'none'
+		}
+	}
+}
+
+function randomSelection(array, number = 3){
+	while (array.length > number){
+		array.splice(ranInt(0, array.length - 1), 1)
+	}
+	return array
+}
+
+function startChapter(name){
+	console.log(`Springe zu Kapitel ${name}`)
+	if (startedChapters.indexOf(name) != -1){
+		console.error(`Kapitel ${name} schon mal gestartet`)
+	}
+	startedChapters.push(name)
+
+	if (typeof chapters[name].props.entry == 'string'){
+		showQuestion({chapter: name, question: chapters[name].props.entry})
+	} else if (chapters[name].props.entry === undefined){
+		let i = 0;
+		let questionName = Object.keys(chapters[name].questions)[i++]
+		while (!checkConditions(chapters[name].questions[questionName])){
+			if (i === Object.keys(chapters[name].questions).length){
+				console.error(`Zeit nicht abgelaufen, aber keine Fragen aus dem Kapitel verfügbar, Zeit: ${gameVariables.time}`)
+				gameVariables.time = timepermonth * 12
+				startChapter('ergebnis')
+				return
+			}
+			questionName = Object.keys(chapters[name].questions)[i++]
+		}
+		showQuestion({chapter: name, question: questionName})
+	} else if (Array.isArray(chapters[name].props.entry)){
+		for (el of chapters[name].props.entry) {
+			if (checkConditions(chapters[name].questions[el])){
+				showQuestion({chapter: name, question: el})
+				break
+			}
+		}
+	} else if (typeof chapters[name].props.entry === 'number'){
+		showQuestion({chapter: name, question: Object.keys(chapters[name].questions)[chapters[name].props.entry]})
+	}
+}
+
+function getNewQuestion(gotoArray){
+	gotoArray = gotoArray.filter(el => checkConditions(getQuestionFromPath(el)))
+	if (gotoArray.length > 1)
+		console.error(`gotoArray hat ${availableQuestions.length} Elemente!`)
+	else if (gotoArray.length == 0){
+		console.error('gotoArray hat keine Elemente. Springe zum Ergebnis')
+		gameVariables.time = 12 * timepermonth
+		return 'ergebnis'
+	}
+	return gotoArray[0]
 }
 
 function popupRoutine() {
@@ -3357,9 +3212,52 @@ function calcResult() {
 	//console.log(result, 'Nach Offset')
 	return (
 		Math.round(
-			Math.min(Math.max(zufallszahl(204, 244) / 10, result), zufallszahl(704, 761) / 10) * 10
+			Math.min(Math.max(ranInt(204, 244) / 10, result), ranInt(704, 761) / 10) * 10
 		) /
 			10 +
 		"%"
 	).replace(".", ",")
+}
+
+function initHeader() {
+	barometerKritisch = $("#barometerKritisch").barometer()
+}
+
+function setHeader() {
+	document.getElementById(
+		"headerText0"
+	).innerHTML = `Kritische Journalist*innen: ${gameVariables.kritischeJournalisten}`
+	barometerKritisch.rotate(map(300, 1400, 225, -45, gameVariables.kritischeJournalisten))
+
+	document.getElementById("headerText1").innerHTML = `Zeit: ${Math.floor(
+		gameVariables.time / timepermonth
+	)} ${Math.floor(gameVariables.time / timepermonth) == 1 ? "Monat" : "Monate"} vergangen`
+	document.getElementById("header1progress").style.width = `${map(
+		0,
+		12 * timepermonth,
+		0,
+		100,
+		gameVariables.time
+	)}%`
+	if (gameVariables.time >= 9 * timepermonth)
+		document.getElementById("header1progress").style["background-color"] = "orange"
+	if (gameVariables.time >= 10.5 * timepermonth)
+		document.getElementById("header1progress").style["background-color"] = "red"
+
+	document.getElementById(
+		"headerText3"
+	).innerHTML = `Qualität der Beziehungen zur Adrejanischen Union`
+	let posP = Math.max(0, gameVariables.aussenbeziehungen)
+	posP = Math.min(30, posP)
+	posP = map(0, 30, 0, 100, posP)
+	document.getElementById("header2bgP").style["grid-template-columns"] = `${posP}% ${100 - posP}%`
+	let posN = Math.max(-30, gameVariables.aussenbeziehungen)
+	posN = Math.min(0, posN)
+	posN = map(0, -30, 0, 100, posN)
+	document.getElementById("header2bgN").style["grid-template-columns"] = `${100 - posN}% ${posN}%`
+
+	if (currentQuestion == "vorstellung") {
+		//console.log('x')
+		$(".header>*").css("opacity", "1")
+	}
 }

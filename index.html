@@ -61,7 +61,7 @@
 
 			<img src="Bilder/logo.png" alt="KLICKS UNTER KONTROLLE" />
 
-			<div class="game">
+			<div id="game">
 				<!--Paragraphs und Buttons werden von JS gefüllt (innerHTML)-->
 				<p id="frage"></p>
 
@@ -79,19 +79,19 @@
 				<p class="chapterSelectionText">Womit möchtest du dich als nächstes beschäftigen?</p>
 
 				<!--Mehrere Kästen, werden von JS befüllt mit Kapitelauswahl-->
-				<div class="newChapter">
+				<div id="newChapter0" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
 					<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
 					<h1 class="chapterHeadline">Beispielkapitel</h1>
 					<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
 				</div>
 
-				<div class="newChapter">
+				<div id="newChapter1" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
 					<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
 					<h1 class="chapterHeadline">Beispielkapitel</h1>
 					<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
 				</div>
 
-				<div class="newChapter">
+				<div id="newChapter2" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
 					<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
 					<h1 class="chapterHeadline">Beispielkapitel</h1>
 					<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
