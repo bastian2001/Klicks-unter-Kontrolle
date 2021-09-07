@@ -1,60 +1,117 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Klicks unter Kontrolle - Medienliteralität</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="styleBarometer.css" />
-    <script src="jquery-3.6.0.slim.min.js"></script>
-    <script src="barometer.js"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
-    <meta name="theme-color" content="#1e583a" />
-    <meta name="author" content="Lia Springer" />
-  </head>
+	<head>
+		<!--Anzeige-->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
-    <div class="header">
-      <div id="header0">
-        <p id="headerText0">Kritische Journalisten</p>
-        <div class="barometer" id="barometerKritisch"></div>
-      </div>
-      <div id="header1">
-        <p id="headerText1">Text 2</p>
-        <div id="header1bg"><div id="header1progress"></div></div>
-      </div>
-      <div id="header2">
-        <p id="headerText3">Text 4</p>
-        <div id="header2bgN">
-          <div id="header2progressN"></div>
-        </div>
-        <div id="header2bgP">
-          <div id="header2progressP"></div>
-        </div>
-      </div>
-    </div>
-    <div class="game">
-      <button id="info" onclick="showInfo()"></button>
-      <img src="Bilder/logo.png" alt="KLICKS UNTER KONTROLLE" />
-      <p id="frage"></p>
-      <button id="antwort0" onclick="answerClick(0)"></button>
-      <p></p>
-      <button id="antwort1" onclick="answerClick(1)"></button>
-      <p></p>
-      <button id="antwort2" onclick="answerClick(2)"></button>
-    </div>
-    <div id="popupbg" style="display: none">
-      <div id="popup">
-        <h1 id="popupHeadline"></h1>
-        <p id="popupMessage"></p>
-        <button
-          id="popupButton"
-          onclick="document.getElementById('popupbg').style='display: none;'"
-        ></button>
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+		<!--Meta-->
+		<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+		<meta name="theme-color" content="#30393A" />
+		<meta name="author" content="Lia und Bastian Springer" />
+
+		<!--Titel-->
+		<title>Klicks unter Kontrolle - Medienliteralität</title>
+
+		<!--Style-->
+		<link rel="stylesheet" href="style.css" />
+
+		<!--Barometer-->
+		<link rel="stylesheet" href="styleBarometer.css" />
+		<script src="jquery-3.6.0.slim.min.js"></script>
+		<script src="barometer.js"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<!--Flex-->
+			<!--Barometer-->
+			<div id="header0">
+				<p id="headerText0">Kritische Journalisten</p>
+				<div class="barometer" id="barometerKritisch"></div>
+			</div>
+
+			<!--Zeit-->
+			<div id="header1">
+				<p id="headerText1">Text 2</p>
+				<div id="header1bg"><div id="header1progress"></div></div>
+			</div>
+
+			<!--Qualität der Beziehungen-->
+			<div id="header2">
+				<p id="headerText3">Text 4</p>
+				<div id="header2bgN">
+					<div id="header2progressN"></div>
+				</div>
+				<div id="header2bgP">
+					<div id="header2progressP"></div>
+				</div>
+			</div>
+		</div>
+
+		<!--Spiel-->
+		<div class="content">
+			<!--Flex-->
+
+			<!--Fragezeichen (Info)-->
+			<button id="info" onclick="showInfo()"></button>
+			<!--absolute-->
+
+			<img src="Bilder/logo.png" alt="KLICKS UNTER KONTROLLE" />
+
+			<div class="game">
+				<!--Paragraphs und Buttons werden von JS gefüllt (innerHTML)-->
+				<p id="frage"></p>
+
+				<button id="antwort0" onclick="answerClick(0)"></button>
+				<p></p>
+
+				<button id="antwort1" onclick="answerClick(1)"></button>
+				<p></p>
+
+				<button id="antwort2" onclick="answerClick(2)"></button>
+			</div>
+
+			<!--Kapitelauswahl-->
+			<div id="chapterSelection">
+				<p class="chapterSelectionText">Womit möchtest du dich als nächstes beschäftigen?</p>
+
+				<!--Mehrere Kästen, werden von JS befüllt mit Kapitelauswahl-->
+				<div class="newChapter">
+					<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
+					<h1 class="chapterHeadline">Beispielkapitel</h1>
+					<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
+				</div>
+
+				<div class="newChapter">
+					<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
+					<h1 class="chapterHeadline">Beispielkapitel</h1>
+					<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
+				</div>
+
+				<div class="newChapter">
+					<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
+					<h1 class="chapterHeadline">Beispielkapitel</h1>
+					<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
+				</div>
+			</div>
+		</div>
+
+		<!--Popup, wird von JS gefüllt und angezeigt - der Button versteckt es wieder-->
+		<div id="popupbg" style="display: none">
+			<div id="popup">
+				<h1 id="popupHeadline"></h1>
+				<p id="popupMessage"></p>
+				<button
+					id="popupButton"
+					onclick="document.getElementById('popupbg').style='display: none;'"
+				></button>
+			</div>
+		</div>
+
+		<!--Script-->
+		<script src="script.js"></script>
+	</body>
 </html>
