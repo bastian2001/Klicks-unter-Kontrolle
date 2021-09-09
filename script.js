@@ -1831,6 +1831,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter!",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
@@ -2763,7 +2764,7 @@ const chapters = {
 					{
 						variableName: "time",
 						type: ">=",
-						value: 23,
+						value: timepermonth * 12 - 1,
 					},
 				],
 				text: "Okay, die Zeit ist vorbei. Schauen wir mal, wie deine Bilanz so aussieht. Bisher gibt es noch $kritischeJournalisten kritische Journalist*innen im Land. $ergebnisErgänzung",
@@ -2777,7 +2778,7 @@ const chapters = {
 			},
 
 			ergebnis2: {
-				text: `Bei der Wahl kommt deine Partei auf $wahlergebnis Prozent der Stimmen! Wenn du die Medien kontrollierst, kriegst du also auch bessere Ergebnisse. Je weniger kritische Beiträge über dich erscheinen, desto besser deine Chancen auf ein gutes Wahlergebnis.`,
+				text: `Bei der Wahl kommt deine Partei auf $wahlergebnis Prozent der Stimmen! Wenn du die Medien kontrollierst, kriegst du also auch bessere Ergebnisse. Je weniger kritische Beiträge über dich erscheinen, desto besser deine Chancen auf ein gutes Wahlergebnis.<br><br>Du möchtest, dass dein Ergebnis auf der Rangliste veröffentlicht wird? Gib hier deinen Namen an:<br><form><input type="text" pattern="[a-zA-Z0-9À-ÿ-. ]{3,30}" minlength=3 maxlength=30 placeholder="Dein Name (Buchstaben, Zahlen, .-)" id="submitHighscoreInput" required><br><button type=submit id=submitHighscoreButton onclick="alert('highscore abgesendet')">Eintragen!</button>`,
 				answers: [
 					{
 						text: "Und jetzt?",
@@ -2880,6 +2881,8 @@ const popups = {
 	//open end
 }
 
+
+let history = ''
 const kritJourStart = ranInt(800, 1000)
 let gameVariables = {
 	time: 0, //bis zur nächsten Wahl
@@ -2911,6 +2914,7 @@ let startedChapters = [],
 	previousPopups = []
 
 showQuestion(currentQuestion)
+initHeader()
 
 function pathToKeys(path) {
 	let chapter = currentQuestion.chapter,
@@ -2922,9 +2926,9 @@ function pathToKeys(path) {
 	}
 	return { chapter, question }
 }
-// function keysToPath(chapter, question){
-// 	return `${chapter}/${question}`
-// }
+function keysToPath(chapter, question){
+	return `${chapter}/${question}`
+}
 
 function getQuestion(chapter, question) {
 	if (chapters[chapter].questions[question] == undefined){
@@ -2942,7 +2946,7 @@ function map(min, max, newMin, newMax, value) {
 }
 
 function showInfo() {
-	showPopup({ message: chapters[currentQuestion.chapter].questions[currentQuestion.question].info, button: "OK" })
+	showPopup({ message: chapters[currentQuestion.chapter].questions[currentQuestion.question].info, button: "OK", headline: 'Hier gibt\'s Infos' })
 }
 
 function ranInt(min, max) {
@@ -2956,6 +2960,7 @@ function showQuestion(obj) {
 
 	//currentquestion setzen
 	currentQuestion = obj
+	history+=`Zeit: ${gameVariables.time}; ` + keysToPath(currentQuestion.chapter, currentQuestion.question) + '\n'
 
 	//Fragentext anzeigen
 	document.getElementById("frage").innerHTML = getQuestion(obj.chapter, obj.question)
@@ -2995,6 +3000,8 @@ function showQuestion(obj) {
 }
 
 function answerClick(answerNo) {
+	if (getQuestion(currentQuestion.chapter, currentQuestion.question).answers.length !== 1)
+		history += `Antwort ${answerNo + 1} ausgewählt.\n`
 	const chosenAnswer = getQuestion(currentQuestion.chapter, currentQuestion.question).answers[
 		answerNo
 	]
@@ -3009,7 +3016,7 @@ function answerClick(answerNo) {
 	}
 	if (gameVariables.time > timepermonth * 12) {
 		console.error("Zeit zu hoch: ", gameVariables.time)
-		// gameVariables.time = 12 * timepermonth
+		gameVariables.time = 12 * timepermonth
 	}
 	//Variablen ausgeben
 	// console.log(
@@ -3035,14 +3042,13 @@ function answerClick(answerNo) {
 	} else if (chosenAnswer.newChapter){
 		startChapter(chosenAnswer.newChapter)
 	} else {
-		if (!chosenAnswer.goto) console.error('Hilfe!', currentQuestion, getQuestion(currentQuestion.chapter, currentQuestion.question), chosenAnswer)
+		if (!chosenAnswer.goto) console.error('Hilfe, was soll als nächstes kommen?', currentQuestion, getQuestion(currentQuestion.chapter, currentQuestion.question), chosenAnswer)
 		let nextQuestion = chosenAnswer.goto
 		if (Array.isArray(nextQuestion)){
 			nextQuestion = getNewQuestion(chosenAnswer.goto)
 		}
-		if (gameVariables.time > 12 * timepermonth){
+		if (gameVariables.time >= 12 * timepermonth && currentQuestion.chapter !== 'ergebnis'){
 			nextQuestion = 'ergebnis/ergebnis'
-			console.error("Time overflow")
 		}
 		showQuestion(pathToKeys(nextQuestion))
 	}
@@ -3078,6 +3084,7 @@ function showChapterSelection(){
 			el.style.display = 'none'
 		}
 	}
+	history += 'Kapitelauswahl: ' + JSON.stringify(availableChapters).replaceAll('","', ', ').replace('["', '').replace('"]', '') + '\n'
 }
 
 function randomSelection(array, number = 3){
@@ -3089,6 +3096,7 @@ function randomSelection(array, number = 3){
 
 function startChapter(name){
 	console.log(`Springe zu Kapitel ${name}`)
+	history += `Springe zu Kapitel ${name}\n`
 	if (startedChapters.indexOf(name) != -1){
 		console.error(`Kapitel ${name} schon mal gestartet`)
 	}
@@ -3126,7 +3134,7 @@ function getNewQuestion(gotoArray){
 	if (gotoArray.length > 1)
 		console.error(`gotoArray hat ${availableQuestions.length} Elemente!`)
 	else if (gotoArray.length == 0){
-		console.error('gotoArray hat keine Elemente. Springe zum Ergebnis')
+		console.error(`gotoArray hat keine Elemente. Springe zum Ergebnis, Zeit: ${gameVariables.time}`)
 		gameVariables.time = 12 * timepermonth
 		return 'ergebnis'
 	}
@@ -3189,7 +3197,7 @@ function showPopup(popup) {
 	}
 	if (popup.message) {
 		message.style = "display: block;"
-		message.innerHTML = popup.message.replaceAll("$wahlergebnis", calcResult())
+		message.innerHTML = popup.message.replaceAll("$wahlergebnis", calcResult()).replaceAll('<a', '<a target="_blank"')
 	} else {
 		message.style = "display: none"
 	}
@@ -3219,6 +3227,7 @@ function calcResult() {
 	).replace(".", ",")
 }
 
+var barometerKritisch
 function initHeader() {
 	barometerKritisch = $("#barometerKritisch").barometer()
 }
@@ -3244,9 +3253,6 @@ function setHeader() {
 	if (gameVariables.time >= 10.5 * timepermonth)
 		document.getElementById("header1progress").style["background-color"] = "red"
 
-	document.getElementById(
-		"headerText3"
-	).innerHTML = `Qualität der Beziehungen zur Adrejanischen Union`
 	let posP = Math.max(0, gameVariables.aussenbeziehungen)
 	posP = Math.min(30, posP)
 	posP = map(0, 30, 0, 100, posP)
@@ -3256,8 +3262,8 @@ function setHeader() {
 	posN = map(0, -30, 0, 100, posN)
 	document.getElementById("header2bgN").style["grid-template-columns"] = `${100 - posN}% ${posN}%`
 
-	if (currentQuestion == "vorstellung") {
+	if (currentQuestion.chapter === 'intro' && currentQuestion.question === 'vorstellung') {
 		//console.log('x')
-		$(".header>*").css("opacity", "1")
+		$(".headerElement").css("opacity", "1")
 	}
 }

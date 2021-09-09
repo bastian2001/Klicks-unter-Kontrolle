@@ -28,20 +28,20 @@
 		<div class="header">
 			<!--Flex-->
 			<!--Barometer-->
-			<div id="header0">
+			<div id="header0" class="headerElement">
 				<p id="headerText0">Kritische Journalisten</p>
 				<div class="barometer" id="barometerKritisch"></div>
 			</div>
 
 			<!--Zeit-->
-			<div id="header1">
+			<div id="header1" class="headerElement">
 				<p id="headerText1">Text 2</p>
 				<div id="header1bg"><div id="header1progress"></div></div>
 			</div>
 
 			<!--Qualität der Beziehungen-->
-			<div id="header2">
-				<p id="headerText3">Text 4</p>
+			<div id="header2" class="headerElement">
+				<p id="headerText2">Qualität der Beziehungen zur Adrejanischen Union</p>
 				<div id="header2bgN">
 					<div id="header2progressN"></div>
 				</div>
@@ -59,19 +59,20 @@
 			<button id="info" onclick="showInfo()"></button>
 			<!--absolute-->
 
-			<img src="Bilder/logo.png" alt="KLICKS UNTER KONTROLLE" />
+			<img id="logo" src="Bilder/logo.png" alt="KLICKS UNTER KONTROLLE" />
 
+			<!--Spiel-->
 			<div id="game">
 				<!--Paragraphs und Buttons werden von JS gefüllt (innerHTML)-->
 				<p id="frage"></p>
 
-				<button id="antwort0" onclick="answerClick(0)"></button>
+				<button id="antwort0" class="answerButton" onclick="answerClick(0)"></button>
 				<p></p>
 
-				<button id="antwort1" onclick="answerClick(1)"></button>
+				<button id="antwort1" class="answerButton" onclick="answerClick(1)"></button>
 				<p></p>
 
-				<button id="antwort2" onclick="answerClick(2)"></button>
+				<button id="antwort2" class="answerButton" onclick="answerClick(2)"></button>
 			</div>
 
 			<!--Kapitelauswahl-->
