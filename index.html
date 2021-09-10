@@ -61,53 +61,56 @@
 
 			<img id="logo" src="Bilder/logo.png" alt="KLICKS UNTER KONTROLLE" />
 
-			<!--Spiel-->
-			<div id="game">
-				<!--Paragraphs und Buttons werden von JS gefüllt (innerHTML)-->
-				<p id="frage"></p>
+			<!--Aktinsbereich-->
+			<div id="actionSpace">
+				<!--Spiel-->
+				<div id="game">
+					<!--Paragraphs und Buttons werden von JS gefüllt (innerHTML)-->
+					<p id="frage"></p>
 
-				<button id="antwort0" class="answerButton" onclick="answerClick(0)"></button>
-				<p></p>
+					<button id="antwort0" class="answerButton" onclick="answerClick(0)"></button>
+					<p></p>
 
-				<button id="antwort1" class="answerButton" onclick="answerClick(1)"></button>
-				<p></p>
+					<button id="antwort1" class="answerButton" onclick="answerClick(1)"></button>
+					<p></p>
 
-				<button id="antwort2" class="answerButton" onclick="answerClick(2)"></button>
-			</div>
-
-			<!--Kapitelauswahl-->
-			<div id="chapterSelection">
-				<p class="chapterSelectionText">Womit möchtest du dich als nächstes beschäftigen?</p>
-
-				<!--Mehrere Kästen, werden von JS befüllt mit Kapitelauswahl-->
-				<div id="newChapter0" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
-					<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
-					<h1 class="chapterHeadline">Beispielkapitel</h1>
-					<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
+					<button id="antwort2" class="answerButton" onclick="answerClick(2)"></button>
 				</div>
 
-				<div id="newChapter1" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
-					<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
-					<h1 class="chapterHeadline">Beispielkapitel</h1>
-					<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
-				</div>
+				<!--Kapitelauswahl-->
+				<div id="chapterSelection" class="hidden">
+					<p class="chapterSelectionText">Womit möchtest du dich als nächstes beschäftigen?</p>
 
-				<div id="newChapter2" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
-					<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
-					<h1 class="chapterHeadline">Beispielkapitel</h1>
-					<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
+					<!--Mehrere Kästen, werden von JS befüllt mit Kapitelauswahl-->
+					<div id="newChapter0" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
+						<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
+						<h1 class="chapterHeadline">Beispielkapitel</h1>
+						<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
+					</div>
+
+					<div id="newChapter1" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
+						<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
+						<h1 class="chapterHeadline">Beispielkapitel</h1>
+						<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
+					</div>
+
+					<div id="newChapter2" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
+						<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
+						<h1 class="chapterHeadline">Beispielkapitel</h1>
+						<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<!--Popup, wird von JS gefüllt und angezeigt - der Button versteckt es wieder-->
-		<div id="popupbg" style="display: none">
+		<div id="popupbg" class="hidden">
 			<div id="popup">
 				<h1 id="popupHeadline"></h1>
 				<p id="popupMessage"></p>
 				<button
 					id="popupButton"
-					onclick="document.getElementById('popupbg').style='display: none;'"
+					onclick="document.getElementById('popupbg').classList.add('hidden')"
 				></button>
 			</div>
 		</div>

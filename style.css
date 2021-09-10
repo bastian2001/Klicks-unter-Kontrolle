@@ -6,6 +6,7 @@ body {
 	box-sizing: border-box;
 	padding: 1.5rem;
 	background-color: #30393a;
+	overflow: hidden;
 }
 
 *{
@@ -19,6 +20,10 @@ p{
 
 a, button{
 	cursor: url("Bilder/CursorButton.png") 7 3, pointer;
+}
+
+.hidden{
+	display: none !important;
 }
 
 /*-------------------STATS------------------*/
@@ -103,20 +108,40 @@ a, button{
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: column;
+	overflow-x: hidden;
 }
 
 #logo {
 	width: 600px;
 	max-width: 100%;
+	max-height: 20vh;
+	object-fit: contain;
+	object-position: center;
+}
+
+#actionSpace{
+	position: relative;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 500rem; /*flex-shrink ist 1*/
+	overflow-x: hidden;
 }
 
 /*Frage und Antworten*/
 #game{
+	position: absolute;
 	width: 100%;
 	text-align: center;
+	transform: translateX(0%);
+	transition: transform .7s ease-out;
+}
+#game.hidden{
+	transform: translateX(105%);
+	display: block !important;
 }
 
-#frage {
+#frage, .headerElement p {
 	color: lightgray;
 	text-align: center;
 	font-size: 1.3rem;
@@ -128,6 +153,7 @@ a, button{
 .answerButton {
 	display: block;
 	width: 45rem;
+	margin: auto;
 	max-width: 100%;
 	background-color: #20201c;
 	border: #7a7a6e solid .125rem;
@@ -146,9 +172,18 @@ a, button{
 
 /*Kapitelauswahl*/
 #chapterSelection{
+	position: absolute;
 	display: grid;
+	width: 100%;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 1rem;
+	transform: translateX(0%);
+	transition: transform .7s ease-out;
+	/* overflow-y: visible !important; */
+}
+#chapterSelection.hidden{
+	transform: translateX(-105%);
+	display: grid !important;
 }
 #chapterSelection>div{
 	background-color: #4a4a42;
@@ -158,6 +193,9 @@ a, button{
 }
 .chapterSelectionText{
 	grid-column: 1 / -1;
+	color: lightgray;
+	text-align: center;
+	font-size: 1.3rem;
 }
 #chapterSelection>div p, #chapterSelection>div h1{
 	color: blanchedalmond;
@@ -166,6 +204,12 @@ a, button{
 	text-align: center;
 	font-size: 1.5rem;
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;;
+}
+.chapterImage{
+	width: 100%;
+	height: 10rem;
+	object-fit: contain;
+	object-position: center;
 }
 
 /*Fragezeichen*/
@@ -183,6 +227,7 @@ a, button{
 	margin: 0px;
 	background-image: url("./Bilder/Info.png");
 	background-size: cover;
+	z-index: 1;
 }
 
 /*Popup*/
@@ -191,13 +236,20 @@ a, button{
 	height: 100%;
 	position: fixed;
 	background-color: #0008;
-	margin: -2%;
+	margin-left: -1.5rem;
 	padding: 0px;
+	transition: top .5s cubic-bezier(.41,1.52,.62,.86);
+	top: 0vh;
+}
+#popupbg.hidden{
+	display: block !important;
+	top: 107vh;
+	display: block !important;
 }
 #popup {
 	width: 32rem;
 	max-width: 80%;
-	position: fixed;
+	position: relative;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -232,11 +284,12 @@ a, button{
 	text-align: center;
 	color: white;
 	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.8rem;
 }
 
 
 /*Ergebnis übermitteln*/
-#submitHighscoreInput {
+#submitScoreInput {
 	width: 25rem;
 	max-width: 100%;
 	padding: .5rem;
@@ -247,8 +300,25 @@ a, button{
 	transition: border-color .2s ease-out;
 	margin: 1rem;
 	font-size: 1rem;
+	display: inline-block;
 }
-#submitHighscoreInput:active, #submitHighscoreInput:focus, #submitHighscoreInput:valid:not(#submitHighscoreInput:placeholder-shown){
+#submitScoreInput:active, #submitScoreInput:focus, #submitScoreInput:valid:not(#submitScoreInput:placeholder-shown){
 	border-bottom: 2px solid white;
 	margin-bottom: calc(1rem - 1px);
+}
+#submitScoreButton {
+	display: inline-block;
+	background-color: #20201c;
+	border: #7a7a6e solid .125rem;
+	color: blanchedalmond;
+	text-align: center;
+	font-size: 1.2rem;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	padding: 1rem;
+	transition: background-color .4s linear;
+}
+#submitScoreButton:hover {
+	color: white;
+	background-color: #424237;
+	transition: background-color .4s cubic-bezier(.09,.74,.44,.99);
 }

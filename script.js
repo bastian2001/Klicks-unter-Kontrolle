@@ -2778,7 +2778,7 @@ const chapters = {
 			},
 
 			ergebnis2: {
-				text: `Bei der Wahl kommt deine Partei auf $wahlergebnis Prozent der Stimmen! Wenn du die Medien kontrollierst, kriegst du also auch bessere Ergebnisse. Je weniger kritische Beiträge über dich erscheinen, desto besser deine Chancen auf ein gutes Wahlergebnis.<br><br>Du möchtest, dass dein Ergebnis auf der Rangliste veröffentlicht wird? Gib hier deinen Namen an:<br><form><input type="text" pattern="[a-zA-Z0-9À-ÿ-. ]{3,30}" minlength=3 maxlength=30 placeholder="Dein Name (Buchstaben, Zahlen, .-)" id="submitHighscoreInput" required><br><button type=submit id=submitHighscoreButton onclick="alert('highscore abgesendet')">Eintragen!</button>`,
+				text: `Bei der Wahl kommt deine Partei auf $wahlergebnis Prozent der Stimmen! Wenn du die Medien kontrollierst, kriegst du also auch bessere Ergebnisse. Je weniger kritische Beiträge über dich erscheinen, desto besser deine Chancen auf ein gutes Wahlergebnis.<br><br>Du möchtest, dass dein Ergebnis auf der Rangliste veröffentlicht wird? Gib hier deinen Namen an:<br><form method=post onsubmit="submitScore(event)" enctype="multipart/form-data"><input type="text" pattern="[a-zA-Z0-9À-ÿ-. ]{3,30}" minlength=3 maxlength=30 placeholder='Dein Name (Buchstaben, Zahlen oder ".- ")' id="submitScoreInput" required><button type=submit id=submitScoreButton >Eintragen!</button>`,
 				answers: [
 					{
 						text: "Und jetzt?",
@@ -2787,7 +2787,7 @@ const chapters = {
 				],
 			},
 			einladungInfo: {
-				text: 'Dieses Spiel sollte dir zeigen, wie Länder Einfluss auf die Pressefreiheit nehmen können. Obwohl deine Story hier natürlich fiktiv war, passieren einige der hier angesprochenen Dinge tatsächlich gerade oder sind bereits passiert. In Polen wird zum Beispiel eine Werbeabgabe initiiert, die es unabhängigen Medien sehr schwer macht, zu bestehen. Der öffentlich-rechtliche Rundfunk in Polen wird außerdem von einem lediglich fünfköpfigen Gremium beaufsichtigt, das von politischen Vertretern gewählt wird. In Ungarn oder Belarus ist die Lage zum Teil noch dramatischer. Wenn du mehr dazu erfahren willst, wirf doch mal einen Blick auf die kleinen Fragezeichen unten rechts neben den Fragen, die dir mehr zu den Hintergründen erzählen. Die NGO "Reporter ohne Grenzen" gibt jährlich eine <a href=https://www.reporter-ohne-grenzen.de/weltkarte/#rangliste-der-pressefreiheit>"Rangliste der Pressefreiheit"</a> heraus. Polen und Ungarn sind in den letzten Jahren beide dramatisch abgerutscht. <br/> <br/> <b>Vielen Dank fürs Spielen!</b> <br> <br><button onclick="window.location.reload()">Neu starten</button>',
+				text: 'Dieses Spiel sollte dir zeigen, wie Länder Einfluss auf die Pressefreiheit nehmen können. Obwohl deine Story hier natürlich fiktiv war, passieren einige der hier angesprochenen Dinge tatsächlich gerade oder sind bereits passiert. In Polen wird zum Beispiel eine Werbeabgabe initiiert, die es unabhängigen Medien sehr schwer macht, zu bestehen. Der öffentlich-rechtliche Rundfunk in Polen wird außerdem von einem lediglich fünfköpfigen Gremium beaufsichtigt, das von politischen Vertretern gewählt wird. In Ungarn oder Belarus ist die Lage zum Teil noch dramatischer. Wenn du mehr dazu erfahren willst, wirf doch mal einen Blick auf die kleinen Fragezeichen unten rechts neben den Fragen, die dir mehr zu den Hintergründen erzählen. Die NGO "Reporter ohne Grenzen" gibt jährlich eine <a target="_blank" href=https://www.reporter-ohne-grenzen.de/weltkarte/#rangliste-der-pressefreiheit>"Rangliste der Pressefreiheit"</a> heraus. Polen und Ungarn sind in den letzten Jahren beide dramatisch abgerutscht. <br/> <br/> <b>Vielen Dank fürs Spielen!</b> <br> <br><button onclick="window.location.reload()">Neu starten</button>',
 				answers: [],
 			},
 		},
@@ -2904,6 +2904,8 @@ let gameVariables = {
 	entlassungenDone: false,
 }
 
+let wahlergebnis = 0
+
 let currentQuestion = {
 	chapter: "intro",
 	question: "willkommen",
@@ -2955,18 +2957,21 @@ function ranInt(min, max) {
 
 function showQuestion(obj) {
 	//Frage statt Kapitelauswahl anzeigen
-	document.getElementById('game').style.display = 'block'
-	document.getElementById('chapterSelection').style.display = 'none'
+	document.getElementById('game').classList.remove('hidden')
+	document.getElementById('chapterSelection').classList.add('hidden')
 
 	//currentquestion setzen
 	currentQuestion = obj
 	history+=`Zeit: ${gameVariables.time}; ` + keysToPath(currentQuestion.chapter, currentQuestion.question) + '\n'
 
+	//Wahlergebnis berechnen
+	wahlergebnis = calcResult()
+
 	//Fragentext anzeigen
 	document.getElementById("frage").innerHTML = getQuestion(obj.chapter, obj.question)
 		.text.replaceAll("$benennungAufkaufen", gameVariables.benennungAufkaufen)
 		.replaceAll("$kritischeJournalisten", gameVariables.kritischeJournalisten)
-		.replaceAll("$wahlergebnis", calcResult())
+		.replaceAll("$wahlergebnis", wahlergebnis)
 		.replaceAll("$sanktionsschwelle", gameVariables.sanktionsschwelle)
 		.replaceAll(
 			"$ergebnisErgänzung",
@@ -2985,13 +2990,13 @@ function showQuestion(obj) {
 	//bis zu 3 Antworten anzeigen
 	for (let i = 0; i < 3; i++) {
 		if (getQuestion(obj.chapter, obj.question).answers[i]) {
-			document.getElementById(`antwort${i}`).style = "display: inline-block"
+			document.getElementById(`antwort${i}`).classList.remove('hidden')
 			document.getElementById(`antwort${i}`).innerHTML = getQuestion(
 				obj.chapter,
 				obj.question
 			).answers[i].text
 		} else {
-			document.getElementById(`antwort${i}`).style = "display:none"
+			document.getElementById(`antwort${i}`).classList.add('hidden')
 		}
 	}
 
@@ -3066,8 +3071,8 @@ function showChapterSelection(){
 
 	availableChapters = randomSelection(availableChapters, chapterSelectionCount)
 
-	document.getElementById('game').style.display = 'none'
-	document.getElementById('chapterSelection').style.display = 'grid'
+	document.getElementById('game').classList.add('hidden')
+	document.getElementById('chapterSelection').classList.remove('hidden')
 
 	if (availableChapters.length === 0){
 		console.error('Keine Kapitel zur Auswahl')
@@ -3080,6 +3085,12 @@ function showChapterSelection(){
 			el.setAttribute('chapter', availableChapters[i])
 			el.children[1].innerHTML = chapters[availableChapters[i]].props.title
 			el.children[2].innerHTML = chapters[availableChapters[i]].props.description
+			if (chapters[availableChapters[i]].props.img){
+				el.children[0].src = chapters[availableChapters[i]].props.img
+				el.children[0].style.display = 'block'
+			} else {
+				el.children[0].style.display = 'none'
+			}
 		} else {
 			el.style.display = 'none'
 		}
@@ -3185,7 +3196,7 @@ function checkSingleCondition(condition) {
 
 function showPopup(popup) {
 	//console.log('showing popup', popup)
-	document.getElementById("popupbg").style = "display:block;"
+	document.getElementById("popupbg").classList.remove('hidden')
 	const headline = document.getElementById("popupHeadline")
 	const message = document.getElementById("popupMessage")
 	const button = document.getElementById("popupButton")
@@ -3197,7 +3208,7 @@ function showPopup(popup) {
 	}
 	if (popup.message) {
 		message.style = "display: block;"
-		message.innerHTML = popup.message.replaceAll("$wahlergebnis", calcResult()).replaceAll('<a', '<a target="_blank"')
+		message.innerHTML = popup.message.replaceAll("$wahlergebnis", wahlergebnis).replaceAll('<a', '<a target="_blank"')
 	} else {
 		message.style = "display: none"
 	}
@@ -3266,4 +3277,10 @@ function setHeader() {
 		//console.log('x')
 		$(".headerElement").css("opacity", "1")
 	}
+}
+
+function submitScore(e){
+	e.preventDefault();
+	console.log(`${document.getElementById('submitScoreInput').value}\n${wahlergebnis}`)
+	fetch('https://ak-ts.de/klicks-unter-kontrolle-highscore', {method: 'POST', headers: {'Content-Type': 'text/plain'}, body: `${document.getElementById('submitScoreInput').value}\n${wahlergebnis}`})
 }
