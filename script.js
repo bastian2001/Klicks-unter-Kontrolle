@@ -390,6 +390,8 @@ const chapters = {
 		questions: {
 			rsm: {
 				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaatsmechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen zu erwarten sind. Insbesondere natürlich die Einbehaltung von AU-Mitteln. Auch zuvor gab es bereits Regelungen in dieser Richtung, allerdings hat das Parlament diese als zu schwach eingeschätzt. Wir könnten dagegen klagen, was meinst du?',
+				mediumType: 'image',
+				mediumSource: 'https://picsum.photos/1200/700',
 				info: 'Die Europäische Union hat zum 1.1.2021 einen solchen Mechanismus auf den Weg gebracht. Gelder sollten nicht in die Hände derjenigen gelangen, die die Demokratie bedrohen, so die Argumentation. Rechtsstaatlichkeit ist in der EU als Grundwert verankert: "Sie bedeutet, dass Regierungen das Recht achten sollten und keine willkürlichen Entscheidungen treffen dürfen. Die Bürger sollten in der Lage sein, das Handeln von Regierungen vor unabhängigen Gerichten anzufechten. Die Rechtsstaatlichkeit umfasst auch die Bekämpfung von Korruption und den Schutz der Medienfreiheit, wodurch sichergestellt wird, dass die Öffentlichkeit angemessen über staatliche Maßnahmen informiert wird", schreibt das EU-Parlament auf seiner <a href= https://www.europarl.europa.eu/news/de/headlines/eu-affairs/20201001STO88311/rechtsstaatsmechanismus-schutz-des-eu-haushalts-und-der-europaischen-werte>Webseite</a>.',
 				answers: [
 					{
@@ -450,6 +452,8 @@ const chapters = {
 			},
 			unterschreiben: {
 				text: "Wie du meinst. So stellen wir uns auf jeden Fall gut mit den anderen Ländern. Hoffentlich fällt uns das nicht später noch zur Last.",
+				mediumType: 'image',
+				mediumSource: 'https://picsum.photos/1200/300',
 				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
 				answers: [
 					{
@@ -466,6 +470,8 @@ const chapters = {
 			},
 			klagen: {
 				text: "Wir sind nicht einmal die einzigen, die klagen! Auch das Nachbarland Tilpern, das eine Regierung hat, die deiner Partei sehr nahesteht und ähnliche Werte vertritt, schließt sich dem an. Wie wollen wir denn argumentieren?",
+				mediumType: 'image',
+				mediumSource: 'https://picsum.photos/300/700',
 				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
 				answers: [
 					{
@@ -561,11 +567,14 @@ const chapters = {
 			entry: 0,
 			title: 'Renationalisierung',
 			description: 'Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit',
+			img: 'https://picsum.photos/1000/600',
 			conditions:[]
 		},
 		questions: {
 			nuppisierung: {
 				text: "80 Prozent der regionalen Tageszeitungen gehören zu einem Unternehmen. Dieses wurde allerdings von einem größeren Verlag aus dem Nachbarland aufgekauft. Außerdem gehören diesem Konzern auch viele Online-Nachrichtenplattformen, die in den letzten Jahren extrem gewachsen sind. Was bedeutet das für uns?",
+				mediumType: 'audio',
+				mediumSource: 'https://www.w3schools.com/jsref/horse.ogg',
 				answers: [
 					{
 						text: "Weiß ich auch nicht. Ist das verkehrt?",
@@ -2787,7 +2796,7 @@ const chapters = {
 				],
 			},
 			einladungInfo: {
-				text: 'Dieses Spiel sollte dir zeigen, wie Länder Einfluss auf die Pressefreiheit nehmen können. Obwohl deine Story hier natürlich fiktiv war, passieren einige der hier angesprochenen Dinge tatsächlich gerade oder sind bereits passiert. In Polen wird zum Beispiel eine Werbeabgabe initiiert, die es unabhängigen Medien sehr schwer macht, zu bestehen. Der öffentlich-rechtliche Rundfunk in Polen wird außerdem von einem lediglich fünfköpfigen Gremium beaufsichtigt, das von politischen Vertretern gewählt wird. In Ungarn oder Belarus ist die Lage zum Teil noch dramatischer. Wenn du mehr dazu erfahren willst, wirf doch mal einen Blick auf die kleinen Fragezeichen unten rechts neben den Fragen, die dir mehr zu den Hintergründen erzählen. Die NGO "Reporter ohne Grenzen" gibt jährlich eine <a target="_blank" href=https://www.reporter-ohne-grenzen.de/weltkarte/#rangliste-der-pressefreiheit>"Rangliste der Pressefreiheit"</a> heraus. Polen und Ungarn sind in den letzten Jahren beide dramatisch abgerutscht. <br/> <br/> <b>Vielen Dank fürs Spielen!</b> <br> <br><button onclick="window.location.reload()">Neu starten</button>',
+				text: 'Dieses Spiel sollte dir zeigen, wie Länder Einfluss auf die Pressefreiheit nehmen können. Obwohl deine Story hier natürlich fiktiv war, passieren einige der hier angesprochenen Dinge tatsächlich gerade oder sind bereits passiert. In Polen wird zum Beispiel eine Werbeabgabe initiiert, die es unabhängigen Medien sehr schwer macht, zu bestehen. Der öffentlich-rechtliche Rundfunk in Polen wird außerdem von einem lediglich fünfköpfigen Gremium beaufsichtigt, das von politischen Vertretern gewählt wird. In Ungarn oder Belarus ist die Lage zum Teil noch dramatischer. Wenn du mehr dazu erfahren willst, wirf doch mal einen Blick auf die kleinen Fragezeichen unten rechts neben den Fragen, die dir mehr zu den Hintergründen erzählen. Die NGO "Reporter ohne Grenzen" gibt jährlich eine <a target="_blank" href=https://www.reporter-ohne-grenzen.de/weltkarte/#rangliste-der-pressefreiheit>"Rangliste der Pressefreiheit"</a> heraus. Polen und Ungarn sind in den letzten Jahren beide dramatisch abgerutscht. <br/> <br/> <b>Vielen Dank fürs Spielen!</b> <br> <br><button class=answerButton onclick="window.location.reload()">Neu starten</button>',
 				answers: [],
 			},
 		},
@@ -2948,7 +2957,7 @@ function map(min, max, newMin, newMax, value) {
 }
 
 function showInfo() {
-	showPopup({ message: chapters[currentQuestion.chapter].questions[currentQuestion.question].info, button: "OK", headline: 'Hier gibt\'s Infos' })
+	showPopup({ message: chapters[currentQuestion.chapter].questions[currentQuestion.question].info, button: "OK" })
 }
 
 function ranInt(min, max) {
@@ -2956,6 +2965,8 @@ function ranInt(min, max) {
 }
 
 function showQuestion(obj) {
+	let question = getQuestion(obj.chapter, obj.question)
+
 	//Frage statt Kapitelauswahl anzeigen
 	document.getElementById('game').classList.remove('hidden')
 	document.getElementById('chapterSelection').classList.add('hidden')
@@ -2964,11 +2975,43 @@ function showQuestion(obj) {
 	currentQuestion = obj
 	history+=`Zeit: ${gameVariables.time}; ` + keysToPath(currentQuestion.chapter, currentQuestion.question) + '\n'
 
+	//Fragemedium anzeigen
+	let image = document.getElementById('frageBild')
+	let video = document.getElementById('frageVideo')
+	let audio = document.getElementById('frageAudio')
+	switch(question.mediumType){
+		case undefined:
+			image.classList.add('hidden')
+			video.classList.add('hidden')
+			audio.classList.add('hidden')
+			break;
+		case 'image':
+			image.classList.remove('hidden')
+			video.classList.add('hidden')
+			audio.classList.add('hidden')
+			image.src = question.mediumSource
+			break;
+		case 'video':
+			image.classList.add('hidden')
+			video.classList.remove('hidden')
+			audio.classList.add('hidden')
+			video.src = question.mediumSource
+			video.oncanplaythrough = video.play
+			break;
+		case 'audio':
+			image.classList.add('hidden')
+			video.classList.add('hidden')
+			audio.classList.remove('hidden')
+			audio.src = question.mediumSource
+			audio.oncanplaythrough = audio.play
+			break;
+	}
+
 	//Wahlergebnis berechnen
 	wahlergebnis = calcResult()
 
 	//Fragentext anzeigen
-	document.getElementById("frage").innerHTML = getQuestion(obj.chapter, obj.question)
+	document.getElementById("frage").innerHTML = question
 		.text.replaceAll("$benennungAufkaufen", gameVariables.benennungAufkaufen)
 		.replaceAll("$kritischeJournalisten", gameVariables.kritischeJournalisten)
 		.replaceAll("$wahlergebnis", wahlergebnis)
@@ -2983,18 +3026,15 @@ function showQuestion(obj) {
 		)
 
 	//Fragezeichen anzeigen falls Info vorhanden
-	if (getQuestion(obj.chapter, obj.question).info) {
+	if (question.info) {
 		document.getElementById("info").style.display = "block"
 	} else document.getElementById("info").style.display = "none"
 
 	//bis zu 3 Antworten anzeigen
 	for (let i = 0; i < 3; i++) {
-		if (getQuestion(obj.chapter, obj.question).answers[i]) {
+		if (question.answers[i]) {
 			document.getElementById(`antwort${i}`).classList.remove('hidden')
-			document.getElementById(`antwort${i}`).innerHTML = getQuestion(
-				obj.chapter,
-				obj.question
-			).answers[i].text
+			document.getElementById(`antwort${i}`).innerHTML = question.answers[i].text
 		} else {
 			document.getElementById(`antwort${i}`).classList.add('hidden')
 		}
@@ -3005,6 +3045,13 @@ function showQuestion(obj) {
 }
 
 function answerClick(answerNo) {
+	// Eventuelle Wiedergabe pausieren
+	document.getElementById('frageVideo').pause()
+	document.getElementById('frageAudio').pause()
+	document.getElementById('frageVideo').oncanplaythrough = () => {}
+	document.getElementById('frageAudio').oncanplaythrough = () => {}
+
+
 	if (getQuestion(currentQuestion.chapter, currentQuestion.question).answers.length !== 1)
 		history += `Antwort ${answerNo + 1} ausgewählt.\n`
 	const chosenAnswer = getQuestion(currentQuestion.chapter, currentQuestion.question).answers[
@@ -3064,6 +3111,8 @@ function showChapterSelection(){
 		startChapter('ergebnis')
 		return
 	}
+
+	document.getElementById('info').style.display = 'none'
 
 	let availableChapters = Object.keys(chapters)
 		.filter(el => startedChapters.indexOf(el) === -1)

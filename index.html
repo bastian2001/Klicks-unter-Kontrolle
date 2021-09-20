@@ -29,19 +29,23 @@
 			<!--Flex-->
 			<!--Barometer-->
 			<div id="header0" class="headerElement">
-				<p id="headerText0">Kritische Journalisten</p>
+				<p id="headerText0" class="headerText">Kritische Journalisten</p>
 				<div class="barometer" id="barometerKritisch"></div>
+			</div>
+			<div id="header0Alt" class="headerElement">
+				<p id="headerText0" class="headerText">Kritische Journalisten</p>
+				<div id="header0bg"><div id="header0progress"></div></div>
 			</div>
 
 			<!--Zeit-->
 			<div id="header1" class="headerElement">
-				<p id="headerText1">Text 2</p>
+				<p id="headerText1" class="headerText">Text 2</p>
 				<div id="header1bg"><div id="header1progress"></div></div>
 			</div>
 
 			<!--Qualität der Beziehungen-->
 			<div id="header2" class="headerElement">
-				<p id="headerText2">Qualität der Beziehungen zur Adrejanischen Union</p>
+				<p id="headerText2" class="headerText">Qualität der Beziehungen zur Adrejanischen Union</p>
 				<div id="header2bgN">
 					<div id="header2progressN"></div>
 				</div>
@@ -66,6 +70,9 @@
 				<!--Spiel-->
 				<div id="game">
 					<!--Paragraphs und Buttons werden von JS gefüllt (innerHTML)-->
+					<img id="frageBild" class="hidden">
+					<video controls id="frageVideo" class="hidden"></video>
+					<audio controls id="frageAudio" class="hidden"></audio>
 					<p id="frage"></p>
 
 					<button id="antwort0" class="answerButton" onclick="answerClick(0)"></button>
