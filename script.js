@@ -384,14 +384,14 @@ const chapters = {
 	rechtsstaatsmechanismus: {
 		props: {
 			entry: 0,
-			title: "Rechtsstaatsmechanismus",
+			title: "Rechtsstaats&shy;mechanismus",
 			description:
 				"Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit",
 			conditions: [],
 		},
 		questions: {
 			rsm: {
-				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaatsmechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen zu erwarten sind. Insbesondere natürlich die Einbehaltung von AU-Mitteln. Auch zuvor gab es bereits Regelungen in dieser Richtung, allerdings hat das Parlament diese als zu schwach eingeschätzt. Wir könnten dagegen klagen, was meinst du?',
+				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen zu erwarten sind. Insbesondere natürlich die Einbehaltung von AU-Mitteln. Auch zuvor gab es bereits Regelungen in dieser Richtung, allerdings hat das Parlament diese als zu schwach eingeschätzt. Wir könnten dagegen klagen, was meinst du?',
 				mediumType: "image",
 				mediumSource: "https://picsum.photos/1200/700",
 				info: 'Die Europäische Union hat zum 1.1.2021 einen solchen Mechanismus auf den Weg gebracht. Gelder sollten nicht in die Hände derjenigen gelangen, die die Demokratie bedrohen, so die Argumentation. Rechtsstaatlichkeit ist in der EU als Grundwert verankert: "Sie bedeutet, dass Regierungen das Recht achten sollten und keine willkürlichen Entscheidungen treffen dürfen. Die Bürger sollten in der Lage sein, das Handeln von Regierungen vor unabhängigen Gerichten anzufechten. Die Rechtsstaatlichkeit umfasst auch die Bekämpfung von Korruption und den Schutz der Medienfreiheit, wodurch sichergestellt wird, dass die Öffentlichkeit angemessen über staatliche Maßnahmen informiert wird", schreibt das EU-Parlament auf seiner <a href= https://www.europarl.europa.eu/news/de/headlines/eu-affairs/20201001STO88311/rechtsstaatsmechanismus-schutz-des-eu-haushalts-und-der-europaischen-werte>Webseite</a>.',
@@ -567,7 +567,7 @@ const chapters = {
 	polonisierung: {
 		props: {
 			entry: 0,
-			title: "Renationalisierung",
+			title: "Renationa&shy;lisierung",
 			description:
 				"Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit",
 			img: "https://picsum.photos/1000/600",
@@ -645,6 +645,8 @@ const chapters = {
 			aufkaufen: {
 				text: "Hast du eine Idee, was man dagegen machen könnte?",
 				info: "Vor einer ähnlichen Situation sah und sieht sich Polen zur Zeit. Die meisten regionalen Tageszeitungen haben zur Verlagsgruppe Passau, also einem deutschen Medienunternehmen, gehört. Wie es weiterging, siehst du, sobald du dich selbst entschieden hast.",
+				mediumType: "video",
+				mediumSource: "https://team-polaris.de/res/car/Gen%200.mp4",
 				answers: [
 					{
 						text: "Der Staat könnte das Medienunternehmen aufkaufen, so wäre die Kontrolle am einfachsten. Wir hätten direkten Einfluss auf die Personalentscheidungen und unser Einfluss würde auch im Lokalen wachsen!",
