@@ -1,7 +1,3 @@
-html {
-	overflow: hidden;
-}
-
 body {
 	display: grid;
 	grid-template-columns: 25% 75%;

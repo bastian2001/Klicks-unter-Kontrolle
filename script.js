@@ -1,3 +1,5 @@
+alert(`${window.innerWidth}, ${window.innerHeight}`)
+
 const timepermonth = 2,
 	chapterSelectionCount = 3
 
