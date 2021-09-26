@@ -400,30 +400,29 @@ button {
 
 /*einspaltig, 3 Balken*/
 @media (max-width: 700px), (max-width: 900px) and (max-height: 700px) {
-	/*wie kleinere Schrift*/
 	body {
 		grid-template-rows: 0fr 1fr;
 		padding: 0.5rem;
 	}
 
-	/*#frage {
-		font-size: 1rem;
+	#frage {
+		font-size: 1.1rem;
 	}
 
 	.answerButton,
 	#submitScoreButton {
-		font-size: 1rem;
+		font-size: 1.1rem;
 		padding: 0.5rem 2rem;
 	}
-	
+
 	#popupbg {
 		margin-left: -0.5rem;
 	}
 
 	.headerText {
-		font-size: 0.9rem;
+		font-size: 1.1rem;
 		margin-bottom: 0.5rem;
-	} */
+	}
 
 	.header {
 		display: block;
