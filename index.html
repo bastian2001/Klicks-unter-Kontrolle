@@ -33,7 +33,7 @@
 				<div class="barometer" id="barometerKritisch"></div>
 			</div>
 			<div id="header0Alt" class="headerElement">
-				<p id="headerText0" class="headerText">Kritische Journalisten</p>
+				<p id="headerText0Alt" class="headerText">Kritische Journalisten</p>
 				<div id="header0bg"><div id="header0progress"></div></div>
 			</div>
 
@@ -70,7 +70,7 @@
 				<!--Spiel-->
 				<div id="game">
 					<!--Paragraphs und Buttons werden von JS gefüllt (innerHTML)-->
-					<img id="frageBild" class="hidden">
+					<img id="frageBild" class="hidden" />
 					<video controls id="frageVideo" class="hidden"></video>
 					<audio controls id="frageAudio" class="hidden"></audio>
 					<p id="frage"></p>
@@ -89,19 +89,31 @@
 					<p class="chapterSelectionText">Womit möchtest du dich als nächstes beschäftigen?</p>
 
 					<!--Mehrere Kästen, werden von JS befüllt mit Kapitelauswahl-->
-					<div id="newChapter0" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
+					<div
+						id="newChapter0"
+						class="newChapter"
+						onclick="startChapter(this.getAttribute('chapter'))"
+					>
 						<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
 						<h1 class="chapterHeadline">Beispielkapitel</h1>
 						<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
 					</div>
 
-					<div id="newChapter1" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
+					<div
+						id="newChapter1"
+						class="newChapter"
+						onclick="startChapter(this.getAttribute('chapter'))"
+					>
 						<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
 						<h1 class="chapterHeadline">Beispielkapitel</h1>
 						<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>
 					</div>
 
-					<div id="newChapter2" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
+					<div
+						id="newChapter2"
+						class="newChapter"
+						onclick="startChapter(this.getAttribute('chapter'))"
+					>
 						<img src="x" class="chapterImage" alt="Beispielbild für Beispielkapitel" />
 						<h1 class="chapterHeadline">Beispielkapitel</h1>
 						<p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p>

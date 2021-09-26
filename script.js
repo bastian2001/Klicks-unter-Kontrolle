@@ -1,13 +1,14 @@
-const timepermonth = 2, chapterSelectionCount = 3
+const timepermonth = 2,
+	chapterSelectionCount = 3
 
 const chapters = {
 	//Kapitel - Eigenschaften und Fragen (Inhalte der Fragen (Fragentext, Antworten, evtl. Bedingungen))
 	intro: {
 		props: {
 			entry: 0,
-			title: 'Intro',
-			description: 'Hier wird das Spiel gestartet',
-			conditions:[]
+			title: "Intro",
+			description: "Hier wird das Spiel gestartet",
+			conditions: [],
 		},
 		questions: {
 			willkommen: {
@@ -69,7 +70,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Kapiert.",
-						newChapter: 'losgehts'
+						newChapter: "losgehts",
 					},
 				],
 			},
@@ -79,9 +80,9 @@ const chapters = {
 	losgehts: {
 		props: {
 			entry: 0,
-			title: 'Los geht\'s!',
-			description: 'Triff deine ersten Entscheidungen',
-			conditions:[]
+			title: "Los geht's!",
+			description: "Triff deine ersten Entscheidungen",
+			conditions: [],
 		},
 		questions: {
 			rundfunkratverkleinern: {
@@ -351,7 +352,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Da hatten wir keinen guten Start miteinander. Aber lass' uns was anderes probieren.",
-						newChapter: 'rechtsstaatsmechanismus',
+						newChapter: "rechtsstaatsmechanismus",
 						variables: [
 							{
 								text: "time",
@@ -383,15 +384,16 @@ const chapters = {
 	rechtsstaatsmechanismus: {
 		props: {
 			entry: 0,
-			title: 'Rechtsstaatsmechanismus',
-			description: 'Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit',
-			conditions:[]
+			title: "Rechtsstaatsmechanismus",
+			description:
+				"Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit",
+			conditions: [],
 		},
 		questions: {
 			rsm: {
 				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaatsmechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen zu erwarten sind. Insbesondere natürlich die Einbehaltung von AU-Mitteln. Auch zuvor gab es bereits Regelungen in dieser Richtung, allerdings hat das Parlament diese als zu schwach eingeschätzt. Wir könnten dagegen klagen, was meinst du?',
-				mediumType: 'image',
-				mediumSource: 'https://picsum.photos/1200/700',
+				mediumType: "image",
+				mediumSource: "https://picsum.photos/1200/700",
 				info: 'Die Europäische Union hat zum 1.1.2021 einen solchen Mechanismus auf den Weg gebracht. Gelder sollten nicht in die Hände derjenigen gelangen, die die Demokratie bedrohen, so die Argumentation. Rechtsstaatlichkeit ist in der EU als Grundwert verankert: "Sie bedeutet, dass Regierungen das Recht achten sollten und keine willkürlichen Entscheidungen treffen dürfen. Die Bürger sollten in der Lage sein, das Handeln von Regierungen vor unabhängigen Gerichten anzufechten. Die Rechtsstaatlichkeit umfasst auch die Bekämpfung von Korruption und den Schutz der Medienfreiheit, wodurch sichergestellt wird, dass die Öffentlichkeit angemessen über staatliche Maßnahmen informiert wird", schreibt das EU-Parlament auf seiner <a href= https://www.europarl.europa.eu/news/de/headlines/eu-affairs/20201001STO88311/rechtsstaatsmechanismus-schutz-des-eu-haushalts-und-der-europaischen-werte>Webseite</a>.',
 				answers: [
 					{
@@ -452,8 +454,8 @@ const chapters = {
 			},
 			unterschreiben: {
 				text: "Wie du meinst. So stellen wir uns auf jeden Fall gut mit den anderen Ländern. Hoffentlich fällt uns das nicht später noch zur Last.",
-				mediumType: 'image',
-				mediumSource: 'https://picsum.photos/1200/300',
+				mediumType: "image",
+				mediumSource: "https://picsum.photos/1200/300",
 				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
 				answers: [
 					{
@@ -470,8 +472,8 @@ const chapters = {
 			},
 			klagen: {
 				text: "Wir sind nicht einmal die einzigen, die klagen! Auch das Nachbarland Tilpern, das eine Regierung hat, die deiner Partei sehr nahesteht und ähnliche Werte vertritt, schließt sich dem an. Wie wollen wir denn argumentieren?",
-				mediumType: 'image',
-				mediumSource: 'https://picsum.photos/300/700',
+				mediumType: "image",
+				mediumSource: "https://picsum.photos/300/700",
 				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
 				answers: [
 					{
@@ -545,7 +547,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter geht's.",
-						newChapter: true
+						newChapter: true,
 					},
 				],
 			},
@@ -555,7 +557,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Weiter geht's.",
-						newChapter: true
+						newChapter: true,
 					},
 				],
 			},
@@ -565,16 +567,17 @@ const chapters = {
 	polonisierung: {
 		props: {
 			entry: 0,
-			title: 'Renationalisierung',
-			description: 'Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit',
-			img: 'https://picsum.photos/1000/600',
-			conditions:[]
+			title: "Renationalisierung",
+			description:
+				"Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit",
+			img: "https://picsum.photos/1000/600",
+			conditions: [],
 		},
 		questions: {
 			nuppisierung: {
 				text: "80 Prozent der regionalen Tageszeitungen gehören zu einem Unternehmen. Dieses wurde allerdings von einem größeren Verlag aus dem Nachbarland aufgekauft. Außerdem gehören diesem Konzern auch viele Online-Nachrichtenplattformen, die in den letzten Jahren extrem gewachsen sind. Was bedeutet das für uns?",
-				mediumType: 'audio',
-				mediumSource: 'https://www.w3schools.com/jsref/horse.ogg',
+				mediumType: "audio",
+				mediumSource: "https://www.w3schools.com/jsref/horse.ogg",
 				answers: [
 					{
 						text: "Weiß ich auch nicht. Ist das verkehrt?",
@@ -870,7 +873,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Klingt logisch.",
-						newChapter: true
+						newChapter: true,
 					},
 				],
 			},
@@ -946,9 +949,9 @@ const chapters = {
 	entlassung: {
 		props: {
 			entry: 0,
-			title: 'Entlassung',
-			description: 'Untreue in den Staatsmedien',
-			conditions:[]
+			title: "Entlassung",
+			description: "Untreue in den Staatsmedien",
+			conditions: [],
 		},
 		questions: {
 			entlassung: {
@@ -1181,9 +1184,9 @@ const chapters = {
 	szenarioRenationalisierung: {
 		props: {
 			entry: 0,
-			title: 'Kritik aus den eigenen Reihen',
-			description: 'Eine bekannte Moderatorin äußert sich dir gegenüber kritisch',
-			conditions:[]
+			title: "Kritik aus den eigenen Reihen",
+			description: "Eine bekannte Moderatorin äußert sich dir gegenüber kritisch",
+			conditions: [],
 		},
 		questions: {
 			zensur: {
@@ -1399,9 +1402,9 @@ const chapters = {
 	umgangMitKritik: {
 		props: {
 			entry: 0,
-			title: 'Probleme aus dem Ausland',
-			description: 'Die Adrejanische Union hat Wind bekommen',
-			conditions:[]
+			title: "Probleme aus dem Ausland",
+			description: "Die Adrejanische Union hat Wind bekommen",
+			conditions: [],
 		},
 		questions: {
 			obama: {
@@ -1740,9 +1743,9 @@ const chapters = {
 	medienstiftung: {
 		props: {
 			entry: 0,
-			title: 'Medienstiftung',
-			description: 'Mehr Geld für Deine Medien',
-			conditions:[]
+			title: "Medienstiftung",
+			description: "Mehr Geld für Deine Medien",
+			conditions: [],
 		},
 		questions: {
 			linie: {
@@ -1982,9 +1985,9 @@ const chapters = {
 	werbesteuer: {
 		props: {
 			entry: 0,
-			title: 'Werbesteuer',
-			description: '...',
-			conditions:[]
+			title: "Werbesteuer",
+			description: "...",
+			conditions: [],
 		},
 		questions: {
 			ws: {
@@ -2578,8 +2581,8 @@ const chapters = {
 	openend: {
 		props: {
 			entry: 0,
-			title: 'Was auch immer, keine Ahnung',
-			description: 'Eine Sammlung an random shit???'
+			title: "Was auch immer, keine Ahnung",
+			description: "Eine Sammlung an random shit???",
 		},
 		questions: {
 			sanktionen2: {
@@ -2764,8 +2767,8 @@ const chapters = {
 	ergebnis: {
 		props: {
 			entry: 0,
-			title: 'Ergebnis',
-			description: 'Ab zum Schluss (diese Nachricht solltest du nicht sehen)'
+			title: "Ergebnis",
+			description: "Ab zum Schluss (diese Nachricht solltest du nicht sehen)",
 		},
 		questions: {
 			ergebnis: {
@@ -2890,8 +2893,7 @@ const popups = {
 	//open end
 }
 
-
-let history = ''
+let history = ""
 const kritJourStart = ranInt(800, 1000)
 let gameVariables = {
 	time: 0, //bis zur nächsten Wahl
@@ -2937,12 +2939,12 @@ function pathToKeys(path) {
 	}
 	return { chapter, question }
 }
-function keysToPath(chapter, question){
+function keysToPath(chapter, question) {
 	return `${chapter}/${question}`
 }
 
 function getQuestion(chapter, question) {
-	if (chapters[chapter].questions[question] == undefined){
+	if (chapters[chapter].questions[question] == undefined) {
 		console.error(chapter, question)
 	}
 	return chapters[chapter].questions[question]
@@ -2957,7 +2959,10 @@ function map(min, max, newMin, newMax, value) {
 }
 
 function showInfo() {
-	showPopup({ message: chapters[currentQuestion.chapter].questions[currentQuestion.question].info, button: "OK" })
+	showPopup({
+		message: chapters[currentQuestion.chapter].questions[currentQuestion.question].info,
+		button: "OK",
+	})
 }
 
 function ranInt(min, max) {
@@ -2968,51 +2973,54 @@ function showQuestion(obj) {
 	let question = getQuestion(obj.chapter, obj.question)
 
 	//Frage statt Kapitelauswahl anzeigen
-	document.getElementById('game').classList.remove('hidden')
-	document.getElementById('chapterSelection').classList.add('hidden')
+	document.getElementById("game").classList.remove("hidden")
+	document.getElementById("chapterSelection").classList.add("hidden")
 
 	//currentquestion setzen
 	currentQuestion = obj
-	history+=`Zeit: ${gameVariables.time}; ` + keysToPath(currentQuestion.chapter, currentQuestion.question) + '\n'
+	history +=
+		`Zeit: ${gameVariables.time}; ` +
+		keysToPath(currentQuestion.chapter, currentQuestion.question) +
+		"\n"
 
 	//Fragemedium anzeigen
-	let image = document.getElementById('frageBild')
-	let video = document.getElementById('frageVideo')
-	let audio = document.getElementById('frageAudio')
-	switch(question.mediumType){
+	let image = document.getElementById("frageBild")
+	let video = document.getElementById("frageVideo")
+	let audio = document.getElementById("frageAudio")
+	switch (question.mediumType) {
 		case undefined:
-			image.classList.add('hidden')
-			video.classList.add('hidden')
-			audio.classList.add('hidden')
-			break;
-		case 'image':
-			image.classList.remove('hidden')
-			video.classList.add('hidden')
-			audio.classList.add('hidden')
+			image.classList.add("hidden")
+			video.classList.add("hidden")
+			audio.classList.add("hidden")
+			break
+		case "image":
+			image.classList.remove("hidden")
+			video.classList.add("hidden")
+			audio.classList.add("hidden")
 			image.src = question.mediumSource
-			break;
-		case 'video':
-			image.classList.add('hidden')
-			video.classList.remove('hidden')
-			audio.classList.add('hidden')
+			break
+		case "video":
+			image.classList.add("hidden")
+			video.classList.remove("hidden")
+			audio.classList.add("hidden")
 			video.src = question.mediumSource
 			video.oncanplaythrough = video.play
-			break;
-		case 'audio':
-			image.classList.add('hidden')
-			video.classList.add('hidden')
-			audio.classList.remove('hidden')
+			break
+		case "audio":
+			image.classList.add("hidden")
+			video.classList.add("hidden")
+			audio.classList.remove("hidden")
 			audio.src = question.mediumSource
 			audio.oncanplaythrough = audio.play
-			break;
+			break
 	}
 
 	//Wahlergebnis berechnen
 	wahlergebnis = calcResult()
 
 	//Fragentext anzeigen
-	document.getElementById("frage").innerHTML = question
-		.text.replaceAll("$benennungAufkaufen", gameVariables.benennungAufkaufen)
+	document.getElementById("frage").innerHTML = question.text
+		.replaceAll("$benennungAufkaufen", gameVariables.benennungAufkaufen)
 		.replaceAll("$kritischeJournalisten", gameVariables.kritischeJournalisten)
 		.replaceAll("$wahlergebnis", wahlergebnis)
 		.replaceAll("$sanktionsschwelle", gameVariables.sanktionsschwelle)
@@ -3033,10 +3041,10 @@ function showQuestion(obj) {
 	//bis zu 3 Antworten anzeigen
 	for (let i = 0; i < 3; i++) {
 		if (question.answers[i]) {
-			document.getElementById(`antwort${i}`).classList.remove('hidden')
+			document.getElementById(`antwort${i}`).classList.remove("hidden")
 			document.getElementById(`antwort${i}`).innerHTML = question.answers[i].text
 		} else {
-			document.getElementById(`antwort${i}`).classList.add('hidden')
+			document.getElementById(`antwort${i}`).classList.add("hidden")
 		}
 	}
 
@@ -3046,11 +3054,10 @@ function showQuestion(obj) {
 
 function answerClick(answerNo) {
 	// Eventuelle Wiedergabe pausieren
-	document.getElementById('frageVideo').pause()
-	document.getElementById('frageAudio').pause()
-	document.getElementById('frageVideo').oncanplaythrough = () => {}
-	document.getElementById('frageAudio').oncanplaythrough = () => {}
-
+	document.getElementById("frageVideo").pause()
+	document.getElementById("frageAudio").pause()
+	document.getElementById("frageVideo").oncanplaythrough = () => {}
+	document.getElementById("frageAudio").oncanplaythrough = () => {}
 
 	if (getQuestion(currentQuestion.chapter, currentQuestion.question).answers.length !== 1)
 		history += `Antwort ${answerNo + 1} ausgewählt.\n`
@@ -3086,33 +3093,39 @@ function answerClick(answerNo) {
 	Vorgeschriebenes nächstes Kapitel
 	goto, notfalls Ergebnis
 	*/
-	if (overrideGoto){
+	if (overrideGoto) {
 		showQuestion(pathToKeys(overrideGoto))
-		overrideGoto = ''
-	} else if(chosenAnswer.newChapter === true){
+		overrideGoto = ""
+	} else if (chosenAnswer.newChapter === true) {
 		showChapterSelection()
-	} else if (chosenAnswer.newChapter){
+	} else if (chosenAnswer.newChapter) {
 		startChapter(chosenAnswer.newChapter)
 	} else {
-		if (!chosenAnswer.goto) console.error('Hilfe, was soll als nächstes kommen?', currentQuestion, getQuestion(currentQuestion.chapter, currentQuestion.question), chosenAnswer)
+		if (!chosenAnswer.goto)
+			console.error(
+				"Hilfe, was soll als nächstes kommen?",
+				currentQuestion,
+				getQuestion(currentQuestion.chapter, currentQuestion.question),
+				chosenAnswer
+			)
 		let nextQuestion = chosenAnswer.goto
-		if (Array.isArray(nextQuestion)){
+		if (Array.isArray(nextQuestion)) {
 			nextQuestion = getNewQuestion(chosenAnswer.goto)
 		}
-		if (gameVariables.time >= 12 * timepermonth && currentQuestion.chapter !== 'ergebnis'){
-			nextQuestion = 'ergebnis/ergebnis'
+		if (gameVariables.time >= 12 * timepermonth && currentQuestion.chapter !== "ergebnis") {
+			nextQuestion = "ergebnis/ergebnis"
 		}
 		showQuestion(pathToKeys(nextQuestion))
 	}
 }
 
-function showChapterSelection(){
-	if (gameVariables.time >= timepermonth * 12){
-		startChapter('ergebnis')
+function showChapterSelection() {
+	if (gameVariables.time >= timepermonth * 12) {
+		startChapter("ergebnis")
 		return
 	}
 
-	document.getElementById('info').style.display = 'none'
+	document.getElementById("info").style.display = "none"
 
 	let availableChapters = Object.keys(chapters)
 		.filter(el => startedChapters.indexOf(el) === -1)
@@ -3120,83 +3133,90 @@ function showChapterSelection(){
 
 	availableChapters = randomSelection(availableChapters, chapterSelectionCount)
 
-	document.getElementById('game').classList.add('hidden')
-	document.getElementById('chapterSelection').classList.remove('hidden')
+	document.getElementById("game").classList.add("hidden")
+	document.getElementById("chapterSelection").classList.remove("hidden")
 
-	if (availableChapters.length === 0){
-		console.error('Keine Kapitel zur Auswahl')
+	if (availableChapters.length === 0) {
+		console.error("Keine Kapitel zur Auswahl")
 	}
 
-	for (let i = 0; i < chapterSelectionCount; i++){
+	for (let i = 0; i < chapterSelectionCount; i++) {
 		const el = document.getElementById(`newChapter${i}`)
-		if (availableChapters[i]){
-			el.style.display = 'block'
-			el.setAttribute('chapter', availableChapters[i])
+		if (availableChapters[i]) {
+			el.style.display = "block"
+			el.setAttribute("chapter", availableChapters[i])
 			el.children[1].innerHTML = chapters[availableChapters[i]].props.title
 			el.children[2].innerHTML = chapters[availableChapters[i]].props.description
-			if (chapters[availableChapters[i]].props.img){
+			if (chapters[availableChapters[i]].props.img) {
 				el.children[0].src = chapters[availableChapters[i]].props.img
-				el.children[0].style.display = 'block'
+				el.children[0].style.display = "block"
 			} else {
-				el.children[0].style.display = 'none'
+				el.children[0].style.display = "none"
 			}
 		} else {
-			el.style.display = 'none'
+			el.style.display = "none"
 		}
 	}
-	history += 'Kapitelauswahl: ' + JSON.stringify(availableChapters).replaceAll('","', ', ').replace('["', '').replace('"]', '') + '\n'
+	history +=
+		"Kapitelauswahl: " +
+		JSON.stringify(availableChapters).replaceAll('","', ", ").replace('["', "").replace('"]', "") +
+		"\n"
 }
 
-function randomSelection(array, number = 3){
-	while (array.length > number){
+function randomSelection(array, number = 3) {
+	while (array.length > number) {
 		array.splice(ranInt(0, array.length - 1), 1)
 	}
 	return array
 }
 
-function startChapter(name){
-	console.log(`Springe zu Kapitel ${name}`)
+function startChapter(name) {
+	// console.log(`Springe zu Kapitel ${name}`)
 	history += `Springe zu Kapitel ${name}\n`
-	if (startedChapters.indexOf(name) != -1){
+	if (startedChapters.indexOf(name) != -1) {
 		console.error(`Kapitel ${name} schon mal gestartet`)
 	}
 	startedChapters.push(name)
 
-	if (typeof chapters[name].props.entry == 'string'){
-		showQuestion({chapter: name, question: chapters[name].props.entry})
-	} else if (chapters[name].props.entry === undefined){
-		let i = 0;
+	if (typeof chapters[name].props.entry == "string") {
+		showQuestion({ chapter: name, question: chapters[name].props.entry })
+	} else if (chapters[name].props.entry === undefined) {
+		let i = 0
 		let questionName = Object.keys(chapters[name].questions)[i++]
-		while (!checkConditions(chapters[name].questions[questionName])){
-			if (i === Object.keys(chapters[name].questions).length){
-				console.error(`Zeit nicht abgelaufen, aber keine Fragen aus dem Kapitel verfügbar, Zeit: ${gameVariables.time}`)
+		while (!checkConditions(chapters[name].questions[questionName])) {
+			if (i === Object.keys(chapters[name].questions).length) {
+				console.error(
+					`Zeit nicht abgelaufen, aber keine Fragen aus dem Kapitel verfügbar, Zeit: ${gameVariables.time}`
+				)
 				gameVariables.time = timepermonth * 12
-				startChapter('ergebnis')
+				startChapter("ergebnis")
 				return
 			}
 			questionName = Object.keys(chapters[name].questions)[i++]
 		}
-		showQuestion({chapter: name, question: questionName})
-	} else if (Array.isArray(chapters[name].props.entry)){
+		showQuestion({ chapter: name, question: questionName })
+	} else if (Array.isArray(chapters[name].props.entry)) {
 		for (el of chapters[name].props.entry) {
-			if (checkConditions(chapters[name].questions[el])){
-				showQuestion({chapter: name, question: el})
+			if (checkConditions(chapters[name].questions[el])) {
+				showQuestion({ chapter: name, question: el })
 				break
 			}
 		}
-	} else if (typeof chapters[name].props.entry === 'number'){
-		showQuestion({chapter: name, question: Object.keys(chapters[name].questions)[chapters[name].props.entry]})
+	} else if (typeof chapters[name].props.entry === "number") {
+		showQuestion({
+			chapter: name,
+			question: Object.keys(chapters[name].questions)[chapters[name].props.entry],
+		})
 	}
 }
 
-function getNewQuestion(gotoArray){
+function getNewQuestion(gotoArray) {
 	gotoArray = gotoArray.filter(el => checkConditions(getQuestionFromPath(el)))
-	if (gotoArray.length > 1)
-		console.error(`gotoArray hat ${availableQuestions.length} Elemente!`)
-	else if (gotoArray.length == 0){
+	if (gotoArray.length > 1) console.error(`gotoArray hat ${availableQuestions.length} Elemente!`)
+	else if (gotoArray.length == 0) {
 		console.error(`gotoArray hat keine Elemente. Springe zum Ergebnis, Zeit: ${gameVariables.time}`)
 		gameVariables.time = 12 * timepermonth
-		return 'ergebnis'
+		return "ergebnis"
 	}
 	return gotoArray[0]
 }
@@ -3245,7 +3265,7 @@ function checkSingleCondition(condition) {
 
 function showPopup(popup) {
 	//console.log('showing popup', popup)
-	document.getElementById("popupbg").classList.remove('hidden')
+	document.getElementById("popupbg").classList.remove("hidden")
 	const headline = document.getElementById("popupHeadline")
 	const message = document.getElementById("popupMessage")
 	const button = document.getElementById("popupButton")
@@ -3257,7 +3277,9 @@ function showPopup(popup) {
 	}
 	if (popup.message) {
 		message.style = "display: block;"
-		message.innerHTML = popup.message.replaceAll("$wahlergebnis", wahlergebnis).replaceAll('<a', '<a target="_blank"')
+		message.innerHTML = popup.message
+			.replaceAll("$wahlergebnis", wahlergebnis)
+			.replaceAll("<a", '<a target="_blank"')
 	} else {
 		message.style = "display: none"
 	}
@@ -3279,10 +3301,7 @@ function calcResult() {
 	result += gameVariables.ergebnisOffset
 	//console.log(result, 'Nach Offset')
 	return (
-		Math.round(
-			Math.min(Math.max(ranInt(204, 244) / 10, result), ranInt(704, 761) / 10) * 10
-		) /
-			10 +
+		Math.round(Math.min(Math.max(ranInt(204, 244) / 10, result), ranInt(704, 761) / 10) * 10) / 10 +
 		"%"
 	).replace(".", ",")
 }
@@ -3296,7 +3315,22 @@ function setHeader() {
 	document.getElementById(
 		"headerText0"
 	).innerHTML = `Kritische Journalist*innen: ${gameVariables.kritischeJournalisten}`
+	document.getElementById(
+		"headerText0Alt"
+	).innerHTML = `Kritische Journalist*innen: ${gameVariables.kritischeJournalisten}`
+
 	barometerKritisch.rotate(map(300, 1400, 225, -45, gameVariables.kritischeJournalisten))
+	document.getElementById("header0progress").style.width = `${map(
+		300,
+		1400,
+		0,
+		100,
+		gameVariables.kritischeJournalisten
+	)}%`
+	if (gameVariables.kritischeJournalisten <= 700)
+		document.getElementById("header0progress").style["background-color"] = "green"
+	if (gameVariables.kritischeJournalisten >= 1100)
+		document.getElementById("header0progress").style["background-color"] = "red"
 
 	document.getElementById("headerText1").innerHTML = `Zeit: ${Math.floor(
 		gameVariables.time / timepermonth
@@ -3322,14 +3356,18 @@ function setHeader() {
 	posN = map(0, -30, 0, 100, posN)
 	document.getElementById("header2bgN").style["grid-template-columns"] = `${100 - posN}% ${posN}%`
 
-	if (currentQuestion.chapter === 'intro' && currentQuestion.question === 'vorstellung') {
+	if (currentQuestion.chapter === "intro" && currentQuestion.question === "vorstellung") {
 		//console.log('x')
 		$(".headerElement").css("opacity", "1")
 	}
 }
 
-function submitScore(e){
-	e.preventDefault();
-	console.log(`${document.getElementById('submitScoreInput').value}\n${wahlergebnis}`)
-	fetch('https://ak-ts.de/klicks-unter-kontrolle-highscore', {method: 'POST', headers: {'Content-Type': 'text/plain'}, body: `${document.getElementById('submitScoreInput').value}\n${wahlergebnis}`})
+function submitScore(e) {
+	e.preventDefault()
+	console.log(`${document.getElementById("submitScoreInput").value}\n${wahlergebnis}`)
+	fetch("https://ak-ts.de/klicks-unter-kontrolle-highscore", {
+		method: "POST",
+		headers: { "Content-Type": "text/plain" },
+		body: `${document.getElementById("submitScoreInput").value}\n${wahlergebnis}`,
+	})
 }
