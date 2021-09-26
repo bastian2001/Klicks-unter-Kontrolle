@@ -2,7 +2,7 @@ body {
 	display: grid;
 	grid-template-columns: 25% 75%;
 	margin: 0px;
-	height: 100vh;
+	height: 100%;
 	box-sizing: border-box;
 	padding: 1.5rem;
 	background-color: #30393a;
@@ -361,6 +361,7 @@ button {
 	transition: background-color 0.4s cubic-bezier(0.09, 0.74, 0.44, 0.99);
 }
 
+/* rückt das Infosymbol bei jeder nicht-Desktop-Ansicht nach außen*/
 @media (max-width: 900px), (max-height: 650px) {
 	#info {
 		bottom: 30px;
@@ -368,6 +369,7 @@ button {
 	}
 }
 
+/*Einpaltig, aber weiterhin mit Barometer*/
 @media (max-width: 900px) {
 	body {
 		grid-template-columns: 1fr;
@@ -393,6 +395,7 @@ button {
 	}
 }
 
+/**/
 @media (max-width: 700px) and (max-height: 950px),
 	(max-width: 900px) and (max-height: 700px),
 	(max-width: 450px) {
