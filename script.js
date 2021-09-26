@@ -1,5 +1,3 @@
-alert(`${window.innerWidth}, ${window.innerHeight}`)
-
 const timepermonth = 2,
 	chapterSelectionCount = 3
 
@@ -3150,7 +3148,7 @@ function showChapterSelection() {
 			el.style.display = "block"
 			el.setAttribute("chapter", availableChapters[i])
 			el.children[1].innerHTML = chapters[availableChapters[i]].props.title
-			el.children[2].innerHTML = chapters[availableChapters[i]].props.description
+			// el.children[2].innerHTML = chapters[availableChapters[i]].props.description
 			if (chapters[availableChapters[i]].props.img) {
 				el.children[0].src = chapters[availableChapters[i]].props.img
 				el.children[0].style.display = "block"

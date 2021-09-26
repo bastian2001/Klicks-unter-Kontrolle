@@ -211,13 +211,14 @@ button {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 1rem;
 	transform: translateX(0%);
-	transition: transform 0.7s ease-out 0s;
+	transition: transform 0.7s ease-out;
 	visibility: visible;
 }
 #chapterSelection.hidden {
-	visibility: hidden;
-	display: grid !important;
-	transition: transform 0.7s ease-out, visibility 0s ease-out 0.7s;
+	overflow: hidden; /*display none zerstört die transition, daher width und overflow hidden*/
+	width: 0;
+	display: grid !important; /*selector .hidden am Anfang überschreibst sonst display grid*/
+	transition: transform 0.7s ease-out, width 0s ease-out 0.7s, overflow 0s ease-out 0.7s;
 	transform: translateX(-105%);
 }
 #chapterSelection > div {
@@ -425,7 +426,7 @@ button {
 
 	.answerButton,
 	#submitScoreButton {
-		padding: 0.5rem 2rem;
+		/* padding: 0.5rem 2rem; */
 	}
 
 	#popupbg {
@@ -460,7 +461,7 @@ button {
 	}
 
 	#chapterSelection.hidden {
-		transform: translateX(-100vh);
+		transform: translateX(-100vw);
 	}
 
 	.content {
@@ -483,7 +484,7 @@ button {
 	.answerButton,
 	#submitScoreButton {
 		font-size: 1rem;
-		padding: 0.5rem 2rem;
+		/* padding: 0.5rem 2rem; */
 	}
 
 	#popupbg {
@@ -501,8 +502,9 @@ button {
 
 /*einspaltige Kapitelauswahl*/
 @media (max-width: 1150px) {
-	#chapterSelection {
-		display: block;
+	#chapterSelection,
+	#chapterSelection.hidden {
+		display: block !important;
 	}
 
 	.newChapter {
