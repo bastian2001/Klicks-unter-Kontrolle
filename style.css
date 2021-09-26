@@ -395,10 +395,8 @@ button {
 	}
 }
 
-/**/
-@media (max-width: 700px) and (max-height: 950px),
-	(max-width: 900px) and (max-height: 700px),
-	(max-width: 450px) {
+/*einspaltig, 3 Balken*/
+@media (max-width: 700px), (max-width: 900px) and (max-height: 700px) {
 	body {
 		grid-template-rows: 0fr 1fr;
 		padding: 0.5rem;
@@ -454,6 +452,7 @@ button {
 	}
 }
 
+/*kleinere Schrift*/
 @media (max-width: 900px) and (max-height: 800px) {
 	body {
 		padding: 0.8rem;
@@ -478,6 +477,7 @@ button {
 	}
 }
 
+/*breit und flach: kleine Schrift*/
 @media (max-height: 650px) {
 	body {
 		padding: 0.8rem;
