@@ -2,11 +2,10 @@ body {
 	display: grid;
 	grid-template-columns: 25% 75%;
 	margin: 0px;
-	height: calc(100vh + 100px);
+	height: 100vh;
 	box-sizing: border-box;
 	padding: 1.5rem;
 	background-color: #30393a;
-	overflow: hidden;
 }
 
 * {
