@@ -2,7 +2,7 @@ body {
 	display: grid;
 	grid-template-columns: 25% 75%;
 	margin: 0px;
-	height: 100vh;
+	height: calc(100vh + 100px);
 	box-sizing: border-box;
 	padding: 1.5rem;
 	background-color: #30393a;
