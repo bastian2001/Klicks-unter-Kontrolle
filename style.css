@@ -52,6 +52,26 @@ button {
 	transition: transform 2s cubic-bezier(0, 0.32, 0.6, 0.98);
 }
 
+#highscoretable {
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	opacity: 1;
+	transition: opacity 0.5s ease-out;
+}
+.rank {
+	opacity: 0;
+	transition: opacity 0.5s ease-out;
+}
+.hsposition {
+	padding-right: 1rem;
+}
+.hsname {
+	padding: 0.2rem 1rem;
+}
+.hsscore {
+	padding-left: 1rem;
+}
+
 #header0Alt {
 	display: none;
 }
@@ -417,7 +437,6 @@ button {
 }
 
 /*einspaltig, 3 Balken*/
-/* @media (max-width: 900px) { */
 @media (max-width: 700px), (max-width: 900px) and (max-height: 700px) {
 	body {
 		grid-template-rows: 0fr 1fr;
@@ -427,6 +446,7 @@ button {
 	.answerButton,
 	#submitScoreButton {
 		/* padding: 0.5rem 2rem; */
+		box-shadow: initial;
 	}
 
 	#popupbg {
@@ -469,6 +489,14 @@ button {
 	}
 	#game {
 		padding-bottom: 15px;
+	}
+
+	#frageBild,
+	#frageVideo {
+		float: none;
+		max-width: initial;
+		margin: 0px;
+		width: 100%;
 	}
 }
 

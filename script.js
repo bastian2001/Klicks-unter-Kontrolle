@@ -1,3 +1,5 @@
+let test = 0
+
 const timepermonth = 2,
 	chapterSelectionCount = 3
 
@@ -477,6 +479,7 @@ const chapters = {
 				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
 				answers: [
 					{
+						//TODO Keine Entscheidung, aber trotzdem Variablen ändern?
 						text: "Wir beziehen uns darauf, dass diese Regelung ausschließlich uns und Tilpern schaden soll, weil alle anderen Staaten in der AU linke Mainstream-Regierungen haben.",
 						goto: "klagen2",
 						variables: [
@@ -491,10 +494,6 @@ const chapters = {
 							{
 								text: "kritischeJournalisten",
 								amount: 25,
-							},
-							{
-								text: "geklagt",
-								value: true,
 							},
 						],
 					},
@@ -564,7 +563,7 @@ const chapters = {
 		},
 	},
 
-	polonisierung: {
+	renationalisierung: {
 		props: {
 			entry: 0,
 			title: "Renationa&shy;lisierung",
@@ -2895,8 +2894,38 @@ const popups = {
 	//open end
 }
 
+/*
+[
+	{
+		name: "...",
+		score: "..."
+	},
+	{
+		...
+	}
+	...
+]
+*/
+fetch("./Bestenliste.json")
+	.then(res => res.json())
+	.then(highscores => {
+		for (index in highscores) {
+			let i = index - 1 + 2
+			$(`#hs${i}name`).text(highscores[i - 1].name)
+			$(`#hs${i}score`).text(highscores[i - 1].score)
+			setTimeout(() => {
+				$(`#hs${i}`).css("opacity", "1")
+			}, 3000 - i * 500)
+		}
+	})
+	.catch(reason => {
+		console.error(reason)
+		//Bestenliste kan nicht angezeigt werden
+	})
+
 let history = ""
-const kritJourStart = ranInt(800, 1000)
+let completeHistory = []
+let kritJourStart = ranInt(800, 1000) //let because of test
 let gameVariables = {
 	time: 0, //bis zur nächsten Wahl
 	falsch: 0, //falsche Entscheidung, für Gutmensch, aber auch für zu krasse Entscheidungen (vielleicht später raus?)
@@ -2972,12 +3001,7 @@ function ranInt(min, max) {
 }
 
 function showQuestion(obj) {
-	let question = getQuestion(obj.chapter, obj.question)
-
-	//Frage statt Kapitelauswahl anzeigen
-	document.getElementById("game").classList.remove("hidden")
-	document.getElementById("chapterSelection").classList.add("hidden")
-
+	//-----------------LOGIK-----------------------
 	//currentquestion setzen
 	currentQuestion = obj
 	history +=
@@ -2985,100 +3009,183 @@ function showQuestion(obj) {
 		keysToPath(currentQuestion.chapter, currentQuestion.question) +
 		"\n"
 
-	//Fragemedium anzeigen
-	let image = document.getElementById("frageBild")
-	let video = document.getElementById("frageVideo")
-	let audio = document.getElementById("frageAudio")
-	switch (question.mediumType) {
-		case undefined:
-			image.classList.add("hidden")
-			video.classList.add("hidden")
-			audio.classList.add("hidden")
-			break
-		case "image":
-			image.classList.remove("hidden")
-			video.classList.add("hidden")
-			audio.classList.add("hidden")
-			image.src = question.mediumSource
-			break
-		case "video":
-			image.classList.add("hidden")
-			video.classList.remove("hidden")
-			audio.classList.add("hidden")
-			video.src = question.mediumSource
-			video.oncanplaythrough = video.play
-			break
-		case "audio":
-			image.classList.add("hidden")
-			video.classList.add("hidden")
-			audio.classList.remove("hidden")
-			audio.src = question.mediumSource
-			audio.oncanplaythrough = audio.play
-			break
-	}
-
 	//Wahlergebnis berechnen
 	wahlergebnis = calcResult()
 
-	//Fragentext anzeigen
-	document.getElementById("frage").innerHTML = question.text
-		.replaceAll("$benennungAufkaufen", gameVariables.benennungAufkaufen)
-		.replaceAll("$kritischeJournalisten", gameVariables.kritischeJournalisten)
-		.replaceAll("$wahlergebnis", wahlergebnis)
-		.replaceAll("$sanktionsschwelle", gameVariables.sanktionsschwelle)
-		.replaceAll(
-			"$ergebnisErgänzung",
-			gameVariables.kritischeJournalisten > 1199
-				? "So richtig erfolgreich warst du in diesem Punkt ja nicht wirklich."
-				: gameVariables.kritischeJournalisten < 1200 && gameVariables.kritischeJournalisten > 800
-				? "Naja, ein paar Weichen hast du auf jeden Fall gestellt."
-				: "Gute Arbeit!"
-		)
+	// Zu gestarteten Kapiteln hinzufügen
+	if (startedChapters.indexOf(obj.chapter) === -1) startedChapters.push(obj.chapter)
 
-	//Fragezeichen anzeigen falls Info vorhanden
-	if (question.info) {
-		document.getElementById("info").style.display = "block"
-	} else document.getElementById("info").style.display = "none"
-
-	//bis zu 3 Antworten anzeigen
-	for (let i = 0; i < 3; i++) {
-		if (question.answers[i]) {
-			document.getElementById(`antwort${i}`).classList.remove("hidden")
-			document.getElementById(`antwort${i}`).innerHTML = question.answers[i].text
-		} else {
-			document.getElementById(`antwort${i}`).classList.add("hidden")
+	if (test) {
+		if (currentQuestion.question != "ergebnis")
+			answerClick(ranInt(0, getQuestion(obj.chapter, obj.question).answers.length - 1))
+		else if (test == 1) {
+			//Testergebnis ausgeben
+			console.log("test complete")
+			let thisHistory = {
+				h: history,
+				e: wahlergebnis,
+				id: test,
+				kjs: kritJourStart,
+			}
+			completeHistory.push(thisHistory)
+			const s = JSON.stringify(completeHistory)
+			const b = new Blob([s], { type: "text/plain" })
+			const url = window.URL.createObjectURL(b)
+			const a = document.createElement("a")
+			a.download = "stats.json"
+			a.href = url
+			a.click()
+		} else if (test > 1) {
+			let thisHistory = {
+				h: history,
+				e: wahlergebnis,
+				id: test,
+				kjs: kritJourStart,
+			}
+			completeHistory.push(thisHistory)
+			history = ""
+			gameVariables = {
+				time: 0, //bis zur nächsten Wahl
+				falsch: 0, //falsche Entscheidung, für Gutmensch, aber auch für zu krasse Entscheidungen (vielleicht später raus?)
+				anerkennung: 0, //in der Partei?
+				aussenbeziehungen: 5, //z. B. Beziehung zur EU
+				staatsnaehe: 0, //muss versteckt sein. beschreibt, wie sehr die ÖRR und andere Medien vom Staat gelenkt werden
+				gutmensch: 0,
+				benennungAufkaufen: "Renationalisierung",
+				kritischeJournalisten: kritJourStart,
+				aufgekauft: false,
+				unternehmen: false,
+				ergebnisOffset: 0,
+				geklagt: false,
+				sanktionsschwelle: -14,
+				sanktionen: false,
+				klageErgebnis: false,
+				klageErfolg: kritJourStart > 920,
+				entlassungenDone: false,
+			}
+			kritJourStart = ranInt(800, 1000)
+			wahlergebnis = 0
+			currentQuestion = {
+				chapter: "intro",
+				question: "willkommen",
+			}
+			startedChapters = []
+			previousPopups = []
+			test--
+			showQuestion(currentQuestion)
 		}
 	}
 
-	// Zu gestarteten Kapiteln hinzufügen
-	if (startedChapters.indexOf(obj.chapter) === -1) startedChapters.push(obj.chapter)
+	//---------------------ANZEIGE--------------------
+	if (!test) {
+		let question = getQuestion(obj.chapter, obj.question)
+
+		//Frage statt Kapitelauswahl anzeigen
+		document.getElementById("game").classList.remove("hidden")
+		document.getElementById("chapterSelection").classList.add("hidden")
+
+		//Fragemedium anzeigen
+		let image = document.getElementById("frageBild")
+		let video = document.getElementById("frageVideo")
+		let audio = document.getElementById("frageAudio")
+		switch (question.mediumType) {
+			case undefined:
+				image.classList.add("hidden")
+				video.classList.add("hidden")
+				audio.classList.add("hidden")
+				break
+			case "image":
+				image.classList.remove("hidden")
+				video.classList.add("hidden")
+				audio.classList.add("hidden")
+				image.src = question.mediumSource
+				break
+			case "video":
+				image.classList.add("hidden")
+				video.classList.remove("hidden")
+				audio.classList.add("hidden")
+				video.src = question.mediumSource
+				video.oncanplaythrough = video.play
+				break
+			case "audio":
+				image.classList.add("hidden")
+				video.classList.add("hidden")
+				audio.classList.remove("hidden")
+				audio.src = question.mediumSource
+				audio.oncanplaythrough = audio.play
+				break
+		}
+
+		//Fragentext anzeigen
+		document.getElementById("frage").innerHTML = question.text
+			.replaceAll("$benennungAufkaufen", gameVariables.benennungAufkaufen)
+			.replaceAll("$kritischeJournalisten", gameVariables.kritischeJournalisten)
+			.replaceAll("$wahlergebnis", wahlergebnis)
+			.replaceAll("$sanktionsschwelle", gameVariables.sanktionsschwelle)
+			.replaceAll(
+				"$ergebnisErgänzung",
+				gameVariables.kritischeJournalisten > 1199
+					? "So richtig erfolgreich warst du in diesem Punkt ja nicht wirklich."
+					: gameVariables.kritischeJournalisten < 1200 && gameVariables.kritischeJournalisten > 800
+					? "Naja, ein paar Weichen hast du auf jeden Fall gestellt."
+					: "Gute Arbeit!"
+			)
+
+		//Fragezeichen anzeigen falls Info vorhanden
+		if (question.info) {
+			document.getElementById("info").style.display = "block"
+		} else document.getElementById("info").style.display = "none"
+
+		//bis zu 3 Antworten anzeigen
+		for (let i = 0; i < 3; i++) {
+			if (question.answers[i]) {
+				document.getElementById(`antwort${i}`).classList.remove("hidden")
+				document.getElementById(`antwort${i}`).innerHTML = question.answers[i].text
+			} else {
+				document.getElementById(`antwort${i}`).classList.add("hidden")
+			}
+		}
+	}
 }
 
-function answerClick(answerNo) {
-	// Eventuelle Wiedergabe pausieren
-	document.getElementById("frageVideo").pause()
-	document.getElementById("frageAudio").pause()
-	document.getElementById("frageVideo").oncanplaythrough = () => {}
-	document.getElementById("frageAudio").oncanplaythrough = () => {}
+function stopMedia() {
+	if (!test) {
+		// Eventuelle Wiedergabe pausieren
+		document.getElementById("frageVideo").pause()
+		document.getElementById("frageAudio").pause()
+		document.getElementById("frageVideo").oncanplaythrough = () => {}
+		document.getElementById("frageAudio").oncanplaythrough = () => {}
+	}
+}
 
-	if (getQuestion(currentQuestion.chapter, currentQuestion.question).answers.length !== 1)
-		history += `Antwort ${answerNo + 1} ausgewählt.\n`
-	const chosenAnswer = getQuestion(currentQuestion.chapter, currentQuestion.question).answers[
-		answerNo
-	]
-
-	//Variablen anpassen
-	if (chosenAnswer.variables) {
-		for (let variable of chosenAnswer.variables) {
+function alterVariables(answer) {
+	if (answer.variables) {
+		for (let variable of answer.variables) {
 			//wenn amount existiert: Addition, wenn nicht: ersetzen durch value
 			if (variable.amount) gameVariables[variable.text] += variable.amount
 			else gameVariables[variable.text] = variable.value
 		}
 	}
+}
+
+function answerClick(answerNo) {
+	const chosenAnswer = getQuestion(currentQuestion.chapter, currentQuestion.question).answers[
+		answerNo
+	]
+
+	if (getQuestion(currentQuestion.chapter, currentQuestion.question).answers.length !== 1)
+		history += `Antwort ${answerNo + 1} ausgewählt.\n`
+
+	stopMedia()
+
+	//Variablen anpassen
+	alterVariables(chosenAnswer)
+
 	if (gameVariables.time > timepermonth * 12) {
 		console.error("Zeit zu hoch: ", gameVariables.time)
 		gameVariables.time = 12 * timepermonth
 	}
+
 	//Variablen ausgeben
 	// console.log(
 	// `Zeit: ${gameVariables.time}, falsch: ${gameVariables.falsch}, anerkennung: ${gameVariables.anerkennung}, aussenbeziehungen: ${gameVariables.aussenbeziehungen}, staatsnaehe: ${gameVariables.staatsnaehe}, gutmensch: ${gameVariables.gutmensch}, benennungAufkaufen: ${gameVariables.benennungAufkaufen}, kritischeJournalisten: ${gameVariables.kritischeJournalisten}, sanktionsschwelle: ${gameVariables.sanktionsschwelle}`
@@ -3089,6 +3196,10 @@ function answerClick(answerNo) {
 
 	popupRoutine()
 
+	showSmartNewQuestion(chosenAnswer)
+}
+
+function showSmartNewQuestion(answer) {
 	/*
 	overrideGoto
 	Kapitelauswahl
@@ -3098,21 +3209,21 @@ function answerClick(answerNo) {
 	if (overrideGoto) {
 		showQuestion(pathToKeys(overrideGoto))
 		overrideGoto = ""
-	} else if (chosenAnswer.newChapter === true) {
+	} else if (answer.newChapter === true) {
 		showChapterSelection()
-	} else if (chosenAnswer.newChapter) {
-		startChapter(chosenAnswer.newChapter)
+	} else if (answer.newChapter) {
+		startChapter(answer.newChapter)
 	} else {
-		if (!chosenAnswer.goto)
+		let nextQuestion = answer.goto
+		if (!nextQuestion)
 			console.error(
 				"Hilfe, was soll als nächstes kommen?",
 				currentQuestion,
 				getQuestion(currentQuestion.chapter, currentQuestion.question),
-				chosenAnswer
+				answer
 			)
-		let nextQuestion = chosenAnswer.goto
-		if (Array.isArray(nextQuestion)) {
-			nextQuestion = getNewQuestion(chosenAnswer.goto)
+		else if (Array.isArray(nextQuestion)) {
+			nextQuestion = getNewQuestion(answer.goto)
 		}
 		if (gameVariables.time >= 12 * timepermonth && currentQuestion.chapter !== "ergebnis") {
 			nextQuestion = "ergebnis/ergebnis"
@@ -3122,47 +3233,58 @@ function answerClick(answerNo) {
 }
 
 function showChapterSelection() {
+	//-------------------LOGIK--------------
+	//ggf. Ergebnis
 	if (gameVariables.time >= timepermonth * 12) {
 		startChapter("ergebnis")
 		return
 	}
 
-	document.getElementById("info").style.display = "none"
-
+	//mögliche Kapitel suchen
 	let availableChapters = Object.keys(chapters)
 		.filter(el => startedChapters.indexOf(el) === -1)
 		.filter(el => checkConditions(chapters[el].props))
-
 	availableChapters = randomSelection(availableChapters, chapterSelectionCount)
-
-	document.getElementById("game").classList.add("hidden")
-	document.getElementById("chapterSelection").classList.remove("hidden")
-
 	if (availableChapters.length === 0) {
 		console.error("Keine Kapitel zur Auswahl")
 	}
 
-	for (let i = 0; i < chapterSelectionCount; i++) {
-		const el = document.getElementById(`newChapter${i}`)
-		if (availableChapters[i]) {
-			el.style.display = "block"
-			el.setAttribute("chapter", availableChapters[i])
-			el.children[1].innerHTML = chapters[availableChapters[i]].props.title
-			// el.children[2].innerHTML = chapters[availableChapters[i]].props.description
-			if (chapters[availableChapters[i]].props.img) {
-				el.children[0].src = chapters[availableChapters[i]].props.img
-				el.children[0].style.display = "block"
-			} else {
-				el.children[0].style.display = "none"
-			}
-		} else {
-			el.style.display = "none"
-		}
-	}
+	//history pflegen
 	history +=
 		"Kapitelauswahl: " +
 		JSON.stringify(availableChapters).replaceAll('","', ", ").replace('["', "").replace('"]', "") +
 		"\n"
+
+	if (test) {
+		// Zufälliges Kapitel starten, falls Test aktiviert
+		startChapter(availableChapters[ranInt(0, availableChapters.length - 1)])
+	}
+
+	//-------------------ANZEIGE---------------
+	if (!test) {
+		document.getElementById("info").style.display = "none"
+
+		document.getElementById("game").classList.add("hidden")
+		document.getElementById("chapterSelection").classList.remove("hidden")
+
+		for (let i = 0; i < chapterSelectionCount; i++) {
+			const el = document.getElementById(`newChapter${i}`)
+			if (availableChapters[i]) {
+				el.style.display = "block"
+				el.setAttribute("chapter", availableChapters[i])
+				el.children[1].innerHTML = chapters[availableChapters[i]].props.title
+				// el.children[2].innerHTML = chapters[availableChapters[i]].props.description
+				if (chapters[availableChapters[i]].props.img) {
+					el.children[0].src = chapters[availableChapters[i]].props.img
+					el.children[0].style.display = "block"
+				} else {
+					el.children[0].style.display = "none"
+				}
+			} else {
+				el.style.display = "none"
+			}
+		}
+	}
 }
 
 function randomSelection(array, number = 3) {
@@ -3224,16 +3346,18 @@ function getNewQuestion(gotoArray) {
 }
 
 function popupRoutine() {
-	let availablePopups = Object.keys(popups)
-		//bis hier alle popup-keys
-		.filter(el => previousPopups.indexOf(el) === -1)
-		//hier nur noch nicht vorgekommene keys
-		.filter(el => checkConditions(popups[el]))
-	//hier nur noch nicht vorgekommene und gecheckte keys
-	//console.log(availablePopups)
-	if (availablePopups[0]) {
-		showPopup(popups[availablePopups[0]])
-		previousPopups[previousPopups.length] = availablePopups[0]
+	if (!test) {
+		let availablePopups = Object.keys(popups)
+			//bis hier alle popup-keys
+			.filter(el => previousPopups.indexOf(el) === -1)
+			//hier nur noch nicht vorgekommene keys
+			.filter(el => checkConditions(popups[el]))
+		//hier nur noch nicht vorgekommene und gecheckte keys
+		//console.log(availablePopups)
+		if (availablePopups[0]) {
+			showPopup(popups[availablePopups[0]])
+			previousPopups[previousPopups.length] = availablePopups[0]
+		}
 	}
 }
 
@@ -3310,57 +3434,66 @@ function calcResult() {
 
 var barometerKritisch
 function initHeader() {
-	barometerKritisch = $("#barometerKritisch").barometer()
+	if (!test) barometerKritisch = $("#barometerKritisch").barometer()
 }
 
 function setHeader() {
-	document.getElementById(
-		"headerText0"
-	).innerHTML = `Kritische Journalist*innen: ${gameVariables.kritischeJournalisten}`
-	document.getElementById(
-		"headerText0Alt"
-	).innerHTML = `Kritische Journalist*innen: ${gameVariables.kritischeJournalisten}`
+	if (!test) {
+		document.getElementById(
+			"headerText0"
+		).innerHTML = `Kritische Journalist*innen: ${gameVariables.kritischeJournalisten}`
+		document.getElementById(
+			"headerText0Alt"
+		).innerHTML = `Kritische Journalist*innen: ${gameVariables.kritischeJournalisten}`
 
-	barometerKritisch.rotate(map(300, 1400, 225, -45, gameVariables.kritischeJournalisten))
-	document.getElementById("header0progress").style.width = `${map(
-		300,
-		1400,
-		0,
-		100,
-		gameVariables.kritischeJournalisten
-	)}%`
-	if (gameVariables.kritischeJournalisten <= 700)
-		document.getElementById("header0progress").style["background-color"] = "green"
-	if (gameVariables.kritischeJournalisten >= 1100)
-		document.getElementById("header0progress").style["background-color"] = "red"
+		barometerKritisch.rotate(map(300, 1400, 225, -45, gameVariables.kritischeJournalisten))
+		document.getElementById("header0progress").style.width = `${map(
+			300,
+			1400,
+			0,
+			100,
+			gameVariables.kritischeJournalisten
+		)}%`
+		if (gameVariables.kritischeJournalisten <= 700)
+			document.getElementById("header0progress").style["background-color"] = "green"
+		if (gameVariables.kritischeJournalisten >= 1100)
+			document.getElementById("header0progress").style["background-color"] = "red"
 
-	document.getElementById("headerText1").innerHTML = `Zeit: ${Math.floor(
-		gameVariables.time / timepermonth
-	)} ${Math.floor(gameVariables.time / timepermonth) == 1 ? "Monat" : "Monate"} vergangen`
-	document.getElementById("header1progress").style.width = `${map(
-		0,
-		12 * timepermonth,
-		0,
-		100,
-		gameVariables.time
-	)}%`
-	if (gameVariables.time >= 9 * timepermonth)
-		document.getElementById("header1progress").style["background-color"] = "orange"
-	if (gameVariables.time >= 10.5 * timepermonth)
-		document.getElementById("header1progress").style["background-color"] = "red"
+		document.getElementById("headerText1").innerHTML = `Zeit: ${Math.floor(
+			gameVariables.time / timepermonth
+		)} ${Math.floor(gameVariables.time / timepermonth) == 1 ? "Monat" : "Monate"} vergangen`
+		document.getElementById("header1progress").style.width = `${map(
+			0,
+			12 * timepermonth,
+			0,
+			100,
+			gameVariables.time
+		)}%`
+		if (gameVariables.time >= 9 * timepermonth)
+			document.getElementById("header1progress").style["background-color"] = "orange"
+		if (gameVariables.time >= 10.5 * timepermonth)
+			document.getElementById("header1progress").style["background-color"] = "red"
 
-	let posP = Math.max(0, gameVariables.aussenbeziehungen)
-	posP = Math.min(30, posP)
-	posP = map(0, 30, 0, 100, posP)
-	document.getElementById("header2bgP").style["grid-template-columns"] = `${posP}% ${100 - posP}%`
-	let posN = Math.max(-30, gameVariables.aussenbeziehungen)
-	posN = Math.min(0, posN)
-	posN = map(0, -30, 0, 100, posN)
-	document.getElementById("header2bgN").style["grid-template-columns"] = `${100 - posN}% ${posN}%`
+		let posP = Math.max(0, gameVariables.aussenbeziehungen)
+		posP = Math.min(30, posP)
+		posP = map(0, 30, 0, 100, posP)
+		document.getElementById("header2bgP").style["grid-template-columns"] = `${posP}% ${100 - posP}%`
+		let posN = Math.max(-30, gameVariables.aussenbeziehungen)
+		posN = Math.min(0, posN)
+		posN = map(0, -30, 0, 100, posN)
+		document.getElementById("header2bgN").style["grid-template-columns"] = `${100 - posN}% ${posN}%`
 
-	if (currentQuestion.chapter === "intro" && currentQuestion.question === "vorstellung") {
-		//console.log('x')
-		$(".headerElement").css("opacity", "1")
+		if (currentQuestion.chapter === "intro" && currentQuestion.question === "willkommen") {
+			$("#highscoretable").css("opacity", "0")
+			setTimeout(() => {
+				$("#highscoretable").css("display", "none")
+				$(".headerElement").css("display", "")
+			}, 500)
+		}
+		if (currentQuestion.chapter === "intro" && currentQuestion.question === "vorstellung") {
+			// console.log("x")
+			$(".headerElement").css("opacity", "1")
+		}
 	}
 }
 
