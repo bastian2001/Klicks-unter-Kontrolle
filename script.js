@@ -7,10 +7,6 @@ const chapters = {
 	//Kapitel - Eigenschaften und Fragen (Inhalte der Fragen (Fragentext, Antworten, evtl. Bedingungen))
 	intro: {
 		props: {
-			entry: 0,
-			title: "Intro",
-			description: "Hier wird das Spiel gestartet",
-			conditions: [],
 		},
 		questions: {
 			willkommen: {
@@ -82,9 +78,6 @@ const chapters = {
 	losgehts: {
 		props: {
 			entry: 0,
-			title: "Los geht's!",
-			description: "Triff deine ersten Entscheidungen",
-			conditions: [],
 		},
 		questions: {
 			rundfunkratverkleinern: {
@@ -229,7 +222,6 @@ const chapters = {
 					},
 				],
 			},
-			//openEnd: Zeitungsmeldung aus dem Ausland/Multimedia/whatever
 			praesident: {
 				text: "Ich glaube, damit hast du es etwas übertrieben, und dein Ansehen im Ausland hat ein wenig gelitten. Eine Katastrophe war es nicht, aber sei nächstes Mal etwas vorsichtiger.",
 				answers: [
@@ -338,7 +330,7 @@ const chapters = {
 					},
 					{
 						text: "Das ist nicht mein Stil. Ich glaub, ich bin nicht geschaffen dafür.",
-						goto: "openend/letzteNachfrage",
+						goto: "nachfragen/letzteNachfrage",
 						variables: [
 							{
 								text: "time",
@@ -368,7 +360,7 @@ const chapters = {
 					},
 					{
 						text: "Ich glaub, ich will komplett zurücktreten.",
-						goto: "openend/letzteNachfrage",
+						goto: "nachfragen/letzteNachfrage",
 						variables: [
 							{
 								text: "time",
@@ -378,18 +370,12 @@ const chapters = {
 					},
 				],
 			},
-
-			//Alternative dazu: Gründung eines Medienrats wie in Ungarn, ausschließlich mit regierungstreuen Mitgliedern besetzt, entzieht z. B. Klubradio die Lizenz#
 		},
 	},
 
 	rechtsstaatsmechanismus: {
 		props: {
-			entry: 0,
-			title: "Rechtsstaats&shy;mechanismus",
-			description:
-				"Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit",
-			conditions: [],
+			entry: 0
 		},
 		questions: {
 			rsm: {
@@ -575,8 +561,6 @@ const chapters = {
 		questions: {
 			nuppisierung: {
 				text: "80 Prozent der regionalen Tageszeitungen gehören zu einem Unternehmen. Dieses wurde allerdings von einem größeren Verlag aus dem Nachbarland aufgekauft. Außerdem gehören diesem Konzern auch viele Online-Nachrichtenplattformen, die in den letzten Jahren extrem gewachsen sind. Was bedeutet das für uns?",
-				mediumType: "audio",
-				mediumSource: "https://www.w3schools.com/jsref/horse.ogg",
 				answers: [
 					{
 						text: "Weiß ich auch nicht. Ist das verkehrt?",
@@ -755,8 +739,7 @@ const chapters = {
 					},
 					{
 						text: "Ist jetzt passiert, aber jetzt können wir unsere Macht natürlich auch ausnutzen. Da könnte man doch alle entlassen, die sich mal kritisch geäußert haben.",
-						goto: "entlassung",
-						newChapter: true,
+						newChapter: "entlassung", //TODO ????
 						variables: [
 							{
 								text: "time",
@@ -952,22 +935,21 @@ const chapters = {
 			entry: 0,
 			title: "Entlassung",
 			description: "Untreue in den Staatsmedien",
-			conditions: [],
+			conditions: [
+				{
+					variableName: "staatsnaehe",
+					type: ">=",
+					value: 8,
+				},
+				{
+					variableName: "aufgekauft",
+					type: "==",
+					value: true,
+				},
+			],
 		},
 		questions: {
 			entlassung: {
-				conditions: [
-					{
-						variableName: "staatsnaehe",
-						type: ">=",
-						value: 8,
-					},
-					{
-						variableName: "aufgekauft",
-						type: "==",
-						value: true,
-					},
-				],
 				text: "Du hast dich ja vorhin schon ziemlich unbeliebt damit gemacht, dass du das ausländische Medienunternehmen aufgekauft hast. Die meisten Tageszeitungen und großen Internetportale sind jetzt also Staatsmedien. Trotzdem publizieren sie bisher genau wie vorher.",
 				answers: [
 					{
@@ -1013,10 +995,6 @@ const chapters = {
 								amount: -125,
 							},
 							{
-								text: "entlassungDone",
-								value: true,
-							},
-							{
 								text: "entlassungenDone",
 								value: true,
 							},
@@ -1045,10 +1023,6 @@ const chapters = {
 							{
 								text: "kritischeJournalisten",
 								amount: -312,
-							},
-							{
-								text: "entlassungDone",
-								value: true,
 							},
 							{
 								text: "entlassungenDone",
@@ -1082,10 +1056,6 @@ const chapters = {
 							{
 								text: "kritischeJournalisten",
 								amount: -65,
-							},
-							{
-								text: "entlassungDone",
-								value: true,
 							},
 							{
 								text: "entlassungenDone",
@@ -1137,10 +1107,7 @@ const chapters = {
 								text: "kritischeJournalisten",
 								amount: -216,
 							},
-							{
-								text: "entlassungDone",
-								value: true,
-							},
+							
 							{
 								text: "entlassungenDone",
 								value: true,
@@ -1185,7 +1152,7 @@ const chapters = {
 	szenarioRenationalisierung: {
 		props: {
 			entry: 0,
-			title: "Kritik aus den eigenen Reihen",
+			title: "Szenario Renationalisierung",
 			description: "Eine bekannte Moderatorin äußert sich dir gegenüber kritisch",
 			conditions: [],
 		},
@@ -1291,7 +1258,7 @@ const chapters = {
 					},
 					{
 						text: "Ich hab da kein gutes Gefühl bei der Sache. Ich trete zurück.",
-						goto: "openend/letzteNachfrage",
+						goto: "nachfragen/letzteNachfrage",
 					},
 				],
 			},
@@ -1403,7 +1370,7 @@ const chapters = {
 	umgangMitKritik: {
 		props: {
 			entry: 0,
-			title: "Probleme aus dem Ausland",
+			title: "Umgang mit Kritik",
 			description: "Die Adrejanische Union hat Wind bekommen",
 			conditions: [],
 		},
@@ -1746,17 +1713,16 @@ const chapters = {
 			entry: 0,
 			title: "Medienstiftung",
 			description: "Mehr Geld für Deine Medien",
-			conditions: [],
+			conditions: [
+				{
+					variableName: "entlassungenDone",
+					type: "==",
+					value: true,
+				},
+			],
 		},
 		questions: {
 			linie: {
-				conditions: [
-					{
-						variableName: "entlassungenDone",
-						type: "==",
-						value: true,
-					},
-				],
 				text: "Um die Nachrichten jetzt noch etwas auf Linie zu bringen, habe ich verschiedene Ideen. Was meinst du, eignet sich besonders gut?",
 				answers: [
 					{
@@ -1834,7 +1800,7 @@ const chapters = {
 					},
 					{
 						text: "Ach, das ist doch alles nichts. Die Werte sehen gerade doch ganz gut aus. Ich bin bis zu den Wahlen im Urlaub - Paris, Athen, auf Wiedersehn!",
-						goto: "openend/letzteNachfrage",
+						goto: "nachfragen/letzteNachfrage",
 					},
 				],
 			},
@@ -1988,17 +1954,16 @@ const chapters = {
 			entry: 0,
 			title: "Werbesteuer",
 			description: "...",
-			conditions: [],
+			conditions: [
+				{
+					variableName: "entlassungenDone",
+					type: "==",
+					value: true,
+				},
+			],
 		},
 		questions: {
 			ws: {
-				conditions: [
-					{
-						variableName: "entlassungenDone",
-						type: "==",
-						value: true,
-					},
-				],
 				text: "Du hast ja bereits einige Journalist*innen davon, sagen wir, überzeugen können, dass es besser ist, wenn sie ihren Job anders oder nicht mehr machen. Einige sind natürlich eingeschüchtert und zum Teil auch gar nicht mehr als Journalist*innen tätig. Aber andere haben sich privaten Medien angeschlossen, vor allem Onlinemedien, oder zum Teil selbst welche gegründet. Dort publizieren sie weiterhin kritisch. Wie können wir das wohl am besten unterbinden?",
 				answers: [
 					{
@@ -2483,8 +2448,506 @@ const chapters = {
 					},
 				],
 			},
+		}
+	},
 
-			klage2: {
+	pegasus: {
+		props: {
+			title: "Digitale Überwachung",
+			conditions: [],
+			entry: 0
+		},
+		questions: {
+			start: {
+				text: "Digitale Überwachung also? Ich sehe schon, du bist echt gerissen und mit allen Wassern gewaschen. Aber klar - no risk, no fun!",
+				answers: [
+					{
+						text: "Wie bitte? Worum geht's denn genau? Nicht so schnell",
+						goto: "wasIstDigitaleUeberwachung"
+					},
+					{
+						text: "Ja klar, bin dabei!",
+						goto: "tippZyklop"
+					}
+				]
+			},
+			wasIstDigitaleUeberwachung: {
+				text: "Stell' dir vor, jemand bereitet einen regierungskritischen Beitrag vor. Du bekommst davon nichts mit und plötzlich weiß jeder von deinen Investments in Waffen oder so. Wenn du aber alle Journalist*innen, die potenziell kritische Beiträge veröffentlichen könnten, abhörst, weißt du genau, wer das Ziel deiner nächsten Attacke sein könnte. Du weißt doch: Feder und Papier entzünden mehr Feuer als alle Streichhölzer dieser Welt - und Feuer können wir gerade gar nicht gebrauchen.",
+				answers: [{
+					text: "Jo, können wir machen.",
+					goto: "tippZyklop"
+				}]
+			},
+			tippZyklop: {
+				text: "Ich hab da mal was vorbereitet. Heißer Tipp der Regierung vom Nachbarland Tilpern: Die Software \"Zyklop\". Mit ihr bekommst du vollen Zugriff auf infizierte Handys. Offiziell nur für Terrorverdächtige und zur Verbrechensbekämpfung gedacht, aber was ein Journalist nicht weiß, macht ihn nicht heiß.",
+				answers: [
+					{
+						text: "Das ist mir doch zu heiß. Ich bin raus.",
+						goto: "zyklopZuHeiss"
+					},
+					{
+						text: "An sich eine gute Idee, aber uns fehlt die gesetzliche Grundlage für den Einsatz im Journalismus.",
+						goto: "gesetzeAendern"
+					},
+					{
+						text: "Klingt super!",
+						goto: "ausmass"
+					}
+				]
+			},
+			zyklopZuHeiss: {
+				text: "Mhhh, schade, aber ist deine Entscheidung",
+				answers: [{
+					text: "Okay, dann sehen wir mal weiter.",
+					newChapter: true
+				}]
+			},
+			gesetzeAendern: {
+				text: "Wenn du Gesetze ändern willst, bringst du ja erst die Aufmerksamkeit auf das Thema. Ich würde dir empfehlen, das unter der Hand zu behandeln und die Gesetze zu ignorieren.",
+				info: "Die Spyware Pegasus wird vom israelischen Unternehmen NSO Group vertrieben. Mit ihrer Hilfe wurden Journalist*innen, Aktivist*innen und Politiker*innen ausgespäht. Sie wurde durch mehrere Staaten eingesetzt. So gibt es Hinweise, dass u. a. Marokko, Indien, Mexiko und Saudi-Arabien die Software genutzt haben.\n2017 bot die NSO Group die Software auch Deutschland an. Dass Deutschland sie tatsächlich genutzt hat, ist aber nicht bekannt und unwahrscheinlich. Ungarn hingegen spähte mit Pegasus wahrscheinlich mehrere Journalist*innen von oppositionellen Medien aus.\nLaut der NSO wird Pegasus nur gegen Kriminelle eingesetzt, allerdings überprüft sie ihre Kunden nur vor Abschluss der Verträge.",
+				answers: [
+					{
+						text: "Gut, dann machen wir das so.",
+						goto: "ausmass"
+					},
+					{
+						text: "Trotzdem.  Ich verwende sie nur im vorgegebenen Bereich, bis die Gesetzesänderung durch ist. Also nur gegen Terror etc.",
+						newChapter: true, //TODO Info"frage"? Evtl. erklären, dass wir warten, außerdem: Zeit vergehen?
+						variables: [{
+							text: "zyklopLoesung",
+							value: "gesetzesänderung"
+						}]
+					}
+				]
+			},
+			ausmass: {
+				text: "Die Software wird von einem ausländischen Unternehmen gestellt und importiert. Wie drastisch willst du das Ganze denn angehen? Die Software lässt sich auch gegen Politiker*innen einsetzen. Aber wir fokussieren uns mal auf den Journalismus.",
+				info: "Die Spyware Pegasus wird vom israelischen Unternehmen NSO Group vertrieben. Mit ihrer Hilfe wurden Journalist*innen, Aktivist*innen und Politiker*innen ausgespäht. Sie wurde durch mehrere Staaten eingesetzt. So gibt es Hinweise, dass u. a. Marokko, Indien, Mexiko und Saudi-Arabien die Software genutzt haben.\n2017 bot die NSO Group die Software auch Deutschland an. Dass Deutschland sie tatsächlich genutzt hat, ist aber nicht bekannt und unwahrscheinlich. Ungarn hingegen spähte mit Pegasus wahrscheinlich mehrere Journalist*innen von oppositionellen Medien aus.\nLaut der NSO wird Pegasus nur gegen Kriminelle eingesetzt, allerdings überprüft sie ihre Kunden nur vor Abschluss der Verträge.",
+				answers: [
+					{
+						text: "Journalist*innen aus dem Ausland sind für uns besonders gefährlich. Die AU sollte so wenig wie möglich erfahren, was hier in Nuppland passiert. Daher stehen die im Vordergrund.",
+						goto: "mittlereLoesung",
+						variables: [
+							{
+								text: "zyklopLoesung",
+								value: "mittel"
+							}
+						]
+					},
+					{
+						text: "Inländische Journalist*innen, die unangenehm auffallen, sollten die Spyware über unauffällige Links zugespielt bekommen. Aber wir nutzen das Programm nur im Verdachtsfall auch zur Überwachung von Kamera, Mikro und Messengern.",
+						goto: "entspannt",
+						variables: [
+							{
+								text: "zyklopLoesung",
+								value: "entspannt"
+							}
+						]
+					},
+					{
+						text: "Ich würde mir das volle Programm wünschen: kritische Journalist*innen aus dem In- und Ausland. Und wenn wir alles an Daten haben, was wir kriegen können - Bild, Ton, Text - sind wir auf der sicheren Seite.",
+						goto: "drastischeLoesung",
+						variables: [
+							{
+								text: "zyklopLoesung",
+								value: "drastisch"
+							}
+						]
+					}
+				]
+			},
+			mittlereLoesung: {
+				text: "Umgekehrt ist das natürlich besonders gefährlich, wenn die AU es mitbekommt. ",
+				answers: [{
+					text: "Naja. Mal sehen, was es uns bringt.",
+					newChapter: true, //TODO: es muss weiter gehen
+				}]
+			},
+			entspannt: {
+				text: "So greifst du relativ wenig ein, aber das Programm fällt natürlich auch nur wenig auf.",
+				answers: [{
+					text: "Na dann warten wir erstmal ab.",
+					newChapter: true
+				}]
+			},
+			drastischeLoesung: {
+				text: "Mutig! Mal sehen, wie das wird. Wenn die AU das mitbekommt, sind wir tot. Aber wenn nicht, hilft uns das auch sehr.",
+				answers: [{
+					text: "Warten wir es ab!",
+					newChapter: true
+				}]
+			}
+		}
+	},
+
+	zyklopAufloesung: {
+		props: {
+			entry: [
+				'dauertZuLange',
+				'handysLangsam',
+				'mittelErfolgreich',
+				'entspanntErfolgreich',
+				'drastischAlarm',
+				'drastischErfolgreich'
+			]
+		},
+		questions: {
+			dauertZuLange: {
+				conditions: [
+					{
+						variableName: "zyklopLoesung",
+						type: "==",
+						value: "gesetzesänderung"
+					}
+				],
+				text: 'Kurzer Zwischenstand zur Zyklop-Software, falls du dich erinnerst: Das wird zeitlich zu knapp. Du wolltest ja eine Gesetzesänderung angehen, aber wir packen das nicht mehr vor der Wahl. Hat aber auch sein Gutes: Dadurch bist du der AU definitiv weniger aufgefallen, das gibt Extrapunkte in den internationalen Beziehungen.',
+				answers: [{
+					text: "Okay, wie geht's weiter?",
+					variables: [
+						{
+							text: "time",
+							amount: 1
+						},
+							//TODO Beziehungen besser
+					]
+				}]
+			},
+			handysLangsam: {
+				conditions: [
+					{
+						variableName: "zyklopLoesung",
+						type: "==",
+						value: "mittel"
+					},
+					{
+						variableName: "randomZyklop",
+						type: "<",
+						value: 0.6
+					}
+				],
+				text: 'Zwischenstand zur Zyklop-Spyware: Da die Handys der abgehörten Journalist*innen natürlich langsamer arbeiten, wenn die Spyware aktiv ist, ist aufgefallen, dass du Zyklop installiert hast. Leider konnte sogar die Verbindung zu dir gezogen werden. So schlägt das Ganze Wellen und mittlerweile hat auch die nuppische Bevölkerung davon mitbekommen. Von deinem guten Wahlergebnis kannst du dich verabschieden.',
+				answers: [{
+					text: "Schade, aber einen Versuch war es wert.",
+					variables: [
+						{
+							text: "time",
+							amount: 1
+						}
+					]
+				}]
+			},
+			mittelErfolgreich: {
+				conditions: [
+					{
+						variableName: "zyklopLoesung",
+						type: "==",
+						value: "mittel"
+					}
+				],
+				text: 'Übrigens: Glückwunsch! Bisher ist deine Nutzung von Zyklop nicht aufgefallen. Stattdessen konntest du einige kritische Journalist*innen identifizieren und sie gezielt einschüchtern.',
+				answers: [{
+					text: "Das klingt gut",
+					variables: [
+						{
+							text: "time",
+							amount: 1
+						}
+					]
+				}]
+			},
+			entspanntErfolgreich: {
+				conditions: [
+					{
+						variableName: "zyklopLoesung",
+						type: "==",
+						value: "entspannt"
+					}
+				],
+				text: 'Übrigens: Deine Nutzung der Spyware Zyklop ist immer noch nicht aufgefallen. Die AU fasst wieder Vertrauen. Aber da du so zurückhaltend warst, hast du bisher auch noch keinen nennenswerten Erfolg dadurch feiern können.',
+				answers: [{
+					text: "Naja gut, immerhin nichts schlimmes passiert.",
+					variables: [
+						{
+							text: "time",
+							amount: 1
+						}
+					]
+				}]
+			},
+			handysLangsam: {
+				conditions: [
+					{
+						variableName: "zyklopLoesung",
+						type: "==",
+						value: "drastisch"
+					},
+					{
+						variableName: "randomZyklop",
+						type: "<",
+						value: 0.6
+					}
+				],
+				text: 'Alarm! Ich meine - damit war zu rechnen: Die Nutzung der Spyware Zyklop ist aufgefallen. Eine internationale Menschenrechtsorganisation klagt gegen dich, die AU verhängt schwere finanzielle Sanktionen und das merkt auch die nuppische Bevölkerung. Du konntest zwar in einigen Fällen kritische Berichterstattung verhindern, aber jetzt gibt es davon natürlich umso mehr.',
+				answers: [{
+					text: "Schade, aber damit war wohl zu rechnen.",
+					variables: [
+						{
+							text: "time",
+							amount: 1
+						}
+					]
+				}]
+			},
+			drastischErfolgreich: {
+				conditions: [
+					{
+						variableName: "zyklopLoesung",
+						type: "==",
+						value: "drastisch"
+					}
+				],
+				text: "Du Teufel! GRANDIOS! Kurz vor der Wahl, deine Nutzung der Zyklop-Spyware ist immer noch nicht aufgefallen und durch die umfassende Einschränkung der Berichterstattung hast du so natürlich richtig gute Karten für die anstehende Wahl. Nirgends verliert jemand auch nur ein kritisches Wort gegen dich. Super gemacht! Oder einfach nur mehr Glück als Verstand.",
+				answers: [
+					{
+						text: "Nix da mit Glück - reines Können",
+						variables: [
+							{
+								text: "time",
+								amount: 1
+							}
+						]
+					}
+				]
+			}
+		}
+	},
+
+	mordUndTotschlag: {
+		props: {
+			title: "Drastische Maßnahmen",
+			conditions: [
+				{
+					variableName: "kritischeJournalisten",
+					type: ">=",
+					value: 1030
+				}
+			],
+			entry: 0
+		},
+		questions: {
+			einleitung: {
+				text: "Wir haben momentan eine beunruhigend hohe Anzahl an kritischen Journalist*innen im Land. Wenn wir nichts dagegen tun, könnte das böse für dich enden.",
+				answers: [
+					{
+						text: "Lass sie doch weiter berichten.",
+						goto: "bistDuSicher"
+					},
+					{
+						text: "Was schlägst du vor?",
+						goto: "radikalereMassnahmen"
+					}
+				]
+			},
+			bistDuSicher: {
+				text: "Bist du dir sicher? Wir können und sollten dagegen vorgehen.",
+				answers: [
+					{
+						text: "Ja, wir müssen nichts unternehmen.",
+						newChapter: true,
+						variables: [
+							{
+								text: "time",
+								amount: 2
+							}
+						]
+					},
+					{
+						text: "Was schlägst du vor?",
+						goto: "radikalereMassnahmen"
+					}
+				]
+			},
+			radikalereMassnahmen: {
+				text: "Ich denke wir sollten radikalere Maßnahmen ergreifen. Vielleicht verstehen sie es dann.",
+				answers: [
+					{
+						text: "Klingt gut.",
+						goto: "vernuenftig"
+					},
+					{
+						text: "klingt gefährlich",
+						goto: "nichtsTun"
+					}
+				]
+			},
+			nichtsTun: {
+				text: "Noch gefährlicher ist es, wenn wir nichts tun.",
+				answers: [
+					{
+						text: "Vielleicht hast du recht.",
+						goto: "vernuenftig"
+					},
+					{
+						text: "Ich kann das aber nicht verantworten.",
+						goto: "dannHaltNicht"
+					}
+				]
+			},
+			dannHaltNicht: {
+				text: "Es ist deine Entscheidung. Mit dieser Einstellung wirst du unserem Land jedoch keinen Dienst erweisen.",
+				answers: [
+					{
+						text: "Okay",
+						newChapter: true,
+						variables: [
+							{
+								text: "time",
+								amount: 3
+							}
+						]
+					}
+				]
+			},
+			vernuenftig: {
+				text: "Ich wusste doch, dass du vernünftig bist. Wir sollten unseren Fokus auf die Gründerin des Blogs \"Veritas\" legen. Nach Ermittlungen unseres Geheimdienstes scheint sie in Besitz belastender Informationen gegenüber dir und der Regierung zu sein. Es sind also radikale, sofortige Maßnahmen erforderlich. Wie sollen wir vorgehen?",
+				info: "In Russland kommt es immer wieder zu Vorfällen, bei denen der Regierung gegenüber kritische Journalist*innen aus Fenstern stürzen.",
+				answers: [
+					{
+						text: "Journalist*innen sind doch bekannt dafür, tollpatschig zu sein. Ich denke, sie sollte aus dem sechsten Stock ihres Apartments \"stürzen\". Unfälle passieren eben. Besonders wenn man nachhilft.",
+						variables: [
+							{
+								text: "kritischeJournalisten",
+								amount: -133
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: -5
+							},
+							{
+								text: "time",
+								amount: 2
+							}
+						],
+						goto: "gestuerzt"
+					},
+					{
+						text: "Die Journalistin sollte diskret verschwinden. Wie wäre es, wenn sie von ihren regelmäßigen Wanderungen nicht wieder nach Hause kommt? Wandern ist nunmal nicht ganz ungefährlich.",
+						variables: [
+							{
+								text: "kritischeJournalisten",
+								amount: -41
+							},
+							{
+								text: "time",
+								amount: 4
+							}
+						],
+						goto: "diskretVerschwunden"
+					}
+				]
+			},
+			diskretVerschwunden: {
+				text: "Damit sind wir sie auf jeden Fall los. Zwar ist die abschreckende Wirkung geringer, kaum jemand wird uns jedoch verdächtigen.",
+				answers: [
+					{
+						text: "Das war auf jeden Fall die bessere Wahl",
+						newChapter: true
+					}
+				]
+			},
+			gestuerzt: {
+				text: "Sehr gute Möglichkeit! Das sendet genau die richtige Nachricht an Journalist*innen und niemand wird beweisen können, dass wir etwas damit zu tun hatten.",
+				answers: [
+					{
+						text: "Das war der Plan",
+						goto: "stellungnahme"
+					}
+				]
+			},
+			stellungnahme: {
+				text: "In- und ausländische Medien möchten eine Stellungnahmen von dir zu dem Vorfall. Was sollen wir ihnen sagen?",
+				answers: [
+					{
+						text: "Gar nichts. Schweigen ist Gold.",
+						goto: "schweigen",
+						variables: [
+							{
+								text: "aussenbeziehungen",
+								amount: -3
+							},
+							{
+								text: "time",
+								amount: 1
+							}
+						]
+					},
+					{
+						text: "Sagen wir ihnen, dass sie aufgrund einer undiagnostiziert Krankheit einen Schwindelanfall erlitt und in Folge dessen durch das Fenster stürzte.",
+						goto: "schwindelanfall",
+						variables: [
+							{
+								text: "time",
+								amount: 2
+							}
+						]
+					},
+					{
+						text: "Sie hat sich einer Hausdurchsuchung wegen illegaler Aktivitäten widersetzt und versucht, durch das Fenster zu fliehen.",
+						goto: "hellhoerig",
+						variables: [
+							{
+								text: "kritischeJournalisten",
+								amount: 53
+							},
+							{
+								text: "time",
+								amount: 1
+							}
+						]
+					}
+				]
+			},
+			schweigen: {
+				text: "Das wird ihnen nicht gefallen. Aber so können sie uns nichts anhängen.",
+				answers: [
+					{
+						text: "Die können uns aber auch nicht einfach rumkommandieren.",
+						newChapter: true
+					}
+				]
+			},
+			schwindelanfall: {
+				text: 'Sehr gute Idee. Ich bereite schonmal die Befundsberichte ihrer "Krankheit" vor.',
+				answers: [
+					{
+						text: "Danke",
+						newChapter: true,
+						variables: [
+							{
+								text: "kritischeJournalisten",
+								amount: -8
+							}
+						]
+					}
+				]
+			},
+			hellhoerig: {
+				text: 'Die Polizei wollte doch nur mit ihr reden. Das wird andere Journalist*innen jedoch hellhörig werden lassen.',
+				answers: [
+					{
+						text: "Das war das kleinste Übel.",
+						newChapter: true
+					}
+				]
+			}
+		}
+	},
+
+	klageErgebnis: {
+		props: {
+		},
+		questions:{
+			klageErfolglos: {
 				conditions: [
 					{
 						variableName: "geklagt",
@@ -2494,7 +2957,7 @@ const chapters = {
 					{
 						variableName: "time",
 						type: ">=",
-						value: 12,
+						value: 6 * timepermonth,
 					},
 					{
 						variableName: "klageErgebnis",
@@ -2512,6 +2975,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Kann man wohl nichts machen.",
+						goto: "/back",
 						variables: [
 							{
 								text: "klageErgebnis",
@@ -2526,7 +2990,7 @@ const chapters = {
 				],
 			},
 
-			klage: {
+			klageErfolgreich: {
 				conditions: [
 					{
 						variableName: "geklagt",
@@ -2536,7 +3000,7 @@ const chapters = {
 					{
 						variableName: "time",
 						type: ">=",
-						value: 12,
+						value: 6 * timepermonth,
 					},
 					{
 						variableName: "klageErfolg",
@@ -2554,6 +3018,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Yes! Glück gehabt!",
+						goto: "/back",
 						variables: [
 							{
 								text: "sanktionsschwelle",
@@ -2579,35 +3044,15 @@ const chapters = {
 		},
 	},
 
-	openend: {
-		props: {
-			entry: 0,
-			title: "Was auch immer, keine Ahnung",
-			description: "Eine Sammlung an random shit???",
-		},
+	sanktionen: {
+		props: {},
 		questions: {
-			sanktionen2: {
-				conditions: [
-					{
-						variableName: "sanktionsschwelle",
-						type: "==",
-						value: -14,
-					},
-					{
-						variableName: "aussenbeziehungen",
-						type: "<=",
-						value: -14,
-					},
-					{
-						variableName: "sanktionen",
-						type: "==",
-						value: false,
-					},
-				],
-				text: "Ich hab dich gewarnt! Die Adrejanische Union verhängt Sanktionen gegen Nuppland. Grund dafür sind die mehrfachen Verstöße gegen die Verträge, auf denen die AU aufbaut. Rechtstaatlichkeit und Pressefreiheit werden dort als hohe Werte angesehen. Es gibt also weniger Geld von der AU, und dadurch sinkt natürlich auch deine Zustimmung bei der Bevölkerung.",
+			sanktionen14: {
+				text: "Übrigens: Ich hab dich gewarnt! Die Adrejanische Union verhängt Sanktionen gegen Nuppland. Grund dafür sind die mehrfachen Verstöße gegen die Verträge, auf denen die AU aufbaut. Rechtstaatlichkeit und Pressefreiheit werden dort als hohe Werte angesehen. Es gibt also weniger Geld von der AU, und dadurch sinkt natürlich auch deine Zustimmung bei der Bevölkerung.",
 				answers: [
 					{
-						text: "Mhhh... Wir müssen trotzdem weitermachen!",
+						goto: "/back",
+						text: "Mhhh... Wir müssen trotzdem weitermachen! Zurück zum Thema!",
 						variables: [
 							{
 								text: "sanktionen",
@@ -2621,33 +3066,11 @@ const chapters = {
 					},
 				],
 			},
-			sanktionen3: {
-				conditions: [
-					{
-						variableName: "sanktionsschwelle",
-						type: "==",
-						value: -22,
-					},
-					{
-						variableName: "geklagt",
-						type: "==",
-						value: true,
-					},
-					{
-						variableName: "aussenbeziehungen",
-						type: "<=",
-						value: -22,
-					},
-					{
-						variableName: "sanktionen",
-						type: "==",
-						value: false,
-					},
-				],
-				text: "Ich hab dich gewarnt! Die Adrejanische Union verhängt Sanktionen gegen Nuppland. Grund dafür sind die mehrfachen Verstöße gegen die Verträge, auf denen die AU aufbaut. Rechtstaatlichkeit und Pressefreiheit werden dort als hohe Werte angesehen. Es gibt also weniger Geld von der AU, und dadurch wird natürlich auch dein Wahlergebnis schlechter. Und das alles, obwohl du erfolgreich geklagt hast und das Verfahren lange aufschieben konntest.",
+			sanktionen22: {
+				text: "Übrigens: Ich hab dich gewarnt! Die Adrejanische Union verhängt Sanktionen gegen Nuppland. Grund dafür sind die mehrfachen Verstöße gegen die Verträge, auf denen die AU aufbaut. Rechtstaatlichkeit und Pressefreiheit werden dort als hohe Werte angesehen. Es gibt also weniger Geld von der AU, und dadurch wird natürlich auch dein Wahlergebnis schlechter. Und das alles, obwohl du erfolgreich geklagt hast und das Verfahren lange aufschieben konntest.",
 				answers: [
 					{
-						text: "Mhhh... Weitermachen müssen wir trotzdem.",
+						text: "Mhhh... Weitermachen müssen wir trotzdem. Zurück zum Thema!",
 						variables: [
 							{
 								text: "sanktionen",
@@ -2658,16 +3081,23 @@ const chapters = {
 								amount: -6,
 							},
 						],
+						goto: "/back"
 					},
 				],
 			},
+		}
+	},
 
+	nachfragen: {
+		props: {
+		},
+		questions: {
 			letzteNachfrage: {
 				text: "Willst du deine politische Karriere wirklich abbrechen?",
 				answers: [
 					{
 						text: "Ja, ich trete zurück.",
-						goto: "ergebnis",
+						goto: "ergebnis/ergebnis",
 						variables: [
 							{
 								text: "time",
@@ -2691,14 +3121,14 @@ const chapters = {
 					{
 						variableName: "time",
 						type: "<=",
-						value: timepermonth * 6,
-					},
+						value: 6 * timepermonth
+					}
 				],
 				text: "Du scheinst nicht wirklich viel ändern zu wollen, also würde ich vorschlagen, dass wir direkt zur Wahl vorspringen. Aber da du deinen Einfluss so wenig genutzt hast, haben die Medien wahrscheinlich wenig zu eurem Wahlkampf beigetragen.",
 				answers: [
 					{
 						text: "Okay, dann machen wir halt dort weiter.",
-						goto: "ergebnis",
+						goto: "ergebnis/ergebnis",
 						variables: [
 							{
 								text: "ergebnisOffset",
@@ -2725,7 +3155,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Okay, dann machen wir halt dort weiter.",
-						goto: "ergebnis",
+						goto: "ergebnis/ergebnis",
 						variables: [
 							{
 								text: "ergebnisOffset",
@@ -2752,7 +3182,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Okay, bis in ein paar Wochen!.",
-						goto: "ergebnis",
+						goto: "ergebnis/ergebnis",
 						variables: [
 							{
 								text: "ergebnisOffset",
@@ -2929,29 +3359,32 @@ let kritJourStart = ranInt(800, 1000) //let because of test
 let gameVariables = {
 	time: 0, //bis zur nächsten Wahl
 	falsch: 0, //falsche Entscheidung, für Gutmensch, aber auch für zu krasse Entscheidungen (vielleicht später raus?)
+	//TODO: wird nur für Popup verwendet
 	anerkennung: 0, //in der Partei?
 	aussenbeziehungen: 5, //z. B. Beziehung zur EU
 	staatsnaehe: 0, //muss versteckt sein. beschreibt, wie sehr die ÖRR und andere Medien vom Staat gelenkt werden
 	gutmensch: 0,
 	benennungAufkaufen: "Renationalisierung",
-	kritischeJournalisten: kritJourStart,
-	aufgekauft: false,
-	unternehmen: false,
+	zyklopLoesung: "", //der Ansatz, der für das Zyklop-Projekt gewählt wurde
+	kritischeJournalisten: kritJourStart, //s. Barometer, kritJourStart beschreibt, wie viele Journalisten es am Anfang waren
 	ergebnisOffset: 0,
-	geklagt: false,
-	sanktionsschwelle: -14,
-	sanktionen: false,
-	klageErgebnis: false,
-	klageErfolg: kritJourStart > 920,
+	sanktionsschwelle: -14, //wird zu -22, falls die Klage erfolgreich war
+	randomZyklop: Math.random(), //für Wahrscheinlichkeit
+	aufgekauft: false, //wenn medien aufgekauft wurden
+	geklagt: false, //ob geklagt wurde
+	sanktionen: false, // ob Sanktionen schon erteilt wurden
+	klageErfolg: kritJourStart > 920, //Klage erfolgreich, wenn man am Anfang schlechtere Karten hatte
+	klageErgebnis: false, //wird true, sobald das Ergebnis angezeigt wurde
 	entlassungenDone: false,
 }
 
-let wahlergebnis = 0
+let wahlergebnis = 0 //bei jeder Frage wird das Wahlergebnis berechnet, damit es nicht zu verschiedenen Werten bei z.B. der Übermittlung in der Bestenliste kommt
 
 let currentQuestion = {
 	chapter: "intro",
 	question: "willkommen",
 }
+let backQuestion = ""
 let overrideGoto = ""
 
 let startedChapters = [],
@@ -2960,6 +3393,18 @@ let startedChapters = [],
 showQuestion(currentQuestion)
 initHeader()
 
+function runTests(noOfTests){
+	test = noOfTests
+	while(test){
+		showQuestion(currentQuestion)
+	}
+}
+
+/**
+ * @brief Wandelt Pfad in Keys um
+ * @param  path string
+ * @return {*} keys als Objekt
+ */
 function pathToKeys(path) {
 	let chapter = currentQuestion.chapter,
 		question = path
@@ -2970,25 +3415,55 @@ function pathToKeys(path) {
 	}
 	return { chapter, question }
 }
+/**
+ * @brief Wandelt Keys in Pfad um
+ * @param chapter string
+ * @param question string
+ * @returns string Fragepfad
+ */
 function keysToPath(chapter, question) {
 	return `${chapter}/${question}`
 }
 
+/**
+ * @brief Frageobjekt auf Basis von Chapter und Question - für Pfad: getQuestionFromPath
+ * @param chapter string
+ * @param question string
+ * @returns Frageobjekt - die Frage
+ */
 function getQuestion(chapter, question) {
 	if (chapters[chapter].questions[question] == undefined) {
 		console.error(chapter, question)
 	}
 	return chapters[chapter].questions[question]
 }
+
+/**
+ * @brief Frageobjekt auf Basis des Pfades
+ * @param path string 
+ * @returns Frageobjekt
+ */
 function getQuestionFromPath(path) {
 	const obj = pathToKeys(path)
 	return getQuestion(obj.chapter, obj.question)
 }
 
+/**
+ * mappt einen Wert (Dreisatz mit offset)
+ * @param min Minimum des vorigen Bereichs
+ * @param max Maximum des vorigen Bereichs
+ * @param newMin Minimum des neuen Bereichs
+ * @param newMax Maximum des neuen Bereichs
+ * @param value der Wert, der in den neuen Bereich skaliert werden soll
+ * @returns 
+ */
 function map(min, max, newMin, newMax, value) {
 	return ((value - min) / (max - min)) * (newMax - newMin) + newMin
 }
 
+/**
+ * @brief zeigt das Popup zur aktuellen Frage an
+ */
 function showInfo() {
 	showPopup({
 		message: chapters[currentQuestion.chapter].questions[currentQuestion.question].info,
@@ -2996,10 +3471,20 @@ function showInfo() {
 	})
 }
 
+/**
+ * Zufallszahl zwischen min und max (ganz, beide Zahlen inklusive)
+ * @param {*} min Der Minimalwert, der rauskommen soll
+ * @param {*} max Der Maximalwert, der rauskommen soll
+ * @returns Zufallszahl
+ */
 function ranInt(min, max) {
 	return Math.floor(map(0, 1, min, max + 1, Math.random()))
 }
 
+/**
+ * Zeigt eine Frage nach Keys an (getQuestion, getQuestionFromPath)
+ * @param obj {chapter, question}
+ */
 function showQuestion(obj) {
 	//-----------------LOGIK-----------------------
 	//currentquestion setzen
@@ -3035,6 +3520,7 @@ function showQuestion(obj) {
 			a.download = "stats.json"
 			a.href = url
 			a.click()
+			test--
 		} else if (test > 1) {
 			let thisHistory = {
 				h: history,
@@ -3054,7 +3540,6 @@ function showQuestion(obj) {
 				benennungAufkaufen: "Renationalisierung",
 				kritischeJournalisten: kritJourStart,
 				aufgekauft: false,
-				unternehmen: false,
 				ergebnisOffset: 0,
 				geklagt: false,
 				sanktionsschwelle: -14,
@@ -3072,7 +3557,6 @@ function showQuestion(obj) {
 			startedChapters = []
 			previousPopups = []
 			test--
-			showQuestion(currentQuestion)
 		}
 	}
 
@@ -3148,6 +3632,9 @@ function showQuestion(obj) {
 	}
 }
 
+/**
+ * stoppt sämtliche Medien
+ */
 function stopMedia() {
 	if (!test) {
 		// Eventuelle Wiedergabe pausieren
@@ -3158,6 +3645,10 @@ function stopMedia() {
 	}
 }
 
+/**
+ * @brief ändert Variablen
+ * @param answer Antwortobjekt mit variables objekt
+ */
 function alterVariables(answer) {
 	if (answer.variables) {
 		for (let variable of answer.variables) {
@@ -3168,6 +3659,10 @@ function alterVariables(answer) {
 	}
 }
 
+/**
+ * Verarbeitet einen Antwortklick
+ * @param answerNo Die answerNo-te Antwort (beginnt bei 0)
+ */
 function answerClick(answerNo) {
 	const chosenAnswer = getQuestion(currentQuestion.chapter, currentQuestion.question).answers[
 		answerNo
@@ -3183,6 +3678,7 @@ function answerClick(answerNo) {
 
 	if (gameVariables.time > timepermonth * 12) {
 		console.error("Zeit zu hoch: ", gameVariables.time)
+		history += `Error: Zeit zu hoch: ${gameVariables.time}\n`
 		gameVariables.time = 12 * timepermonth
 	}
 
@@ -3199,13 +3695,13 @@ function answerClick(answerNo) {
 	showSmartNewQuestion(chosenAnswer)
 }
 
+/**
+ * @brief Zeigt auf Basis eines Antwortobjekts eine neue Frage an
+ * 
+ *  overrideGoto - Kapitelauswahl - Vorgeschriebenes nächstes Kapitel - goto inkl. back, notfalls Ergebnis
+ * @param {*} answer das Antwortobjekt
+ */
 function showSmartNewQuestion(answer) {
-	/*
-	overrideGoto
-	Kapitelauswahl
-	Vorgeschriebenes nächstes Kapitel
-	goto, notfalls Ergebnis
-	*/
 	if (overrideGoto) {
 		showQuestion(pathToKeys(overrideGoto))
 		overrideGoto = ""
@@ -3215,6 +3711,9 @@ function showSmartNewQuestion(answer) {
 		startChapter(answer.newChapter)
 	} else {
 		let nextQuestion = answer.goto
+		if (nextQuestion === "/back"){
+			nextQuestion = backQuestion
+		}
 		if (!nextQuestion)
 			console.error(
 				"Hilfe, was soll als nächstes kommen?",
@@ -3232,21 +3731,24 @@ function showSmartNewQuestion(answer) {
 	}
 }
 
+/**
+ * Zeigt die Kapitelauswahl an
+ * @returns void
+ */
 function showChapterSelection() {
 	//-------------------LOGIK--------------
 	//ggf. Ergebnis
-	if (gameVariables.time >= timepermonth * 12) {
-		startChapter("ergebnis")
-		return
-	}
 
 	//mögliche Kapitel suchen
 	let availableChapters = Object.keys(chapters)
 		.filter(el => startedChapters.indexOf(el) === -1)
 		.filter(el => checkConditions(chapters[el].props))
 	availableChapters = randomSelection(availableChapters, chapterSelectionCount)
-	if (availableChapters.length === 0) {
-		console.error("Keine Kapitel zur Auswahl")
+	if (availableChapters.length === 0 || gameVariables.time >= timepermonth * 12) {
+		console.error("Keine Kapitel zur Auswahl oder Zeit vorbei")
+		history += "Error: Keine Kapitel zur Auswahl oder Zeit vorbei\n"
+		startChapter("ergebnis")
+		return
 	}
 
 	//history pflegen
@@ -3287,6 +3789,9 @@ function showChapterSelection() {
 	}
 }
 
+/**
+ * @brief Zufällig gekürztes Array
+ */
 function randomSelection(array, number = 3) {
 	while (array.length > number) {
 		array.splice(ranInt(0, array.length - 1), 1)
@@ -3294,17 +3799,36 @@ function randomSelection(array, number = 3) {
 	return array
 }
 
+/**
+ * startet das Kapitel
+ * 
+ * ggf mit Einwurf von Klage oder so
+ * @param {*} name Name des Kapitels
+ * @returns void
+ */
 function startChapter(name) {
-	// console.log(`Springe zu Kapitel ${name}`)
+
+	if (gameVariables.time >= 10 * timepermonth && gameVariables.zyklopLoesung && startedChapters.indexOf("zyklopAufloesung") === -1 && name != "zyklopAufloesung"){
+		chapters.zyklopAufloesung.questions.dauertZuLange.answers[0].newChapter = name
+		chapters.zyklopAufloesung.questions.drastischErfolgreich.answers[0].newChapter = name
+		chapters.zyklopAufloesung.questions.entspanntErfolgreich.answers[0].newChapter = name
+		chapters.zyklopAufloesung.questions.handysLangsam.answers[0].newChapter = name
+		chapters.zyklopAufloesung.questions.mittelErfolgreich.answers[0].newChapter = name
+		
+		startChapter("zyklopAufloesung")
+		return
+	}
+
 	history += `Springe zu Kapitel ${name}\n`
 	if (startedChapters.indexOf(name) != -1) {
-		console.error(`Kapitel ${name} schon mal gestartet`)
+		console.warn(`Kapitel ${name} schon mal gestartet`)
 	}
 	startedChapters.push(name)
 
-	if (typeof chapters[name].props.entry == "string") {
-		showQuestion({ chapter: name, question: chapters[name].props.entry })
-	} else if (chapters[name].props.entry === undefined) {
+	let q;
+	if (typeof chapters[name].props.entry == "string") { //entry ist Fragenkey
+		q={ chapter: name, question: chapters[name].props.entry }
+	} else if (chapters[name].props.entry === undefined) { // entry ist nicht definiert (=> erste gültige Frage, egal was)
 		let i = 0
 		let questionName = Object.keys(chapters[name].questions)[i++]
 		while (!checkConditions(chapters[name].questions[questionName])) {
@@ -3312,39 +3836,80 @@ function startChapter(name) {
 				console.error(
 					`Zeit nicht abgelaufen, aber keine Fragen aus dem Kapitel verfügbar, Zeit: ${gameVariables.time}`
 				)
+				history += `Error: Zeit nicht abgelaufen, aber keine Fragen aus dem Kapitel verfügbar, Zeit: ${gameVariables.time}\n`
 				gameVariables.time = timepermonth * 12
 				startChapter("ergebnis")
 				return
 			}
 			questionName = Object.keys(chapters[name].questions)[i++]
 		}
-		showQuestion({ chapter: name, question: questionName })
-	} else if (Array.isArray(chapters[name].props.entry)) {
+		q={ chapter: name, question: questionName }
+	} else if (Array.isArray(chapters[name].props.entry)) { // entry ist ein Array (=> erste gültige Frage aus dem Array)
 		for (el of chapters[name].props.entry) {
 			if (checkConditions(chapters[name].questions[el])) {
-				showQuestion({ chapter: name, question: el })
+				q={ chapter: name, question: el }
 				break
 			}
 		}
-	} else if (typeof chapters[name].props.entry === "number") {
-		showQuestion({
+	} else if (typeof chapters[name].props.entry === "number") { //entry ist eine Zahl (=> so vielte Frage, 0=erste Frage)
+		q={
 			chapter: name,
 			question: Object.keys(chapters[name].questions)[chapters[name].props.entry],
-		})
+		}
+	} else {
+		throw "WTF condition #lskdaslfz"
 	}
+	//Kapitelanfang überschreiben, z.B. Klage
+	switch(true){ //wie else if ... else if
+		case (gameVariables.time >= timepermonth * 6 && gameVariables.geklagt && !gameVariables.klageErgebnis && gameVariables.klageErfolg) :
+			backQuestion = keysToPath(q.chapter, q.question)
+			q = "klageErgebnis/klageErfolgreich"
+			break;
+		case (gameVariables.time >= timepermonth * 6 && gameVariables.geklagt && !gameVariables.klageErgebnis && !gameVariables.klageErfolg) :
+			backQuestion = keysToPath(q.chapter, q.question)
+			q = "klageErgebnis/klageErfolglos"
+			break;
+		//1.3 erhöhen, um die Sanktionen später kommen zu lassen
+		case (!gameVariables.sanktionen && gameVariables.sanktionsschwelle === -22
+		&& gameVariables.geklagt && gameVariables.aussenbeziehungen <= -22
+		&& (Math.pow(Math.random(), 1.3) > gameVariables.time / (12 * timepermonth) || q.chapter === "ergebnis")):
+			backQuestion = keysToPath(q.chapter, q.question);
+			q = "sanktionen/sanktionen22"
+			break;
+		case (!gameVariables.sanktionen && gameVariables.sanktionsschwelle === -14
+		&& gameVariables.geklagt && gameVariables.aussenbeziehungen <= -14
+		&& (Math.pow(Math.random(), 1.3) > gameVariables.time / (12 * timepermonth) || q.chapter === "ergebnis")):
+			backQuestion = keysToPath(q.chapter, q.question);
+			q = "sanktionen/sanktionen14"
+			break;
+	}
+	if (typeof q === 'string')
+		q = pathToKeys(q)
+	showQuestion(q)
 }
 
+/**
+ * Zieht aus einem Array eine neue Frage - gefilter nach conditions
+ * 
+ * ggf wird das Ergebnis aufgerufen, falls keine gültige Frage dabei ist
+ * @param {*} gotoArray Array an Fragenpfaden
+ * @returns Fragenpfad 
+ */
 function getNewQuestion(gotoArray) {
 	gotoArray = gotoArray.filter(el => checkConditions(getQuestionFromPath(el)))
-	if (gotoArray.length > 1) console.error(`gotoArray hat ${availableQuestions.length} Elemente!`)
+	if (gotoArray.length > 1) console.warn(`gotoArray hat ${availableQuestions.length} Elemente!`)
 	else if (gotoArray.length == 0) {
 		console.error(`gotoArray hat keine Elemente. Springe zum Ergebnis, Zeit: ${gameVariables.time}`)
+		history += `Error: gotoArray hat keine Elemente. Springe zum Ergebnis, Zeit: ${gameVariables.time}\n`
 		gameVariables.time = 12 * timepermonth
-		return "ergebnis"
+		return getNewQuestion(["ergebnis/vorErgebnis0", "ergebnis/vorErgebnis1", "ergebnis/vorErgebnis2", "ergebnis/ergebnis"])
 	}
 	return gotoArray[0]
 }
 
+/**
+ * @brief Guckt, ob Popups angezeigt werden müssen
+ */
 function popupRoutine() {
 	if (!test) {
 		let availablePopups = Object.keys(popups)
@@ -3361,6 +3926,10 @@ function popupRoutine() {
 	}
 }
 
+/**
+ * Prüft conditions eines Objekts
+ * @param obj enthält das conditions-Array (obj.conditions ist [])
+ */
 function checkConditions(obj) {
 	if (!obj.conditions) return false
 	//prüfen ob conditions zutreffen
@@ -3371,6 +3940,12 @@ function checkConditions(obj) {
 	return allConditions
 	//leeres Array: Frage immer verfügbar, kein Array: frage nie verfügbar außer über goto
 }
+
+/**
+ * prüft eine condition
+ * @param {*} condition 
+ * @returns true oder false
+ */
 function checkSingleCondition(condition) {
 	switch (condition.type) {
 		case "==":
@@ -3389,6 +3964,10 @@ function checkSingleCondition(condition) {
 	}
 }
 
+/**
+ * zeigt ein Popup an
+ * @param {*} popup das Popupobjekt
+ */
 function showPopup(popup) {
 	//console.log('showing popup', popup)
 	document.getElementById("popupbg").classList.remove("hidden")
@@ -3412,6 +3991,7 @@ function showPopup(popup) {
 	button.innerHTML = popup.button || "Weiter"
 }
 
+/**Berechnet das Ergebnis */
 function calcResult() {
 	let result = 50
 	result += map(600, 1400, 30, -40, gameVariables.kritischeJournalisten)
@@ -3433,10 +4013,14 @@ function calcResult() {
 }
 
 var barometerKritisch
+/**Initialisiert das Barometer bzw die Header */
 function initHeader() {
 	if (!test) barometerKritisch = $("#barometerKritisch").barometer()
 }
 
+/**
+ * Setzt Werte in HEader ein
+ */
 function setHeader() {
 	if (!test) {
 		document.getElementById(
@@ -3497,6 +4081,9 @@ function setHeader() {
 	}
 }
 
+/**überträgt den Score an den Server
+ * @param e das event, das geblockt werden muss
+ */
 function submitScore(e) {
 	e.preventDefault()
 	console.log(`${document.getElementById("submitScoreInput").value}\n${wahlergebnis}`)
