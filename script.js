@@ -938,7 +938,7 @@ const chapters = {
 				{
 					variableName: "staatsnaehe",
 					type: ">=",
-					value: 8,
+					value: 5,
 				},
 				{
 					variableName: "aufgekauft",
@@ -3338,7 +3338,7 @@ const chapters = {
 				],
 			},
 			achievementKeinMoerder: {
-				text: "Du hast eine Auszeichnung erhalten: Kein Mörder!",
+				text: "Du hast eine Auszeichnung erhalten: Moralische Instanz... gewissermaßen!",
 				mediumType: "image",
 				mediumSource: "https://picsum.photos/1000/1000?random=TODOKeinMoerder",
 				answers: [
@@ -3435,8 +3435,6 @@ const popups = {
 		],
 		message: "Du hast nicht mehr viel Zeit bis zur Wahl!",
 	},
-
-	//open end
 }
 
 /*
@@ -3863,7 +3861,7 @@ function showChapterSelection() {
 	availableChapters = randomSelection(availableChapters, chapterSelectionCount)
 	if (availableChapters.length === 0 || gameVariables.time >= timepermonth * 12) {
 		if (availableChapters.length === 0) {
-			console.error("Keine Kapitel zur Auswahl")
+			if (!test) console.error("Keine Kapitel zur Auswahl")
 			history += "Error: Keine Kapitel zur Auswahl\n"
 		}
 		startChapter("ergebnis")
