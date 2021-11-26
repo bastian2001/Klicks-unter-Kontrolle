@@ -1,13 +1,11 @@
 ## Fragen:
 
--   klagen: keine Entscheidung, aber Variablen ändern
-
 ## To do:
 
--   Fragen mit Medien einpflegen
--   conditions hinterlegen (Hilfe: Diagramm!)
--   time abschätzen für Kapitelauswahl
--   Testspiele automatisieren und Verteilung prüfen
+-   Fragen mit Medien einpflegen - check
+-   conditions hinterlegen (Hilfe: Diagramm!) - check
+-   time abschätzen für Kapitelauswahl - check
+-   Testspiele automatisieren und Verteilung prüfen - (check)
 -   Serverseite Highscore
--   vorergebnis: wenn man am Ende Zeit übrig hat
+-   vorergebnis: wenn man am Ende Zeit übrig hat - check
 -   alternatives Ende: du Streber
