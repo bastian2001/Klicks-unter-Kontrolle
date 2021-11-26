@@ -329,7 +329,7 @@ const chapters = {
 					},
 					{
 						text: "Das ist nicht mein Stil. Ich glaub, ich bin nicht geschaffen dafür.",
-						goto: "nachfragen/letzteNachfrage",
+						goto: "nachfrage/letzteNachfrage",
 						variables: [
 							{
 								text: "time",
@@ -359,7 +359,7 @@ const chapters = {
 					},
 					{
 						text: "Ich glaub, ich will komplett zurücktreten.",
-						goto: "nachfragen/letzteNachfrage",
+						goto: "nachfrage/letzteNachfrage",
 						variables: [
 							{
 								text: "time",
@@ -464,7 +464,6 @@ const chapters = {
 				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
 				answers: [
 					{
-						//TODO Keine Entscheidung, aber trotzdem Variablen ändern?
 						text: "Wir beziehen uns darauf, dass diese Regelung ausschließlich uns und Tilpern schaden soll, weil alle anderen Staaten in der AU linke Mainstream-Regierungen haben.",
 						goto: "klagen2",
 						variables: [
@@ -738,7 +737,7 @@ const chapters = {
 					},
 					{
 						text: "Ist jetzt passiert, aber jetzt können wir unsere Macht natürlich auch ausnutzen. Da könnte man doch alle entlassen, die sich mal kritisch geäußert haben.",
-						newChapter: "entlassung", //TODO ????
+						newChapter: "entlassung",
 						variables: [
 							{
 								text: "time",
@@ -944,6 +943,11 @@ const chapters = {
 					variableName: "aufgekauft",
 					type: "==",
 					value: true,
+				},
+				{
+					variableName: "time",
+					type: "<=",
+					value: 21,
 				},
 			],
 		},
@@ -1257,7 +1261,7 @@ const chapters = {
 					},
 					{
 						text: "Ich hab da kein gutes Gefühl bei der Sache. Ich trete zurück.",
-						goto: "nachfragen/letzteNachfrage",
+						goto: "nachfrage/letzteNachfrage",
 					},
 				],
 			},
@@ -1371,7 +1375,13 @@ const chapters = {
 			entry: 0,
 			title: "Umgang mit Kritik",
 			description: "Die Adrejanische Union hat Wind bekommen",
-			conditions: [],
+			conditions: [
+				{
+					variableName: "time",
+					type: "<=",
+					value: 19,
+				},
+			],
 		},
 		questions: {
 			obama: {
@@ -1718,6 +1728,11 @@ const chapters = {
 					type: "==",
 					value: true,
 				},
+				{
+					variableName: "time",
+					type: "<=",
+					value: 19,
+				},
 			],
 		},
 		questions: {
@@ -1738,7 +1753,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								amount: 4,
+								amount: 3,
 							},
 							{
 								text: "kritischeJournalisten",
@@ -1793,13 +1808,13 @@ const chapters = {
 						variables: [
 							{
 								text: "time",
-								amount: 1,
+								amount: 3,
 							},
 						],
 					},
 					{
 						text: "Ach, das ist doch alles nichts. Die Werte sehen gerade doch ganz gut aus. Ich bin bis zu den Wahlen im Urlaub - Paris, Athen, auf Wiedersehn!",
-						goto: "nachfragen/letzteNachfrage",
+						goto: "nachfrage/letzteNachfrage",
 					},
 				],
 			},
@@ -1958,6 +1973,11 @@ const chapters = {
 					variableName: "entlassungenDone",
 					type: "==",
 					value: true,
+				},
+				{
+					variableName: "time",
+					type: "<=",
+					value: 20,
 				},
 			],
 		},
@@ -2467,6 +2487,12 @@ const chapters = {
 					{
 						text: "Ja klar, bin dabei!",
 						goto: "tippZyklop",
+						variables: [
+							{
+								text: "time",
+								amount: 2,
+							},
+						],
 					},
 				],
 			},
@@ -2476,6 +2502,12 @@ const chapters = {
 					{
 						text: "Jo, können wir machen.",
 						goto: "tippZyklop",
+						variables: [
+							{
+								text: "time",
+								amount: 2,
+							},
+						],
 					},
 				],
 			},
@@ -2502,6 +2534,12 @@ const chapters = {
 					{
 						text: "Okay, dann sehen wir mal weiter.",
 						newChapter: true,
+						variables: [
+							{
+								text: "gutmensch",
+								amount: 1,
+							},
+						],
 					},
 				],
 			},
@@ -2521,6 +2559,14 @@ const chapters = {
 								text: "zyklopLoesung",
 								value: "gesetzesänderung",
 							},
+							{
+								text: "time",
+								amount: 3,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: 35,
+							},
 						],
 					},
 				],
@@ -2537,6 +2583,10 @@ const chapters = {
 								text: "zyklopLoesung",
 								value: "mittel",
 							},
+							{
+								text: "time",
+								value: 2,
+							},
 						],
 					},
 					{
@@ -2546,6 +2596,10 @@ const chapters = {
 							{
 								text: "zyklopLoesung",
 								value: "entspannt",
+							},
+							{
+								text: "time",
+								value: 2,
 							},
 						],
 					},
@@ -2557,6 +2611,10 @@ const chapters = {
 								text: "zyklopLoesung",
 								value: "drastisch",
 							},
+							{
+								text: "time",
+								value: 3,
+							},
 						],
 					},
 				],
@@ -2566,7 +2624,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Naja. Mal sehen, was es uns bringt.",
-						newChapter: true, //TODO: es muss weiter gehen
+						newChapter: true,
 					},
 				],
 			},
@@ -2620,7 +2678,10 @@ const chapters = {
 								text: "time",
 								amount: 1,
 							},
-							//TODO Beziehungen besser
+							{
+								text: "aussenbeziehungen",
+								amount: 2,
+							},
 						],
 					},
 				],
@@ -2647,6 +2708,14 @@ const chapters = {
 								text: "time",
 								amount: 1,
 							},
+							{
+								text: "aussenbeziehungen",
+								amount: -1,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: 87,
+							},
 						],
 					},
 				],
@@ -2668,6 +2737,10 @@ const chapters = {
 								text: "time",
 								amount: 1,
 							},
+							{
+								text: "kritischeJournalisten",
+								amount: -54,
+							},
 						],
 					},
 				],
@@ -2688,6 +2761,10 @@ const chapters = {
 							{
 								text: "time",
 								amount: 1,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: -13,
 							},
 						],
 					},
@@ -2715,6 +2792,14 @@ const chapters = {
 								text: "time",
 								amount: 1,
 							},
+							{
+								text: "aussenbeziehungen",
+								amount: -5,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: 133,
+							},
 						],
 					},
 				],
@@ -2735,6 +2820,14 @@ const chapters = {
 							{
 								text: "time",
 								amount: 1,
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: 1,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: -156,
 							},
 						],
 					},
@@ -3191,7 +3284,7 @@ const chapters = {
 		},
 	},
 
-	nachfragen: {
+	nachfrage: {
 		props: {},
 		questions: {
 			letzteNachfrage: {
@@ -3217,7 +3310,15 @@ const chapters = {
 					},
 				],
 			},
+		},
+	},
 
+	ergebnis: {
+		props: {
+			title: "Ergebnis",
+			description: "Ab zum Schluss (diese Nachricht solltest du nicht sehen)",
+		},
+		questions: {
 			vorErgebnis0: {
 				conditions: [
 					{
@@ -3230,7 +3331,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Okay, dann machen wir halt dort weiter.",
-						goto: "ergebnis/ergebnis",
+						goto: "ergebnis",
 						variables: [
 							{
 								text: "ergebnisOffset",
@@ -3257,7 +3358,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Okay, dann machen wir halt dort weiter.",
-						goto: "ergebnis/ergebnis",
+						goto: "ergebnis",
 						variables: [
 							{
 								text: "ergebnisOffset",
@@ -3284,7 +3385,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Okay, bis in ein paar Wochen!.",
-						goto: "ergebnis/ergebnis",
+						goto: "ergebnis",
 						variables: [
 							{
 								text: "ergebnisOffset",
@@ -3294,17 +3395,14 @@ const chapters = {
 					},
 				],
 			},
-		},
-	},
-
-	ergebnis: {
-		props: {
-			title: "Ergebnis",
-			description: "Ab zum Schluss (diese Nachricht solltest du nicht sehen)",
-		},
-		questions: {
 			ergebnis: {
-				conditions: [],
+				conditions: [
+					{
+						variableName: "time",
+						type: ">=",
+						value: timepermonth * 11,
+					},
+				],
 				text: "Okay, die Zeit ist vorbei. Schauen wir mal, wie deine Bilanz so aussieht. Bisher gibt es noch $kritischeJournalisten kritische Journalist*innen im Land. $ergebnisErgänzung",
 
 				answers: [
@@ -3594,6 +3692,7 @@ function ranInt(min, max) {
 	return Math.floor(map(0, 1, min, max + 1, Math.random()))
 }
 
+let endTime = -1
 /**
  * Zeigt eine Frage nach Keys an (getQuestion, getQuestionFromPath)
  * @param obj {chapter, question}
@@ -3602,10 +3701,7 @@ function showQuestion(obj) {
 	//-----------------LOGIK-----------------------
 	//currentquestion setzen
 	currentQuestion = obj
-	history +=
-		`Zeit: ${gameVariables.time}; ` +
-		keysToPath(currentQuestion.chapter, currentQuestion.question) +
-		"\n"
+	history += `Zeit: ${gameVariables.time}; ` + keysToPath(currentQuestion.chapter, currentQuestion.question) + "\n"
 
 	//Wahlergebnis berechnen
 	wahlergebnis = calcResult()
@@ -3614,6 +3710,10 @@ function showQuestion(obj) {
 	if (startedChapters.indexOf(obj.chapter) === -1) startedChapters.push(obj.chapter)
 
 	if (test) {
+		if (endTime != -1 && currentQuestion.chapter != "ergebnis") endTime = -1
+		if (endTime === -1 && (currentQuestion.chapter == "ergebnis" || currentQuestion.chapter == "nachfrage")) {
+			endTime = gameVariables.time
+		}
 		if (currentQuestion.chapter != "ergebnis")
 			answerClick(ranInt(0, getQuestion(obj.chapter, obj.question).answers.length - 1))
 		else if (test == 1) {
@@ -3624,7 +3724,7 @@ function showQuestion(obj) {
 				e: wahlergebnis,
 				id: test,
 				kjs: kritJourStart,
-				t: gameVariables.time,
+				t: endTime,
 			}
 			completeHistory.push(thisHistory)
 			const s = JSON.stringify(completeHistory)
@@ -3641,29 +3741,28 @@ function showQuestion(obj) {
 				e: wahlergebnis,
 				id: test,
 				kjs: kritJourStart,
-				t: gameVariables.time,
+				t: endTime,
 			}
+			endTime = -1
 			completeHistory.push(thisHistory)
 			history = ""
 			gameVariables = {
-				time: 0, //bis zur nächsten Wahl
-				falsch: 0, //falsche Entscheidung, für Gutmensch, aber auch für zu krasse Entscheidungen (vielleicht später raus?)
-				//TODO: wird nur für Popup verwendet
-				anerkennung: 0, //in der Partei?
-				aussenbeziehungen: 5, //z. B. Beziehung zur EU
-				staatsnaehe: 0, //muss versteckt sein. beschreibt, wie sehr die ÖRR und andere Medien vom Staat gelenkt werden
+				time: 0,
+				falsch: 0,
+				aussenbeziehungen: 5,
+				staatsnaehe: 0,
 				gutmensch: 0,
 				benennungAufkaufen: "Renationalisierung",
-				zyklopLoesung: "", //der Ansatz, der für das Zyklop-Projekt gewählt wurde
-				kritischeJournalisten: kritJourStart, //s. Barometer, kritJourStart beschreibt, wie viele Journalisten es am Anfang waren
+				zyklopLoesung: "",
+				kritischeJournalisten: kritJourStart,
 				ergebnisOffset: 0,
-				sanktionsschwelle: -14, //wird zu -22, falls die Klage erfolgreich war
-				randomZyklop: Math.random(), //für Wahrscheinlichkeit
-				aufgekauft: false, //wenn medien aufgekauft wurden
-				geklagt: false, //ob geklagt wurde
-				sanktionen: false, // ob Sanktionen schon erteilt wurden
-				klageErfolg: kritJourStart > 920, //Klage erfolgreich, wenn man am Anfang schlechtere Karten hatte
-				klageErgebnis: false, //wird true, sobald das Ergebnis angezeigt wurde
+				sanktionsschwelle: -14,
+				randomZyklop: Math.random(),
+				aufgekauft: false,
+				geklagt: false,
+				sanktionen: false,
+				klageErfolg: kritJourStart > 920,
+				klageErgebnis: false,
 				entlassungenDone: false,
 			}
 			kritJourStart = ranInt(800, 1000)
@@ -3729,8 +3828,7 @@ function showQuestion(obj) {
 				"$ergebnisErgänzung",
 				gameVariables.kritischeJournalisten > 1199
 					? "So richtig erfolgreich warst du in diesem Punkt ja nicht wirklich."
-					: gameVariables.kritischeJournalisten < 1200 &&
-					  gameVariables.kritischeJournalisten > 800
+					: gameVariables.kritischeJournalisten < 1200 && gameVariables.kritischeJournalisten > 800
 					? "Naja, ein paar Weichen hast du auf jeden Fall gestellt."
 					: "Gute Arbeit!"
 			)
@@ -3784,9 +3882,7 @@ function alterVariables(answer) {
  * @param answerNo Die answerNo-te Antwort (beginnt bei 0)
  */
 function answerClick(answerNo) {
-	const chosenAnswer = getQuestion(currentQuestion.chapter, currentQuestion.question).answers[
-		answerNo
-	]
+	const chosenAnswer = getQuestion(currentQuestion.chapter, currentQuestion.question).answers[answerNo]
 
 	if (getQuestion(currentQuestion.chapter, currentQuestion.question).answers.length !== 1)
 		history += `Antwort ${answerNo + 1} ausgewählt.\n`
@@ -3839,9 +3935,6 @@ function showSmartNewQuestion(answer) {
 		else if (Array.isArray(nextQuestion)) {
 			nextQuestion = getNewQuestion(answer.goto)
 		}
-		// if (gameVariables.time >= 12 * timepermonth && currentQuestion.chapter !== "ergebnis") {
-		// 	nextQuestion = "ergebnis/ergebnis"
-		// }
 		showQuestion(pathToKeys(nextQuestion))
 	}
 }
@@ -3871,10 +3964,7 @@ function showChapterSelection() {
 	//history pflegen
 	history +=
 		"Kapitelauswahl: " +
-		JSON.stringify(availableChapters)
-			.replaceAll('","', ", ")
-			.replace('["', "")
-			.replace('"]', "") +
+		JSON.stringify(availableChapters).replaceAll('","', ", ").replace('["', "").replace('"]', "") +
 		"\n"
 
 	if (test) {
@@ -4011,8 +4101,7 @@ function startChapter(name) {
 			gameVariables.sanktionsschwelle === -22 &&
 			gameVariables.geklagt &&
 			gameVariables.aussenbeziehungen <= -22 &&
-			(Math.pow(Math.random(), 1.3) > gameVariables.time / (12 * timepermonth) ||
-				q.chapter === "ergebnis"):
+			(Math.pow(Math.random(), 1.3) > gameVariables.time / (12 * timepermonth) || q.chapter === "ergebnis"):
 			backQuestion = keysToPath(q.chapter, q.question)
 			q = "sanktionen/sanktionen22"
 			break
@@ -4020,8 +4109,7 @@ function startChapter(name) {
 			gameVariables.sanktionsschwelle === -14 &&
 			gameVariables.geklagt &&
 			gameVariables.aussenbeziehungen <= -14 &&
-			(Math.pow(Math.random(), 1.3) > gameVariables.time / (12 * timepermonth) ||
-				q.chapter === "ergebnis"):
+			(Math.pow(Math.random(), 1.3) > gameVariables.time / (12 * timepermonth) || q.chapter === "ergebnis"):
 			backQuestion = keysToPath(q.chapter, q.question)
 			q = "sanktionen/sanktionen14"
 			break
@@ -4041,9 +4129,7 @@ function getNewQuestion(gotoArray) {
 	gotoArray = gotoArray.filter(el => checkConditions(getQuestionFromPath(el)))
 	if (gotoArray.length > 1) console.warn(`gotoArray hat ${availableQuestions.length} Elemente!`)
 	else if (gotoArray.length == 0) {
-		console.error(
-			`gotoArray hat keine Elemente. Springe zum Ergebnis, Zeit: ${gameVariables.time}`
-		)
+		console.error(`gotoArray hat keine Elemente. Springe zum Ergebnis, Zeit: ${gameVariables.time}`)
 		history += `Error: gotoArray hat keine Elemente. Springe zum Ergebnis, Zeit: ${gameVariables.time}\n`
 		gameVariables.time = 12 * timepermonth
 		return getNewQuestion([
@@ -4068,7 +4154,7 @@ function popupRoutine() {
 			.filter(el => checkConditions(popups[el]))
 		//hier nur noch nicht vorgekommene und gecheckte keys
 		//console.log(availablePopups)
-		if (availablePopups[0]) {
+		if (availablePopups[0] && currentQuestion.chapter != "ergebnis" && currentQuestion.chapter != "nachfrage") {
 			showPopup(popups[availablePopups[0]])
 			previousPopups[previousPopups.length] = availablePopups[0]
 		}
@@ -4156,8 +4242,7 @@ function calcResult() {
 	result += gameVariables.ergebnisOffset
 	//console.log(result, 'Nach Offset')
 	return (
-		Math.round(Math.min(Math.max(ranInt(204, 244) / 10, result), ranInt(704, 761) / 10) * 10) /
-			10 +
+		Math.round(Math.min(Math.max(ranInt(204, 244) / 10, result), ranInt(704, 761) / 10) * 10) / 10 +
 		"%"
 	).replace(".", ",")
 }
@@ -4193,9 +4278,9 @@ function setHeader() {
 		if (gameVariables.kritischeJournalisten >= 1100)
 			document.getElementById("header0progress").style["background-color"] = "red"
 
-		document.getElementById("headerText1").innerHTML = `Zeit: ${Math.floor(
-			gameVariables.time / timepermonth
-		)} ${Math.floor(gameVariables.time / timepermonth) == 1 ? "Monat" : "Monate"} vergangen`
+		document.getElementById("headerText1").innerHTML = `Zeit: ${Math.floor(gameVariables.time / timepermonth)} ${
+			Math.floor(gameVariables.time / timepermonth) == 1 ? "Monat" : "Monate"
+		} vergangen`
 		document.getElementById("header1progress").style.width = `${map(
 			0,
 			12 * timepermonth,
@@ -4211,15 +4296,11 @@ function setHeader() {
 		let posP = Math.max(0, gameVariables.aussenbeziehungen)
 		posP = Math.min(30, posP)
 		posP = map(0, 30, 0, 100, posP)
-		document.getElementById("header2bgP").style["grid-template-columns"] = `${posP}% ${
-			100 - posP
-		}%`
+		document.getElementById("header2bgP").style["grid-template-columns"] = `${posP}% ${100 - posP}%`
 		let posN = Math.max(-30, gameVariables.aussenbeziehungen)
 		posN = Math.min(0, posN)
 		posN = map(0, -30, 0, 100, posN)
-		document.getElementById("header2bgN").style["grid-template-columns"] = `${
-			100 - posN
-		}% ${posN}%`
+		document.getElementById("header2bgN").style["grid-template-columns"] = `${100 - posN}% ${posN}%`
 
 		if (currentQuestion.chapter === "intro" && currentQuestion.question === "willkommen") {
 			$("#highscoretable").css("opacity", "0")
