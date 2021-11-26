@@ -2924,7 +2924,7 @@ const chapters = {
 			},
 			vernuenftig: {
 				text: 'Ich wusste doch, dass du vernünftig bist. Wir sollten unseren Fokus auf die Gründerin des Blogs "Veritas" legen. Nach Ermittlungen unseres Geheimdienstes scheint sie in Besitz belastender Informationen gegenüber dir und der Regierung zu sein. Es sind also radikale, sofortige Maßnahmen erforderlich. Wie sollen wir vorgehen?',
-				info: "In Russland kommt es immer wieder zu Vorfällen, bei denen der Regierung gegenüber kritische Journalist*innen unter unklaren Umständen sterben.  So ist beispielsweise 2018 der Investigativjournalist Maxim Borodin ums Leben gekommen. Er fiel aus seiner Wohnung im fünften Stock. Nach offiziellen Angaben handle es sich um einen Unfall oder um Selbstmord. Kolleg*innen hingegen merken die verdächtigen Umstände dieses Vorfalls an.",
+				info: "In Russland kommt es immer wieder zu Vorfällen, bei denen der Regierung gegenüber kritische Journalist*innen unter unklaren Umständen sterben.  So ist beispielsweise 2018 der Investigativjournalist Maxim Borodin ums Leben gekommen. Er fiel aus seiner Wohnung im fünften Stock. Nach offiziellen Angaben handle es sich um einen Unfall oder um Selbstmord. Kolleg*innen hingegen merken die verdächtigen Umstände dieses Vorfalls an. <a href='https://www.faz.net/aktuell/feuilleton/russischer-journalist-borodin-stirbt-selbstmord-unfall-oder-mord-15553929.html'>Link 1</a>, <a href='https://taz.de/Mysterioeser-Todesfall-in-Russland/!5498686/'>Link 2</a>",
 				answers: [
 					{
 						text: 'Journalist*innen sind doch bekannt dafür, tollpatschig zu sein. Ich denke, sie sollte aus dem sechsten Stock ihres Apartments "stürzen". Unfälle passieren eben. Besonders wenn man nachhilft.',
@@ -2945,7 +2945,7 @@ const chapters = {
 						goto: "gestuerzt",
 					},
 					{
-						text: "Die Journalistin sollte diskret verschwinden. Wie wäre es, wenn sie von ihren regelmäßigen Wanderungen nicht wieder nach Hause kommt? Wandern ist nunmal nicht ganz ungefährlich.",
+						text: 'Wie wäre es wenn die Journalistin während ihrer regelmäßigen Wanderungen über einen "Ast stolpert" und sich ein Bein bricht? Einige Waldwege sind wirklich schlecht gesichert.',
 						variables: [
 							{
 								text: "kritischeJournalisten",
@@ -2979,7 +2979,7 @@ const chapters = {
 				],
 			},
 			diskretVerschwunden: {
-				text: "Damit sind wir sie auf jeden Fall los. Zwar ist die abschreckende Wirkung geringer, kaum jemand wird uns jedoch verdächtigen.",
+				text: "Das würde ihr auf alle Fälle mächtig Angst einjagen, die abschreckende WIrkung gegenüber anderen Journalist*innen ist jedoch geringer.",
 				answers: [
 					{
 						text: "Das war auf jeden Fall die bessere Wahl",
@@ -3074,14 +3074,14 @@ const chapters = {
 			},
 			zuNaiv: {
 				text: "Naiv von dir zu glauben, du hättest nicht schon längst Blut an dir kleben. Wir müssen auf Nummer sicher gehen und dein Vorschlag bietet hier keine Sicherheit.",
-				info: "Deniz Yücel", //TODO
+				info: "Weltweit sitzen jährlich hunderte Journalist*innen aufgrund ihrer Berichterstattung im Gefängnis. Ein prominentes Beispiel hierfür ist der deutsch- türkische Journalist Deniz Yücel, der durch seine kritische journalistischen Arbeit ca. ein Jahr in türkischer Haft war. Erst durch diplomatischen Druck aus Deutschland wurde Yücel letztendlich freigelassen. <a href='https://www.hessenschau.de/kultur/interview-mit-deniz-yuecel-die-freiheit-der-kunst-gilt-auch-fuer-die-bescheuerten,deniz-yuecel-pen-praesident-100.html'>Link 1</a>, <a href='https://www.reporter-ohne-grenzen.de/barometer/2021/journalisten-in-haft'>Link 2</a>, <a href='https://www.sueddeutsche.de/politik/deniz-yuecel-prozess-chronologie-1.4946432'>Link 3</a>",
 				answers: [
 					{
 						text: "Ich verstehe.",
 						goto: "vernuenftigOhne3",
 					},
 					{
-						text: "Ich werde nicht für den Tod einer Person verantwortlich sein.",
+						text: "Ich werde weder für einen Angriff gegen sie, geschweige denn für ihren Tod verantwortlich sein.",
 						goto: "mordNudger",
 					},
 				],
@@ -3101,7 +3101,7 @@ const chapters = {
 			},
 			vernuenftigOhne3: {
 				text: 'Ich wusste doch, dass du vernünftig bist. Wir sollten unseren Fokus auf die Gründerin des Blogs "Veritas" legen. Nach Ermittlungen unseres Geheimdienstes scheint sie in Besitz belastender Informationen gegenüber dir und der Regierung zu sein. Es sind also radikale, sofortige Maßnahmen erforderlich. Wie sollen wir vorgehen?',
-				info: "In Russland kommt es immer wieder zu Vorfällen, bei denen der Regierung gegenüber kritische Journalist*innen unter unklaren Umständen sterben.  So ist beispielsweise 2018 der Investigativjournalist Maxim Borodin ums Leben gekommen. Er fiel aus seiner Wohnung im fünften Stock. Nach offiziellen Angaben handle es sich um einen Unfall oder um Selbstmord. Kolleg*innen hingegen merken die verdächtigen Umstände dieses Vorfalls an.",
+				info: "In Russland kommt es immer wieder zu Vorfällen, bei denen der Regierung gegenüber kritische Journalist*innen unter unklaren Umständen sterben.  So ist beispielsweise 2018 der Investigativjournalist Maxim Borodin ums Leben gekommen. Er fiel aus seiner Wohnung im fünften Stock. Nach offiziellen Angaben handle es sich um einen Unfall oder um Selbstmord. Kolleg*innen hingegen merken die verdächtigen Umstände dieses Vorfalls an. <a href='https://www.faz.net/aktuell/feuilleton/russischer-journalist-borodin-stirbt-selbstmord-unfall-oder-mord-15553929.html'>Link 1</a>, <a href='https://taz.de/Mysterioeser-Todesfall-in-Russland/!5498686/'>Link 2</a>",
 				answers: [
 					{
 						text: 'Journalist*innen sind doch bekannt dafür, tollpatschig zu sein. Ich denke, sie sollte aus dem sechsten Stock ihres Apartments "stürzen". Unfälle passieren eben. Besonders wenn man nachhilft.',
@@ -3122,7 +3122,7 @@ const chapters = {
 						goto: "gestuerzt",
 					},
 					{
-						text: "Die Journalistin sollte diskret verschwinden. Wie wäre es, wenn sie von ihren regelmäßigen Wanderungen nicht wieder nach Hause kommt? Wandern ist nunmal nicht ganz ungefährlich.",
+						text: 'Wie wäre es wenn die Journalistin während ihrer regelmäßigen Wanderungen über einen "Ast stolpert" und sich ein Bein bricht? Einige Waldwege sind wirklich schlecht gesichert.',
 						variables: [
 							{
 								text: "kritischeJournalisten",
