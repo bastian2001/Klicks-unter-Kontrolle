@@ -104,6 +104,14 @@
 					<img id="frageBild" class="hidden" />
 					<video controls id="frageVideo" class="hidden"></video>
 					<audio controls id="frageAudio" class="hidden"></audio>
+					<div id="frageIframe" class="hidden">
+						<iframe
+							id="frageIframeIframe"
+							src=""
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+					</div>
 					<p id="frage"></p>
 
 					<button id="antwort0" class="answerButton" onclick="answerClick(0)"></button>
@@ -120,31 +128,19 @@
 					<p class="chapterSelectionText">Womit möchtest du dich als nächstes beschäftigen?</p>
 
 					<!--Mehrere Kästen, werden von JS befüllt mit Kapitelauswahl-->
-					<div
-						id="newChapter0"
-						class="newChapter"
-						onclick="startChapter(this.getAttribute('chapter'))"
-					>
+					<div id="newChapter0" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
 						<img src="x" class="chapterImage" />
 						<h1 class="chapterHeadline">Beispielkapitel</h1>
 						<!-- <p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p> -->
 					</div>
 
-					<div
-						id="newChapter1"
-						class="newChapter"
-						onclick="startChapter(this.getAttribute('chapter'))"
-					>
+					<div id="newChapter1" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
 						<img src="x" class="chapterImage" />
 						<h1 class="chapterHeadline">Beispielkapitel</h1>
 						<!-- <p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p> -->
 					</div>
 
-					<div
-						id="newChapter2"
-						class="newChapter"
-						onclick="startChapter(this.getAttribute('chapter'))"
-					>
+					<div id="newChapter2" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
 						<img src="x" class="chapterImage" />
 						<h1 class="chapterHeadline">Beispielkapitel</h1>
 						<!-- <p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p> -->
@@ -158,10 +154,7 @@
 			<div id="popup">
 				<h1 id="popupHeadline"></h1>
 				<p id="popupMessage"></p>
-				<button
-					id="popupButton"
-					onclick="document.getElementById('popupbg').classList.add('hidden')"
-				></button>
+				<button id="popupButton" onclick="document.getElementById('popupbg').classList.add('hidden')"></button>
 			</div>
 		</div>
 

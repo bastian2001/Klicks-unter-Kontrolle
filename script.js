@@ -378,10 +378,11 @@ const chapters = {
 		},
 		questions: {
 			rsm: {
-				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen zu erwarten sind. Insbesondere natürlich die Einbehaltung von AU-Mitteln. Auch zuvor gab es bereits Regelungen in dieser Richtung, allerdings hat das Parlament diese als zu schwach eingeschätzt. Wir könnten dagegen klagen, was meinst du?',
-				mediumType: "image",
-				mediumSource: "https://picsum.photos/1200/700",
+				// text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen zu erwarten sind. Insbesondere natürlich die Einbehaltung von AU-Mitteln. Auch zuvor gab es bereits Regelungen in dieser Richtung, allerdings hat das Parlament diese als zu schwach eingeschätzt. Wir könnten dagegen klagen, was meinst du?',
+				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Wir könnten dagegen klagen, was meinst du?',
 				info: 'Die Europäische Union hat zum 1.1.2021 einen solchen Mechanismus auf den Weg gebracht. Gelder sollten nicht in die Hände derjenigen gelangen, die die Demokratie bedrohen, so die Argumentation. Rechtsstaatlichkeit ist in der EU als Grundwert verankert: "Sie bedeutet, dass Regierungen das Recht achten sollten und keine willkürlichen Entscheidungen treffen dürfen. Die Bürger sollten in der Lage sein, das Handeln von Regierungen vor unabhängigen Gerichten anzufechten. Die Rechtsstaatlichkeit umfasst auch die Bekämpfung von Korruption und den Schutz der Medienfreiheit, wodurch sichergestellt wird, dass die Öffentlichkeit angemessen über staatliche Maßnahmen informiert wird", schreibt das EU-Parlament auf seiner <a href= https://www.europarl.europa.eu/news/de/headlines/eu-affairs/20201001STO88311/rechtsstaatsmechanismus-schutz-des-eu-haushalts-und-der-europaischen-werte>Webseite</a>.',
+				mediumType: "youtube",
+				mediumSource: "2iJbqncEw1Q",
 				answers: [
 					{
 						text: "Ich glaube, wir sollten da lieber keine schlafenden Hunde wecken. Natürlich unterzeichnen wir mit.",
@@ -441,8 +442,6 @@ const chapters = {
 			},
 			unterschreiben: {
 				text: "Wie du meinst. So stellen wir uns auf jeden Fall gut mit den anderen Ländern. Hoffentlich fällt uns das nicht später noch zur Last.",
-				mediumType: "image",
-				mediumSource: "https://picsum.photos/1200/300",
 				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
 				answers: [
 					{
@@ -459,8 +458,6 @@ const chapters = {
 			},
 			klagen: {
 				text: "Wir sind nicht einmal die einzigen, die klagen! Auch das Nachbarland Tilpern, das eine Regierung hat, die deiner Partei sehr nahesteht und ähnliche Werte vertritt, schließt sich dem an. Wie wollen wir denn argumentieren?",
-				mediumType: "image",
-				mediumSource: "https://picsum.photos/300/700",
 				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
 				answers: [
 					{
@@ -553,12 +550,13 @@ const chapters = {
 			title: "Renationa&shy;lisierung",
 			description:
 				"Neue Regelung gegen Verstöße von Rechtsstaatlichkeit, z.B. gegen Einschränkungen der Medienfreiheit",
-			img: "https://picsum.photos/1000/600",
 			conditions: [],
 		},
 		questions: {
 			nuppisierung: {
 				text: "80 Prozent der regionalen Tageszeitungen gehören zu einem Unternehmen. Dieses wurde allerdings von einem größeren Verlag aus dem Nachbarland aufgekauft. Außerdem gehören diesem Konzern auch viele Online-Nachrichtenplattformen, die in den letzten Jahren extrem gewachsen sind. Was bedeutet das für uns?",
+				mediumType: "youtube",
+				mediumSource: "E7VqsUseIs8",
 				answers: [
 					{
 						text: "Weiß ich auch nicht. Ist das verkehrt?",
@@ -626,8 +624,6 @@ const chapters = {
 			aufkaufen: {
 				text: "Hast du eine Idee, was man dagegen machen könnte?",
 				info: "Vor einer ähnlichen Situation sah und sieht sich Polen zur Zeit. Die meisten regionalen Tageszeitungen haben zur Verlagsgruppe Passau, also einem deutschen Medienunternehmen, gehört. Wie es weiterging, siehst du, sobald du dich selbst entschieden hast.",
-				mediumType: "video",
-				mediumSource: "https://team-polaris.de/res/car/Gen%200.mp4",
 				answers: [
 					{
 						text: "Der Staat könnte das Medienunternehmen aufkaufen, so wäre die Kontrolle am einfachsten. Wir hätten direkten Einfluss auf die Personalentscheidungen und unser Einfluss würde auch im Lokalen wachsen!",
@@ -1443,6 +1439,8 @@ const chapters = {
 			wahrheit2: {
 				text: "Du hast Recht. Falls das auffliegt, fliegt uns hier alles um die Ohren. Die Äußerung wird natürlich auch in den anderen Ländern wahrgenommen werden, aber besser stehen wir auch selbst dazu.",
 				info: "Eine ähnliche Aussage gab es 2016 vom damaligen US-Präsidenten Barack Obama über Polen. Tatsächlich wurde die Aussage in der Übersetzung komplett verdreht, von einem mahnenden Ton zu einem lobenden. Obwohl das einigen aufgefallen ist, hat es keine großen Wellen geschlagen.",
+				mediumType: "youtube",
+				mediumSource: "WC6Y9zMQsHI",
 				answers: [
 					{
 						text: "Ich hoffe, da gibt's nicht noch Ärger.",
@@ -1452,6 +1450,8 @@ const chapters = {
 			},
 			verschweigen: {
 				text: "Können wir natürlich versuchen. Aber falls das noch rauskommt, haben wir echt ein Problem.",
+				mediumType: "youtube",
+				mediumSource: "w0EVg8c0eL8",
 				answers: [
 					{
 						text: "Doch noch die Wahrheit sagen.",
@@ -1534,6 +1534,8 @@ const chapters = {
 			},
 			manipulation: {
 				text: 'Riskant. Aber gut. Dann übersetzen wir den Satz also... "Wir blicken [...] auf die nuppische Demokratie. [Die demokratischen Verfahren werden zunehmend abgebaut, obwohl] es [ist] wichtig [...], dass alle Staaten zusammenarbeiten. Nuppland ist als Beispiel für die ganze Welt zu sehen." Passt?',
+				mediumType: "youtube",
+				mediumSource: "P6nXtTzL13U",
 				answers: [
 					{
 						text: "Krass, aber ja, machen wir so. Was so ein paar Wörtchen ändern können...",
@@ -2700,6 +2702,8 @@ const chapters = {
 					},
 				],
 				text: "Zwischenstand zur Zyklop-Spyware: Da die Handys der abgehörten Journalist*innen natürlich langsamer arbeiten, wenn die Spyware aktiv ist, ist aufgefallen, dass du Zyklop installiert hast. Leider konnte sogar die Verbindung zu dir gezogen werden. So schlägt das Ganze Wellen und mittlerweile hat auch die nuppische Bevölkerung davon mitbekommen. Von deinem guten Wahlergebnis kannst du dich verabschieden.",
+				mediumType: "youtube",
+				mediumSource: "TV_X1xWtC54",
 				answers: [
 					{
 						text: "Schade, aber einen Versuch war es wert.",
@@ -2784,6 +2788,8 @@ const chapters = {
 					},
 				],
 				text: "Alarm! Ich meine - damit war zu rechnen: Die Nutzung der Spyware Zyklop ist aufgefallen. Eine internationale Menschenrechtsorganisation klagt gegen dich, die AU verhängt schwere finanzielle Sanktionen und das merkt auch die nuppische Bevölkerung. Du konntest zwar in einigen Fällen kritische Berichterstattung verhindern, aber jetzt gibt es davon natürlich umso mehr.",
+				mediumType: "youtube",
+				mediumSource: "H3mE4PEoEjc",
 				answers: [
 					{
 						text: "Schade, aber damit war wohl zu rechnen.",
@@ -2989,6 +2995,8 @@ const chapters = {
 			},
 			gestuerzt: {
 				text: "Sehr gute Möglichkeit! Das sendet genau die richtige Nachricht an Journalist*innen und niemand wird beweisen können, dass wir etwas damit zu tun hatten.",
+				mediumType: "youtube",
+				mediumSource: "RjE3mioliu0",
 				answers: [
 					{
 						text: "Das war der Plan",
@@ -3437,8 +3445,6 @@ const chapters = {
 			},
 			achievementKeinMoerder: {
 				text: "Du hast eine Auszeichnung erhalten: Moralische Instanz... gewissermaßen!",
-				mediumType: "image",
-				mediumSource: "https://picsum.photos/1000/1000?random=TODOKeinMoerder",
 				answers: [
 					{
 						text: "Weiter",
@@ -3547,22 +3553,22 @@ const popups = {
 	...
 ]
 */
-fetch("./Bestenliste.json")
-	.then(res => res.json())
-	.then(highscores => {
-		for (index in highscores) {
-			let i = index - 1 + 2
-			$(`#hs${i}name`).text(highscores[i - 1].name)
-			$(`#hs${i}score`).text(highscores[i - 1].score)
-			setTimeout(() => {
-				$(`#hs${i}`).css("opacity", "1")
-			}, 3000 - i * 500)
-		}
-	})
-	.catch(reason => {
-		console.error(reason)
-		//Bestenliste kan nicht angezeigt werden
-	})
+// fetch("./Bestenliste.json")
+// 	.then(res => res.json())
+// 	.then(highscores => {
+// 		for (index in highscores) {
+// 			let i = index - 1 + 2
+// 			$(`#hs${i}name`).text(highscores[i - 1].name)
+// 			$(`#hs${i}score`).text(highscores[i - 1].score)
+// 			setTimeout(() => {
+// 				$(`#hs${i}`).css("opacity", "1")
+// 			}, 3000 - i * 500)
+// 		}
+// 	})
+// 	.catch(reason => {
+// 		console.error(reason)
+// 		//Bestenliste kan nicht angezeigt werden
+// 	})
 
 let history = ""
 let completeHistory = []
@@ -3790,22 +3796,27 @@ function showQuestion(obj) {
 		let image = document.getElementById("frageBild")
 		let video = document.getElementById("frageVideo")
 		let audio = document.getElementById("frageAudio")
+		let iframe = document.getElementById("frageIframe")
+		let youtube = document.getElementById("frageIframeIframe")
 		switch (question.mediumType) {
 			case undefined:
 				image.classList.add("hidden")
 				video.classList.add("hidden")
 				audio.classList.add("hidden")
+				iframe.classList.add("hidden")
 				break
 			case "image":
 				image.classList.remove("hidden")
 				video.classList.add("hidden")
 				audio.classList.add("hidden")
+				iframe.classList.add("hidden")
 				image.src = question.mediumSource
 				break
 			case "video":
-				image.classList.add("hidden")
+				image.classLiframeist.add("hidden")
 				video.classList.remove("hidden")
 				audio.classList.add("hidden")
+				iframe.classList.add("hidden")
 				video.src = question.mediumSource
 				video.oncanplaythrough = video.play
 				break
@@ -3813,8 +3824,16 @@ function showQuestion(obj) {
 				image.classList.add("hidden")
 				video.classList.add("hidden")
 				audio.classList.remove("hidden")
+				iframe.classList.add("hidden")
 				audio.src = question.mediumSource
 				audio.oncanplaythrough = audio.play
+				break
+			case "youtube":
+				image.classList.add("hidden")
+				video.classList.add("hidden")
+				audio.classList.add("hidden")
+				iframe.classList.remove("hidden")
+				youtube.src = `https://www.youtube.com/embed/${question.mediumSource}?modestbranding=1&rel=0&showinfo=0`
 				break
 		}
 
