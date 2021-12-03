@@ -1200,7 +1200,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: 3,
+								amount: -29,
 							},
 							{
 								text: "entlassungenDone",
@@ -1218,11 +1218,11 @@ const chapters = {
 							},
 							{
 								text: "aussenbeziehungen",
-								amount: -3,
+								amount: -5,
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -278,
+								amount: -164,
 							},
 							{
 								text: "zensurDone",
@@ -1321,7 +1321,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: 7,
+								amount: 14,
 							},
 						],
 					},
@@ -1339,7 +1339,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -80,
+								amount: -60,
 							},
 							{
 								text: "aussenbeziehungen",
@@ -1359,7 +1359,7 @@ const chapters = {
 				],
 			},
 			nichts: {
-				text: "Keine schlafenden Hunde wecken, würde ich auch sagen. Ein paar Journalisten sind misstrauisch geworden, aber lass' uns da erstmal abwarten.",
+				text: "Keine schlafenden Hunde wecken, würde ich auch sagen. Ein paar Journalisten sind misstrauisch geworden, aber das ist kein Drama.",
 				answers: [
 					{
 						text: "Was machen wir als nächstes?",
@@ -1368,7 +1368,7 @@ const chapters = {
 				],
 			},
 			wahrheit: {
-				text: "Mhhh, schwierig. So lenkst du natürlich noch mehr Aufmerksamkeit auf das ganze Thema. Wahrscheinlich wäre es besser gewesen, alles zu verschweigen. Aber mit deiner Vermutung, dass so mehr Journalist*innen weniger Kritisches schreiben, lagst du richtig.",
+				text: "Mhhh, schwierig. So lenkst du natürlich noch mehr Aufmerksamkeit auf das ganze Thema. Wahrscheinlich wäre es besser gewesen, alles zu verschweigen. Aber ja, es schüchtert natürlich ein!",
 				answers: [
 					{
 						text: "Weiter geht's!",
@@ -1377,7 +1377,7 @@ const chapters = {
 				],
 			},
 			drohung: {
-				text: "Wow, mutig! Aber nicht verkehrt: Das hat ziemlich viele kritische Journalist*innen eingeschüchtert. Im Ausland kommt das natürlich nicht so gut an. Die wird so schnell nichts mehr gegen die WhR sagen.",
+				text: "Wow, mutig! Aber nicht verkehrt: Das hat ziemlich viele kritische Journalist*innen eingeschüchtert. Im Ausland kommt das natürlich nicht so gut an. Aber hey - die Moderatorin wird so schnell nichts mehr gegen die WhR sagen!",
 				info: 'Durch das "Kleine Mediengesetz" in Polen konnte die Regierung bei der Personalpolitik des öffentlich-rechtlichen Rundfunks mitmischen. Viele Redakteure, Moderatorinnen und Journalisten wurden durch "politisch Korrekte" ersetzt, zum Beispiel die beliebte Moderatorin Beata Tadla. Mehr dazu findest du <a href=https://www.dw.com/de/polnische-medien-mauern-gegen-geplante-reklamesteuer/a-56527227>bei der Deutschen Welle</a>. Öffentliche Drohungen gab es bisher nicht, zumindest nicht gegen Journalist*innen.',
 				answers: [
 					{
@@ -1404,7 +1404,7 @@ const chapters = {
 		},
 		questions: {
 			obama: {
-				text: 'Ein Präsident eines großen wichtigen Staates sagt auf einer Veranstaltung in Nuppland: "Wir blicken besorgt auf die nuppische Demokratie. Die demokratischen Verfahren werden zunehmend abgebaut, obwohl es wichtig ist, dass alle Staaten zusammenarbeiten. Nuppland ist als Beispiel für die ganze Welt zu sehen."',
+				text: 'Melek Orama ist Präsident von Odenia, einem sehr wichtigen Land der AU. Auf einem wichtigen Regierungsgipfel sagte er heute: "Wir blicken besorgt auf die nuppische Demokratie. Die demokratischen Verfahren werden zunehmend abgebaut, aber es ist wichtig, dass alle Staaten zusammenarbeiten. Nuppland ist als Beispiel für die ganze Welt zu sehen."',
 				answers: [
 					{
 						text: "Das ist eine Katastrophe! Aber das müssen wir schon bringen. Sonst könnte man uns Manipulation vorwerfen.",
@@ -1420,12 +1420,16 @@ const chapters = {
 							},
 							{
 								text: "aussenbeziehungen",
-								amount: -4,
+								amount: -2,
 							},
+							{
+								text: "kritischeJournalisten",
+								amount: 48
+							}
 						],
 					},
 					{
-						text: "Das können wir nicht zeigen! Vielleicht ein paar Schnittbilder von seiner Rede, aber das können wir nicht zeigen!",
+						text: "Das können wir nicht zeigen! Vielleicht ein paar Schnittbilder von seiner Rede, aber nicht dieses Zitat.",
 						goto: "verschweigen",
 						variables: [
 							{
@@ -1435,7 +1439,7 @@ const chapters = {
 						],
 					},
 					{
-						text: "Der Satz mit dem Beispiel ist doch wirklich missverständlich formuliert. Den kann man doch auch positiv umdeuten, wem soll das denn auffallen?",
+						text: "Der Satz mit dem Beispiel ist doch wirklich missverständlich formuliert. Den kann man doch auch positiv umdeuten, wem soll das denn auffallen? Ein bisschen Kosmetik und schon sagt er das Gegenteil und lobt unsere Demokratie.",
 						goto: "manipulation",
 						variables: [
 							{
@@ -1460,7 +1464,7 @@ const chapters = {
 			},
 
 			wahrheit2: {
-				text: "Du hast Recht. Falls das auffliegt, fliegt uns hier alles um die Ohren. Die Äußerung wird natürlich auch in den anderen Ländern wahrgenommen werden, aber besser stehen wir auch selbst dazu.",
+				text: "Du hast Recht. Falls wir da was manipulieren, fliegt uns hier alles um die Ohren. Die Äußerung wird natürlich auch in den anderen Ländern wahrgenommen werden, aber wir müssen auch selbst dazu stehen.",
 				info: "Eine ähnliche Aussage gab es 2016 vom damaligen US-Präsidenten Barack Obama über Polen. Tatsächlich wurde die Aussage in der Übersetzung komplett verdreht, von einem mahnenden Ton zu einem lobenden. Obwohl das einigen aufgefallen ist, hat es keine großen Wellen geschlagen.",
 				mediumType: "youtube",
 				mediumSource: "WC6Y9zMQsHI",
@@ -1527,7 +1531,7 @@ const chapters = {
 						newChapter: true,
 					},
 					{
-						text: "Wir müssen noch eine Rechtfertigung mit versteckter Drohung an Journalisten rausgeben. Vielleicht hilft das, die zum Verstummen zu bringen.",
+						text: "Dann geben wir eine versteckte Drohung an die Journalisten raus. Vielleicht hilft das, die zum Verstummen zu bringen.",
 						goto: "wahrheit2b",
 						variables: [
 							{
@@ -1556,7 +1560,7 @@ const chapters = {
 				],
 			},
 			manipulation: {
-				text: 'Riskant. Aber gut. Dann übersetzen wir den Satz also... "Wir blicken [...] auf die nuppische Demokratie. [Die demokratischen Verfahren werden zunehmend abgebaut, obwohl] es [ist] wichtig [...], dass alle Staaten zusammenarbeiten. Nuppland ist als Beispiel für die ganze Welt zu sehen." Passt?',
+				text: 'Riskant. Aber gut. Dann übersetzen wir den Satz also... "Wir blicken auf die nuppische Demokratie. Es ist wichtig, dass alle Staaten zusammenarbeiten. Nuppland ist als Beispiel für die ganze Welt zu sehen." Das fällt doch keinem auf!',
 				mediumType: "youtube",
 				mediumSource: "P6nXtTzL13U",
 				answers: [
@@ -1574,11 +1578,11 @@ const chapters = {
 							},
 							{
 								text: "aussenbeziehungen",
-								amount: -8,
+								amount: -6,
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: 89,
+								amount: 107,
 							},
 						],
 					},
@@ -1596,7 +1600,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: 12,
+								amount: 38,
 							},
 						],
 					},
