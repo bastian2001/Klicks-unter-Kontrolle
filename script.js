@@ -32,7 +32,7 @@ const chapters = {
 			},
 
 			befoerderung: {
-				text: "Du wurdest befördert. Dein Chef Rokossowski hat dir die Aufgabe übertragen, die Medienpolitik deines Landes Nuppland zu organisieren. Du bist Vorsitzende*r in einem Ausschuss, der versucht, alle Entscheidungen, die die Medien betreffen, zugunsten eurer Partei, der WhR (Wir haben Recht) zu treffen. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren, im Land, und die Zahl muss runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
+				text: "Du wurdest befördert. Dein Chef Rokossowski hat dir die Aufgabe übertragen, die Medienpolitik deines Landes Nuppland zu organisieren. Du versuchst, alle Entscheidungen, die die Medien betreffen, zugunsten eurer Partei, der WhR (Wir haben Recht) zu treffen. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren, im Land, und die Zahl muss runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
 				info: "Auf diesem Fragezeichen findest du über das Spiel verteilt immer wieder Anmerkungen zu Ländern, Regierungen und Medienunternehmen, die ähnliche Maßnahmen getroffen haben. Außerdem kannst du herausfinden, welche Auswirkungen das hatte.",
 				answers: [
 					{
@@ -63,7 +63,7 @@ const chapters = {
 			},
 
 			au: {
-				text: "Nuppland ist Mitglied der Adrejanischen Union, eines Staatenbunds. Andere Staaten können also begrenzt in eure Politik eingreifen und Sanktionen verhängen. Ins Ausland sollte daher nicht zu viel dringen, was euch Probleme bereiten könnte.",
+				text: "Du lebst in Nuppland. Nuppland ist Mitglied der Adrejanischen Union, eines Staatenbunds. Andere Staaten können also in eure Politik eingreifen und Sanktionen verhängen. Ins Ausland sollte daher nichts dringen, was euch Probleme bereiten könnte.",
 				answers: [
 					{
 						text: "Kapiert.",
@@ -80,7 +80,7 @@ const chapters = {
 		},
 		questions: {
 			rundfunkratverkleinern: {
-				text: "Bisher gibt es einen öffentlich-rechtlichen Rundfunk in deinem Land. Dieser finanziert sich über eine Abgabe von allen, keine Steuer, und wird von einem Ausschuss, dem Rundfunkrat, beobachtet. Insgesamt neun Menschen sitzen im Rat, von denen drei von der Präsidentin, vier von der ersten und zwei von der zweiten Parlamentskammer bestimmt werden. Meinst du, da kann man noch was machen?",
+				text: "Bisher gibt es einen öffentlich-rechtlichen Rundfunk in deinem Land. Dieser finanziert sich über eine Abgabe von allen, keine Steuer, und wird vom Rundfunkrat beobachtet. Insgesamt neun Menschen sitzen im Rat, von denen drei von der Präsidentin, vier von der ersten und zwei von der zweiten Parlamentskammer bestimmt werden. Meinst du, da kann man noch was machen?",
 				info: "In Deutschland gibt es einen öffentlich-rechtlichen Rundfunk mit insgesamt 9 Landesrundfunkanstalten (LRAs), die in der ARD zusammengeschlossen sind. Außerdem gibt es das ZDF und weitere Anstalten wie die Deutsche Welle. Jede Anstalt hat ihren eigenen Rundfunkrat, in dem aber meist zwischen 30 und 60 Personen sitzen. Die hier beschriebene Lage orientiert sich an der Situation in Polen vor 2016.",
 				answers: [
 					{
@@ -135,8 +135,8 @@ const chapters = {
 			},
 
 			weniger: {
-				text: "Richtig so! So wird es für dich viel leichter, mitzubekommen, was so in weiten Teilen der Medien läuft. Ein bisschen kann dein Ansehen nach Außen natürlich darunter leiden, aber man macht sich ja immer irgendwie Feinde.",
-				info: 'In Polen hat die Regierungspartei PiS 2016 das "Kleine Mediengesetz" erlassen, in dem der Rundfunk umstrukturiert wurde. Auch der Rundfunkrat KRRiT wurde verkleinert, von ursprünglich neun auf fünf Mitglieder. <a href=https://www.ard.de/home/Rundfunkrat/456538/index.html>Im Vergleich zu den Rundfunkräten in Deutschland ist das sehr wenig.</a>',
+				text: "Richtig so! So kannst du leichter beeinflussen, was im Fernsehen läuft. Ein bisschen kann dein Ansehen nach Außen natürlich darunter leiden, aber irgendwie macht man sich ja immer Feinde.",
+				info: 'In Polen hat die Regierungspartei PiS 2016 das "Kleine Mediengesetz" erlassen, in dem der Rundfunk umstrukturiert wurde. Auch der Rundfunkrat KRRiT wurde verkleinert, von ursprünglich neun auf fünf Mitglieder. Im Vergleich zu den Rundfunkräten in Deutschland ist das sehr wenig.',
 				answers: [
 					{
 						text: "Ich hab Blut geleckt.",
@@ -158,7 +158,7 @@ const chapters = {
 				text: "Willst du vielleicht sogar noch ändern, wie die Ratsmitglieder bestimmt werden?",
 				answers: [
 					{
-						text: "Alle der Präsident, das hätte doch was.",
+						text: "Alle die Präsidentin, das hätte doch was.",
 						goto: "praesident",
 						variables: [
 							{
@@ -222,7 +222,7 @@ const chapters = {
 				],
 			},
 			praesident: {
-				text: "Ich glaube, damit hast du es etwas übertrieben, und dein Ansehen im Ausland hat ein wenig gelitten. Eine Katastrophe war es nicht, aber sei nächstes Mal etwas vorsichtiger.",
+				text: "An sich wäre das zwar praktisch. So könnte die WhR sehr leicht bestimmen, was in den Medien läuft. Aber damit hast du es etwas übertrieben, und dein Ansehen im Ausland hat ein wenig gelitten. Eine Katastrophe war es nicht, aber sei nächstes Mal etwas vorsichtiger.",
 				answers: [
 					{
 						text: "Okay, versuche ich.",
@@ -253,7 +253,7 @@ const chapters = {
 				],
 			},
 			gleich: {
-				text: "Eigentlich ist es tatsächlich ganz gut so: Ein Teil der fünf Mitglieder wird je von der ersten und der zweiten Kammer sowie vom Präsidenten gewählt. Sagen wir, im Verhältnis 2:1:2? So kann der Präsident immer noch gut eine Mehrheit herbeiführen, wenn er nur eine Person überzeugt, die er nicht bestimmt hat. Im Ausland wird aber weniger ankommen.",
+				text: "Eigentlich ist es tatsächlich ganz gut so: Ein Teil der fünf Mitglieder wird je von der ersten und der zweiten Kammer sowie von der Präsidentin gewählt. Sagen wir, im Verhältnis 2:1:2? So kann die Präsidentin mit nur einer dritten Person t eine Mehrheit herbeiführen. Im Ausland wird aber weniger darüber gerdet werden.",
 				answers: [
 					{
 						text: "Let's go!",
@@ -378,14 +378,14 @@ const chapters = {
 		},
 		questions: {
 			rsm: {
-				// text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen zu erwarten sind. Insbesondere natürlich die Einbehaltung von AU-Mitteln. Auch zuvor gab es bereits Regelungen in dieser Richtung, allerdings hat das Parlament diese als zu schwach eingeschätzt. Wir könnten dagegen klagen, was meinst du?',
+				// text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen wie Einschränkung von finanziellen Mitteln zu erwarten sind. Für uns wäre das unvorteilhaft, wir wollen ja keine freie Presse. Wir könnten dagegen klagen, was meinst du?',
 				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Wir könnten dagegen klagen, was meinst du?',
 				info: 'Die Europäische Union hat zum 1.1.2021 einen solchen Mechanismus auf den Weg gebracht. Gelder sollten nicht in die Hände derjenigen gelangen, die die Demokratie bedrohen, so die Argumentation. Rechtsstaatlichkeit ist in der EU als Grundwert verankert: "Sie bedeutet, dass Regierungen das Recht achten sollten und keine willkürlichen Entscheidungen treffen dürfen. Die Bürger sollten in der Lage sein, das Handeln von Regierungen vor unabhängigen Gerichten anzufechten. Die Rechtsstaatlichkeit umfasst auch die Bekämpfung von Korruption und den Schutz der Medienfreiheit, wodurch sichergestellt wird, dass die Öffentlichkeit angemessen über staatliche Maßnahmen informiert wird", schreibt das EU-Parlament auf seiner <a href= https://www.europarl.europa.eu/news/de/headlines/eu-affairs/20201001STO88311/rechtsstaatsmechanismus-schutz-des-eu-haushalts-und-der-europaischen-werte>Webseite</a>.',
 				mediumType: "youtube",
 				mediumSource: "2iJbqncEw1Q",
 				answers: [
 					{
-						text: "Ich glaube, wir sollten da lieber keine schlafenden Hunde wecken. Natürlich unterzeichnen wir mit.",
+						text: "Ich glaube, wir sollten da lieber keine schlafenden Hunde wecken. Wir unterzeichnen.",
 						goto: "unterschreiben",
 						variables: [
 							{
@@ -499,7 +499,7 @@ const chapters = {
 						],
 					},
 					{
-						text: "Ärgerlich, aber es ist trotzdem wichtig, dass wir uns dagegen stellen. Wir sind doch kein Sozialamt, sondern haben auch unsere Ziele. Wir klagen.",
+						text: "Ärgerlich, aber wir stellen uns dagegen. Wir haben auch unsere Ziele. Also: klagen.",
 						goto: "klagengefahr",
 						variables: [
 							{
@@ -523,7 +523,7 @@ const chapters = {
 				],
 			},
 			klagengefahr: {
-				text: "Die Gefahr ist natürlich, dass Nupplands Regierung sich jetzt zum Feindbild entwickelt. Aber gut, in einigen Wochen wissen wir mehr. In der Zwischenzeit wird der Adrejanische Gerichtshof uns anhören.",
+				text: "Die Gefahr ist natürlich, dass Nupplands Regierung sich jetzt zum Feindbild entwickelt. In einigen Wochen wissen wir mehr. In der Zwischenzeit wird der Adrejanische Gerichtshof uns anhören.",
 				answers: [
 					{
 						text: "Weiter geht's.",
@@ -554,7 +554,7 @@ const chapters = {
 		},
 		questions: {
 			nuppisierung: {
-				text: "80 Prozent der regionalen Tageszeitungen gehören zu einem Unternehmen. Dieses wurde allerdings von einem größeren Verlag aus dem Nachbarland aufgekauft. Außerdem gehören diesem Konzern auch viele Online-Nachrichtenplattformen, die in den letzten Jahren extrem gewachsen sind. Was bedeutet das für uns?",
+				text: "80 Prozent der regionalen Tageszeitungen und Online-Nachrichtenplattformen gehörten zu einem nuppischen Unternehmen. Dieses wurde allerdings kürzlich vom Verlag Press Enterprises aus dem Nachbarland aufgekauft. Was bedeutet das für uns?",
 				mediumType: "youtube",
 				mediumSource: "E7VqsUseIs8",
 				answers: [
@@ -592,7 +592,7 @@ const chapters = {
 			},
 
 			erklaerung1: {
-				text: "Ausländische Auftraggeber können dir so viel leichter in die Berichterstattung deines Landes reden. Und das kann wiederum dem Ansehen deiner Partei schaden.",
+				text: "Ausländische Auftraggeber können dir so viel leichter in die Berichterstattung deines Landes pfuschen. Und das kann wiederum dem Ansehen deiner Partei schaden.",
 				answers: [
 					{
 						text: "Verstehe.",
@@ -612,7 +612,7 @@ const chapters = {
 			},
 
 			kontrolle: {
-				text: "Außerdem lässt sich doch so viel schwieriger beeinflussen, was in den Medien steht. Ein gemeinsames Feindbild, zum Beispiel die Oiropäische Union, könnte sehr gut im Wahlkampf sein. Wenn das Nachbarland, was in der OU sehr anerkannt ist, allerdings die Periodika besitzt, wird es schwierig, dass sowas in den Medien kommt.",
+				text: "Außerdem lässt sich doch so viel schwieriger beeinflussen, was in den Medien steht. Im Wahlkampf könnte ein Feindbild, zum Beispiel das Nachbarland, sehr nützlich sein. Aber wenn die Medien Press Enterprises gehören, werden die wenig Kritisches schreiben.",
 				answers: [
 					{
 						text: "Kapiert.",
@@ -626,7 +626,7 @@ const chapters = {
 				info: "Vor einer ähnlichen Situation sah und sieht sich Polen zur Zeit. Die meisten regionalen Tageszeitungen haben zur Verlagsgruppe Passau, also einem deutschen Medienunternehmen, gehört. Wie es weiterging, siehst du, sobald du dich selbst entschieden hast.",
 				answers: [
 					{
-						text: "Der Staat könnte das Medienunternehmen aufkaufen, so wäre die Kontrolle am einfachsten. Wir hätten direkten Einfluss auf die Personalentscheidungen und unser Einfluss würde auch im Lokalen wachsen!",
+						text: "Nuppland könnte die Medien zurückkaufenkaufen, so wäre die Kontrolle am einfachsten. Wir hätten direkten Einfluss auf die Personalentscheidungen und unser Einfluss würde auch im Lokalen wachsen!",
 						goto: "pressefreiheit",
 						variables: [
 							{
@@ -647,7 +647,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: 56,
+								amount: 85,
 							},
 							{
 								text: "staatsnaehe",
@@ -660,7 +660,7 @@ const chapters = {
 						],
 					},
 					{
-						text: "Wir könnten ein hiesiges Unternehmen nutzen, das das Verlagshaus aufkauft. Einige Unternehmen gehören doch schon jetzt zum Teil dem Staat, zum Beispiel über Aktien.",
+						text: "Wir könnten ein hiesiges Unternehmen nutzen, das Press Enterprises aufkauft. Das könnten wir staatlich fördern, sodass die Medien zum Teil dem Staat gehören würden. Einige Unternehmen gehören doch schon jetzt zum Teil dem Staat, zum Beispiel über Aktien.",
 						goto: "aufkaufen2",
 						variables: [
 							{
@@ -677,7 +677,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: 125,
+								amount: 156,
 							},
 							{
 								text: "staatsnaehe",
@@ -707,7 +707,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -34,
+								amount: 0,
 							},
 						],
 					},
@@ -715,7 +715,7 @@ const chapters = {
 			},
 
 			pressefreiheit: {
-				text: "Uhh, ganz schlechte Idee. Die anderen Länder der Adrejanischen Union haben uns doch eh schon auf dem Kieker. Wenn wir jetzt noch einen großen Teil der lokalen Presse kaufen, wird das nicht gut enden. Wie machen wir weiter?",
+				text: "Uhh, ganz schlechte Idee. Die anderen Länder der Adrejanischen Union haben uns doch eh schon auf dem Kieker. Wenn wir jetzt noch einen großen Teil der lokalen Presse kaufen, wird das nicht gut enden.",
 				answers: [
 					{
 						text: "Naja, Fehler passieren. Vergessen wir das einfach.",
@@ -732,7 +732,7 @@ const chapters = {
 						],
 					},
 					{
-						text: "Ist jetzt passiert, aber jetzt können wir unsere Macht natürlich auch ausnutzen. Da könnte man doch alle entlassen, die sich mal kritisch geäußert haben.",
+						text: "Ist jetzt passiert, aber jetzt können wir unsere Macht natürlich auch ausnutzen. Da könnte man doch alle Journalisten entlassen, die sich mal kritisch geäußert haben, oder?",
 						newChapter: "entlassung",
 						variables: [
 							{
@@ -745,7 +745,7 @@ const chapters = {
 			},
 
 			aufkaufen2: {
-				text: 'Brillant! So bleibt das ganze unter der Hand und dringt nicht so an die Öffentlichkeit. Komplett geheim halten können wir das ja aber auch nicht. Unter welchem Namen kommunizieren wir das Ganze denn? Der Fokus wird bei einer "Renationalisierung" natürlich anders gelegt als bei einer "Entmonopolisierung", aber beide Namen klingen doch eigentlich ganz gut, oder?',
+				text: 'Brillant! So bleibt das ganze unter der Hand und dringt nicht so an die Öffentlichkeit. Komplett geheim halten können wir das aber auch nicht. Unter welchem Namen kommunizieren wir das Ganze denn? Der Fokus wird bei einer "Renationalisierung" natürlich anders gelegt als bei einer "Entmonopolisierung", aber beide Namen klingen doch eigentlich ganz gut, oder?',
 				answers: [
 					{
 						text: "Renationalisierung",
@@ -804,6 +804,10 @@ const chapters = {
 								text: "aussenwahrnehmung",
 								amount: -2,
 							},
+							{
+								text: "kritischeJournalisten",
+								amount: 86,
+							},
 						],
 					},
 					{
@@ -821,6 +825,10 @@ const chapters = {
 							{
 								text: "aussenwahrnehmung",
 								amount: -1,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: 42,
 							},
 						],
 					},
@@ -840,13 +848,17 @@ const chapters = {
 								text: "aussenwahrnehmung",
 								amount: -3,
 							},
+							{
+								text: "kritischeJournalisten",
+								amount: 124,
+							},
 						],
 					},
 				],
 			},
 
 			orlen: {
-				text: 'Klingt zwar erst einmal skurril, aber du hast die beste Wahl getroffen! In Tankstellen und Kiosks werden viele der Pressetitel verkauft, da könnte man also bestimmte Titel bevorzugen, und bei anderen gibt es dann vielleicht... hmm... Lieferengpässe oder so? Was wir natürlich niemals tun würden, oder? ;) Und wenn jemand was sagt, verweisen wir darauf, dass das üblich ist und in den USA auch Amazon die "Washington Post" gekauft hat.',
+				text: 'Klingt zwar erst einmal skurril, aber du hast die beste Wahl getroffen! In Tankstellen und Kiosks werden viele der Pressetitel verkauft, da könnte man also bestimmte Titel bevorzugen, und bei anderen gibt es dann vielleicht... hmm... Lieferengpässe oder so? Was wir natürlich niemals tun würden, oder? ;)',
 				info: 'Tatsächlich hält Polen ein gutes Viertel der Aktien des Öl- und Tankstellenkonzerns Orlen. Das "polnische Gazprom" hat diese Tageszeitungen und die zugehörigen Internetportale - die "Polska Press" - aufgekauft und viele der Chefredakteur*innen ausgetauscht. Mehr Infos dazu findest du <a href=https://www.tagesschau.de/ausland/europa/polen-orlen-medien-101.html>hier</a>.',
 				answers: [
 					{
@@ -868,7 +880,7 @@ const chapters = {
 			},
 
 			pr: {
-				text: "Nicht deine beste Idee, um ehrlich zu sein. Wenn ein Haufen Zeitungstitel und Onlineportale von einer PR-Agentur aufgekauft werden, wo der Staat seine Finger mit im Spiel hat, werden natürlich alle misstrauisch. Versuch doch nächstes mal, etwas subtiler zu agieren.",
+				text: "Nicht deine beste Idee. Wenn ein Haufen Zeitungstitel und Onlineportale von einer PR-Agentur aufgekauft werden, wo der Staat seine Finger mit im Spiel hat, werden natürlich alle misstrauisch. Versuch doch nächstes mal, etwas subtiler zu agieren.",
 				info: 'Tatsächlich hält Polen ein gutes Viertel der Aktien des Öl- und Tankstellenkonzerns Orlen. Das "polnische Gazprom" hat diese Tageszeitungen und die zugehörigen Internetportale - die "Polska Press" - aufgekauft und viele der Chefredakteur*innen ausgetauscht. Mehr Infos dazu findest du <a href=https://www.tagesschau.de/ausland/europa/polen-orlen-medien-101.html>hier</a>.',
 				answers: [
 					{
@@ -879,7 +891,7 @@ const chapters = {
 			},
 
 			nachfrage2: {
-				text: "Hältst du das echt für schlau? Wir hatten doch davor schon überlegt, dass es ganz schlau wäre, da etwas zu ändern.",
+				text: "Hältst du das echt für schlau? So liegen die Medien in ausländischen Händen.",
 				answers: [
 					{
 						text: "Okay, ich will doch etwas ausprobieren.",
@@ -892,7 +904,7 @@ const chapters = {
 						],
 					},
 					{
-						text: "Ne, wir lassen das so. Das ist viel besser für eine plurale Medienlandschaft.",
+						text: "Ne, wir lassen das so. Einer plurale Medienlandschaft sollte das nicht schaden.",
 						goto: "nagut2",
 						variables: [
 							{
@@ -907,13 +919,17 @@ const chapters = {
 								text: "time",
 								amount: 3,
 							},
+							{
+								text: "kritischeJournalisten",
+								amount: 234,
+							},
 						],
 					},
 				],
 			},
 
 			nagut2: {
-				text: "Na gut, wenn du meinst.",
+				text: "Du spinnst doch. Wess' Brot ich ess', dess' Lied ich sing'. Ist doch klar, dass die so genau das gleiche Mainstream-Geblubber schreiben werden wie alle, statt unsere Partei zu pushen!",
 				answers: [
 					{
 						text: "Weiter.",
@@ -949,7 +965,7 @@ const chapters = {
 		},
 		questions: {
 			entlassung: {
-				text: "Du hast dich ja vorhin schon ziemlich unbeliebt damit gemacht, dass du das ausländische Medienunternehmen aufgekauft hast. Die meisten Tageszeitungen und großen Internetportale sind jetzt also Staatsmedien. Trotzdem publizieren sie bisher genau wie vorher.",
+				text: "Nuppland hast dich ja vorhin schon ziemlich unbeliebt damit gemacht, dass es die Titel von Press Enterprises aufgekauft hat. Die meisten Tageszeitungen und großen Internetportale sind jetzt also Staatsmedien. Trotzdem publizieren sie bisher genau wie vorher.",
 				answers: [
 					{
 						text: "Ist doch gut so. Medien von den Menschen, die hier leben, für die Menschen, die hier leben.",
@@ -969,7 +985,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -14,
+								amount: 5,
 							},
 						],
 					},
@@ -991,7 +1007,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -125,
+								amount: -98,
 							},
 							{
 								text: "entlassungenDone",
@@ -1017,15 +1033,19 @@ const chapters = {
 							},
 							{
 								text: "aussenbeziehungen",
-								amount: -4,
+								amount: -6,
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -312,
+								amount: -212,
 							},
 							{
 								text: "entlassungenDone",
 								value: true,
+							},
+							{
+								text: "ergebnisOffset",
+								amount: -4,
 							},
 						],
 					},
@@ -1063,7 +1083,7 @@ const chapters = {
 						],
 					},
 					{
-						text: "Im Ausland schauen die doch sowieso schon sehr genau hin, seit wir die Medien gekauft haben. Wir sollten da schon besser aufpassen. Darum hier lieber vorsichtig sein. Und ein paar Journalisten werden so auch weniger kritisch sein.",
+						text: "Die AU schaut doch sowieso schon sehr genau hin, seit wir die Titel von Press Enterprises gekauft haben. Wir sollten da schon besser aufpassen.",
 						newChapter: true,
 						variables: [
 							{
@@ -1073,6 +1093,10 @@ const chapters = {
 							{
 								text: "kritischeJournalisten",
 								amount: -7,
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: 1,
 							},
 						],
 					},
@@ -3502,7 +3526,7 @@ const popups = {
 			{
 				variableName: "falsch",
 				type: "<",
-				value: 4,
+				value: 3,
 			},
 			{
 				variableName: "time",
