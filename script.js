@@ -378,8 +378,7 @@ const chapters = {
 		},
 		questions: {
 			rsm: {
-				// text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen wie Einschränkung von finanziellen Mitteln zu erwarten sind. Für uns wäre das unvorteilhaft, wir wollen ja keine freie Presse. Wir könnten dagegen klagen, was meinst du?',
-				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Wir könnten dagegen klagen, was meinst du?',
+				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen wie Einschränkung von finanziellen Mitteln zu erwarten sind. Für uns wäre das unvorteilhaft, wir wollen ja keine freie Presse. Wir könnten dagegen klagen, was meinst du?',
 				info: 'Die Europäische Union hat zum 1.1.2021 einen solchen Mechanismus auf den Weg gebracht. Gelder sollten nicht in die Hände derjenigen gelangen, die die Demokratie bedrohen, so die Argumentation. Rechtsstaatlichkeit ist in der EU als Grundwert verankert: "Sie bedeutet, dass Regierungen das Recht achten sollten und keine willkürlichen Entscheidungen treffen dürfen. Die Bürger sollten in der Lage sein, das Handeln von Regierungen vor unabhängigen Gerichten anzufechten. Die Rechtsstaatlichkeit umfasst auch die Bekämpfung von Korruption und den Schutz der Medienfreiheit, wodurch sichergestellt wird, dass die Öffentlichkeit angemessen über staatliche Maßnahmen informiert wird", schreibt das EU-Parlament auf seiner <a href= https://www.europarl.europa.eu/news/de/headlines/eu-affairs/20201001STO88311/rechtsstaatsmechanismus-schutz-des-eu-haushalts-und-der-europaischen-werte>Webseite</a>.',
 				mediumType: "youtube",
 				mediumSource: "2iJbqncEw1Q",
@@ -1104,7 +1103,7 @@ const chapters = {
 			},
 			chefsentlassen: {
 				text: "Sehr gut. Wenn die Chefpositionen mit regierungstreuen Leuten besetzt sind, schüchtert das wahrscheinlich auch die Journalist*innen in den Redaktionen schon etwas ein.",
-				info: "In den großen Städten ist es leichter, Ersatz zu finden, während Lokalzeitungen in dieser Hinsicht weniger Macht haben. Mehr zur Ersetzung der Journalist*innen findest du in <a href =https://www.deutschlandfunkkultur.de/medienpolitik-in-polen-angriff-auf-die-pressefreiheit.979.de.html?dram:article_id=496143>diesem Artikel vom Deutschlandfunk</a>.",
+				info: "In den großen Städten ist es leichter, Ersatz zu finden, während Lokalzeitungen in dieser Hinsicht weniger Freiheiten haben. Mehr zur Ersetzung der Journalist*innen findest du in <a href =https://www.deutschlandfunkkultur.de/medienpolitik-in-polen-angriff-auf-die-pressefreiheit.979.de.html?dram:article_id=496143>diesem Artikel vom Deutschlandfunk</a>.",
 				answers: [
 					{
 						text: "Und wenn ich zusätzlich trotzdem noch weitere Journalist*innen ersetze?",
@@ -1128,7 +1127,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -216,
+								amount: -116,
 							},
 
 							{
@@ -1150,7 +1149,7 @@ const chapters = {
 				],
 			},
 			alleentlassen: {
-				text: "Die Zahl der kritischen Journalisten hat enorm abgenommen. Und natürlich verdienen sie es alle, die sich gegen die WhR stellen, nicht besser. Aber gerade auf dem Land und abseits der großen Städte, wo die Redaktionen der Lokalzeitungen sitzen, ist es schwierig, genug politisch Korrekte zu finden, mit denen du die Stellen besetzen kannst. Ein paar der jetzt staatlichen Zeitungen und Portale müssen eingedampft werden. Dadurch wird deine Anerkennung in der Partei leider auch sehr abnehmen.",
+				text: "Die Zahl der kritischen Journalisten hat enorm abgenommen. Und natürlich verdienen es alle, die sich gegen die WhR stellen, nicht besser. Aber gerade auf dem Land und abseits der großen Städte, wo die Redaktionen der Lokalzeitungen sitzen, ist es schwierig, genug politisch Korrekte zu finden, mit denen du die Stellen besetzen kannst. Ein paar der jetzt staatlichen Zeitungen und Portale müssen eingedampft werden. Dadurch wird deine Anerkennung in der Partei leider auch sehr abnehmen.",
 				info: "In den großen Städten ist es leichter, Ersatz zu finden, während Lokalzeitungen in dieser Hinsicht weniger Macht haben. Mehr zur Ersetzung der Journalist*innen findest du in <a href =https://www.deutschlandfunkkultur.de/medienpolitik-in-polen-angriff-auf-die-pressefreiheit.979.de.html?dram:article_id=496143>diesem Artikel vom Deutschlandfunk</a>.",
 				answers: [
 					{
@@ -1175,7 +1174,7 @@ const chapters = {
 	szenarioRenationalisierung: {
 		props: {
 			entry: 0,
-			title: "Szenario Renationalisierung",
+			title: "Kritische Moderatorin",
 			description: "Eine bekannte Moderatorin äußert sich dir gegenüber kritisch",
 			conditions: [],
 		},
