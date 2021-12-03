@@ -3879,6 +3879,7 @@ function stopMedia() {
 		document.getElementById("frageAudio").pause()
 		document.getElementById("frageVideo").oncanplaythrough = () => {}
 		document.getElementById("frageAudio").oncanplaythrough = () => {}
+		document.getElementById("frageIframeIframe").src = ""
 	}
 }
 
@@ -4321,16 +4322,16 @@ function setHeader() {
 		posN = map(0, -30, 0, 100, posN)
 		document.getElementById("header2bgN").style["grid-template-columns"] = `${100 - posN}% ${posN}%`
 
-		if (currentQuestion.chapter === "intro" && currentQuestion.question === "willkommen") {
-			$("#highscoretable").css("opacity", "0")
-			setTimeout(() => {
-				$("#highscoretable").css("display", "none")
-				$(".headerElement").css("display", "")
-			}, 500)
-		}
+		// if (currentQuestion.chapter === "intro" && currentQuestion.question === "willkommen") {
+		// 	$("#highscoretable").css("opacity", "0")
+		// 	setTimeout(() => {
+		// 		$("#highscoretable").css("display", "none")
+		// 		$(".headerElement").css("display", "")
+		// 	}, 500)
+		// }
 		if (currentQuestion.chapter === "intro" && currentQuestion.question === "vorstellung") {
 			// console.log("x")
-			$(".headerElement").css("opacity", "1")
+			$(".headerElement").removeClass("hidden")
 		}
 	}
 }
