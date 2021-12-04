@@ -739,48 +739,7 @@ const chapters = {
 			},
 
 			aufkaufen2: {
-				text: 'Brillant! So bleibt das ganze unter der Hand und dringt nicht so an die Öffentlichkeit. Komplett geheim halten können wir das aber auch nicht. Unter welchem Namen kommunizieren wir das Ganze denn? Der Fokus wird bei einer "Renationalisierung" natürlich anders gelegt als bei einer "Entmonopolisierung", aber beide Namen klingen doch eigentlich ganz gut, oder?',
-				answers: [
-					{
-						text: "Renationalisierung",
-						goto: "aufkaufen3",
-						variables: [
-							{
-								text: "benennungAufkaufen",
-								value: "Renationalisierung",
-							},
-							{
-								text: "anerkennung",
-								amount: 1,
-							},
-							{
-								text: "aussenbeziehungen",
-								amount: -1,
-							},
-							{
-								text: "time",
-								amount: 2,
-							},
-						],
-					},
-					{
-						text: "Entmonopolisierung",
-						goto: "aufkaufen3",
-						variables: [
-							{
-								text: "benennungAufkaufen",
-								value: "Entmonopolisierung",
-							},
-							{
-								text: "time",
-								amount: 1,
-							},
-						],
-					},
-				],
-			},
-			aufkaufen3: {
-				text: 'Sehr gut. Gut, wir nutzen für unsere $benennungAufkaufen also ein Unternehmen, das zum Teil staatlich ist, um diese Titel, Internetportale, Vertriebskanäle und Druckereien aufzukaufen. So können wir die Medien wieder "nuppisieren" und ausländische Investoren zurückdrängen. Aber welches Unternehmen nutzen wir dafür?',
+				text: 'Brillant! So bleibt das ganze unter der Hand und dringt nicht so an die Öffentlichkeit. Komplett geheim halten können wir das aber auch nicht. Wir nutzen für unsere $benennungAufkaufen also ein Unternehmen, das zum Teil staatlich ist, um diese Titel, Internetportale, Vertriebskanäle und Druckereien aufzukaufen. So können wir die Medien wieder "nuppisieren" und ausländische Investoren zurückdrängen. Aber welches Unternehmen nutzen wir dafür?',
 				answers: [
 					{
 						text: "Naja, ein bisschen Erfahrung mit der Führung eines Verlagshauses sollte man schon haben. Ich entscheide mich für eine große Buchhandelskette.",
@@ -2631,7 +2590,7 @@ const chapters = {
 							},
 							{
 								text: "anerkennung",
-								value: 1
+								amount: 1,
 							},
 						],
 					},
@@ -3006,7 +2965,7 @@ const chapters = {
 						goto: "gestuerzt",
 					},
 					{
-						text: 'Wie wäre es wenn die Journalistin während ihrer regelmäßigen Wanderungen über einen "Ast stolpert" und sich ein Bein bricht? Einige Waldwege sind wirklich schlecht gesichert. Und wer weiß, vielleicht passiert ihrer Familie ja das Gleiche?',
+						text: 'Wie wäre es wenn die Journalistin während ihrer regelmäßigen Wanderungen über einen "Ast stolpert" und sich ein Bein bricht? Einige Waldwege sind wirklich schlecht gesichert. Es wäre zu schade, wenn auch ihrer Familie das Gleiche passieren würde... ;)?',
 						variables: [
 							{
 								text: "kritischeJournalisten",
@@ -3189,7 +3148,7 @@ const chapters = {
 						goto: "gestuerzt",
 					},
 					{
-						text: 'Wie wäre es wenn die Journalistin während ihrer regelmäßigen Wanderungen über einen "Ast stolpert" und sich ein Bein bricht? Einige Waldwege sind wirklich schlecht gesichert. Und vielleicht passiert ihrer Familie ja das Gleiche?!',
+						text: 'Wie wäre es wenn die Journalistin während ihrer regelmäßigen Wanderungen über einen "Ast stolpert" und sich ein Bein bricht? Einige Waldwege sind wirklich schlecht gesichert. Es wäre zu schade, wenn auch ihrer Familie das Gleiche passieren würde... ;)',
 						variables: [
 							{
 								text: "kritischeJournalisten",
@@ -3237,7 +3196,7 @@ const chapters = {
 				info: "Polen und Ungarn haben vor dem Europäischen Gerichtshof gegen den Rechtsstaatsmechanismus der EU geklagt. Bisher wurde nach Kompromissen gesucht. Zur Zeit wird der Mechanismus trotzdem ausgeführt. Eine abschließende Prüfung steht noch aus.",
 				answers: [
 					{
-						text: "Kann man wohl nichts machen.",
+						text: "Kann man wohl nichts machen. Weiter geht's!",
 						goto: "/back",
 						variables: [
 							{
@@ -3280,7 +3239,7 @@ const chapters = {
 				info: "Polen und Ungarn haben vor dem Europäischen Gerichtshof gegen den Rechtsstaatsmechanismus der EU geklagt. Bisher wurde nach Kompromissen gesucht. Zur Zeit wird der Mechanismus trotzdem ausgeführt. Eine abschließende Prüfung steht noch aus.",
 				answers: [
 					{
-						text: "Yes! Glück gehabt!",
+						text: "Yes! Glück gehabt! Weiter geht's!",
 						goto: "/back",
 						variables: [
 							{
@@ -3299,11 +3258,6 @@ const chapters = {
 					},
 				],
 			},
-
-			/*
-			Die Werbesteuer betrifft natürlich auch die öffentlich-rechtlichen Medien. Wie willst du damit umgehen? (mehr Subventionen, vom Gesetz her ausnehmen, Abgabe dafür erhöhen) Wir brauchen auch noch einen schicken Namen dafür ;) (Medienabgabe, Werbeprämie, Werbegebühr) oder Unter welchem Titel bringen wir das jetzt ins Volk?
-		
-		*/
 		},
 	},
 
@@ -3315,7 +3269,7 @@ const chapters = {
 				answers: [
 					{
 						goto: "/back",
-						text: "Mhhh... Wir müssen trotzdem weitermachen! Zurück zum Thema!",
+						text: "Zurück zum Thema!",
 						variables: [
 							{
 								text: "sanktionen",
