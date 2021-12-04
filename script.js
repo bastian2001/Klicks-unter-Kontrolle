@@ -3457,7 +3457,7 @@ const chapters = {
 				],
 			},
 			achievementKeinMoerder: {
-				text: "Du hast eine Auszeichnung erhalten: Moralische Instanz... gewissermaßen!",
+				text: "Das war ja moralisch beinahe einwandfrei. Du hast also doch deine Grenzen... Respekt! Vielleicht bist du einfach nicht für die Macht geschaffen. Die WhR hat dich schnell gegen jemanden ersetzt, der sowieso an deinem Stuhl gesägt hat. Aber immerhin: Du bist echt eine moralische Instanz ... naja.",
 				answers: [
 					{
 						text: "Weiter",
