@@ -704,10 +704,6 @@ const chapters = {
 								text: "time",
 								amount: 3,
 							},
-							{
-								text: "kritischeJournalisten",
-								amount: 0,
-							},
 						],
 					},
 				],
@@ -857,7 +853,7 @@ const chapters = {
 			},
 
 			orlen: {
-				text: 'Klingt zwar erst einmal skurril, aber du hast die beste Wahl getroffen! In Tankstellen und Kiosks werden viele der Pressetitel verkauft, da könnte man also bestimmte Titel bevorzugen, und bei anderen gibt es dann vielleicht... hmm... Lieferengpässe oder so? Was wir natürlich niemals tun würden, oder? ;)',
+				text: "Klingt zwar erst einmal skurril, aber du hast die beste Wahl getroffen! In Tankstellen und Kiosks werden viele der Pressetitel verkauft, da könnte man also bestimmte Titel bevorzugen, und bei anderen gibt es dann vielleicht... hmm... Lieferengpässe oder so? Was wir natürlich niemals tun würden, oder? ;)",
 				info: 'Tatsächlich hält Polen ein gutes Viertel der Aktien des Öl- und Tankstellenkonzerns Orlen. Das "polnische Gazprom" hat diese Tageszeitungen und die zugehörigen Internetportale - die "Polska Press" - aufgekauft und viele der Chefredakteur*innen ausgetauscht. Mehr Infos dazu findest du <a href=https://www.tagesschau.de/ausland/europa/polen-orlen-medien-101.html>hier</a>.',
 				answers: [
 					{
@@ -1424,8 +1420,8 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: 48
-							}
+								amount: 48,
+							},
 						],
 					},
 					{
@@ -2614,7 +2610,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								value: 2,
+								amount: 2,
 							},
 						],
 					},
@@ -2628,7 +2624,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								value: 2,
+								amount: 2,
 							},
 						],
 					},
@@ -2642,7 +2638,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								value: 3,
+								amount: 3,
 							},
 						],
 					},
@@ -3779,6 +3775,7 @@ function showQuestion(obj) {
 			endTime = -1
 			completeHistory.push(thisHistory)
 			history = ""
+			kritJourStart = ranInt(800, 1000)
 			gameVariables = {
 				time: 0,
 				falsch: 0,
@@ -3798,7 +3795,6 @@ function showQuestion(obj) {
 				klageErgebnis: false,
 				entlassungenDone: false,
 			}
-			kritJourStart = ranInt(800, 1000)
 			wahlergebnis = 0
 			currentQuestion = {
 				chapter: "intro",
