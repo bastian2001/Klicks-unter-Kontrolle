@@ -30,7 +30,6 @@ const chapters = {
 					},
 				],
 			},
-
 			befoerderung: {
 				text: "Du wurdest befördert. Dein Chef Rokossowski hat dir die Aufgabe übertragen, die Medienpolitik deines Landes Nuppland zu organisieren. Du versuchst, alle Entscheidungen, die die Medien betreffen, zugunsten eurer Partei, der WhR (Wir haben Recht) zu treffen. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren, im Land, und die Zahl muss runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
 				info: "Auf diesem Fragezeichen findest du über das Spiel verteilt immer wieder Anmerkungen zu Ländern, Regierungen und Medienunternehmen, die ähnliche Maßnahmen getroffen haben. Außerdem kannst du herausfinden, welche Auswirkungen das hatte.",
@@ -625,7 +624,7 @@ const chapters = {
 				info: "Vor einer ähnlichen Situation sah und sieht sich Polen zur Zeit. Die meisten regionalen Tageszeitungen haben zur Verlagsgruppe Passau, also einem deutschen Medienunternehmen, gehört. Wie es weiterging, siehst du, sobald du dich selbst entschieden hast.",
 				answers: [
 					{
-						text: "Nuppland könnte die Medien zurückkaufenkaufen, so wäre die Kontrolle am einfachsten. Wir hätten direkten Einfluss auf die Personalentscheidungen und unser Einfluss würde auch im Lokalen wachsen!",
+						text: "Nuppland könnte die Medien zurückkaufen, so wäre die Kontrolle am einfachsten. Wir hätten direkten Einfluss auf die Personalentscheidungen und unser Einfluss würde auch im Lokalen wachsen!",
 						goto: "pressefreiheit",
 						variables: [
 							{
@@ -1388,7 +1387,7 @@ const chapters = {
 	umgangMitKritik: {
 		props: {
 			entry: 0,
-			title: "Umgang mit Kritik",
+			title: "Manipulation",
 			description: "Die Adrejanische Union hat Wind bekommen",
 			conditions: [
 				{
@@ -1639,7 +1638,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								amount: 3,
+								amount: 4,
 							},
 						],
 					},
@@ -1675,7 +1674,7 @@ const chapters = {
 						variables: [
 							{
 								text: "kritischeJournalisten",
-								amount: -8,
+								amount: 49,
 							},
 							{
 								text: "falsch",
@@ -1710,7 +1709,7 @@ const chapters = {
 			},
 
 			manipulation22: {
-				text: "Okay, jetzt fühlen sich alle auf den Arm genommen und sind ziemlich sauer auf dich. Sowohl deine Partei als auch deine Beziehungen ins adrejanische Ausland leiden.",
+				text: "Dein Ernst? So fühlen sich doch alle auf den Arm genommen. Sowohl deine Partei als auch deine Beziehungen ins adrejanische Ausland leiden.",
 				answers: [
 					{
 						text: "Aussitzen.",
@@ -1811,7 +1810,7 @@ const chapters = {
 							},
 							{
 								text: "staatsnaehe",
-								amount: 2,
+								amount: 4,
 							},
 							{
 								text: "anerkennung",
@@ -1844,7 +1843,7 @@ const chapters = {
 				],
 			},
 			genial: {
-				text: "Eine meiner besseren Ideen.",
+				text: "Eine meiner besseren Ideen. Und wie es aussieht, geht dein Plan auf. Die Agentur stellt jetzt kostenlos MAterial zur Recherche für nuppische Medien zur Verfügung. So werden kleinere Unternehmen immer abhängiger und können gar nicht anders als dir nach dem Mund zu reden!",
 				info: "Die ungarische Nachrichtenagentur MTI wurde 2015 in die staatliche Rundfunkholding MTVA überführt, zu der auch der öffentlich-rechtliche Rundfunk gehört. Die Agentur stellt kostenlos Ressourcen für die ungarischen Medien zur Verfügung, macht damit aber gerade kleinere Redaktionen immer abhängiger von der Regierung. Zuvor waren gerade kleinere Redaktionen häufig diejenigen, die am ehesten regierungskritische Inhalte verbreiten konnten. Mehr Informationen zur MTVA findest du <a href=https://taz.de/Pressefreiheit-in-Ungarn-unter-Beschuss/!5668697/>hier</a> und <a href=https://www.reporter-ohne-grenzen.de/pressemitteilungen/meldung/fehlende-pressefreiheit-gefahr-fuer-europa/>hier</a>.",
 				answers: [
 					{
@@ -1861,7 +1860,7 @@ const chapters = {
 			},
 
 			kesma: {
-				text: 'Gut, du hast die Stiftung ZMSN ("Zentrale Medienstiftung Nuppland") gegründet. Abseits vom öffentlich-rechtlichen Rundfunk sind natürlich auch die vielen lokalen Medien, Druckereien und Internetportale Mitglied, die jetzt endlich in nuppländischer Hand sind. Vor allem also regierungsnahe Medien, viele davon in der Hand von Bekannten und Freunden von dir. Trotzdem gibt es natürlich noch viel Oppositionelles, gerade im Netz.',
+				text: 'Gut, du hast die Stiftung ZMSN ("Zentrale Medienstiftung Nuppland") gegründet. Abseits vom öffentlich-rechtlichen Rundfunk sind andere regierungsnahe Medien dabei, viele davon in der Hand von Bekannten und Freunden von dir. Trotzdem gibt es natürlich noch viel Oppositionelles, gerade im Netz.',
 				info: "2018 wurde in Ungarn die Medienstiftung KESMA (Közép-Európai Sajtó és Média Alapítvány, deutsch: Zentraleuropäische Presse- und Medienstiftung) gegründet. Sie wird von Journalistenverbänden oder der NGO Reporter ohne Grenzen kritisiert, aufgrund der engen Verbindungen zum ungarischen Premierminister Viktor Orbán.",
 				answers: [
 					{
@@ -1869,7 +1868,7 @@ const chapters = {
 						goto: "nichtnurdas",
 					},
 					{
-						text: "ZMSN-Medien könnten doch bestimmte Subventionen bekommen, oder andere Unterstützung, die den anderen Medien nicht zukommt. So haben die zu wenig Geld.",
+						text: "ZMSN-Medien könnten doch bestimmte Subventionen bekommen, oder andere Unterstützung, die den anderen Medien nicht zukommt. So haben die Oppositionellen zu wenig Geld.",
 						goto: "subventionen",
 						variables: [
 							{
@@ -1882,7 +1881,7 @@ const chapters = {
 							},
 							{
 								text: "staatsnaehe",
-								amount: 2,
+								amount: 3,
 							},
 							{
 								text: "aussenbeziehungen",
@@ -1890,7 +1889,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -76,
+								amount: -25,
 							},
 						],
 					},
@@ -1898,7 +1897,7 @@ const chapters = {
 			},
 
 			nichtnurdas: {
-				text: "Noch besser. Der Stiftung gehören ja auch die Druckereien und Agenturen an. Normalerweise hätte das natürlich von der Kartellbehörde genehmigt werden müssen, aber so ein bisschen Mauschelei fällt ja nicht auf. Jetzt kontrollieren wir aber einen großen Teil der Kanäle und können durch den Zusammenschluss Synergien viel besser nutzen... und wie du schon sagtest, auch leicht ein Auge auf alles haben.",
+				text: "Noch besser. Der Stiftung gehören ja auch die Druckereien und Agenturen an. Normalerweise hätte das natürlich von der Kartellbehörde genehmigt werden müssen. Aber zum Glück hat Präsidentin Rokossowski ihre Kontakte. Jetzt kontrollieren wir aber einen großen Teil der Kanäle und können durch den Zusammenschluss leicht ein Auge auf alles haben.",
 				info: "2018 wurde in Ungarn die Medienstiftung KESMA (Közép-Európai Sajtó és Média Alapítvány, deutsch: Zentraleuropäische Presse- und Medienstiftung) gegründet. Sie wird von Journalistenverbänden oder der NGO Reporter ohne Grenzen kritisiert, aufgrund der engen Verbindungen zum ungarischen Premierminister Viktor Orbán.",
 				answers: [
 					{
@@ -1915,7 +1914,7 @@ const chapters = {
 							},
 							{
 								text: "staatsnaehe",
-								amount: 2,
+								amount: 3,
 							},
 							{
 								text: "aussenbeziehungen",
@@ -1923,12 +1922,12 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -76,
+								amount: -25,
 							},
 						],
 					},
 					{
-						text: "Dann briefe ich direkt mal die Leitungen, auf was sie besonders acht haben sollen: möglichst wenig Leute feuern, aber auf jeden Fall einschüchtern.",
+						text: "Dann briefe ich direkt mal die Leitungen, auf was sie besonders acht haben sollen: auf jeden Fall einschüchtern.",
 						goto: "briefing",
 						variables: [
 							{
@@ -1945,7 +1944,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -154,
+								amount: -114,
 							},
 						],
 					},
@@ -1953,7 +1952,7 @@ const chapters = {
 			},
 
 			briefing: {
-				text: "Die Zahl der kritischen Journalist*innen hat abgenommen. Aber eher, weil sich zumindest die bei den Medien in der Stiftung niemand mehr traut, etwas Kritisches zu schreiben - sehr gut!",
+				text: "Die Zahl der kritischen Journalist*innen hat abgenommen, weil sich zumindest die bei den Medien in der Stiftung niemand mehr traut, etwas Kritisches zu schreiben - sehr gut!",
 				info: "In Polen wurden vielen kritischen Journalist*innen gekündigt, doch nach der Ansicht einiger Medienschaffender könnte sich die Regierung damit verkalkuliert haben. Sie meinen, dass es auf dem Land schwieriger ist, viele Stellen neu zu besetzen. In froßen Städten sei das einfacher. Insofern ist es effizienter, nicht alle zu entlassen, sondern sie eher einzuschränken.",
 				answers: [
 					{
@@ -2078,7 +2077,7 @@ const chapters = {
 				],
 			},
 			lizenz2B: {
-				text: "Ziemlich lasch. Dein Handeln wurde nicht wirklich ernst genommen, der Sender ist sogar gewachsen. Aber lass' uns keine große Sache draus machen.",
+				text: "Ziemlich lasch. Dein Handeln wurde nicht wirklich ernst genommen, der Sender ist sogar gewachsen, weil das natürlich Publicity bringt.",
 				info: 'In Ungarn wurde dem Radiosender "Klubradio", einem der wenigen oppositionellen Medien, wegen einer solchen Bagatelle die Lizenz entzogen. Mittlerweile ist der Sender nur noch <a href=https://www.klubradio.hu/>übers Internet zu hören</a>. <a href=https://www.tagesschau.de/ausland/europa/ungarn-pressefreiheit-103.html>Hier</a> findest du mehr zum Entzug der Lizenz.',
 				answers: [
 					{
@@ -2095,7 +2094,7 @@ const chapters = {
 			},
 
 			lizenz3B: {
-				text: "Super Idee! Auch, wenn der Sender online noch weiter sendet, erreicht er so nur noch einen Bruchteil der Hörer*innen, und kann sich so natürlich auch schlechter finanzieren.",
+				text: "Super Idee! Auch, wenn der Sender online noch weiter sendet, erreicht er so nur noch einen Bruchteil des Publikums, und kann sich so natürlich auch schlechter finanzieren.",
 				info: 'In Ungarn wurde dem Radiosender "Klubradio", einem der wenigen oppositionellen Medien, wegen einer solchen Bagatelle die Lizenz entzogen. Mittlerweile ist der Sender nur noch <a href=https://www.klubradio.hu/>übers Internet zu hören</a>. <a href=https://www.tagesschau.de/ausland/europa/ungarn-pressefreiheit-103.html>Hier</a> findest du mehr zum Entzug der Lizenz.',
 				answers: [
 					{
@@ -2171,7 +2170,7 @@ const chapters = {
 			},
 
 			lizenz3: {
-				text: "Super Idee! Auch, wenn der Sender online noch weiter sendet, erreicht er so nur noch einen Bruchteil der Hörer*innen, und kann sich so natürlich auch schlechter finanzieren.",
+				text: "Super Idee! Auch, wenn der Sender online noch weiter sendet, erreicht er so nur noch einen Bruchteil des Publikums, und kann sich so natürlich auch schlechter finanzieren.",
 				info: 'In Ungarn wurde dem Radiosender "Klubradio", einem der wenigen oppositionellen Medien, wegen einer solchen Bagatelle die Lizenz entzogen. Mittlerweile ist der Sender nur noch <a href=https://www.klubradio.hu/>übers Internet zu hören</a>. <a href=https://www.tagesschau.de/ausland/europa/ungarn-pressefreiheit-103.html>Hier</a> findest du mehr zum Entzug der Lizenz.',
 				answers: [
 					{
@@ -2276,7 +2275,7 @@ const chapters = {
 						],
 					},
 					{
-						text: "Das überzeugt mich nicht.",
+						text: "Das überzeugt mich nicht. Hast du noch mehr Ideen?",
 						newChapter: true,
 						variables: [
 							{
@@ -2288,7 +2287,7 @@ const chapters = {
 				],
 			},
 			werbepraemieB: {
-				text: "Großartige Wahl! So fällt kaum auf, wer da eigentlich zahlt.",
+				text: "Großartige Wahl! So fällt kaum auf, wer da eigentlich zahlt. Dass die Wir haben Recht die Prämie bekommt, erfährt man erst, wenn man genauer hinschaut.",
 				info: 'Polen hat 2021 einen Gesetzesentwurf vorgeschlagen, der Medien zu einer solchen Abgabe zwingen würde. Bisher ist er noch nicht durch alle Instanzen, und die privaten Medien haben sich mit einem Tag, an dem sie nicht gesendet haben oder schwarze Titelblätter gedruckt haben, klar gegen die Regelung positioniert. So wären sie "Medien ohne Wahl" und würden in große finanzielle Schwierigkeiten kommen. Das Finanzministerium, auf dessen Website der Vorschlag erschienen ist, spricht tatsächlich von einer <a href=https://www.gov.pl/web/finanse/media-pomoga-w-zwalczaniu-skutkow-covid-19-przepisy-o-skladce-reklamowej-w-prekonsultacjach>"Werbeprämie"</a>.',
 				answers: [
 					{
@@ -2439,7 +2438,7 @@ const chapters = {
 				],
 			},
 			werbepraemie: {
-				text: "Großartige Wahl! So fällt kaum auf, wer da eigentlich zahlt.",
+				text: "Großartige Wahl! So fällt kaum auf, wer da eigentlich zahlt. Dass die Wir haben Recht die Prämie bekommt, erfährt man erst, wenn man genauer hinschaut.",
 				info: 'Polen hat 2021 einen Gesetzesentwurf vorgeschlagen, der Medien zu einer solchen Abgabe zwingen würde. Bisher ist er noch nicht durch alle Instanzen, und die privaten Medien haben sich mit einem Tag, an dem sie nicht gesendet haben oder schwarze Titelblätter gedruckt haben, klar gegen die Regelung positioniert. So wären sie "Medien ohne Wahl" und würden in große finanzielle Schwierigkeiten kommen. Das Finanzministerium, auf dessen Website der Vorschlag erschienen ist, spricht tatsächlich von einer <a href=https://www.gov.pl/web/finanse/media-pomoga-w-zwalczaniu-skutkow-covid-19-przepisy-o-skladce-reklamowej-w-prekonsultacjach>"Werbeprämie"</a>.',
 				answers: [
 					{
@@ -2482,7 +2481,7 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: -128,
+								amount: -74,
 							},
 							{
 								text: "aussenbeziehungen",
@@ -2612,6 +2611,10 @@ const chapters = {
 								text: "time",
 								amount: 2,
 							},
+							{
+								text: "anerkennung",
+								value: 2
+							},
 						],
 					},
 					{
@@ -2626,6 +2629,10 @@ const chapters = {
 								text: "time",
 								amount: 2,
 							},
+							{
+								text: "anerkennung",
+								value: 1
+							},
 						],
 					},
 					{
@@ -2639,6 +2646,10 @@ const chapters = {
 							{
 								text: "time",
 								amount: 3,
+							},
+							{
+								text: "anerkennung",
+								value: 3
 							},
 						],
 					},
@@ -2743,6 +2754,10 @@ const chapters = {
 								text: "kritischeJournalisten",
 								amount: 87,
 							},
+							{
+								text: "ergebisOffset",
+								amount: -15,
+							},
 						],
 					},
 				],
@@ -2827,8 +2842,12 @@ const chapters = {
 							},
 							{
 								text: "kritischeJournalisten",
-								amount: 133,
+								amount: 183,
 							},
+							{
+								text: "ergebnisOffset",
+								amount: -25
+							}
 						],
 					},
 				],
@@ -2858,6 +2877,7 @@ const chapters = {
 								text: "kritischeJournalisten",
 								amount: -156,
 							},
+
 						],
 					},
 				],
@@ -2937,7 +2957,7 @@ const chapters = {
 				],
 			},
 			dannHaltNicht: {
-				text: "Es ist deine Entscheidung. Mit dieser Einstellung wirst du unserem Land jedoch keinen Dienst erweisen.",
+				text: "Es ist deine Entscheidung. Mit dieser Einstellung wirst du unserem Land jedoch keinen Dienst erweisen. Moralapostel!",
 				answers: [
 					{
 						text: "Okay",
@@ -2947,12 +2967,20 @@ const chapters = {
 								text: "time",
 								amount: 3,
 							},
+							{
+								text: "gutmensch",
+								amount: 1,
+							},
+							{
+								text: "falsch",
+								amount: 2
+							}
 						],
 					},
 				],
 			},
 			vernuenftig: {
-				text: 'Ich wusste doch, dass du vernünftig bist. Wir sollten unseren Fokus auf die Gründerin des Blogs "Veritas" legen. Nach Ermittlungen unseres Geheimdienstes scheint sie in Besitz belastender Informationen gegenüber dir und der Regierung zu sein. Es sind also radikale, sofortige Maßnahmen erforderlich. Wie sollen wir vorgehen?',
+				text: 'Ich wusste doch, dass du vernünftig bist. Wir sollten unseren Fokus auf die Gründerin des Blogs "Veritas" legen. Nach Ermittlungen unseres Geheimdienstes scheint sie in Besitz belastender Informationen über dich und die Regierung zu sein. Es sind also radikale, sofortige Maßnahmen erforderlich. Wie sollen wir vorgehen?',
 				info: "In Russland kommt es immer wieder zu Vorfällen, bei denen der Regierung gegenüber kritische Journalist*innen unter unklaren Umständen sterben.  So ist beispielsweise 2018 der Investigativjournalist Maxim Borodin ums Leben gekommen. Er fiel aus seiner Wohnung im fünften Stock. Nach offiziellen Angaben handle es sich um einen Unfall oder um Selbstmord. Kolleg*innen hingegen merken die verdächtigen Umstände dieses Vorfalls an. <a href='https://www.faz.net/aktuell/feuilleton/russischer-journalist-borodin-stirbt-selbstmord-unfall-oder-mord-15553929.html'>Link 1</a>, <a href='https://taz.de/Mysterioeser-Todesfall-in-Russland/!5498686/'>Link 2</a>",
 				answers: [
 					{
@@ -2960,35 +2988,43 @@ const chapters = {
 						variables: [
 							{
 								text: "kritischeJournalisten",
-								amount: -133,
+								amount: -116,
 							},
 							{
 								text: "aussenbeziehungen",
-								amount: -5,
+								amount: -4,
 							},
 							{
 								text: "time",
 								amount: 2,
 							},
+							{
+								text: "anerkennung",
+								amount: 1
+							}
 						],
 						goto: "gestuerzt",
 					},
 					{
-						text: 'Wie wäre es wenn die Journalistin während ihrer regelmäßigen Wanderungen über einen "Ast stolpert" und sich ein Bein bricht? Einige Waldwege sind wirklich schlecht gesichert.',
+						text: 'Wie wäre es wenn die Journalistin während ihrer regelmäßigen Wanderungen über einen "Ast stolpert" und sich ein Bein bricht? Einige Waldwege sind wirklich schlecht gesichert. Und wer weiß, vielleicht passiert ihrer Familie ja das Gleiche?',
 						variables: [
 							{
 								text: "kritischeJournalisten",
-								amount: -41,
+								amount: -11,
 							},
 							{
 								text: "time",
 								amount: 4,
 							},
+							{
+								text: "aussenbeziehungen",
+								amount: -2
+							}
 						],
 						goto: "diskretVerschwunden",
 					},
 					{
-						text: "Ich möchte kein Blut an meinen Händen kleben haben. Es genügt, wenn wir ihr einen Denkzettel verpassen. Sperren wir sie für ein paar Monate ins Gefängnis und drohen ihr, das gleiche mit ihren Familienmitgliedern zu tun, wenn sie sich weiterhin gegen unser Land stellt.",
+						text: "Ich möchte kein Blut an meinen Händen kleben haben. Es genügt, wenn wir ihr einen Denkzettel verpassen. Sperren wir sie für ein Wochenende ins Gefängnis, aber genug ist genug!",
 						variables: [
 							{
 								text: "time",
@@ -3008,10 +3044,10 @@ const chapters = {
 				],
 			},
 			diskretVerschwunden: {
-				text: "Das würde ihr auf alle Fälle mächtig Angst einjagen, die abschreckende WIrkung gegenüber anderen Journalist*innen ist jedoch geringer.",
+				text: "Das würde ihr auf alle Fälle mächtig Angst einjagen, die abschreckende Wirkung gegenüber anderen Journalist*innen ist jedoch geringer.",
 				answers: [
 					{
-						text: "Das war auf jeden Fall die bessere Wahl",
+						text: "Das war auf jeden Fall die bessere Wahl.",
 						newChapter: true,
 					},
 				],
@@ -3036,7 +3072,7 @@ const chapters = {
 						variables: [
 							{
 								text: "aussenbeziehungen",
-								amount: -3,
+								amount: -2,
 							},
 							{
 								text: "time",
@@ -3066,15 +3102,19 @@ const chapters = {
 								text: "time",
 								amount: 1,
 							},
+							{
+								text: "falsch",
+								amount: 1,
+							},
 						],
 					},
 				],
 			},
 			schweigen: {
-				text: "Das wird ihnen nicht gefallen. Aber so können sie uns nichts anhängen.",
+				text: "Das wird den Medien nicht gefallen. Aber so können sie uns nichts anhängen.",
 				answers: [
 					{
-						text: "Die können uns aber auch nicht einfach rumkommandieren.",
+						text: "Tja, wer ist hier in der Regierung?",
 						newChapter: true,
 					},
 				],
@@ -3095,7 +3135,7 @@ const chapters = {
 				],
 			},
 			hellhoerig: {
-				text: "Die Polizei wollte doch nur mit ihr reden. Das wird andere Journalist*innen jedoch hellhörig werden lassen.",
+				text: "Keine gute Idee. Das wird andere Journalist*innen hellhörig werden lassen!",
 				answers: [
 					{
 						text: "Das war das kleinste Übel.",
@@ -3104,15 +3144,15 @@ const chapters = {
 				],
 			},
 			zuNaiv: {
-				text: "Naiv von dir zu glauben, du hättest nicht schon längst Blut an dir kleben. Wir müssen auf Nummer sicher gehen und dein Vorschlag bietet hier keine Sicherheit.",
+				text: "Naiv von dir zu glauben, du hättest nicht schon längst Blut an dir kleben. Wir müssen auf Nummer sicher gehen, was die Berichterstattung angeht. Und dein Vorschlag bietet hier keine Sicherheit.",
 				info: "Weltweit sitzen jährlich hunderte Journalist*innen aufgrund ihrer Berichterstattung im Gefängnis. Ein prominentes Beispiel hierfür ist der deutsch- türkische Journalist Deniz Yücel, der durch seine kritische journalistischen Arbeit ca. ein Jahr in türkischer Haft war. Erst durch diplomatischen Druck aus Deutschland wurde Yücel letztendlich freigelassen. <a href='https://www.hessenschau.de/kultur/interview-mit-deniz-yuecel-die-freiheit-der-kunst-gilt-auch-fuer-die-bescheuerten,deniz-yuecel-pen-praesident-100.html'>Link 1</a>, <a href='https://www.reporter-ohne-grenzen.de/barometer/2021/journalisten-in-haft'>Link 2</a>, <a href='https://www.sueddeutsche.de/politik/deniz-yuecel-prozess-chronologie-1.4946432'>Link 3</a>",
 				answers: [
 					{
-						text: "Ich verstehe.",
+						text: "Ich verstehe. Dann müssen wir doch radikaler vorgehen.",
 						goto: "vernuenftigOhne3",
 					},
 					{
-						text: "Ich werde weder für einen Angriff gegen sie, geschweige denn für ihren Tod verantwortlich sein.",
+						text: "Ich werde weder für einen Angriff gegen sie noch für ihren Tod verantwortlich sein.",
 						goto: "mordNudger",
 					},
 				],
@@ -3121,17 +3161,13 @@ const chapters = {
 				text: "Sei vernünftig und setze es in Perspektive. Sollten die Informationen an die Öffentlichkeit gelangen, wird das unserem Land und Volk massiv schaden. Wen kümmert diese staatsfeindliche Journalistin?",
 				answers: [
 					{
-						text: "Ich verstehe.",
-						goto: "vernuenftigOhne3",
-					},
-					{
 						text: "Das läuft alles vollkommen aus dem Ruder. Ich mach' hier nicht mehr mit!",
 						goto: "ergebnis/mordUndTotschlagEnde",
 					},
 				],
 			},
 			vernuenftigOhne3: {
-				text: 'Ich wusste doch, dass du vernünftig bist. Wir sollten unseren Fokus auf die Gründerin des Blogs "Veritas" legen. Nach Ermittlungen unseres Geheimdienstes scheint sie in Besitz belastender Informationen gegenüber dir und der Regierung zu sein. Es sind also radikale, sofortige Maßnahmen erforderlich. Wie sollen wir vorgehen?',
+				text: 'Ich wusste doch, dass du vernünftig bist. Wir sollten unseren Fokus auf die Gründerin des Blogs "Veritas" legen. Nach Ermittlungen unseres Geheimdienstes scheint sie in Besitz belastender Informationen über dich und die Regierung zu sein. Es sind also radikale sofortige Maßnahmen erforderlich. Wie sollen wir vorgehen?',
 				info: "In Russland kommt es immer wieder zu Vorfällen, bei denen der Regierung gegenüber kritische Journalist*innen unter unklaren Umständen sterben.  So ist beispielsweise 2018 der Investigativjournalist Maxim Borodin ums Leben gekommen. Er fiel aus seiner Wohnung im fünften Stock. Nach offiziellen Angaben handle es sich um einen Unfall oder um Selbstmord. Kolleg*innen hingegen merken die verdächtigen Umstände dieses Vorfalls an. <a href='https://www.faz.net/aktuell/feuilleton/russischer-journalist-borodin-stirbt-selbstmord-unfall-oder-mord-15553929.html'>Link 1</a>, <a href='https://taz.de/Mysterioeser-Todesfall-in-Russland/!5498686/'>Link 2</a>",
 				answers: [
 					{
@@ -3153,7 +3189,7 @@ const chapters = {
 						goto: "gestuerzt",
 					},
 					{
-						text: 'Wie wäre es wenn die Journalistin während ihrer regelmäßigen Wanderungen über einen "Ast stolpert" und sich ein Bein bricht? Einige Waldwege sind wirklich schlecht gesichert.',
+						text: 'Wie wäre es wenn die Journalistin während ihrer regelmäßigen Wanderungen über einen "Ast stolpert" und sich ein Bein bricht? Einige Waldwege sind wirklich schlecht gesichert. Und vielleicht passiert ihrer Familie ja das Gleiche?!',
 						variables: [
 							{
 								text: "kritischeJournalisten",
