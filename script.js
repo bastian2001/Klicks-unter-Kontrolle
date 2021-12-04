@@ -31,7 +31,7 @@ const chapters = {
 				],
 			},
 			befoerderung: {
-				text: "Du wurdest befördert. Dein Chef Rokossowski hat dir die Aufgabe übertragen, die Medienpolitik deines Landes Nuppland zu organisieren. Du versuchst, alle Entscheidungen, die die Medien betreffen, zugunsten eurer Partei, der WhR (Wir haben Recht) zu treffen. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren, im Land, und die Zahl muss runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
+				text: "Du wurdest befördert. Die Präsidentin von Nuppland, deine Chefin Rokossowski, hat dir die Aufgabe übertragen, die Medienpolitik des Landes zu organisieren. Deine Aufgabe: Eure Partei, die WhR (Wir haben Recht) soll wiedergewählt werden - und das geht am Leichtesten, wenn nichts Schlechtes über dich und deine Partei in den Medien erscheint. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren, im Land, und die Zahl muss runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
 				info: "Auf diesem Fragezeichen findest du über das Spiel verteilt immer wieder Anmerkungen zu Ländern, Regierungen und Medienunternehmen, die ähnliche Maßnahmen getroffen haben. Außerdem kannst du herausfinden, welche Auswirkungen das hatte.",
 				answers: [
 					{
