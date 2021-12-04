@@ -1843,7 +1843,7 @@ const chapters = {
 				],
 			},
 			genial: {
-				text: "Eine meiner besseren Ideen. Und wie es aussieht, geht dein Plan auf. Die Agentur stellt jetzt kostenlos MAterial zur Recherche für nuppische Medien zur Verfügung. So werden kleinere Unternehmen immer abhängiger und können gar nicht anders als dir nach dem Mund zu reden!",
+				text: "Eine meiner besseren Ideen. Und wie es aussieht, geht dein Plan auf. Die Agentur stellt jetzt kostenlos Material zur Recherche für nuppische Medien zur Verfügung. So werden kleinere Unternehmen immer abhängiger und können gar nicht anders als dir nach dem Mund zu reden!",
 				info: "Die ungarische Nachrichtenagentur MTI wurde 2015 in die staatliche Rundfunkholding MTVA überführt, zu der auch der öffentlich-rechtliche Rundfunk gehört. Die Agentur stellt kostenlos Ressourcen für die ungarischen Medien zur Verfügung, macht damit aber gerade kleinere Redaktionen immer abhängiger von der Regierung. Zuvor waren gerade kleinere Redaktionen häufig diejenigen, die am ehesten regierungskritische Inhalte verbreiten konnten. Mehr Informationen zur MTVA findest du <a href=https://taz.de/Pressefreiheit-in-Ungarn-unter-Beschuss/!5668697/>hier</a> und <a href=https://www.reporter-ohne-grenzen.de/pressemitteilungen/meldung/fehlende-pressefreiheit-gefahr-fuer-europa/>hier</a>.",
 				answers: [
 					{
@@ -2613,7 +2613,7 @@ const chapters = {
 							},
 							{
 								text: "anerkennung",
-								value: 2
+								value: 2,
 							},
 						],
 					},
@@ -2631,7 +2631,7 @@ const chapters = {
 							},
 							{
 								text: "anerkennung",
-								value: 1
+								value: 1,
 							},
 						],
 					},
@@ -2649,7 +2649,7 @@ const chapters = {
 							},
 							{
 								text: "anerkennung",
-								value: 3
+								value: 3,
 							},
 						],
 					},
@@ -2846,8 +2846,8 @@ const chapters = {
 							},
 							{
 								text: "ergebnisOffset",
-								amount: -25
-							}
+								amount: -25,
+							},
 						],
 					},
 				],
@@ -2877,7 +2877,6 @@ const chapters = {
 								text: "kritischeJournalisten",
 								amount: -156,
 							},
-
 						],
 					},
 				],
@@ -2973,8 +2972,8 @@ const chapters = {
 							},
 							{
 								text: "falsch",
-								amount: 2
-							}
+								amount: 2,
+							},
 						],
 					},
 				],
@@ -3000,8 +2999,8 @@ const chapters = {
 							},
 							{
 								text: "anerkennung",
-								amount: 1
-							}
+								amount: 1,
+							},
 						],
 						goto: "gestuerzt",
 					},
@@ -3018,8 +3017,8 @@ const chapters = {
 							},
 							{
 								text: "aussenbeziehungen",
-								amount: -2
-							}
+								amount: -2,
+							},
 						],
 						goto: "diskretVerschwunden",
 					},
