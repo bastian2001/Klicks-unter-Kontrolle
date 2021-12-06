@@ -1,7 +1,7 @@
 let test = 0
 
 const timepermonth = 1,
-	chapterSelectionCount = 3
+	chapterSelectionCount = 2
 
 const chapters = {
 	//Kapitel - Eigenschaften und Fragen (Inhalte der Fragen (Fragentext, Antworten, evtl. Bedingungen))

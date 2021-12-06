@@ -253,7 +253,7 @@ button {
 	position: absolute;
 	display: grid;
 	width: 100%;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-gap: 1rem;
 	transform: translateX(0%);
 	transition: transform 0.7s ease-out;
