@@ -1078,7 +1078,6 @@ const chapters = {
 		},
 	},
 
-								text: "sanktionen",
 	nachfrage: {
 		props: {},
 		questions: {
