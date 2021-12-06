@@ -721,6 +721,456 @@ const chapters = {
 		},
 	},
 
+	entlassung: {
+		props: {
+			entry: 0,
+			title: "Entlassung",
+			description: "Untreue in den Staatsmedien",
+			conditions: [
+				{
+					variableName: "staatsnaehe",
+					type: ">=",
+					value: 5,
+				},
+				{
+					variableName: "aufgekauft",
+					type: "==",
+					value: true,
+				},
+				{
+					variableName: "time",
+					type: "<=",
+					value: 10.5 * timepermonth,
+				},
+			],
+		},
+		questions: {
+			entlassung: {
+				text: "Nuppland hast dich ja vorhin schon ziemlich unbeliebt damit gemacht, dass es die Titel von Press Enterprises aufgekauft hat. Die meisten Tageszeitungen und großen Internetportale sind jetzt also Staatsmedien. Trotzdem publizieren sie bisher genau wie vorher.",
+				answers: [
+					{
+						text: "Ist doch gut so. Medien von den Menschen, die hier leben, für die Menschen, die hier leben.",
+						goto: "gleich2",
+						variables: [
+							{
+								text: "time",
+								amount: 3,
+							},
+							{
+								text: "falsch",
+								amount: 1,
+							},
+							{
+								text: "gutmensch",
+								amount: 1,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: 5,
+							},
+						],
+					},
+					{
+						text: "Also entlasse ich alle Chefredakteur*innen, die sich in letzter Zeit kritisch geäußert haben...? Und dann besetze ich die Stellen mit parteitreuen Menschen.",
+						goto: "chefsentlassen",
+						variables: [
+							{
+								text: "time",
+								amount: 3,
+							},
+							{
+								text: "anerkennung",
+								amount: 1,
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: -3,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: -98,
+							},
+							{
+								text: "entlassungenDone",
+								value: true,
+							},
+						],
+					},
+					{
+						text: "Zusätzlich zu den Chefredakteur*innen sollten auch die kleineren Fische aus dem Becken geworfen werden, wenn sie sich nicht opportun verhalten. Nestbeschmutzer!",
+						goto: "alleentlassen",
+						variables: [
+							{
+								text: "time",
+								amount: 4,
+							},
+							{
+								text: "falsch",
+								amount: 1,
+							},
+							{
+								text: "anerkennung",
+								amount: 3,
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: -6,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: -212,
+							},
+							{
+								text: "entlassungenDone",
+								value: true,
+							},
+							{
+								text: "ergebnisOffset",
+								amount: -4,
+							},
+						],
+					},
+				],
+			},
+
+			gleich2: {
+				text: "Laaaaangweilig. Weißt du, dass du so deinen Kritiker*innen das Feld komplett überlässt? Kein Wunder, dass eure Umfragewerte sinken. Klar freuen sich alle über eine bunte Medienlandschaft, aber stell dir bloß mal vor, was du alles mit ein paar Einschränkungen erreichen könntest.",
+				info: "In den letzten Jahren wurden in Polen viele Posten in den Redaktionen neu besetzt. In den großen Städten ist es leichter, Ersatz zu finden, während Lokalzeitungen in dieser Hinsicht weniger Macht haben. Mehr zur Ersetzung der Journalist*innen findest du in <a href =https://www.deutschlandfunkkultur.de/medienpolitik-in-polen-angriff-auf-die-pressefreiheit.979.de.html?dram:article_id=496143>diesem Artikel vom Deutschlandfunk</a>.",
+				answers: [
+					{
+						text: "Okay, vielleicht entlassen wir doch ein oder zwei der Chefredaktuer*innen...",
+						goto: "chefsentlassen",
+						variables: [
+							{
+								text: "time",
+								amount: 2,
+							},
+							{
+								text: "anerkennung",
+								amount: 1,
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: -3,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: -65,
+							},
+							{
+								text: "entlassungenDone",
+								value: true,
+							},
+						],
+					},
+					{
+						text: "Die AU schaut doch sowieso schon sehr genau hin, seit wir die Titel von Press Enterprises gekauft haben. Wir sollten da schon besser aufpassen.",
+						newChapter: true,
+						variables: [
+							{
+								text: "anerkennung",
+								amount: -2,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: -7,
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: 1,
+							},
+						],
+					},
+				],
+			},
+			chefsentlassen: {
+				text: "Sehr gut. Wenn die Chefpositionen mit regierungstreuen Leuten besetzt sind, schüchtert das wahrscheinlich auch die Journalist*innen in den Redaktionen schon etwas ein.",
+				info: "In den großen Städten ist es leichter, Ersatz zu finden, während Lokalzeitungen in dieser Hinsicht weniger Freiheiten haben. Mehr zur Ersetzung der Journalist*innen findest du in <a href =https://www.deutschlandfunkkultur.de/medienpolitik-in-polen-angriff-auf-die-pressefreiheit.979.de.html?dram:article_id=496143>diesem Artikel vom Deutschlandfunk</a>.",
+				answers: [
+					{
+						text: "Und wenn ich zusätzlich trotzdem noch weitere Journalist*innen ersetze?",
+						goto: "alleentlassen",
+						variables: [
+							{
+								text: "time",
+								amount: 2,
+							},
+							{
+								text: "falsch",
+								amount: 1,
+							},
+							{
+								text: "anerkennung",
+								amount: 2,
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: -4,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: -116,
+							},
+
+							{
+								text: "entlassungenDone",
+								value: true,
+							},
+						],
+					},
+					{
+						text: "Reicht erstmal, denke ich.",
+						newChapter: true,
+						variables: [
+							{
+								text: "time",
+								amount: 1,
+							},
+						],
+					},
+				],
+			},
+			alleentlassen: {
+				text: "Die Zahl der kritischen Journalisten hat enorm abgenommen. Und natürlich verdienen es alle, die sich gegen die WhR stellen, nicht besser. Aber gerade auf dem Land und abseits der großen Städte, wo die Redaktionen der Lokalzeitungen sitzen, ist es schwierig, genug politisch Korrekte zu finden, mit denen du die Stellen besetzen kannst. Ein paar der jetzt staatlichen Zeitungen und Portale müssen eingedampft werden. Dadurch wird deine Anerkennung in der Partei leider auch sehr abnehmen.",
+				info: "In den großen Städten ist es leichter, Ersatz zu finden, während Lokalzeitungen in dieser Hinsicht weniger Macht haben. Mehr zur Ersetzung der Journalist*innen findest du in <a href =https://www.deutschlandfunkkultur.de/medienpolitik-in-polen-angriff-auf-die-pressefreiheit.979.de.html?dram:article_id=496143>diesem Artikel vom Deutschlandfunk</a>.",
+				answers: [
+					{
+						text: "Das hab' ich nicht bedacht... Blöd gelaufen.",
+						newChapter: true,
+						variables: [
+							{
+								text: "anerkennung",
+								amount: -5,
+							},
+							{
+								text: "time",
+								amount: 3,
+							},
+						],
+					},
+				],
+			},
+		},
+	},
+
+	szenarioRenationalisierung: {
+		props: {
+			entry: 0,
+			title: "Kritische Moderatorin",
+			description: "Eine bekannte Moderatorin äußert sich dir gegenüber kritisch",
+			conditions: [],
+		},
+		questions: {
+			zensur: {
+				text: "Im öffentlich-rechtlichen Fernsehen äußert sich eine beliebte Moderatorin kritisch zu einem neuen Gesetzentwurf. Wie regierst du am besten?",
+				answers: [
+					{
+						text: "Ich kann sie einfach von heute auf morgen entlassen, oder?",
+						goto: "entlassen",
+						variables: [
+							{
+								text: "anerkennung",
+								amount: 2,
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: -1,
+							},
+							{
+								text: "time",
+								amount: 1,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: -29,
+							},
+							{
+								text: "entlassungenDone",
+								value: true,
+							},
+						],
+					},
+					{
+						text: "Eine öffentliche Drohung gegenüber kritischen Journalist*innen klingt doch gut.",
+						goto: "drohung",
+						variables: [
+							{
+								text: "time",
+								amount: 1,
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: -5,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: -164,
+							},
+							{
+								text: "zensurDone",
+								value: true,
+							},
+						],
+					},
+					{
+						text: "Ich habe moralische Einwände.",
+						goto: "moralisch",
+						variables: [
+							{
+								text: "gutmensch",
+								amount: 1,
+							},
+							{
+								text: "time",
+								amount: 2,
+							},
+						],
+					},
+				],
+			},
+
+			moralisch: {
+				text: "Moralische was?",
+				answers: [
+					{
+						text: "Einwände.",
+						goto: "moralisch2",
+						variables: [
+							{
+								text: "gutmensch",
+								amount: 1,
+							},
+							{
+								text: "time",
+								amount: 1,
+							},
+						],
+					},
+					{
+						text: "Ach, nicht so wichtig.",
+						goto: "zensur",
+					},
+				],
+			},
+
+			moralisch2: {
+				text: "Bist du dir sicher, dass du hier in diesem Job richtig bist?",
+				answers: [
+					{
+						text: "Denke schon. Ich probiere es nochmal.",
+						goto: "zensur",
+					},
+					{
+						text: "Ich hab da kein gutes Gefühl bei der Sache. Ich trete zurück.",
+						goto: "nachfrage/letzteNachfrage",
+					},
+				],
+			},
+
+			entlassen: {
+				text: "Klar, im Ausland kennt sie kaum jemand, und im Inland schieben wir einfach einen Grund vor, wenn du magst. Hast du eine Idee?",
+				info: 'Durch das "Kleine Mediengesetz" in Polen konnte die Regierung bei der Personalpolitik des öffentlich-rechtlichen Rundfunks mitmischen. Viele Redakteure, Moderatorinnen und Journalisten wurden durch "politisch Korrekte" ersetzt, zum Beispiel die beliebte Moderatorin Beata Tadla. Mehr dazu findest du <a href=https://www.dw.com/de/polnische-medien-mauern-gegen-geplante-reklamesteuer/a-56527227>bei der Deutschen Welle</a>.',
+				answers: [
+					{
+						text: "Sagen wir einfach, sie ist krank geworden.",
+						goto: "krank",
+						variables: [
+							{
+								text: "time",
+								amount: 1,
+							},
+							{
+								text: "anerkennung",
+								amount: 1,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: 3,
+							},
+						],
+					},
+					{
+						text: "Ich würde es totschweigen. Wir besetzen ihre Sendungen einfach neu.",
+						goto: "nichts",
+						variables: [
+							{
+								text: "time",
+								amount: 1,
+							},
+							{
+								text: "anerkennung",
+								amount: 2,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: 14,
+							},
+						],
+					},
+					{
+						text: "Wir sagen die Wahrheit, dass sie wegen kritischer Äußerungen rausgeflogen ist. Das schüchtert andere Journalist*innen doch auch ein.",
+						goto: "wahrheit",
+						variables: [
+							{
+								text: "time",
+								amount: 1,
+							},
+							{
+								text: "anerkennung",
+								amount: -2,
+							},
+							{
+								text: "kritischeJournalisten",
+								amount: -60,
+							},
+							{
+								text: "aussenbeziehungen",
+								amount: -3,
+							},
+						],
+					},
+				],
+			},
+			krank: {
+				text: "Von der Bildfläche komplett verschwinden darf sie natürlich nicht. Ansonsten aber eine ganz gute Wahl, denke ich.",
+				answers: [
+					{
+						text: "Was machen wir als nächstes?",
+						newChapter: true,
+					},
+				],
+			},
+			nichts: {
+				text: "Keine schlafenden Hunde wecken, würde ich auch sagen. Ein paar Journalisten sind misstrauisch geworden, aber das ist kein Drama.",
+				answers: [
+					{
+						text: "Was machen wir als nächstes?",
+						newChapter: true,
+					},
+				],
+			},
+			wahrheit: {
+				text: "Mhhh, schwierig. So lenkst du natürlich noch mehr Aufmerksamkeit auf das ganze Thema. Wahrscheinlich wäre es besser gewesen, alles zu verschweigen. Aber ja, es schüchtert natürlich ein!",
+				answers: [
+					{
+						text: "Weiter geht's!",
+						newChapter: true,
+					},
+				],
+			},
+			drohung: {
+				text: "Wow, mutig! Aber nicht verkehrt: Das hat ziemlich viele kritische Journalist*innen eingeschüchtert. Im Ausland kommt das natürlich nicht so gut an. Aber hey - die Moderatorin wird so schnell nichts mehr gegen die WhR sagen!",
+				info: 'Durch das "Kleine Mediengesetz" in Polen konnte die Regierung bei der Personalpolitik des öffentlich-rechtlichen Rundfunks mitmischen. Viele Redakteure, Moderatorinnen und Journalisten wurden durch "politisch Korrekte" ersetzt, zum Beispiel die beliebte Moderatorin Beata Tadla. Mehr dazu findest du <a href=https://www.dw.com/de/polnische-medien-mauern-gegen-geplante-reklamesteuer/a-56527227>bei der Deutschen Welle</a>. Öffentliche Drohungen gab es bisher nicht, zumindest nicht gegen Journalist*innen.',
+				answers: [
+					{
+						text: "Richtig so!",
+						newChapter: true,
+					},
+				],
+			},
+		},
+	},
+
 	umgangMitKritik: {
 		props: {
 			entry: 0,
