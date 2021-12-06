@@ -1078,50 +1078,7 @@ const chapters = {
 		},
 	},
 
-	sanktionen: {
-		props: {},
-		questions: {
-			sanktionen14: {
-				text: "Übrigens: Ich hab dich gewarnt! Die Adrejanische Union verhängt Sanktionen gegen Nuppland. Grund dafür sind die mehrfachen Verstöße gegen die Verträge, auf denen die AU aufbaut. Rechtstaatlichkeit und Pressefreiheit werden dort als hohe Werte angesehen. Es gibt also weniger Geld von der AU, und dadurch sinkt natürlich auch deine Zustimmung bei der Bevölkerung.",
-				answers: [
-					{
-						goto: "/back",
-						text: "Zurück zum Thema!",
-						variables: [
-							{
 								text: "sanktionen",
-								value: true,
-							},
-							{
-								text: "ergebnisOffset",
-								amount: -10,
-							},
-						],
-					},
-				],
-			},
-			sanktionen22: {
-				text: "Übrigens: Ich hab dich gewarnt! Die Adrejanische Union verhängt Sanktionen gegen Nuppland. Grund dafür sind die mehrfachen Verstöße gegen die Verträge, auf denen die AU aufbaut. Rechtstaatlichkeit und Pressefreiheit werden dort als hohe Werte angesehen. Es gibt also weniger Geld von der AU, und dadurch wird natürlich auch dein Wahlergebnis schlechter. Und das alles, obwohl du erfolgreich geklagt hast und das Verfahren lange aufschieben konntest.",
-				answers: [
-					{
-						text: "Mhhh... Weitermachen müssen wir trotzdem. Zurück zum Thema!",
-						variables: [
-							{
-								text: "sanktionen",
-								value: true,
-							},
-							{
-								text: "ergebnisOffset",
-								amount: -6,
-							},
-						],
-						goto: "/back",
-					},
-				],
-			},
-		},
-	},
-
 	nachfrage: {
 		props: {},
 		questions: {
@@ -1909,42 +1866,6 @@ function startChapter(name) {
 		}
 	} else {
 		throw "WTF condition #lskdaslfz"
-	}
-	//Kapitelanfang überschreiben, z.B. Klage
-	switch (
-		true //wie else if ... else if
-	) {
-		case gameVariables.time >= timepermonth * 6 &&
-			gameVariables.geklagt &&
-			!gameVariables.klageErgebnis &&
-			gameVariables.klageErfolg:
-			backQuestion = keysToPath(q.chapter, q.question)
-			q = "klageErgebnis/klageErfolgreich"
-			break
-		case gameVariables.time >= timepermonth * 6 &&
-			gameVariables.geklagt &&
-			!gameVariables.klageErgebnis &&
-			!gameVariables.klageErfolg:
-			backQuestion = keysToPath(q.chapter, q.question)
-			q = "klageErgebnis/klageErfolglos"
-			break
-		//1.3 erhöhen, um die Sanktionen später kommen zu lassen
-		case !gameVariables.sanktionen &&
-			gameVariables.sanktionsschwelle === -22 &&
-			gameVariables.geklagt &&
-			gameVariables.aussenbeziehungen <= -22 &&
-			(Math.pow(Math.random(), 1.3) > gameVariables.time / (12 * timepermonth) || q.chapter === "ergebnis"):
-			backQuestion = keysToPath(q.chapter, q.question)
-			q = "sanktionen/sanktionen22"
-			break
-		case !gameVariables.sanktionen &&
-			gameVariables.sanktionsschwelle === -14 &&
-			gameVariables.geklagt &&
-			gameVariables.aussenbeziehungen <= -14 &&
-			(Math.pow(Math.random(), 1.3) > gameVariables.time / (12 * timepermonth) || q.chapter === "ergebnis"):
-			backQuestion = keysToPath(q.chapter, q.question)
-			q = "sanktionen/sanktionen14"
-			break
 	}
 	if (typeof q === "string") q = pathToKeys(q)
 	showQuestion(q)
