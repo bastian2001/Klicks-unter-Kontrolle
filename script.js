@@ -225,7 +225,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Okay, versuche ich.",
-						newChapter: "rechtsstaatsmechanismus",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
@@ -241,7 +241,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Mmmhhh, okay.",
-						newChapter: "rechtsstaatsmechanismus",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
@@ -256,7 +256,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Let's go!",
-						newChapter: "rechtsstaatsmechanismus",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
@@ -318,7 +318,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Wenn du meinst... Dann lass uns weiter Journalisten jagen.",
-						newChapter: "rechtsstaatsmechanismus",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
@@ -344,7 +344,7 @@ const chapters = {
 				answers: [
 					{
 						text: "Da hatten wir keinen guten Start miteinander. Aber lass' uns was anderes probieren.",
-						newChapter: "rechtsstaatsmechanismus",
+						newChapter: true,
 						variables: [
 							{
 								text: "time",
@@ -370,178 +370,6 @@ const chapters = {
 			},
 		},
 	},
-
-	rechtsstaatsmechanismus: {
-		props: {
-			entry: 0,
-		},
-		questions: {
-			rsm: {
-				text: 'Moooooment, nicht so schnell. Uns kommt da gerade etwas dazwischen: Die Adrejanische Union plant eine neue Regelung - einen sogenannten "Rechtsstaats&shy;mechanismus". Das bedeutet, dass bei Verstößen gegen die Rechtsstaatlichkeit, zum Beispiel bei Einschränkungen der Medienfreiheit, besondere Sanktionen wie Einschränkung von finanziellen Mitteln zu erwarten sind. Für uns wäre das unvorteilhaft, wir wollen ja keine freie Presse. Wir könnten dagegen klagen, was meinst du?',
-				info: 'Die Europäische Union hat zum 1.1.2021 einen solchen Mechanismus auf den Weg gebracht. Gelder sollten nicht in die Hände derjenigen gelangen, die die Demokratie bedrohen, so die Argumentation. Rechtsstaatlichkeit ist in der EU als Grundwert verankert: "Sie bedeutet, dass Regierungen das Recht achten sollten und keine willkürlichen Entscheidungen treffen dürfen. Die Bürger sollten in der Lage sein, das Handeln von Regierungen vor unabhängigen Gerichten anzufechten. Die Rechtsstaatlichkeit umfasst auch die Bekämpfung von Korruption und den Schutz der Medienfreiheit, wodurch sichergestellt wird, dass die Öffentlichkeit angemessen über staatliche Maßnahmen informiert wird", schreibt das EU-Parlament auf seiner <a href= https://www.europarl.europa.eu/news/de/headlines/eu-affairs/20201001STO88311/rechtsstaatsmechanismus-schutz-des-eu-haushalts-und-der-europaischen-werte>Webseite</a>.',
-				mediumType: "youtube",
-				mediumSource: "2iJbqncEw1Q",
-				answers: [
-					{
-						text: "Ich glaube, wir sollten da lieber keine schlafenden Hunde wecken. Wir unterzeichnen.",
-						goto: "unterschreiben",
-						variables: [
-							{
-								text: "aussenbeziehungen",
-								amount: 4,
-							},
-							{
-								text: "time",
-								amount: 1,
-							},
-							{
-								text: "gutmensch",
-								amount: 1,
-							},
-						],
-					},
-					{
-						text: "Ja, natürlich klagen wir! Bei der geringsten Erfolgschance müssen wir es probieren. Und ansonsten verlängern wir wenigstens das Verfahren.",
-						goto: "klagen",
-						variables: [
-							{
-								text: "aussenbeziehungen",
-								amount: -4,
-							},
-							{
-								text: "time",
-								amount: 1,
-							},
-							{
-								text: "kritischeJournalisten",
-								amount: 143,
-							},
-							{
-								text: "geklagt",
-								value: true,
-							},
-						],
-					},
-					{
-						text: "Ich weiß nicht. Wie entscheiden sich denn die anderen Länder?",
-						goto: "verbuendete",
-						variables: [
-							{
-								text: "aussenbeziehungen",
-								amount: -1,
-							},
-							{
-								text: "time",
-								amount: 1,
-							},
-						],
-					},
-				],
-			},
-			unterschreiben: {
-				text: "Wie du meinst. So stellen wir uns auf jeden Fall gut mit den anderen Ländern. Hoffentlich fällt uns das nicht später noch zur Last.",
-				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
-				answers: [
-					{
-						text: "Ach, das passt schon. Weiter geht's im Wahlkampf!",
-						newChapter: true,
-						variables: [
-							{
-								text: "time",
-								amount: 1,
-							},
-						],
-					},
-				],
-			},
-			klagen: {
-				text: "Wir sind nicht einmal die einzigen, die klagen! Auch das Nachbarland Tilpern, das eine Regierung hat, die deiner Partei sehr nahesteht und ähnliche Werte vertritt, schließt sich dem an. Wie wollen wir denn argumentieren?",
-				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
-				answers: [
-					{
-						text: "Wir beziehen uns darauf, dass diese Regelung ausschließlich uns und Tilpern schaden soll, weil alle anderen Staaten in der AU linke Mainstream-Regierungen haben.",
-						goto: "klagen2",
-						variables: [
-							{
-								text: "time",
-								amount: 1,
-							},
-							{
-								text: "aussenbeziehungen",
-								amount: -3,
-							},
-							{
-								text: "kritischeJournalisten",
-								amount: 25,
-							},
-						],
-					},
-				],
-			},
-			verbuendete: {
-				text: "Vielleicht haben wir zu lange gezögert. Wären wir vorgeprescht, hätten sich vielleicht andere angeschlossen, schade. Willst du dich auch allein dagegen stellen?",
-				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
-				answers: [
-					{
-						text: "Nein, dann lassen wir das lieber so auf sich beruhen und unterschreiben. Und weiter im Wahlkampf!",
-						newChapter: true,
-						variables: [
-							{
-								text: "aussenbeziehungen",
-								amount: 3,
-							},
-							{
-								text: "time",
-								amount: 2,
-							},
-						],
-					},
-					{
-						text: "Ärgerlich, aber wir stellen uns dagegen. Wir haben auch unsere Ziele. Also: klagen.",
-						goto: "klagengefahr",
-						variables: [
-							{
-								text: "kritischeJournalisten",
-								amount: 124,
-							},
-							{
-								text: "aussenbeziehungen",
-								amount: -5,
-							},
-							{
-								text: "time",
-								amount: 1,
-							},
-							{
-								text: "geklagt",
-								value: true,
-							},
-						],
-					},
-				],
-			},
-			klagengefahr: {
-				text: "Die Gefahr ist natürlich, dass Nupplands Regierung sich jetzt zum Feindbild entwickelt. In einigen Wochen wissen wir mehr. In der Zwischenzeit wird der Adrejanische Gerichtshof uns anhören.",
-				answers: [
-					{
-						text: "Weiter geht's.",
-						newChapter: true,
-					},
-				],
-			},
-			klagen2: {
-				text: "Gut, dann ziehen wir jetzt so vor den Adrejanischen Gerichtshof. Wir werden in einigen Wochen sehen, was daraus wird.",
-				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in der EU in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
-				answers: [
-					{
-						text: "Weiter geht's.",
-						newChapter: true,
-					},
-				],
-			},
-		},
-	},
-
 	renationalisierung: {
 		props: {
 			entry: 0,
@@ -3166,102 +2994,6 @@ const chapters = {
 			},
 		},
 	},
-
-	klageErgebnis: {
-		props: {},
-		questions: {
-			klageErfolglos: {
-				conditions: [
-					{
-						variableName: "geklagt",
-						type: "==",
-						value: true,
-					},
-					{
-						variableName: "time",
-						type: ">=",
-						value: 6 * timepermonth,
-					},
-					{
-						variableName: "klageErgebnis",
-						type: "==",
-						value: false,
-					},
-					{
-						variableName: "klageErfolg",
-						type: "==",
-						value: false,
-					},
-				],
-				text: "Das Urteil des Adrejanischen Gerichtshofs ist durch: Nuppland hat leider nicht Recht bekommen. Das bedeutet, dass ihr nach wie vor schon bei wenigen Verstößen gegen die Rechtsstaatlichkeit mit weniger AU-Geldern rechnen könnt.",
-				info: "Polen und Ungarn haben vor dem Europäischen Gerichtshof gegen den Rechtsstaatsmechanismus der EU geklagt. Bisher wurde nach Kompromissen gesucht. Zur Zeit wird der Mechanismus trotzdem ausgeführt. Eine abschließende Prüfung steht noch aus.",
-				answers: [
-					{
-						text: "Kann man wohl nichts machen. Weiter geht's!",
-						goto: "/back",
-						variables: [
-							{
-								text: "klageErgebnis",
-								value: true,
-							},
-							{
-								text: "kritischeJournalisten",
-								amount: 26,
-							},
-						],
-					},
-				],
-			},
-
-			klageErfolgreich: {
-				conditions: [
-					{
-						variableName: "geklagt",
-						type: "==",
-						value: true,
-					},
-					{
-						variableName: "time",
-						type: ">=",
-						value: 6 * timepermonth,
-					},
-					{
-						variableName: "klageErfolg",
-						type: "==",
-						value: true,
-					},
-					{
-						variableName: "klageErgebnis",
-						type: "==",
-						value: false,
-					},
-				],
-				text: "Der Adrejanische Gerichtshof hat sich beraten, Nuppland hat Recht bekommen. Das bedeutet, dass Nuppland erst bei starken Verstößen mit Sanktionen belegt wird. Herzlichen Glückwunsch zum Erfolg vor Gericht!",
-				info: "Polen und Ungarn haben vor dem Europäischen Gerichtshof gegen den Rechtsstaatsmechanismus der EU geklagt. Bisher wurde nach Kompromissen gesucht. Zur Zeit wird der Mechanismus trotzdem ausgeführt. Eine abschließende Prüfung steht noch aus.",
-				answers: [
-					{
-						text: "Yes! Glück gehabt! Weiter geht's!",
-						goto: "/back",
-						variables: [
-							{
-								text: "sanktionsschwelle",
-								value: -22,
-							},
-							{
-								text: "klageErgebnis",
-								value: true,
-							},
-							{
-								text: "kritischeJournalisten",
-								amount: 31,
-							},
-						],
-					},
-				],
-			},
-		},
-	},
-
 	sanktionen: {
 		props: {},
 		questions: {
