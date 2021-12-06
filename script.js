@@ -2557,6 +2557,8 @@ const chapters = {
 			ausmass: {
 				text: "Die Software wird von einem ausländischen Unternehmen gestellt und importiert. Wie drastisch willst du das Ganze denn angehen? Die Software lässt sich auch gegen Politiker*innen einsetzen. Aber wir fokussieren uns mal auf den Journalismus.",
 				info: "Die Spyware Pegasus wird vom israelischen Unternehmen NSO Group vertrieben. Mit ihrer Hilfe wurden Journalist*innen, Aktivist*innen und Politiker*innen ausgespäht. Sie wurde durch mehrere Staaten eingesetzt. So gibt es Hinweise, dass u. a. Marokko, Indien, Mexiko und Saudi-Arabien die Software genutzt haben.\n2017 bot die NSO Group die Software auch Deutschland an. Dass Deutschland sie tatsächlich genutzt hat, ist aber nicht bekannt und unwahrscheinlich. Ungarn hingegen spähte mit Pegasus wahrscheinlich mehrere Journalist*innen von oppositionellen Medien aus.\nLaut der NSO wird Pegasus nur gegen Kriminelle eingesetzt, allerdings überprüft sie ihre Kunden nur vor Abschluss der Verträge.",
+				mediumType: "youtube",
+				mediumSource: "8ypYySUB-Yg",
 				answers: [
 					{
 						text: "Journalist*innen aus dem Ausland sind für uns besonders gefährlich. Die AU sollte so wenig wie möglich erfahren, was hier in Nuppland passiert. Daher stehen die im Vordergrund.",
