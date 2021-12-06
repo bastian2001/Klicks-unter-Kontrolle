@@ -740,7 +740,7 @@ const chapters = {
 				{
 					variableName: "time",
 					type: "<=",
-					value: 21,
+					value: 10.5 * timepermonth,
 				},
 			],
 		},
@@ -1180,7 +1180,7 @@ const chapters = {
 				{
 					variableName: "time",
 					type: "<=",
-					value: 19,
+					value: 9.5 * timepermonth,
 				},
 			],
 		},
@@ -1542,7 +1542,7 @@ const chapters = {
 				{
 					variableName: "time",
 					type: "<=",
-					value: 19,
+					value: 9.5 * timepermonth,
 				},
 			],
 		},
@@ -1788,7 +1788,7 @@ const chapters = {
 				{
 					variableName: "time",
 					type: "<=",
-					value: 20,
+					value: 10 * timepermonth,
 				},
 			],
 		},
