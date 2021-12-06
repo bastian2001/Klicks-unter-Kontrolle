@@ -1,6 +1,6 @@
 let test = 0
 
-const timepermonth = 2,
+const timepermonth = 1,
 	chapterSelectionCount = 3
 
 const chapters = {
@@ -3220,7 +3220,7 @@ const popups = {
 			{
 				variableName: "gutmensch",
 				type: ">",
-				value: 3,
+				value: 2,
 			},
 		],
 		message:
@@ -3231,7 +3231,7 @@ const popups = {
 			{
 				variableName: "falsch",
 				type: ">",
-				value: 4,
+				value: 2,
 			},
 		],
 		//headline: 'Hier eine Überschrift',
@@ -3248,7 +3248,7 @@ const popups = {
 			{
 				variableName: "falsch",
 				type: "<",
-				value: 3,
+				value: 2,
 			},
 			{
 				variableName: "time",
