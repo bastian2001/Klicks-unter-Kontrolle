@@ -2218,17 +2218,17 @@ function showPopup(popup) {
 function calcResult() {
 	let result = 50
 	result += map(600, 1400, 30, -40, gameVariables.kritischeJournalisten)
-	console.log(result, "Nach Journalisten")
+	// console.log(result, "Nach Journalisten")
 	result += map(10, -25, 30, -20, gameVariables.aussenbeziehungen)
-	console.log(result, "Nach Außen")
+	// console.log(result, "Nach Außen")
 	result += map(30, -20, 8, -20, gameVariables.anerkennung)
-	console.log(result, "Nach Anerkennung")
+	// console.log(result, "Nach Anerkennung")
 	result += map(25, 0, 15, -10, gameVariables.staatsnaehe)
-	console.log(result, "Nach Staatsnähe")
+	// console.log(result, "Nach Staatsnähe")
 	result += map(0, 1, -3, 3, Math.random())
-	console.log(result, "Nach Zufall")
+	// console.log(result, "Nach Zufall")
 	result += gameVariables.ergebnisOffset
-	console.log(result, "Nach Offset")
+	// console.log(result, "Nach Offset")
 	return (
 		Math.round(Math.min(Math.max(ranInt(204, 244) / 10, result), ranInt(704, 761) / 10) * 10) / 10 +
 		"%"
