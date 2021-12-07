@@ -1987,7 +1987,7 @@ function showPopup(popup) {
 
 /**Berechnet das Ergebnis */
 function calcResult() {
-	let result = 50
+	let result = 55
 	result += map(600, 1400, 30, -40, gameVariables.kritischeJournalisten)
 	// console.log(result, "Nach Journalisten")
 	result += map(10, -25, 30, -20, gameVariables.aussenbeziehungen)
@@ -2000,8 +2000,9 @@ function calcResult() {
 	// console.log(result, "Nach Zufall")
 	result += gameVariables.ergebnisOffset
 	// console.log(result, "Nach Offset")
+	if (result > 40) result -= (result - 40) / 2
 	return (
-		Math.round(Math.min(Math.max(ranInt(204, 244) / 10, result), ranInt(704, 761) / 10) * 10) / 10 +
+		Math.round(Math.min(Math.max(ranInt(204, 244) / 10, result), ranInt(600, 642) / 10) * 10) / 10 +
 		"%"
 	).replace(".", ",")
 }
