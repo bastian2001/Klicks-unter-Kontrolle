@@ -114,7 +114,7 @@ const chapters = {
 						variables: [
 							{
 								text: "time",
-								amount: 3,
+								amount: 1,
 							},
 							{
 								text: "falsch",
@@ -200,7 +200,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								amount: 2,
+								amount: 1,
 							},
 							{
 								text: "kritischeJournalisten",
@@ -245,7 +245,7 @@ const chapters = {
 						variables: [
 							{
 								text: "time",
-								amount: 2,
+								amount: 1,
 							},
 						],
 					},
