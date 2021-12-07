@@ -433,8 +433,8 @@ fs.readFile("./stats.json").then(buf => {
 	// avgerrors /= obj.length
 	console.log(qCounter)
 	console.log(eCounter)
-	console.log("Die nuller:")
-	for (const name of Object.keys(qCounter)) if (qCounter[name] == 0) console.log("   ", name)
+	// console.log("Die nuller:")
+	// for (const name of Object.keys(qCounter)) if (qCounter[name] == 0) console.log("   ", name)
 	console.log("Von", obj.length, "Spielen:")
 	console.log("Zeit unter 20", sub20)
 	console.log("Durchschnittsergebnis", avgresult)
