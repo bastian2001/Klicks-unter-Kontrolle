@@ -385,8 +385,7 @@ fs.readFile("./stats.json").then(buf => {
 	let sub20 = 0
 
 	for (const chapter of Object.keys(chapters)) {
-		for (const question of Object.keys(chapters[chapter].questions))
-			qCounter[`${chapter}/${question}`] = 0
+		for (const question of Object.keys(chapters[chapter].questions)) qCounter[`${chapter}/${question}`] = 0
 	}
 
 	for (const o of obj) {
@@ -420,8 +419,16 @@ fs.readFile("./stats.json").then(buf => {
 			}
 		}
 	}
-	// console.log(obj)
 	avgresult /= obj.length
+	let standardDeviation = 0
+	results.forEach((value, index) => {
+		//index: ergebnis in Promille, value = anzahl wie oft das Ergebnis vorgekkommen ist
+		standardDeviation += value * Math.abs(index / 10 - avgresult) * Math.abs(index / 10 - avgresult)
+	})
+	standardDeviation /= obj.length - 1
+	standardDeviation = Math.pow(standardDeviation, 0.5)
+
+	// console.log(obj)
 	avgDuration /= obj.length
 	// avgerrors /= obj.length
 	console.log(qCounter)
@@ -431,6 +438,7 @@ fs.readFile("./stats.json").then(buf => {
 	console.log("Von", obj.length, "Spielen:")
 	console.log("Zeit unter 20", sub20)
 	console.log("Durchschnittsergebnis", avgresult)
+	console.log("Standardabweichung", standardDeviation)
 	console.log("Durchschnittszeit ", avgDuration)
 	console.log("Durchschnittlich aktiv gestartete Kapitel", muts / obj.length)
 })
