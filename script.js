@@ -1503,7 +1503,7 @@ const popups = {
 			{
 				variableName: "falsch",
 				type: ">",
-				value: 2,
+				value: 3,
 			},
 		],
 		//headline: 'Hier eine Überschrift',
@@ -1520,7 +1520,7 @@ const popups = {
 			{
 				variableName: "falsch",
 				type: "<",
-				value: 2,
+				value: 3,
 			},
 			{
 				variableName: "time",
