@@ -1483,8 +1483,9 @@ const popups = {
 				value: -6,
 			},
 		],
+		headline: "Aufpassen!",
 		message:
-			"Aufpassen! Die Adrejanische Union schaut bei euch schon länger genauer hin. Wenn sich da noch was tut, verhängt die Union wahrscheinlich Sanktionen, was sich auch aufs Wahlergebnis auswirken dürfte.",
+			"Die Adrejanische Union schaut bei euch schon länger genauer hin. Wenn sich da noch was tut, verhängt die Union wahrscheinlich Sanktionen, was sich auch aufs Wahlergebnis auswirken dürfte.",
 	},
 
 	gutmensch: {
@@ -1495,8 +1496,9 @@ const popups = {
 				value: 2,
 			},
 		],
+		headline: "Du Gutmensch!",
 		message:
-			"Du Gutmensch! Eine plurale Medienlandschaft ist ja ganz nett, aber dein Job sieht anders aus. Die Umfragewerte deiner Partei schwinden.",
+			"Eine plurale Medienlandschaft ist ja ganz nett, aber dein Job sieht anders aus. Die Umfragewerte deiner Partei schwinden.",
 	},
 	falsch: {
 		conditions: [
@@ -1506,9 +1508,9 @@ const popups = {
 				value: 3,
 			},
 		],
-		//headline: 'Hier eine Überschrift',
+		headline: "Schlechte Entscheidung",
 		message:
-			"Du stellst dich echt nicht sonderlich gut an. Dein Ansehen in der Partei schwindet, und die Zeit bis zur Wahl auch. Halt dich besser ran, wenn du Rokossowski zufrieden sehen willst!" /*<img src='' class=''>*/,
+			"Du stellst dich echt nicht sonderlich gut an. Dein Ansehen in der Partei schwindet, und die Zeit bis zur Wahl auch. Halt dich besser ran, wenn du Rokossowski zufrieden sehen willst!",
 	},
 	guteArbeit: {
 		conditions: [
@@ -1528,8 +1530,9 @@ const popups = {
 				value: 12 * timepermonth - 1,
 			},
 		],
+		headline: "Gute Arbeit!",
 		message:
-			"Gute Arbeit! Rokossowski lobt dich. Bis zur Wahl sind es nur noch wenige Monate und bisher ist wenig Schlechtes über die WhR erschienen. Weiter so!",
+			"Rokossowski lobt dich. Bis zur Wahl sind es nur noch wenige Monate und bisher ist wenig Schlechtes über die WhR erschienen. Weiter so!",
 	},
 	zwischenergebnis: {
 		conditions: [
