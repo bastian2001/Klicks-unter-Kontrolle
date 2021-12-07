@@ -1134,8 +1134,8 @@ const chapters = {
 					},
 					{
 						variableName: "time",
-						type: ">=",
-						value: timepermonth * 6 + 1,
+						type: ">",
+						value: timepermonth * 6,
 					},
 				],
 				text: "Du scheinst nicht sooo viel ändern zu wollen, also würde ich vorschlagen, dass wir direkt zur Wahl vorspringen. Viel mehr Ideen habe ich leider nicht mehr für deinen Wahlkampf. Insofern haben die Medien wahrscheinlich wenig zu eurem Wahlkampf beigetragen.",
@@ -1161,8 +1161,8 @@ const chapters = {
 					},
 					{
 						variableName: "time",
-						type: ">=",
-						value: timepermonth * 9 + 1,
+						type: ">",
+						value: timepermonth * 9,
 					},
 				],
 				text: "Viel mehr Ideen habe ich leider nicht mehr für deinen Wahlkampf. Was hältst du von einer kurzen Pause, bis die Wahl stattfindet?",
@@ -1183,8 +1183,8 @@ const chapters = {
 				conditions: [
 					{
 						variableName: "time",
-						type: ">=",
-						value: timepermonth * 11,
+						type: ">",
+						value: timepermonth * 11 - 1,
 					},
 				],
 				text: "Okay, die Zeit ist vorbei. Schauen wir mal, wie deine Bilanz so aussieht. Bisher gibt es noch $kritischeJournalisten kritische Journalist*innen im Land. $ergebnisErgänzung",
