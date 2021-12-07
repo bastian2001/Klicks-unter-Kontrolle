@@ -31,7 +31,7 @@ const chapters = {
 				],
 			},
 			befoerderung: {
-				text: "Du wurdest befördert. Die Präsidentin von Nuppland, deine Chefin Rokossowski, hat dir die Aufgabe übertragen, die Medienpolitik des Landes zu organisieren. Deine Aufgabe: Eure Partei, die WhR (Wir haben Recht) soll wiedergewählt werden - und das geht am Leichtesten, wenn nichts Schlechtes über dich und deine Partei in den Medien erscheint. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren, im Land, und die Zahl muss runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
+				text: "Du wurdest befördert: Die Präsidentin von Nuppland, deine Chefin Rokossowski, hat dir die Medienpolitik des Landes übertragen. Deine Aufgabe: Eure Partei, die WhR (Wir haben Recht) soll wiedergewählt werden - und dafür darf nichts Schlechtes über dich und deine Partei in den Medien erscheinen. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren. Die Zahl muss dringend runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
 				info: "Auf diesem Fragezeichen findest du über das Spiel verteilt immer wieder Anmerkungen zu Ländern, Regierungen und Medienunternehmen, die ähnliche Maßnahmen getroffen haben. Außerdem kannst du herausfinden, welche Auswirkungen das hatte.",
 				answers: [
 					{
@@ -52,7 +52,7 @@ const chapters = {
 			},
 
 			wahlen: {
-				text: "Naja, und wenn die Journalist*innen nicht mehr schreiben können, weil es keine Medien mehr gibt, in denen sie unterkommen, dann geht die Zahl natürlich auch runter. Ein Journalist ohne Job ist kein Journalist, haha... In einem Jahr stehen wieder Wahlen an. Bis dahin musst du alles dafür tun, dass ihr gute Karten habt und in den Medien so wenig Negatives wie möglich über euch gebracht wird. An der Seite siehst du, wie viel Zeit du noch bis zur Wahl hast.",
+				text: "Und: Ein Journalist ohne Job ist kein Journalist, haha... Wenn es keine freien Medien mehr gibt, geht die Zahl auch runter. Wie lange es noch bis zur Wahl ist, siehst du an der Seite. Bis dahin musst du alles dafür tun, dass ihr gute Karten habt und in den Medien so wenig Negatives wie möglich über euch gebracht wird.",
 				answers: [
 					{
 						text: "Verstanden.",
@@ -62,10 +62,10 @@ const chapters = {
 			},
 
 			au: {
-				text: "Du lebst in Nuppland. Nuppland ist Mitglied der Adrejanischen Union, eines Staatenbunds. Andere Staaten können also in eure Politik eingreifen und Sanktionen verhängen. Ins Ausland sollte daher nichts dringen, was euch Probleme bereiten könnte.",
+				text: "Dein Land Nuppland ist Mitglied in der Adrejanischen Union, einem Staatenbund. Andere Staaten können also in eure Politik eingreifen und Sanktionen verhängen. Ins Ausland sollte daher nichts dringen, was euch Probleme bereiten könnte.",
 				answers: [
 					{
-						text: "Kapiert.",
+						text: "Let's go!",
 						newChapter: "losgehts",
 					},
 				],
@@ -79,7 +79,7 @@ const chapters = {
 		},
 		questions: {
 			rundfunkratverkleinern: {
-				text: "Bisher gibt es einen öffentlich-rechtlichen Rundfunk in deinem Land. Dieser finanziert sich über eine Abgabe von allen, keine Steuer, und wird vom Rundfunkrat beobachtet. Insgesamt neun Menschen sitzen im Rat, von denen drei von der Präsidentin, vier von der ersten und zwei von der zweiten Parlamentskammer bestimmt werden. Meinst du, da kann man noch was machen?",
+				text: "Bisher gibt es einen öffentlich-rechtlichen Rundfunk in deinem Land. Dieser finanziert sich über eine Abgabe von allen Einwohner*innen Nupplands. Er wird vom Rundfunkrat beobachtet, der aus neun Menschen besteht, von denen drei von der Präsidentin, vier von der ersten und zwei von der zweiten Parlamentskammer bestimmt werden. Meinst du, da kann man noch was machen?",
 				info: "In Deutschland gibt es einen öffentlich-rechtlichen Rundfunk mit insgesamt 9 Landesrundfunkanstalten (LRAs), die in der ARD zusammengeschlossen sind. Außerdem gibt es das ZDF und weitere Anstalten wie die Deutsche Welle. Jede Anstalt hat ihren eigenen Rundfunkrat, in dem aber meist zwischen 30 und 60 Personen sitzen. Die hier beschriebene Lage orientiert sich an der Situation in Polen vor 2016.",
 				answers: [
 					{
