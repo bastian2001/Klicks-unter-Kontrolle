@@ -2015,6 +2015,10 @@ function showChapterSelection() {
 
 	//-------------------ANZEIGE---------------
 	if (!test) {
+		if (availableChapters.length === 1) {
+			startChapter(availableChapters[0])
+		}
+
 		document.getElementById("info").style.display = "none"
 
 		document.getElementById("game").classList.add("hidden")
