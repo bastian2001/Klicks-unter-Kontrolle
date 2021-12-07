@@ -209,7 +209,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								amount: 2,
+								amount: 1,
 							},
 							{
 								text: "kritischeJournalisten",
@@ -285,7 +285,7 @@ const chapters = {
 						variables: [
 							{
 								text: "time",
-								amount: 2,
+								amount: 1,
 							},
 							{
 								text: "anerkennung",
@@ -315,7 +315,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								amount: 2,
+								amount: 1,
 							},
 						],
 					},
@@ -478,7 +478,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								amount: 3,
+								amount: 2,
 							},
 							{
 								text: "kritischeJournalisten",
@@ -574,7 +574,7 @@ const chapters = {
 						variables: [
 							{
 								text: "time",
-								amount: 2,
+								amount: 1,
 							},
 							{
 								text: "anerkennung",
@@ -596,7 +596,7 @@ const chapters = {
 						variables: [
 							{
 								text: "time",
-								amount: 2,
+								amount: 1,
 							},
 							{
 								text: "anerkennung",
@@ -618,7 +618,7 @@ const chapters = {
 						variables: [
 							{
 								text: "time",
-								amount: 3,
+								amount: 1,
 							},
 							{
 								text: "anerkennung",
@@ -697,7 +697,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								amount: 3,
+								amount: 2,
 							},
 							{
 								text: "kritischeJournalisten",
@@ -974,7 +974,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								amount: 4,
+								amount: 2,
 							},
 						],
 					},
