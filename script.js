@@ -31,8 +31,17 @@ const chapters = {
 				],
 			},
 			befoerderung: {
-				text: "Du wurdest befördert: Die Präsidentin von Nuppland, deine Chefin Rokossowski, hat dir die Medienpolitik des Landes übertragen. Deine Aufgabe: Eure Partei, die WhR (Wir haben Recht) soll wiedergewählt werden - und dafür darf nichts Schlechtes über dich und deine Partei in den Medien erscheinen. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren. Die Zahl muss dringend runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
+				text: "Du wurdest befördert: Die Präsidentin von Nuppland, deine Chefin Rokossowski, hat dir die Medienpolitik des Landes übertragen. Deine Aufgabe: Eure Partei, die WhR (Wir haben Recht) soll wiedergewählt werden - und dafür darf nichts Schlechtes über dich und deine Partei in den Medien erscheinen.",
 				info: "Auf diesem Fragezeichen findest du über das Spiel verteilt immer wieder Anmerkungen zu Ländern, Regierungen und Medienunternehmen, die ähnliche Maßnahmen getroffen haben. Außerdem kannst du herausfinden, welche Auswirkungen das hatte.",
+				answers: [
+					{
+						text: "Verstehe.",
+						goto: "jours",
+					},
+				],
+			},
+			jours: {
+				text: "Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren. Die Zahl muss dringend runtergehen. Journalist*innen wird man am leichtesten los, wenn man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Und: Ein Journalist ohne Job ist kein Journalist, haha... Verstanden?",
 				answers: [
 					{
 						text: "Okay...",
@@ -52,7 +61,7 @@ const chapters = {
 			},
 
 			wahlen: {
-				text: "Und: Ein Journalist ohne Job ist kein Journalist, haha... Wenn es keine freien Medien mehr gibt, geht die Zahl auch runter. Wie lange es noch bis zur Wahl ist, siehst du an der Seite. Bis dahin musst du alles dafür tun, dass ihr gute Karten habt und in den Medien so wenig Negatives wie möglich über euch gebracht wird.",
+				text: "Wie lange es noch bis zur Wahl ist, siehst du an der Seite. Bis dahin musst du alles dafür tun, dass ihr gute Karten habt und in den Medien so wenig Negatives wie möglich über euch gebracht wird.",
 				answers: [
 					{
 						text: "Verstanden.",
