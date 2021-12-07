@@ -1780,6 +1780,7 @@ function showQuestion(obj) {
 				staatsnaehe: 0,
 				gutmensch: 0,
 				benennungAufkaufen: "Renationalisierung",
+				anerkennung: 0,
 				zyklopLoesung: "",
 				kritischeJournalisten: kritJourStart,
 				ergebnisOffset: 0,
