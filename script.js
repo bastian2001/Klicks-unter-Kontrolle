@@ -1,6 +1,6 @@
 let test = 0
 
-const timepermonth = 1,
+const timepermonth = 0.8,
 	chapterSelectionCount = 2
 
 const chapters = {
@@ -529,7 +529,7 @@ const chapters = {
 							},
 							{
 								text: "time",
-								amount: 3,
+								amount: 2,
 							},
 						],
 					},
