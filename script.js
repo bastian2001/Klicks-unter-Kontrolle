@@ -1,6 +1,6 @@
 let test = 0
 
-const timepermonth = 0.8,
+const timepermonth = 1.2,
 	chapterSelectionCount = 2
 
 const chapters = {
@@ -725,13 +725,7 @@ const chapters = {
 			entry: 0,
 			title: "Manipulation",
 			description: "Die Adrejanische Union hat Wind bekommen",
-			conditions: [
-				{
-					variableName: "time",
-					type: "<=",
-					value: 9.5 * timepermonth,
-				},
-			],
+			conditions: [],
 		},
 		questions: {
 			obama: {
@@ -1300,17 +1294,6 @@ const popups = {
 		headline: "Gute Arbeit!",
 		message:
 			"Rokossowski lobt dich. Bis zur Wahl sind es nur noch wenige Monate und bisher ist wenig Schlechtes über die WhR erschienen. Weiter so!",
-	},
-	zwischenergebnis: {
-		conditions: [
-			{
-				variableName: "time",
-				type: ">=",
-				value: 7 * timepermonth,
-			},
-		],
-		message:
-			"Wenn nächsten Sonntag Wahlen wären, bekäme deine Partei nach Umfragewerten $wahlergebnis. Diese Werte solltest du allerdings nicht für bare Münze nehmen, da solche Umfragen nicht komplett repräsentativ die Bevölkerung abbilden können.",
 	},
 	zeit: {
 		conditions: [
