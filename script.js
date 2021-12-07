@@ -1087,7 +1087,7 @@ const chapters = {
 							},
 							{
 								text: "ergebnisOffset",
-								amount: -30,
+								amount: -40,
 							},
 						],
 					},
