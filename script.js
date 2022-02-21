@@ -3436,7 +3436,7 @@ const chapters = {
 			},
 
 			ergebnis2: {
-				text: `Bei der Wahl kommt deine Partei auf $wahlergebnis Prozent der Stimmen! Wenn du die Medien kontrollierst, kriegst du also auch bessere Ergebnisse. Je weniger kritische Beiträge über dich erscheinen, desto besser deine Chancen auf ein gutes Wahlergebnis.<br><br>Du möchtest, dass dein Ergebnis auf der Rangliste veröffentlicht wird? Gib hier deinen Namen an:<br><form method=post onsubmit="submitScore(event)" enctype="multipart/form-data"><input type="text" pattern="[a-zA-Z0-9À-ÿ-. ]{3,30}" minlength=3 maxlength=30 placeholder='Dein Name (Buchstaben, Zahlen oder ".- ")' id="submitScoreInput" required><button type=submit id=submitScoreButton >Eintragen!</button>`,
+				text: `Bei der Wahl kommt deine Partei auf $wahlergebnis Prozent der Stimmen! Wenn du die Medien kontrollierst, kriegst du also auch bessere Ergebnisse. Je weniger kritische Beiträge über dich erscheinen, desto besser deine Chancen auf ein gutes Wahlergebnis.<br><br>Du möchtest, dass dein Ergebnis in die lokale Rangliste eingetragen wird? Dafür wird ein Cookie erstellt. Gib hier deinen Namen an:<br><input type="text" placeholder='Dein Name' id="submitScoreInput"><button onclick="enterScore()" id=submitScoreButton >Eintragen!</button>`,
 				answers: [
 					{
 						text: "Und jetzt?",
@@ -3567,22 +3567,6 @@ const popups = {
 	...
 ]
 */
-// fetch("./Bestenliste.json")
-// 	.then(res => res.json())
-// 	.then(highscores => {
-// 		for (index in highscores) {
-// 			let i = index - 1 + 2
-// 			$(`#hs${i}name`).text(highscores[i - 1].name)
-// 			$(`#hs${i}score`).text(highscores[i - 1].score)
-// 			setTimeout(() => {
-// 				$(`#hs${i}`).css("opacity", "1")
-// 			}, 3000 - i * 500)
-// 		}
-// 	})
-// 	.catch(reason => {
-// 		console.error(reason)
-// 		//Bestenliste kan nicht angezeigt werden
-// 	})
 
 let history = ""
 let completeHistory = []
@@ -3629,6 +3613,52 @@ function runTests(noOfTests) {
 	while (test) {
 		showQuestion(currentQuestion)
 	}
+}
+
+readHSList()
+function readHSList() {
+	let list
+	try {
+		list = JSON.parse(getCookie("highscores"))
+	} catch (e) {
+		list = []
+	}
+	if (list.length == 0) {
+		$("#highscorelist").append("<tr><td>Es sind noch keine Einträge auf der Bestenliste.</td></tr>")
+		return
+	}
+	for (let i = 0; i < list.length && i < 5; i++) {
+		$("#highscorelist").append(
+			`<tr><td>${i + 1}.&nbsp;</td><td class="highscoreName">${list[i].name}</td><td class="highscoreScore">${
+				list[i].score
+			}</td></tr>`
+		)
+	}
+}
+function newHSListEntry(name, score) {
+	let list = getCookie("highscores")
+	if (list == "") {
+		setCookie("highscores", JSON.stringify([{ name: name, score: score }]))
+		return
+	}
+	list = JSON.parse(list)
+	list.push({ name: name, score: score })
+	list.sort((a, b) => {
+		sca = a.score.substring(0, a.score.length - 1).replace(",", ".") - 0
+		scb = b.score.substring(0, b.score.length - 1).replace(",", ".") - 0
+		if (sca > scb) return -1
+		if (sca < scb) return 1
+		if (sca == scb) return 0
+	})
+	list = list.slice(0, 5)
+	setCookie("highscores", JSON.stringify(list), 730)
+}
+function enterScore() {
+	if (document.getElementById("submitScoreInput").value.length <= 2) {
+		alert("Bitte trage einen längeren Namen ein.")
+		return
+	}
+	newHSListEntry(document.getElementById("submitScoreInput").value, wahlergebnis)
 }
 
 /**
@@ -4355,15 +4385,26 @@ function setHeader() {
 	}
 }
 
-/**überträgt den Score an den Server
- * @param e das event, das geblockt werden muss
- */
-function submitScore(e) {
-	e.preventDefault()
-	console.log(`${document.getElementById("submitScoreInput").value}\n${wahlergebnis}`)
-	fetch("https://ak-ts.de/klicks-unter-kontrolle-highscore", {
-		method: "POST",
-		headers: { "Content-Type": "text/plain" },
-		body: `${document.getElementById("submitScoreInput").value}\n${wahlergebnis}`,
-	})
+///speichert einen Cookie cname mit Wert cvalue, der in exdays gelöscht wird
+function setCookie(cname, cvalue, exdays) {
+	const d = new Date()
+	d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
+	let expires = "expires=" + d.toUTCString()
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
+}
+
+///liest einen Cookie cname
+function getCookie(cname) {
+	let name = cname + "="
+	let ca = document.cookie.split(";")
+	for (let i = 0; i < ca.length; i++) {
+		let c = ca[i]
+		while (c.charAt(0) == " ") {
+			c = c.substring(1)
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length)
+		}
+	}
+	return ""
 }

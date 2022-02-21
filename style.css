@@ -58,25 +58,9 @@ button {
 	transition: transform 2s cubic-bezier(0, 0.32, 0.6, 0.98);
 }
 
-/* #highscoretable {
-	color: white;
-	font-family: Arial, Helvetica, sans-serif;
-	opacity: 1;
-	transition: opacity 0.5s ease-out;
+.highscoreName {
+	min-width: 100px;
 }
-.rank {
-	opacity: 0;
-	transition: opacity 0.5s ease-out;
-}
-.hsposition {
-	padding-right: 1rem;
-}
-.hsname {
-	padding: 0.2rem 1rem;
-}
-.hsscore {
-	padding-left: 1rem;
-} */
 
 #header0Alt {
 	display: none;
@@ -414,9 +398,7 @@ button {
 #anleitung h2 {
 	font-size: 2rem;
 }
-#anleitung h2,
-#anleitung h3,
-#anleitung p {
+#popupStartBg {
 	color: white;
 }
 
@@ -427,7 +409,7 @@ button {
 }
 
 #startButton {
-	grid-column: span 3;
+	grid-column: 1 / -1;
 	display: block;
 	padding: 1rem;
 	width: 100%;
@@ -435,6 +417,12 @@ button {
 }
 #startButton:hover {
 	background-color: #fff3;
+}
+#highscorelistwrapper {
+	margin-bottom: 1rem;
+}
+#highscorelist td {
+	padding-bottom: 0.8rem;
 }
 
 /*Ergebnis übermitteln*/
@@ -523,6 +511,18 @@ button {
 
 	.headerText {
 		font-size: 1.1rem;
+	}
+
+	#popupStart {
+		grid-template-columns: 1fr;
+		grid-template-rows: 0fr 0fr 1fr 0fr;
+		overflow-y: auto;
+		width: 80vw;
+		height: 80vh;
+	}
+	#line {
+		height: 2px;
+		width: 100%;
 	}
 }
 
