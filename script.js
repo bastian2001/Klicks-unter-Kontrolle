@@ -157,7 +157,7 @@ const chapters = {
 				text: "Willst du vielleicht sogar noch ändern, wie die Ratsmitglieder bestimmt werden?",
 				answers: [
 					{
-						text: "Alle die Präsidentin, das hätte doch was.",
+						text: "Alle werden von der Präsidentin bestimmt, das hätte doch was.",
 						goto: "praesident",
 						variables: [
 							{
@@ -3105,7 +3105,7 @@ const chapters = {
 			},
 			zuNaiv: {
 				text: "Naiv von dir zu glauben, du hättest nicht schon längst Blut an dir kleben. Wir müssen auf Nummer sicher gehen, was die Berichterstattung angeht. Und dein Vorschlag bietet hier keine Sicherheit.",
-				info: "Weltweit sitzen jährlich hunderte Journalist*innen aufgrund ihrer Berichterstattung im Gefängnis. Ein prominentes Beispiel hierfür ist der deutsch- türkische Journalist Deniz Yücel, der durch seine kritische journalistischen Arbeit ca. ein Jahr in türkischer Haft war. Erst durch diplomatischen Druck aus Deutschland wurde Yücel letztendlich freigelassen. <a href='https://www.hessenschau.de/kultur/interview-mit-deniz-yuecel-die-freiheit-der-kunst-gilt-auch-fuer-die-bescheuerten,deniz-yuecel-pen-praesident-100.html'>Link 1</a>, <a href='https://www.reporter-ohne-grenzen.de/barometer/2021/journalisten-in-haft'>Link 2</a>, <a href='https://www.sueddeutsche.de/politik/deniz-yuecel-prozess-chronologie-1.4946432'>Link 3</a>",
+				info: "Weltweit sitzen jährlich hunderte Journalist*innen aufgrund ihrer Berichterstattung im Gefängnis. Ein prominentes Beispiel hierfür ist der deutsch-türkische Journalist Deniz Yücel, der durch seine kritische journalistischen Arbeit ca. ein Jahr in türkischer Haft war. Erst durch diplomatischen Druck aus Deutschland wurde Yücel letztendlich freigelassen. <a href='https://www.hessenschau.de/kultur/interview-mit-deniz-yuecel-die-freiheit-der-kunst-gilt-auch-fuer-die-bescheuerten,deniz-yuecel-pen-praesident-100.html'>Link 1</a>, <a href='https://www.reporter-ohne-grenzen.de/barometer/2021/journalisten-in-haft'>Link 2</a>, <a href='https://www.sueddeutsche.de/politik/deniz-yuecel-prozess-chronologie-1.4946432'>Link 3</a>",
 				answers: [
 					{
 						text: "Ich verstehe. Dann müssen wir doch radikaler vorgehen.",
