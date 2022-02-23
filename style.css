@@ -10,7 +10,7 @@ body {
 
 * {
 	outline: none;
-	cursor: url("Bilder/Cursor.png") 7 3, auto;
+	cursor: url("./res/img/cursor.png") 7 3, auto;
 }
 
 p,
@@ -21,7 +21,7 @@ h3 {
 
 a,
 button {
-	cursor: url("Bilder/CursorButton.png") 7 3, pointer;
+	cursor: url("./res/img/cursor_button.png") 7 3, pointer;
 }
 
 .hidden {
@@ -291,7 +291,7 @@ button {
 	height: 70px !important;
 	padding: 0px;
 	margin: 0px;
-	background-image: url("./Bilder/Info.png");
+	background-image: url("./res/img/info.png");
 	background-size: cover;
 	z-index: 1;
 }
