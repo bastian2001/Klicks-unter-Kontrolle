@@ -16,12 +16,12 @@
 		<title>Klicks unter Kontrolle - Medienliteralität</title>
 
 		<!--Style-->
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="./style.css" />
 
 		<!--Barometer-->
-		<link rel="stylesheet" href="styleBarometer.css" />
-		<script src="jquery-3.6.0.slim.min.js"></script>
-		<script src="barometer.js"></script>
+		<link rel="stylesheet" href="./style_barometer.css" />
+		<script src="./jquery-3.6.0.slim.min.js"></script>
+		<script src="./barometer.js"></script>
 	</head>
 
 	<body>
@@ -63,7 +63,7 @@
 			<button id="info" onclick="showInfo()"></button>
 			<!--absolute-->
 
-			<img id="logo" src="Bilder/logo.png" alt="KLICKS UNTER KONTROLLE" />
+			<img id="logo" src="./res/img/logo.png" alt="KLICKS UNTER KONTROLLE" />
 
 			<!--Aktinsbereich-->
 			<div id="actionSpace">
@@ -77,7 +77,7 @@
 						<iframe
 							id="frageIframeIframe"
 							src=""
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 							allowfullscreen
 						></iframe>
 					</div>
@@ -133,15 +133,26 @@
 					<h2>Klicks unter Kontrolle</h2>
 					<h3>Herzlich Willkommen!</h3>
 					<p>
-						Hier bei Klicks unter Kontrolle lernst du, wie die Medienfreiheit in einigen Ländern systematisch untergraben wird. Deine Aufgabe: Verhilf deiner Partei, der Wir haben Recht (WhR) zur Wiederwahl, indem du negative Berichterstattung verhinderst.
+						Hier bei Klicks unter Kontrolle lernst du, wie die Medienfreiheit in einigen Ländern
+						systematisch untergraben wird. Deine Aufgabe: Verhilf deiner Partei, der Wir haben Recht (WhR)
+						zur Wiederwahl, indem du negative Berichterstattung verhinderst.
 					</p>
 					<h3>Einsatz des Spiels</h3>
 					<p>
-						Das Spiel lässt sich gut im Unterricht, etwa in Politik oder Deutsch einsetzen. Ideen zur konkreten Umsetzung gibt es in unserer Lehrkraftecke. Aber auch für alle anderen, die sich mit Presse- und Medienfreiheit beschäftigen wollen, bietet Klicks unter Kontrolle Impulse.</p>
-					<p>Dieses Spiel gehört zum Projekt "Aktuelle Kamera vs. Tagesschau - ein deutsch-deutscher Nachrichtenvergleich der Hessischen Landeszentrale für politische Bildung.</p>
+						Das Spiel lässt sich gut im Unterricht, etwa in Politik oder Deutsch einsetzen. Ideen zur
+						konkreten Umsetzung gibt es in unserer Lehrkraftecke. Aber auch für alle anderen, die sich mit
+						Presse- und Medienfreiheit beschäftigen wollen, bietet Klicks unter Kontrolle Impulse.
+					</p>
+					<p>
+						Dieses Spiel gehört zum Projekt "Aktuelle Kamera vs. Tagesschau - ein deutsch-deutscher
+						Nachrichtenvergleich der Hessischen Landeszentrale für politische Bildung.
+					</p>
 				</div>
 				<div id="line"></div>
-				<div id="highscorelist"></div>
+				<div id="highscorelistwrapper">
+					<h2>Bestenliste</h2>
+					<table id="highscorelist"></table>
+				</div>
 				<button id="startButton" onclick="document.getElementById('popupStartBg').classList.add('hidden')">
 					Spiel starten
 				</button>
@@ -149,6 +160,6 @@
 		</div>
 
 		<!--Script-->
-		<script src="script.js"></script>
+		<script src="./script.js"></script>
 	</body>
 </html>

@@ -440,7 +440,7 @@ const chapters = {
 			},
 			unterschreiben: {
 				text: "Wie du meinst. So stellen wir uns auf jeden Fall gut mit den anderen Ländern. Hoffentlich fällt uns das nicht später noch zur Last.",
-				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
+				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt.",
 				answers: [
 					{
 						text: "Ach, das passt schon. Weiter geht's im Wahlkampf!",
@@ -456,7 +456,7 @@ const chapters = {
 			},
 			klagen: {
 				text: "Wir sind nicht einmal die einzigen, die klagen! Auch das Nachbarland Tilpern, das eine Regierung hat, die deiner Partei sehr nahesteht und ähnliche Werte vertritt, schließt sich dem an. Wie wollen wir denn argumentieren?",
-				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
+				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt.",
 				answers: [
 					{
 						text: "Wir beziehen uns darauf, dass diese Regelung ausschließlich uns und Tilpern schaden soll, weil alle anderen Staaten in der AU linke Mainstream-Regierungen haben.",
@@ -480,7 +480,7 @@ const chapters = {
 			},
 			verbuendete: {
 				text: "Vielleicht haben wir zu lange gezögert. Wären wir vorgeprescht, hätten sich vielleicht andere angeschlossen, schade. Willst du dich auch allein dagegen stellen?",
-				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
+				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt.",
 				answers: [
 					{
 						text: "Nein, dann lassen wir das lieber so auf sich beruhen und unterschreiben. Und weiter im Wahlkampf!",
@@ -531,7 +531,7 @@ const chapters = {
 			},
 			klagen2: {
 				text: "Gut, dann ziehen wir jetzt so vor den Adrejanischen Gerichtshof. Wir werden in einigen Wochen sehen, was daraus wird.",
-				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in der EU in Frage gestellt und vor dem EU-Gerichtshof geklagt. Der Mechanismus wird dennoch weiter angewendet.",
+				info: "Tatsächlich haben Ungarn und Polen die Rechtmäßigkeit des Mechanismus in Frage gestellt und vor dem EU-Gerichtshof geklagt.",
 				answers: [
 					{
 						text: "Weiter geht's.",
@@ -1912,7 +1912,7 @@ const chapters = {
 
 			briefing: {
 				text: "Die Zahl der kritischen Journalist*innen hat abgenommen, weil sich zumindest die bei den Medien in der Stiftung niemand mehr traut, etwas Kritisches zu schreiben - sehr gut!",
-				info: "In Polen wurden vielen kritischen Journalist*innen gekündigt, doch nach der Ansicht einiger Medienschaffender könnte sich die Regierung damit verkalkuliert haben. Sie meinen, dass es auf dem Land schwieriger ist, viele Stellen neu zu besetzen. In froßen Städten sei das einfacher. Insofern ist es effizienter, nicht alle zu entlassen, sondern sie eher einzuschränken.",
+				info: "In Polen wurden vielen kritischen Journalist*innen gekündigt, doch nach der Ansicht einiger Medienschaffender könnte sich die Regierung damit verkalkuliert haben. Sie meinen, dass es auf dem Land schwieriger ist, viele Stellen neu zu besetzen. In großen Städten sei das einfacher. Insofern ist es effizienter, nicht alle zu entlassen, sondern sie eher einzuschränken.",
 				answers: [
 					{
 						text: "Weiter geht's!",
@@ -2528,7 +2528,7 @@ const chapters = {
 			},
 			gesetzeAendern: {
 				text: "Wenn du Gesetze ändern willst, bringst du ja erst die Aufmerksamkeit auf das Thema. Ich würde dir empfehlen, das unter der Hand zu behandeln und die Gesetze zu ignorieren.",
-				info: "Die Spyware Pegasus wird vom israelischen Unternehmen NSO Group vertrieben. Mit ihrer Hilfe wurden Journalist*innen, Aktivist*innen und Politiker*innen ausgespäht. Sie wurde durch mehrere Staaten eingesetzt. So gibt es Hinweise, dass u. a. Marokko, Indien, Mexiko und Saudi-Arabien die Software genutzt haben.\n2017 bot die NSO Group die Software auch Deutschland an. Dass Deutschland sie tatsächlich genutzt hat, ist aber nicht bekannt und unwahrscheinlich. Ungarn hingegen spähte mit Pegasus wahrscheinlich mehrere Journalist*innen von oppositionellen Medien aus.\nLaut der NSO wird Pegasus nur gegen Kriminelle eingesetzt, allerdings überprüft sie ihre Kunden nur vor Abschluss der Verträge.",
+				info: 'Die Spyware Pegasus wird vom israelischen Unternehmen NSO Group vertrieben. Mit ihrer Hilfe wurden Journalist*innen, Aktivist*innen und Politiker*innen ausgespäht. Sie wurde durch mehrere Staaten eingesetzt. So gibt es Hinweise, dass u. a. Marokko, Indien, Mexiko und Saudi-Arabien die Software genutzt haben.\n2017 bot die NSO Group die Software auch Deutschland an. Dass Deutschland sie tatsächlich genutzt hat, ist aber nicht bekannt und unwahrscheinlich. Ungarn hingegen spähte mit Pegasus wahrscheinlich mehrere Journalist*innen von oppositionellen Medien aus Auch in Polen sind <a href="https://www.tagesschau.de/ausland/europa/pegasus-affaere-polen-101.html">mindestens drei Fälle bekannt</a>, in denen die Software gegen Oppositionelle angewendet wurde.\nLaut der NSO wird Pegasus nur gegen Kriminelle eingesetzt, allerdings überprüft sie ihre Kunden nur vor Abschluss der Verträge.',
 				answers: [
 					{
 						text: "Gut, dann machen wir das so.",
@@ -3194,7 +3194,7 @@ const chapters = {
 					},
 				],
 				text: "Das Urteil des Adrejanischen Gerichtshofs ist durch: Nuppland hat leider nicht Recht bekommen. Das bedeutet, dass ihr nach wie vor schon bei wenigen Verstößen gegen die Rechtsstaatlichkeit mit weniger AU-Geldern rechnen könnt.",
-				info: "Polen und Ungarn haben vor dem Europäischen Gerichtshof gegen den Rechtsstaatsmechanismus der EU geklagt. Bisher wurde nach Kompromissen gesucht. Zur Zeit wird der Mechanismus trotzdem ausgeführt. Eine abschließende Prüfung steht noch aus.",
+				info: 'Polen und Ungarn haben vor dem Europäischen Gerichtshof gegen den Rechtsstaatsmechanismus der EU geklagt. <a href="https://www.tagesschau.de/ausland/europa/eugh-rechtsstaatsmechanismus-103.html">Diese Klage wurde jedoch abgewiesen</a>, was es der EU erlaubt, den Rechtstaatmechanismus legitim einzusetzen.',
 				answers: [
 					{
 						text: "Kann man wohl nichts machen. Weiter geht's!",
@@ -3237,7 +3237,7 @@ const chapters = {
 					},
 				],
 				text: "Der Adrejanische Gerichtshof hat sich beraten, Nuppland hat Recht bekommen. Das bedeutet, dass Nuppland erst bei starken Verstößen mit Sanktionen belegt wird. Herzlichen Glückwunsch zum Erfolg vor Gericht!",
-				info: "Polen und Ungarn haben vor dem Europäischen Gerichtshof gegen den Rechtsstaatsmechanismus der EU geklagt. Bisher wurde nach Kompromissen gesucht. Zur Zeit wird der Mechanismus trotzdem ausgeführt. Eine abschließende Prüfung steht noch aus.",
+				info: 'Polen und Ungarn haben vor dem Europäischen Gerichtshof gegen den Rechtsstaatsmechanismus der EU geklagt. <a href="https://www.tagesschau.de/ausland/europa/eugh-rechtsstaatsmechanismus-103.html">Diese Klage wurde jedoch abgewiesen</a>, was es der EU erlaubt, den Rechtstaatmechanismus legitim einzusetzen.',
 				answers: [
 					{
 						text: "Yes! Glück gehabt! Weiter geht's!",
@@ -3436,7 +3436,7 @@ const chapters = {
 			},
 
 			ergebnis2: {
-				text: `Bei der Wahl kommt deine Partei auf $wahlergebnis Prozent der Stimmen! Wenn du die Medien kontrollierst, kriegst du also auch bessere Ergebnisse. Je weniger kritische Beiträge über dich erscheinen, desto besser deine Chancen auf ein gutes Wahlergebnis.<br><br>Du möchtest, dass dein Ergebnis auf der Rangliste veröffentlicht wird? Gib hier deinen Namen an:<br><form method=post onsubmit="submitScore(event)" enctype="multipart/form-data"><input type="text" pattern="[a-zA-Z0-9À-ÿ-. ]{3,30}" minlength=3 maxlength=30 placeholder='Dein Name (Buchstaben, Zahlen oder ".- ")' id="submitScoreInput" required><button type=submit id=submitScoreButton >Eintragen!</button>`,
+				text: `Bei der Wahl kommt deine Partei auf $wahlergebnis Prozent der Stimmen! Wenn du die Medien kontrollierst, kriegst du also auch bessere Ergebnisse. Je weniger kritische Beiträge über dich erscheinen, desto besser deine Chancen auf ein gutes Wahlergebnis.<br><br>Du möchtest, dass dein Ergebnis in die lokale Rangliste eingetragen wird? Dafür wird ein Cookie erstellt. Gib hier deinen Namen an:<br><input type="text" placeholder='Dein Name' id="submitScoreInput"><button onclick="enterScore()" id=submitScoreButton >Eintragen!</button>`,
 				answers: [
 					{
 						text: "Und jetzt?",
@@ -3567,22 +3567,6 @@ const popups = {
 	...
 ]
 */
-// fetch("./Bestenliste.json")
-// 	.then(res => res.json())
-// 	.then(highscores => {
-// 		for (index in highscores) {
-// 			let i = index - 1 + 2
-// 			$(`#hs${i}name`).text(highscores[i - 1].name)
-// 			$(`#hs${i}score`).text(highscores[i - 1].score)
-// 			setTimeout(() => {
-// 				$(`#hs${i}`).css("opacity", "1")
-// 			}, 3000 - i * 500)
-// 		}
-// 	})
-// 	.catch(reason => {
-// 		console.error(reason)
-// 		//Bestenliste kan nicht angezeigt werden
-// 	})
 
 let history = ""
 let completeHistory = []
@@ -3629,6 +3613,52 @@ function runTests(noOfTests) {
 	while (test) {
 		showQuestion(currentQuestion)
 	}
+}
+
+readHSList()
+function readHSList() {
+	let list
+	try {
+		list = JSON.parse(getCookie("highscores"))
+	} catch (e) {
+		list = []
+	}
+	if (list.length == 0) {
+		$("#highscorelist").append("<tr><td>Es sind noch keine Einträge auf der Bestenliste.</td></tr>")
+		return
+	}
+	for (let i = 0; i < list.length && i < 5; i++) {
+		$("#highscorelist").append(
+			`<tr><td>${i + 1}.&nbsp;</td><td class="highscoreName">${list[i].name}</td><td class="highscoreScore">${
+				list[i].score
+			}</td></tr>`
+		)
+	}
+}
+function newHSListEntry(name, score) {
+	let list = getCookie("highscores")
+	if (list == "") {
+		setCookie("highscores", JSON.stringify([{ name: name, score: score }]))
+		return
+	}
+	list = JSON.parse(list)
+	list.push({ name: name, score: score })
+	list.sort((a, b) => {
+		sca = a.score.substring(0, a.score.length - 1).replace(",", ".") - 0
+		scb = b.score.substring(0, b.score.length - 1).replace(",", ".") - 0
+		if (sca > scb) return -1
+		if (sca < scb) return 1
+		if (sca == scb) return 0
+	})
+	list = list.slice(0, 5)
+	setCookie("highscores", JSON.stringify(list), 730)
+}
+function enterScore() {
+	if (document.getElementById("submitScoreInput").value.length <= 2) {
+		alert("Bitte trage einen längeren Namen ein.")
+		return
+	}
+	newHSListEntry(document.getElementById("submitScoreInput").value, wahlergebnis)
 }
 
 /**
@@ -4355,15 +4385,26 @@ function setHeader() {
 	}
 }
 
-/**überträgt den Score an den Server
- * @param e das event, das geblockt werden muss
- */
-function submitScore(e) {
-	e.preventDefault()
-	console.log(`${document.getElementById("submitScoreInput").value}\n${wahlergebnis}`)
-	fetch("https://ak-ts.de/klicks-unter-kontrolle-highscore", {
-		method: "POST",
-		headers: { "Content-Type": "text/plain" },
-		body: `${document.getElementById("submitScoreInput").value}\n${wahlergebnis}`,
-	})
+///speichert einen Cookie cname mit Wert cvalue, der in exdays gelöscht wird
+function setCookie(cname, cvalue, exdays) {
+	const d = new Date()
+	d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
+	let expires = "expires=" + d.toUTCString()
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
+}
+
+///liest einen Cookie cname
+function getCookie(cname) {
+	let name = cname + "="
+	let ca = document.cookie.split(";")
+	for (let i = 0; i < ca.length; i++) {
+		let c = ca[i]
+		while (c.charAt(0) == " ") {
+			c = c.substring(1)
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length)
+		}
+	}
+	return ""
 }
