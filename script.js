@@ -31,8 +31,10 @@ const chapters = {
 				],
 			},
 			befoerderung: {
-				text: "Du wurdest befördert. Die Präsidentin von Nuppland, deine Chefin Rokossowski, hat dir die Medienpolitik des Landes übertragen. Deine Aufgabe: Eure Partei, die WhR (Wir haben Recht) soll wiedergewählt werden - und das geht am Leichtesten, wenn nichts Schlechtes über dich und deine Partei in den Medien erscheint. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren. Die Zahl muss runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
+				text: "Du wurdest befördert. Der Präsident von Nuppland, dein Chef Rokossowski, hat dir die Medienpolitik des Landes übertragen. Deine Aufgabe: Eure Partei, die WhR (Wir haben Recht) soll wiedergewählt werden - und das geht am Leichtesten, wenn nichts Schlechtes über dich und deine Partei in den Medien erscheint. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren. Die Zahl muss runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
 				info: "Auf diesem Fragezeichen findest du über das Spiel verteilt immer wieder Anmerkungen zu Ländern, Regierungen und Medienunternehmen, die ähnliche Maßnahmen getroffen haben. Außerdem kannst du herausfinden, welche Auswirkungen das hatte.",
+				mediumType: "image",
+				mediumSource: "./res/img/flagge_nuppland.png",
 				answers: [
 					{
 						text: "Okay...",
@@ -63,6 +65,8 @@ const chapters = {
 
 			au: {
 				text: "Dein Land Nuppland ist Mitglied in der Adrejanischen Union, einem Staatenbund. Andere Staaten können also in eure Politik eingreifen und Sanktionen verhängen. Ins Ausland sollte daher nichts dringen, was euch Probleme bereiten könnte.",
+				mediumType: "image",
+				mediumSource: "./res/img/flagge_au.png",
 				answers: [
 					{
 						text: "Kapiert.",
@@ -79,7 +83,7 @@ const chapters = {
 		},
 		questions: {
 			rundfunkratverkleinern: {
-				text: "Bisher gibt es einen öffentlich-rechtlichen Rundfunk in deinem Land. Dieser finanziert sich über eine Abgabe von allen, keine Steuer, und wird vom Rundfunkrat beobachtet. Insgesamt neun Menschen sitzen im Rat, von denen drei von der Präsidentin, vier von der ersten und zwei von der zweiten Parlamentskammer bestimmt werden. Meinst du, da kann man noch was machen?",
+				text: "Bisher gibt es einen öffentlich-rechtlichen Rundfunk in deinem Land. Dieser finanziert sich über eine Abgabe von allen, keine Steuer, und wird vom Rundfunkrat beobachtet. Insgesamt neun Menschen sitzen im Rat, von denen drei vom Präsidenten, vier von der ersten und zwei von der zweiten Parlamentskammer bestimmt werden. Meinst du, da kann man noch was machen?",
 				info: "In Deutschland gibt es einen öffentlich-rechtlichen Rundfunk mit insgesamt 9 Landesrundfunkanstalten (LRAs), die in der ARD zusammengeschlossen sind. Außerdem gibt es das ZDF und weitere Anstalten wie die Deutsche Welle. Jede Anstalt hat ihren eigenen Rundfunkrat, in dem aber meist zwischen 30 und 60 Personen sitzen. Die hier beschriebene Lage orientiert sich an der Situation in Polen vor 2016.",
 				answers: [
 					{
@@ -157,7 +161,7 @@ const chapters = {
 				text: "Willst du vielleicht sogar noch ändern, wie die Ratsmitglieder bestimmt werden?",
 				answers: [
 					{
-						text: "Alle werden von der Präsidentin bestimmt, das hätte doch was.",
+						text: "Alle werden vom Präsidenten bestimmt, das hätte doch was.",
 						goto: "praesident",
 						variables: [
 							{
@@ -252,7 +256,7 @@ const chapters = {
 				],
 			},
 			gleich: {
-				text: "Eigentlich ist es tatsächlich ganz gut so: Ein Teil der fünf Mitglieder wird je von der ersten und der zweiten Kammer sowie von der Präsidentin gewählt. Sagen wir, im Verhältnis 2:1:2? So kann die Präsidentin mit nur einer dritten Person eine Mehrheit herbeiführen. Im Ausland wird aber weniger darüber geredet werden.",
+				text: "Eigentlich ist es tatsächlich ganz gut so: Ein Teil der fünf Mitglieder wird je von der ersten und der zweiten Kammer sowie vom Präsidenten gewählt. Sagen wir, im Verhältnis 2:1:2? So kann der Präsident mit nur einer dritten Person eine Mehrheit herbeiführen. Im Ausland wird aber weniger darüber geredet werden.",
 				answers: [
 					{
 						text: "Let's go!",
@@ -1010,7 +1014,7 @@ const chapters = {
 				info: "In den letzten Jahren wurden in Polen viele Posten in den Redaktionen neu besetzt. In den großen Städten ist es leichter, Ersatz zu finden, während Lokalzeitungen in dieser Hinsicht weniger Macht haben. Mehr zur Ersetzung der Journalist*innen findest du in <a href =https://www.deutschlandfunkkultur.de/medienpolitik-in-polen-angriff-auf-die-pressefreiheit.979.de.html?dram:article_id=496143>diesem Artikel vom Deutschlandfunk</a>.",
 				answers: [
 					{
-						text: "Okay, vielleicht entlassen wir doch ein oder zwei der Chefredaktuer*innen...",
+						text: "Okay, vielleicht entlassen wir doch ein oder zwei der Chefredakteur*innen...",
 						goto: "chefsentlassen",
 						variables: [
 							{
@@ -1856,7 +1860,7 @@ const chapters = {
 			},
 
 			nichtnurdas: {
-				text: "Noch besser. Der Stiftung gehören ja auch die Druckereien und Agenturen an. Normalerweise hätte das natürlich von der Kartellbehörde genehmigt werden müssen. Aber zum Glück hat Präsidentin Rokossowski ihre Kontakte. Jetzt kontrollieren wir aber einen großen Teil der Kanäle und können durch den Zusammenschluss leicht ein Auge auf alles haben.",
+				text: "Noch besser. Der Stiftung gehören ja auch die Druckereien und Agenturen an. Normalerweise hätte das natürlich von der Kartellbehörde genehmigt werden müssen. Aber zum Glück hat Präsident Rokossowski seine Kontakte. Jetzt kontrollieren wir aber einen großen Teil der Kanäle und können durch den Zusammenschluss leicht ein Auge auf alles haben.",
 				info: "2018 wurde in Ungarn die Medienstiftung KESMA (Közép-Európai Sajtó és Média Alapítvány, deutsch: Zentraleuropäische Presse- und Medienstiftung) gegründet. Sie wird von Journalistenverbänden oder der NGO Reporter ohne Grenzen kritisiert, aufgrund der engen Verbindungen zum ungarischen Premierminister Viktor Orbán.",
 				answers: [
 					{
