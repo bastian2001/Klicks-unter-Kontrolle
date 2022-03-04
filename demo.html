@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<!--Anzeige-->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--Meta-->
+		<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+		<meta name="theme-color" content="#85a0bf" />
+		<meta name="author" content="Lia und Bastian Springer" />
+
+		<!--Titel-->
+		<title>Klicks unter Kontrolle</title>
+
+		<!--Style-->
+		<link rel="stylesheet" href="./styledemo.css" />
+
+		<!--Barometer-->
+		<link rel="stylesheet" href="./style_barometer.css" />
+		<script src="./jquery-3.6.0.slim.min.js"></script>
+		<script src="./barometer.js"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<!--Flex-->
+			<!--Barometer-->
+			<div id="header0" class="headerElement hidden">
+				<p id="headerText0" class="headerText">Kritische Journalisten</p>
+				<div class="barometer" id="barometerKritisch"></div>
+			</div>
+			<div id="header0Alt" class="headerElement hidden">
+				<p id="headerText0Alt" class="headerText">Kritische Journalisten</p>
+				<div id="header0bg"><div id="header0progress"></div></div>
+			</div>
+
+			<!--Zeit-->
+			<div id="header1" class="headerElement hidden">
+				<p id="headerText1" class="headerText">Text 2</p>
+				<div id="header1bg"><div id="header1progress"></div></div>
+			</div>
+
+			<!--Qualität der Beziehungen-->
+			<div id="header2" class="headerElement hidden">
+				<p id="headerText2" class="headerText">Beziehungen zur Adrejanischen Union</p>
+				<div id="header2bgN">
+					<div id="header2progressN"></div>
+				</div>
+				<div id="header2bgP">
+					<div id="header2progressP"></div>
+				</div>
+			</div>
+		</div>
+
+		<!--Spiel-->
+		<div class="content">
+			<!--Flex-->
+
+			<!--Fragezeichen (Info)-->
+			<button id="info" onclick="showInfo()"></button>
+			<!--absolute-->
+
+			<img id="logo" src="./res/img/logo.png" alt="KLICKS UNTER KONTROLLE" />
+
+			<!--Aktinsbereich-->
+			<div id="actionSpace">
+				<!--Spiel-->
+				<div id="game">
+					<!--Paragraphs und Buttons werden von JS gefüllt (innerHTML)-->
+					<img id="frageBild" class="hidden" />
+					<video controls id="frageVideo" class="hidden"></video>
+					<audio controls id="frageAudio" class="hidden"></audio>
+					<div id="frageIframe" class="hidden">
+						<iframe
+							id="frageIframeIframe"
+							src=""
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+					</div>
+					<p id="frage"></p>
+
+					<button id="antwort0" class="answerButton" onclick="answerClick(0)"></button>
+					<p></p>
+
+					<button id="antwort1" class="answerButton" onclick="answerClick(1)"></button>
+					<p></p>
+
+					<button id="antwort2" class="answerButton" onclick="answerClick(2)"></button>
+				</div>
+
+				<!--Kapitelauswahl-->
+				<div id="chapterSelection" class="hidden">
+					<p class="chapterSelectionText">Womit möchtest du dich als nächstes beschäftigen?</p>
+
+					<!--Mehrere Kästen, werden von JS befüllt mit Kapitelauswahl-->
+					<div id="newChapter0" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
+						<img src="x" class="chapterImage" />
+						<h1 class="chapterHeadline">Beispielkapitel</h1>
+						<!-- <p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p> -->
+					</div>
+
+					<div id="newChapter1" class="newChapter" onclick="startChapter(this.getAttribute('chapter'))">
+						<img src="x" class="chapterImage" />
+						<h1 class="chapterHeadline">Beispielkapitel</h1>
+						<!-- <p class="chapterDescription">Kurze Beschreibung des Beispielkapitels</p> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Popup, wird von JS gefüllt und angezeigt - der Button versteckt es wieder-->
+		<div id="popupbg" class="hidden">
+			<div id="popup">
+				<h1 id="popupHeadline"></h1>
+				<p id="popupMessage"></p>
+				<button id="popupButton" onclick="document.getElementById('popupbg').classList.add('hidden')"></button>
+			</div>
+		</div>
+
+		<div id="popupStartBg">
+			<div id="popupStart">
+				<div id="anleitung">
+					<h2>Klicks unter Kontrolle: Demo</h2>
+					<p>
+						Klicks unter Kontrolle zeigt, wie Staaten systematisch die Pressefreiheit einschränken. Und das
+						nicht nur weit weg, mit Polen und Ungarn gibt es auch zwei Länder in der EU, die Maßnahmen
+						ergreifen, um die freie Berichterstattung in ihrem Land zu behindern.
+					</p>
+					<p>
+						Die Aufgabe bei Klicks unter Kontrolle ist es, selbst Entscheidungen zu treffen, um die WhR (Wir
+						haben Recht), die eigene Partei, möglichst zur Wiederwahl zur verhelfen, indem freie Medien
+						abgebaut werden.
+					</p>
+					<p>
+						Dies ist nur eine Demoversion, um das Spiel kennenzulernen. Das ganze Spiel gibt's
+						<a href="https://ak-ts.de/klicks" style="color: white">hier</a>.
+					</p>
+				</div>
+				<button id="startButton" onclick="document.getElementById('popupStartBg').classList.add('hidden')">
+					Spiel starten
+				</button>
+			</div>
+		</div>
+
+		<a href="https://ak-ts.de/impressum/" id="impressum">Impressum</a>
+
+		<!--Script-->
+		<script src="./scriptdemo.js"></script>
+	</body>
+</html>
