@@ -10,18 +10,19 @@ body {
 
 * {
 	outline: none;
-	cursor: url("Bilder/Cursor.png") 7 3, auto;
+	cursor: url("./res/img/cursor.png") 7 3, auto;
 }
 
 p,
 h2,
-h3 {
+h3,
+td {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 a,
 button {
-	cursor: url("Bilder/CursorButton.png") 7 3, pointer;
+	cursor: url("./res/img/cursor_button.png") 7 3, pointer;
 }
 
 .hidden {
@@ -58,25 +59,9 @@ button {
 	transition: transform 2s cubic-bezier(0, 0.32, 0.6, 0.98);
 }
 
-/* #highscoretable {
-	color: white;
-	font-family: Arial, Helvetica, sans-serif;
-	opacity: 1;
-	transition: opacity 0.5s ease-out;
+.highscoreName {
+	min-width: 100px;
 }
-.rank {
-	opacity: 0;
-	transition: opacity 0.5s ease-out;
-}
-.hsposition {
-	padding-right: 1rem;
-}
-.hsname {
-	padding: 0.2rem 1rem;
-}
-.hsscore {
-	padding-left: 1rem;
-} */
 
 #header0Alt {
 	display: none;
@@ -307,7 +292,7 @@ button {
 	height: 70px !important;
 	padding: 0px;
 	margin: 0px;
-	background-image: url("./Bilder/Info.png");
+	background-image: url("./res/img/info.png");
 	background-size: cover;
 	z-index: 1;
 }
@@ -409,14 +394,13 @@ button {
 	grid-template-columns: 2fr;
 	grid-template-rows: 1fr 0fr;
 	gap: 1rem;
+	overflow-y: auto;
 }
 
 #anleitung h2 {
 	font-size: 2rem;
 }
-#anleitung h2,
-#anleitung h3,
-#anleitung p {
+#popupStartBg {
 	color: white;
 }
 
@@ -435,6 +419,12 @@ button {
 }
 #startButton:hover {
 	background-color: #fff3;
+}
+#highscorelistwrapper {
+	margin-bottom: 1rem;
+}
+#highscorelist td {
+	padding-bottom: 0.8rem;
 }
 
 /*Ergebnis übermitteln*/
@@ -472,6 +462,16 @@ button {
 	color: white;
 	background-color: #424237;
 	transition: background-color 0.4s cubic-bezier(0.09, 0.74, 0.44, 0.99);
+}
+
+#impressum {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	color: blanchedalmond;
+	text-decoration: none;
+	z-index: 1;
+	font-size: 10px;
 }
 
 /* rückt das Infosymbol bei jeder nicht-Desktop-Ansicht nach außen*/
@@ -524,6 +524,28 @@ button {
 	.headerText {
 		font-size: 1.1rem;
 	}
+
+	#popupStart {
+		grid-template-columns: 1fr;
+		grid-template-rows: 0fr 0fr 1fr 0fr;
+		width: 80vw;
+		height: 80vh;
+		left: 10vw;
+	}
+	#line {
+		height: 2px;
+		width: 100%;
+	}
+	#popupbg,
+	#popupStartBg {
+		margin-left: -0.8rem;
+	}
+
+	#impressum {
+		bottom: 1px;
+		right: 1px;
+		font-size: 9px;
+	}
 }
 
 /*einspaltig, 3 Balken*/
@@ -535,7 +557,6 @@ button {
 
 	.answerButton,
 	#submitScoreButton {
-		/* padding: 0.5rem 2rem; */
 		box-shadow: initial;
 	}
 
@@ -592,6 +613,15 @@ button {
 	#frageIframe {
 		padding-top: 56.25%;
 	}
+	#popupbg,
+	#popupStartBg {
+		margin-left: -0.5rem;
+	}
+
+	#impressum {
+		right: 0.8rem;
+		bottom: 0.8rem;
+	}
 }
 
 /*kleinere Schrift*/
@@ -619,6 +649,15 @@ button {
 	.headerText {
 		font-size: 0.9rem;
 		margin-bottom: 0.5rem;
+	}
+	#popupbg,
+	#popupStartBg {
+		margin-left: -0.5rem;
+	}
+
+	#impressum {
+		right: 0.8rem;
+		bottom: 0.8rem;
 	}
 }
 

@@ -31,8 +31,11 @@ const chapters = {
 				],
 			},
 			befoerderung: {
-				text: "Du wurdest befördert: Die Präsidentin von Nuppland, deine Chefin Rokossowski, hat dir die Medienpolitik des Landes übertragen. Deine Aufgabe: Eure Partei, die WhR (Wir haben Recht) soll wiedergewählt werden - und dafür darf nichts Schlechtes über dich und deine Partei in den Medien erscheinen.",
+				text: "Du wurdest befördert. Der Präsident von Nuppland, dein Chef Rokossowski, hat dir die Medienpolitik des Landes übertragen. Deine Aufgabe: Eure Partei, die WhR (Wir haben Recht) soll wiedergewählt werden - und das geht am Leichtesten, wenn nichts Schlechtes über dich und deine Partei in den Medien erscheint. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren. Die Zahl muss runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
 				info: "Auf diesem Fragezeichen findest du über das Spiel verteilt immer wieder Anmerkungen zu Ländern, Regierungen und Medienunternehmen, die ähnliche Maßnahmen getroffen haben. Außerdem kannst du herausfinden, welche Auswirkungen das hatte.",
+				mediumType: "video",
+				mediumSource: "./res/video/nuppland_flagge.mp4",
+				gif: true,
 				answers: [
 					{
 						text: "Verstehe.",
@@ -61,7 +64,7 @@ const chapters = {
 			},
 
 			wahlen: {
-				text: "Wie lange es noch bis zur Wahl ist, siehst du an der Seite. Bis dahin musst du alles dafür tun, dass ihr gute Karten habt und in den Medien so wenig Negatives wie möglich über euch gebracht wird.",
+				text: "Ein Journalist ohne Job ist kein Journalist, haha... Wenn es also keine freien Medien mehr gibt, gibt es auch keine kritischen Journalisten mehr. In einem Jahr stehen wieder Wahlen an. Bis dahin musst du alles dafür tun, dass ihr gute Karten habt und in den Medien so wenig Negatives wie möglich über euch gebracht wird. An der Seite siehst du, wie viel Zeit du noch bis zur Wahl hast.",
 				answers: [
 					{
 						text: "Verstanden.",
@@ -72,6 +75,9 @@ const chapters = {
 
 			au: {
 				text: "Dein Land Nuppland ist Mitglied in der Adrejanischen Union, einem Staatenbund. Andere Staaten können also in eure Politik eingreifen und Sanktionen verhängen. Ins Ausland sollte daher nichts dringen, was euch Probleme bereiten könnte.",
+				mediumType: "video",
+				mediumSource: "./res/video/au_flagge.mp4",
+				gif: true,
 				answers: [
 					{
 						text: "Let's go!",
@@ -88,7 +94,7 @@ const chapters = {
 		},
 		questions: {
 			rundfunkratverkleinern: {
-				text: "Bisher gibt es einen öffentlich-rechtlichen Rundfunk in deinem Land. Dieser finanziert sich über eine Abgabe von allen Einwohner*innen Nupplands. Er wird vom Rundfunkrat beobachtet, der aus neun Menschen besteht, von denen drei von der Präsidentin, vier von der ersten und zwei von der zweiten Parlamentskammer bestimmt werden. Meinst du, da kann man noch was machen?",
+				text: "Bisher gibt es einen öffentlich-rechtlichen Rundfunk in deinem Land. Dieser finanziert sich über eine Abgabe von allen, keine Steuer, und wird vom Rundfunkrat beobachtet. Insgesamt neun Menschen sitzen im Rat, von denen drei vom Präsidenten, vier von der ersten und zwei von der zweiten Parlamentskammer bestimmt werden. Meinst du, da kann man noch was machen?",
 				info: "In Deutschland gibt es einen öffentlich-rechtlichen Rundfunk mit insgesamt 9 Landesrundfunkanstalten (LRAs), die in der ARD zusammengeschlossen sind. Außerdem gibt es das ZDF und weitere Anstalten wie die Deutsche Welle. Jede Anstalt hat ihren eigenen Rundfunkrat, in dem aber meist zwischen 30 und 60 Personen sitzen. Die hier beschriebene Lage orientiert sich an der Situation in Polen vor 2016.",
 				answers: [
 					{
@@ -166,7 +172,7 @@ const chapters = {
 				text: "Willst du vielleicht sogar noch ändern, wie die Ratsmitglieder bestimmt werden?",
 				answers: [
 					{
-						text: "Alle die Präsidentin, das hätte doch was.",
+						text: "Alle werden vom Präsidenten bestimmt, das hätte doch was.",
 						goto: "praesident",
 						variables: [
 							{
@@ -261,7 +267,7 @@ const chapters = {
 				],
 			},
 			gleich: {
-				text: "Eigentlich ist es tatsächlich ganz gut so: Ein Teil der fünf Mitglieder wird je von der ersten und der zweiten Kammer sowie von der Präsidentin gewählt. Sagen wir, im Verhältnis 2:1:2? So kann die Präsidentin mit nur einer dritten Person eine Mehrheit herbeiführen. Im Ausland wird aber weniger darüber geredet werden.",
+				text: "Eigentlich ist es tatsächlich ganz gut so: Ein Teil der fünf Mitglieder wird je von der ersten und der zweiten Kammer sowie vom Präsidenten gewählt. Sagen wir, im Verhältnis 2:1:2? So kann der Präsident mit nur einer dritten Person eine Mehrheit herbeiführen. Im Ausland wird aber weniger darüber geredet werden.",
 				answers: [
 					{
 						text: "Let's go!",
@@ -1201,7 +1207,7 @@ const chapters = {
 			},
 
 			ergebnis2: {
-				text: `Bei der Wahl kommt deine Partei auf $wahlergebnis Prozent der Stimmen! Wenn du die Medien kontrollierst, kriegst du also auch bessere Ergebnisse. Je weniger kritische Beiträge über dich erscheinen, desto besser deine Chancen auf ein gutes Wahlergebnis.<br><br>Du möchtest, dass dein Ergebnis auf der Rangliste veröffentlicht wird? Gib hier deinen Namen an:<br><form method=post onsubmit="submitScore(event)" enctype="multipart/form-data"><input type="text" pattern="[a-zA-Z0-9À-ÿ-. ]{3,30}" minlength=3 maxlength=30 placeholder='Dein Name (Buchstaben, Zahlen oder ".- ")' id="submitScoreInput" required><button type=submit id=submitScoreButton >Eintragen!</button>`,
+				text: `Bei der Wahl kommt deine Partei auf $wahlergebnis Prozent der Stimmen! Wenn du die Medien kontrollierst, kriegst du also auch bessere Ergebnisse. Je weniger kritische Beiträge über dich erscheinen, desto besser deine Chancen auf ein gutes Wahlergebnis.<br><br>Du möchtest, dass dein Ergebnis in die lokale Rangliste eingetragen wird? Dafür wird ein Cookie erstellt. Gib hier deinen Namen an:<br><input type="text" placeholder='Dein Name' id="submitScoreInput"><button onclick="enterScore()" id=submitScoreButton >Eintragen!</button>`,
 				answers: [
 					{
 						text: "Und jetzt?",
@@ -1324,22 +1330,6 @@ const popups = {
 	...
 ]
 */
-// fetch("./Bestenliste.json")
-// 	.then(res => res.json())
-// 	.then(highscores => {
-// 		for (index in highscores) {
-// 			let i = index - 1 + 2
-// 			$(`#hs${i}name`).text(highscores[i - 1].name)
-// 			$(`#hs${i}score`).text(highscores[i - 1].score)
-// 			setTimeout(() => {
-// 				$(`#hs${i}`).css("opacity", "1")
-// 			}, 3000 - i * 500)
-// 		}
-// 	})
-// 	.catch(reason => {
-// 		console.error(reason)
-// 		//Bestenliste kan nicht angezeigt werden
-// 	})
 
 let history = ""
 let completeHistory = []
@@ -1385,6 +1375,52 @@ function runTests(noOfTests) {
 	while (test) {
 		showQuestion(currentQuestion)
 	}
+}
+
+readHSList()
+function readHSList() {
+	let list
+	try {
+		list = JSON.parse(getCookie("highscores"))
+	} catch (e) {
+		list = []
+	}
+	if (list.length == 0) {
+		$("#highscorelist").append("<tr><td>Es sind noch keine Einträge auf der Bestenliste.</td></tr>")
+		return
+	}
+	for (let i = 0; i < list.length && i < 5; i++) {
+		$("#highscorelist").append(
+			`<tr><td>${i + 1}.&nbsp;</td><td class="highscoreName">${list[i].name}</td><td class="highscoreScore">${
+				list[i].score
+			}</td></tr>`
+		)
+	}
+}
+function newHSListEntry(name, score) {
+	let list = getCookie("highscores")
+	if (list == "") {
+		setCookie("highscores", JSON.stringify([{ name: name, score: score }]))
+		return
+	}
+	list = JSON.parse(list)
+	list.push({ name: name, score: score })
+	list.sort((a, b) => {
+		sca = a.score.substring(0, a.score.length - 1).replace(",", ".") - 0
+		scb = b.score.substring(0, b.score.length - 1).replace(",", ".") - 0
+		if (sca > scb) return -1
+		if (sca < scb) return 1
+		if (sca == scb) return 0
+	})
+	list = list.slice(0, 5)
+	setCookie("highscores", JSON.stringify(list), 730)
+}
+function enterScore() {
+	if (document.getElementById("submitScoreInput").value.length <= 2) {
+		alert("Bitte trage einen längeren Namen ein.")
+		return
+	}
+	newHSListEntry(document.getElementById("submitScoreInput").value, wahlergebnis)
 }
 
 /**
@@ -1584,12 +1620,21 @@ function showQuestion(obj) {
 				image.src = question.mediumSource
 				break
 			case "video":
-				image.classLiframeist.add("hidden")
+				image.classList.add("hidden")
 				video.classList.remove("hidden")
 				audio.classList.add("hidden")
 				iframe.classList.add("hidden")
 				video.src = question.mediumSource
 				video.oncanplaythrough = video.play
+				if (question.gif) {
+					video.setAttribute("loop", "true")
+					video.removeAttribute("controls")
+					video.setAttribute("muted", "true")
+				} else {
+					video.removeAttribute("loop")
+					video.setAttribute("controls", "true")
+					video.setAttribute("muted", "false")
+				}
 				break
 			case "audio":
 				image.classList.add("hidden")
@@ -2059,15 +2104,26 @@ function setHeader() {
 	}
 }
 
-/**überträgt den Score an den Server
- * @param e das event, das geblockt werden muss
- */
-function submitScore(e) {
-	e.preventDefault()
-	console.log(`${document.getElementById("submitScoreInput").value}\n${wahlergebnis}`)
-	fetch("https://ak-ts.de/klicks-unter-kontrolle-highscore", {
-		method: "POST",
-		headers: { "Content-Type": "text/plain" },
-		body: `${document.getElementById("submitScoreInput").value}\n${wahlergebnis}`,
-	})
+///speichert einen Cookie cname mit Wert cvalue, der in exdays gelöscht wird
+function setCookie(cname, cvalue, exdays) {
+	const d = new Date()
+	d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000)
+	let expires = "expires=" + d.toUTCString()
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
+}
+
+///liest einen Cookie cname
+function getCookie(cname) {
+	let name = cname + "="
+	let ca = document.cookie.split(";")
+	for (let i = 0; i < ca.length; i++) {
+		let c = ca[i]
+		while (c.charAt(0) == " ") {
+			c = c.substring(1)
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length)
+		}
+	}
+	return ""
 }

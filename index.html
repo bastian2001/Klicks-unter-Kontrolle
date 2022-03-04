@@ -9,19 +9,19 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
-		<meta name="theme-color" content="#30393A" />
+		<meta name="theme-color" content="#85a0bf" />
 		<meta name="author" content="Lia und Bastian Springer" />
 
 		<!--Titel-->
-		<title>Klicks unter Kontrolle - Medienliteralität</title>
+		<title>Klicks unter Kontrolle</title>
 
 		<!--Style-->
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="./style.css" />
 
 		<!--Barometer-->
-		<link rel="stylesheet" href="styleBarometer.css" />
-		<script src="jquery-3.6.0.slim.min.js"></script>
-		<script src="barometer.js"></script>
+		<link rel="stylesheet" href="./style_barometer.css" />
+		<script src="./jquery-3.6.0.slim.min.js"></script>
+		<script src="./barometer.js"></script>
 	</head>
 
 	<body>
@@ -45,7 +45,7 @@
 
 			<!--Qualität der Beziehungen-->
 			<div id="header2" class="headerElement hidden">
-				<p id="headerText2" class="headerText">Qualität der Beziehungen zur Adrejanischen Union</p>
+				<p id="headerText2" class="headerText">Beziehungen zur Adrejanischen Union</p>
 				<div id="header2bgN">
 					<div id="header2progressN"></div>
 				</div>
@@ -63,7 +63,7 @@
 			<button id="info" onclick="showInfo()"></button>
 			<!--absolute-->
 
-			<img id="logo" src="Bilder/logo.png" alt="KLICKS UNTER KONTROLLE" />
+			<img id="logo" src="./res/img/logo.png" alt="KLICKS UNTER KONTROLLE" />
 
 			<!--Aktinsbereich-->
 			<div id="actionSpace">
@@ -77,7 +77,7 @@
 						<iframe
 							id="frageIframeIframe"
 							src=""
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 							allowfullscreen
 						></iframe>
 					</div>
@@ -125,17 +125,20 @@
 			<div id="popupStart">
 				<div id="anleitung">
 					<h2>Klicks unter Kontrolle: Demo</h2>
-					<h3>Willkommen in Nuppland, liebe HLZ!</h3>
 					<p>
-						Klicks unter Kontrolle zeigt, wie Staaten systematisch die Pressefreiheit einschränken. Und das nicht nur weit weg, mit Polen und Ungarn gibt es auch zwei Länder in der EU, die Maßnahmen ergreifen, um die freie Berichterstattung in ihrem Land zu behindern.
+						Klicks unter Kontrolle zeigt, wie Staaten systematisch die Pressefreiheit einschränken. Und das
+						nicht nur weit weg, mit Polen und Ungarn gibt es auch zwei Länder in der EU, die Maßnahmen
+						ergreifen, um die freie Berichterstattung in ihrem Land zu behindern.
 					</p>
 					<p>
-						Die Aufgabe bei Klicks unter Kontrolle ist es, selbst Entscheidungen zu treffen, um die WhR (Wir haben Recht), die eigene Partei, möglichst zur Wiederwahl zur verhelfen, indem freie Medien abgebaut werden.
+						Die Aufgabe bei Klicks unter Kontrolle ist es, selbst Entscheidungen zu treffen, um die WhR (Wir
+						haben Recht), die eigene Partei, möglichst zur Wiederwahl zur verhelfen, indem freie Medien
+						abgebaut werden.
 					</p>
 					<p>
-						Dies ist nur eine Demoversion, um das Spiel kennenzulernen. Das ganze Spiel gibt's <a href=https://suspicious-roentgen-be0987.netlify.app style="color:white">hier</a>.
+						Dies ist nur eine Demoversion, um das Spiel kennenzulernen. Das ganze Spiel gibt's
+						<a href="https://ak-ts.de/klicks" style="color: white">hier</a>.
 					</p>
-					
 				</div>
 				<button id="startButton" onclick="document.getElementById('popupStartBg').classList.add('hidden')">
 					Spiel starten
@@ -143,7 +146,9 @@
 			</div>
 		</div>
 
+		<a href="https://ak-ts.de/impressum/" id="impressum">Impressum</a>
+
 		<!--Script-->
-		<script src="script.js"></script>
+		<script src="./script.js"></script>
 	</body>
 </html>
