@@ -33,8 +33,9 @@ const chapters = {
 			befoerderung: {
 				text: "Du wurdest befördert. Der Präsident von Nuppland, dein Chef Rokossowski, hat dir die Medienpolitik des Landes übertragen. Deine Aufgabe: Eure Partei, die WhR (Wir haben Recht) soll wiedergewählt werden - und das geht am Leichtesten, wenn nichts Schlechtes über dich und deine Partei in den Medien erscheint. Links siehst du die Anzahl der kritischen Journalist*innen, die regelmäßig publizieren. Die Zahl muss runtergehen, und das geht am Leichtesten, indem man ihnen das Leben schwer macht. Viele geben dann auch von ganz allein auf. Verstanden?",
 				info: "Auf diesem Fragezeichen findest du über das Spiel verteilt immer wieder Anmerkungen zu Ländern, Regierungen und Medienunternehmen, die ähnliche Maßnahmen getroffen haben. Außerdem kannst du herausfinden, welche Auswirkungen das hatte.",
-				mediumType: "image",
-				mediumSource: "./res/img/flagge_nuppland.png",
+				mediumType: "video",
+				mediumSource: "./res/video/nuppland_flagge.mp4",
+				gif: true,
 				answers: [
 					{
 						text: "Okay...",
@@ -65,8 +66,9 @@ const chapters = {
 
 			au: {
 				text: "Dein Land Nuppland ist Mitglied in der Adrejanischen Union, einem Staatenbund. Andere Staaten können also in eure Politik eingreifen und Sanktionen verhängen. Ins Ausland sollte daher nichts dringen, was euch Probleme bereiten könnte.",
-				mediumType: "image",
-				mediumSource: "./res/img/flagge_au.png",
+				mediumType: "video",
+				mediumSource: "./res/video/au_flagge.mp4",
+				gif: true,
 				answers: [
 					{
 						text: "Kapiert.",
@@ -3271,6 +3273,9 @@ const chapters = {
 		questions: {
 			sanktionen14: {
 				text: "Übrigens: Ich hab dich gewarnt! Die Adrejanische Union verhängt Sanktionen gegen Nuppland. Grund dafür sind die mehrfachen Verstöße gegen die Verträge, auf denen die AU aufbaut. Rechtstaatlichkeit und Pressefreiheit werden dort als hohe Werte angesehen. Es gibt also weniger Geld von der AU, und dadurch sinkt natürlich auch deine Zustimmung bei der Bevölkerung.",
+				mediumType: "video",
+				mediumSource: "./res/video/au_flagge.mp4",
+				gif: true,
 				answers: [
 					{
 						goto: "/back",
@@ -3862,12 +3867,21 @@ function showQuestion(obj) {
 				image.src = question.mediumSource
 				break
 			case "video":
-				image.classLiframeist.add("hidden")
+				image.classList.add("hidden")
 				video.classList.remove("hidden")
 				audio.classList.add("hidden")
 				iframe.classList.add("hidden")
 				video.src = question.mediumSource
 				video.oncanplaythrough = video.play
+				if (question.gif) {
+					video.setAttribute("loop", "true")
+					video.removeAttribute("controls")
+					video.setAttribute("muted", "true")
+				} else {
+					video.removeAttribute("loop")
+					video.setAttribute("controls", "true")
+					video.setAttribute("muted", "false")
+				}
 				break
 			case "audio":
 				image.classList.add("hidden")

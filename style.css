@@ -15,7 +15,8 @@ body {
 
 p,
 h2,
-h3 {
+h3,
+td {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -393,6 +394,7 @@ button {
 	grid-template-columns: 2fr 0fr 1fr;
 	grid-template-rows: 1fr 0fr;
 	gap: 1rem;
+	overflow-y: auto;
 }
 
 #anleitung h2 {
@@ -462,6 +464,16 @@ button {
 	transition: background-color 0.4s cubic-bezier(0.09, 0.74, 0.44, 0.99);
 }
 
+#impressum {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	color: blanchedalmond;
+	text-decoration: none;
+	z-index: 1;
+	font-size: 10px;
+}
+
 /* rückt das Infosymbol bei jeder nicht-Desktop-Ansicht nach außen*/
 @media (max-width: 900px), (max-height: 700px) {
 	#info {
@@ -516,13 +528,23 @@ button {
 	#popupStart {
 		grid-template-columns: 1fr;
 		grid-template-rows: 0fr 0fr 1fr 0fr;
-		overflow-y: auto;
 		width: 80vw;
 		height: 80vh;
+		left: 10vw;
 	}
 	#line {
 		height: 2px;
 		width: 100%;
+	}
+	#popupbg,
+	#popupStartBg {
+		margin-left: -0.8rem;
+	}
+
+	#impressum {
+		bottom: 1px;
+		right: 1px;
+		font-size: 9px;
 	}
 }
 
@@ -535,7 +557,6 @@ button {
 
 	.answerButton,
 	#submitScoreButton {
-		/* padding: 0.5rem 2rem; */
 		box-shadow: initial;
 	}
 
@@ -592,6 +613,15 @@ button {
 	#frageIframe {
 		padding-top: 56.25%;
 	}
+	#popupbg,
+	#popupStartBg {
+		margin-left: -0.5rem;
+	}
+
+	#impressum {
+		right: 0.8rem;
+		bottom: 0.8rem;
+	}
 }
 
 /*kleinere Schrift*/
@@ -619,6 +649,15 @@ button {
 	.headerText {
 		font-size: 0.9rem;
 		margin-bottom: 0.5rem;
+	}
+	#popupbg,
+	#popupStartBg {
+		margin-left: -0.5rem;
+	}
+
+	#impressum {
+		right: 0.8rem;
+		bottom: 0.8rem;
 	}
 }
 
