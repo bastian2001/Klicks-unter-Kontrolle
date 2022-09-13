@@ -3663,11 +3663,16 @@ function newHSListEntry(name, score) {
 	setCookie("highscores", JSON.stringify(list), 730)
 }
 function enterScore() {
-	if (document.getElementById("submitScoreInput").value.length <= 2) {
+	const name = document.getElementById("submitScoreInput").value
+	if (name.length <= 2) {
 		alert("Bitte trage einen längeren Namen ein.")
 		return
 	}
-	newHSListEntry(document.getElementById("submitScoreInput").value, wahlergebnis)
+	newHSListEntry(name, wahlergebnis)
+	$("#submitScoreInput").remove()
+	document.getElementById(
+		"submitScoreButton"
+	).outerHTML = `<div id="scoreSubmitted"><span id="highScoreName">${name}</span> Eingetragen&nbsp;&nbsp;<i class="fa-solid fa-check"></i></div>`
 }
 
 /**
@@ -4426,3 +4431,8 @@ function getCookie(cname) {
 	}
 	return ""
 }
+
+setTimeout(() => {
+	jQuery.getScript("https://kit.fontawesome.com/7200296c80.js")
+	console.log("Loading Font Awesome")
+}, 10000)

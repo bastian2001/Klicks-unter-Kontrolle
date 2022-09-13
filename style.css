@@ -463,6 +463,12 @@ button {
 	background-color: #424237;
 	transition: background-color 0.4s cubic-bezier(0.09, 0.74, 0.44, 0.99);
 }
+#scoreSubmitted {
+	margin: 2rem;
+}
+#highScoreName {
+	font-weight: bold;
+}
 
 #impressum {
 	position: fixed;
